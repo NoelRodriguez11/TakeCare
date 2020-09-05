@@ -23,6 +23,6 @@
     	</a><br>
     	
 	<?php else: ?>
-		<h2>Laura</h2>
+		<h2>Prueba de victor de menu login</h2>
 	<?php endif;?>
 </div>
