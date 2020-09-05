@@ -23,6 +23,6 @@
     	</a><br>
     	
 	<?php else: ?>
-		<h2>Debes hacer login o registrarte para poder empezar a operar</h2>
+		<h2>Laura</h2>
 	<?php endif;?>
 </div>
