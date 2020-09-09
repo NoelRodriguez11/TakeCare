@@ -12,7 +12,7 @@
 	<!-- <script src="<?=base_url()?>assets/js/popper.min.js" ></script>  -->
 	<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 	
-	<title>TakeCare Noel</title>
+	<title>TakeCare Noel2</title>
 </head>
 
 <body>
