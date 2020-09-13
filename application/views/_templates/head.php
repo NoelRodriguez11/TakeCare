@@ -11,6 +11,9 @@
 	<script src="<?=base_url()?>assets/js/jquery.min.js" ></script>
 	<!-- <script src="<?=base_url()?>assets/js/popper.min.js" ></script>  -->
 	<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/js/modo.js"></script>
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/oscuro.css">
 	
 	<title>TakeCare TFG</title>
 </head>

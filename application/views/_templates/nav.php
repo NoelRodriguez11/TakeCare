@@ -1,9 +1,9 @@
+
+<?php if (isset ($datosGen['persona']) && $datosGen['persona']->loginname != 'admin'): ?>  
+
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="assets/js/modo.js"></script>
-
-
 <link rel="stylesheet" href="assets/css/oscuro.css">
-<?php if (isset ($datosGen['persona']) && $datosGen['persona']->loginname != 'admin'): ?>  
 <nav class="container navbar navbar-inverse">
   <div class="navbar-header">
     <a class="navbar-brand" style="margin: auto;width: 60%;padding: 60%; " href="<?=base_url()?>">Inicio</a>
