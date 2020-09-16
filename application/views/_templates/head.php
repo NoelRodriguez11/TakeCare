@@ -17,8 +17,10 @@
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/modo.js"></script>
     <link rel="stylesheet" href="<?=base_url()?>assets/css/oscuro.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
+	<script type="text/javascript" src="<?=base_url()?>assets/js/nav.js"></script>
    
-    
+
 	<title>TakeCare TFG</title>
 </head>
 
