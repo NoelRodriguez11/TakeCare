@@ -1,8 +1,3 @@
-
-
-
-<?php if (isset ($datosGen['persona'])): ?>  
-
 <!-- Bootstrap NavBar -->
 <nav class="navbar navbar-inverse" style="height: 80px;" >
    <button type="button" onclick="cambiarModo()">
@@ -14,7 +9,7 @@
   </a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">Arriba A</a>
       </li>
       <li class="nav-item">
@@ -42,6 +37,8 @@
   </div>
 </nav><!-- NavBar END -->
 
+
+<?php if (isset ($datosGen['persona'])): ?>  
 
 <!-- Bootstrap row -->
 <div class="row" id="body-row">
@@ -131,46 +128,6 @@
             <!-- Logo -->   
         </ul><!-- List Group END-->
     </div><!-- sidebar-container END -->
-<?php else: ?> 	
-
-<!-- Bootstrap NavBar -->
-<nav class="navbar navbar-inverse" style="height: 80px;" >
-   <button type="button" onclick="cambiarModo()">
-    <span><i class="fas fa-lightbulb"></i></span>
-    </button>
-  <a class="navbar-brand" href="<?=base_url()?>"> 
-	<img src="<?=base_url()?>assets/img/iconotc.png" alt="INICIO" style="width: 60px;">
-    <span class="menu-collapsed">TAKE CARE</span>
-  </a>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Arriba A</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Arriba B</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Arriba C</a>
-      </li>
-      
-      <!-- This menu is hidden in bigger devices with d-sm-none. 
-           The sidebar isn't proper for smaller screens imo, so this dropdown menu can keep all the useful sidebar itens exclusively for smaller screens  -->
-      <li class="nav-item dropdown d-sm-block d-md-none">
-        <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Arriba D
-        </a>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="<?=base_url()?>loquesea/c">D a</a>
-            <a class="dropdown-item" href="<?=base_url()?>loquesea/c">D b</a>
-            <a class="dropdown-item" href="<?=base_url()?>loquesea/c">D c</a>
-            <a class="dropdown-item" href="<?=base_url()?>loquesea/c">Etc ...</a>
-        </div>
-      </li><!-- Smaller devices menu END -->
-      
-    </ul>
-  </div>
-</nav><!-- NavBar END -->
 
 <?php endif;?>
 

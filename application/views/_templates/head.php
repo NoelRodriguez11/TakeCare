@@ -18,6 +18,7 @@
     <script type="text/javascript" src="<?=base_url()?>assets/js/modo.js"></script>
     <link rel="stylesheet" href="<?=base_url()?>assets/css/oscuro.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/footer.css">
 	<script type="text/javascript" src="<?=base_url()?>assets/js/nav.js"></script>
    
 
