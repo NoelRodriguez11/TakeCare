@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <a class="navbar-left" href="<?=base_url()?>"> 
+    <a   class="navbar-left" href="<?=base_url()?>"> 
     <span><img src="<?=base_url()?>assets/img/iconotc.png" alt="INICIO" style="width: 50px; height:50px;"></span>
  	</a>
   
