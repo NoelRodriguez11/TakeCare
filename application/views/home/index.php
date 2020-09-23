@@ -23,6 +23,5 @@
     	</a><br>
     	
 	<?php else: ?>
-		<h2>Prueba de victor de menu login</h2>
 	<?php endif;?>
 </div>
