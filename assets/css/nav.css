@@ -75,11 +75,10 @@ footer .row{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     width: 100%;
-    background-color: white;
 }
 
 footer a{
-    color: green;
+	color: grey;
     padding: 0;
 }
 
@@ -93,13 +92,11 @@ footer p.RRSS a{
     display: inline-block;
 }
 
-
 footer .selectorIdioma a{
     margin-right: 20px;
 }
 
 footer .copyright{
-    border-top:1px solid #EEE;
     padding: 15px;
     color:grey;
     font-size: 80%;
@@ -126,3 +123,4 @@ footer .copyright{
 	margin-right: auto;
 	
 }
+
