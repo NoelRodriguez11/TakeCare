@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Diagnóstico Online</a></li>
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Profesionales</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a><button type="button" onclick="cambiarModo()">
@@ -82,7 +82,7 @@
             <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-user fa-fw mr-3"></span>
-                    <span class="menu-collapsed">CONFIGURACI�N PERFIL</span>
+                    <span class="menu-collapsed">SEGUNDO</span>
                     <span class="submenu-icon ml-auto"></span>
                 </div>
             </a>
