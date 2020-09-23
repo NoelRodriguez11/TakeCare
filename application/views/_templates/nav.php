@@ -1,48 +1,45 @@
-<!-- Bootstrap NavBar -->
-<nav class="navbar navbar-inverse">
 
-  <a class="navbar-brand" href="<?=base_url()?>"> 
-	<img src="<?=base_url()?>assets/img/iconotc.png" alt="INICIO" style="width: 60px;">
-    <span class="menu-collapsed">TAKE CARE</span>
-  </a>
-  
-  <ul class="navbar-nav">
-  <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        DIAGNOSTICO ONLINE
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
-    </li>
-  </ul>
-  
-  
-  
-<div class="container">
-    <ul class="nav navbar-nav navbar-right">
-    
-    <button type="button" onclick="cambiarModo()">
-    	<span><i class="fas fa-lightbulb"></i></span>
-	</button>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a class="navbar-brand" href="<?=base_url()?>"> 
+    <span><img src="<?=base_url()?>assets/img/iconotc.png" alt="INICIO" style="width: 50px; height:50px;"></span>
 	
-       <?php if ($datosGen['persona']!=null):?>
-	Bienvenid@ <?=$datosGen['persona']->loginname?> /
-	<a href="<?=base_url()?>hdu/anonymous/logout">Salir</a>
-<?php else:?>
-	<a href="<?=base_url()?>hdu/anonymous/registrar">Registro</a> / 
-	<a href="<?=base_url()?>hdu/anonymous/login">Login</a>
-	</ul>
-<?php endif;?>
+   TAKE CARE
+  </a>
+    </div>
 
-
-  
-</div>
-
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">DiagnÃ³stico Online</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a><button type="button" onclick="cambiarModo()">
+        	<span><i class="fas fa-lightbulb"></i></span>
+    	</button></a>
+    	</li>
+    	
+		
+         <?php if ($datosGen['persona']!=null):?>
+        	<li>Bienvenid@ <?=$datosGen['persona']->loginname?></li><li><a href="<?=base_url()?>hdu/anonymous/logout">Salir</a></li>
+        <?php else:?>
+        	<li><a href="<?=base_url()?>hdu/anonymous/registrar">Registro</a></li><li><a href="<?=base_url()?>hdu/anonymous/login">Login</a></li>
+        <?php endif;?>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
+
+
 
 
 
@@ -83,7 +80,7 @@
             <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-user fa-fw mr-3"></span>
-                    <span class="menu-collapsed">CONFIGURACIÓN PERFIL</span>
+                    <span class="menu-collapsed">CONFIGURACIï¿½N PERFIL</span>
                     <span class="submenu-icon ml-auto"></span>
                 </div>
             </a>
@@ -99,7 +96,7 @@
             <a href="#" class="bg-dark list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-tasks fa-fw mr-3"></span>
-                    <span class="menu-collapsed">CONFIGURACIÓN PERFIL</span>    
+                    <span class="menu-collapsed">CONFIGURACIï¿½N PERFIL</span>    
                 </div>
             </a>
             <!-- Separator with title -->
