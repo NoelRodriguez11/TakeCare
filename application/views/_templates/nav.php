@@ -9,10 +9,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <a class="navbar-brand" href="<?=base_url()?>"> 
+    <a class="navbar-left" href="<?=base_url()?>"> 
     <span><img src="<?=base_url()?>assets/img/iconotc.png" alt="INICIO" style="width: 50px; height:50px;"></span>
-	
-   TAKE CARE
+ 	</a>
+  
+   <a class="navbar-brand" href="<?=base_url()?>"> 
+    <span>TakeCare</span>
   </a>
     </div>
 
@@ -30,7 +32,7 @@
     	
 		
          <?php if ($datosGen['persona']!=null):?>
-        	<li>Bienvenid@ <?=$datosGen['persona']->loginname?></li><li><a href="<?=base_url()?>hdu/anonymous/logout">Salir</a></li>
+        	<li><a>Bienvenid@ <?=$datosGen['persona']->loginname?></a></li><li><a href="<?=base_url()?>hdu/anonymous/logout">Salir</a></li>
         <?php else:?>
         	<li><a href="<?=base_url()?>hdu/anonymous/registrar">Registro</a></li><li><a href="<?=base_url()?>hdu/anonymous/login">Login</a></li>
         <?php endif;?>
