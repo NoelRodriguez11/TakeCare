@@ -14,7 +14,7 @@
  	</a>
   
    <a class="navbar-brand" href="<?=base_url()?>"> 
-    <span>TakeCare</span>
+    <span class="logoTakeCare">TakeCare</span>
   </a>
     </div>
 
