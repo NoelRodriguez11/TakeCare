@@ -67,3 +67,62 @@
 nav .navbar-inverse {
 	
 }
+
+footer .row{
+    
+    margin:50px auto 0 auto;
+    padding-top: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    width: 100%;
+    background-color: white;
+}
+
+footer a{
+    color: green;
+    padding: 0;
+}
+
+footer .RRSS img{
+    height: 20px;
+    width: auto;
+    margin-left: 10px;
+}
+footer p.RRSS a{
+    padding: 7px;
+    display: inline-block;
+}
+
+
+footer .selectorIdioma a{
+    margin-right: 20px;
+}
+
+footer .copyright{
+    border-top:1px solid #EEE;
+    padding: 15px;
+    color:grey;
+    font-size: 80%;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.categoriaEmpresa{
+	float:left;
+	margin-right:100px;
+}
+
+.categoriaEspecialidades{
+	float:left;
+	margin-right:100px;
+}
+
+.tituloRedes{
+	float:left;
+}
+
+#divInicial{
+	margin-left: auto;
+	margin-right: auto;
+	
+}
