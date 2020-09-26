@@ -6,6 +6,11 @@
     min-height: 100vh;   
     background-color: #333;
     padding: 0;
+    float:left;
+    position:relative;
+    z-index:0;
+    clear:left;
+    display:block;
 }
 
 /* Sidebar sizes when expanded and expanded */
@@ -62,67 +67,20 @@
   padding-left: 10px;
 }
 
-/*Navar principal*/
-
-footer .row{
-    
-    margin:50px auto 0 auto;
-    padding-top: 20px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    width: 100%;
-}
-
-footer a{
-	color: grey;
-    padding: 0;
-}
-
-footer .RRSS img{
-    height: 20px;
-    width: auto;
-    margin-left: 10px;
-}
-footer p.RRSS a{
-    padding: 7px;
-    display: inline-block;
-}
-
-footer .selectorIdioma a{
-    margin-right: 20px;
-}
-
-footer .copyright{
-    padding: 15px;
-    color:grey;
-    font-size: 80%;
-    width: 100%;
-    margin-top: 25px;
-}
-
-.categoriaEmpresa{
-	float:left;
-	margin-right:100px;
-}
-
-.categoriaEspecialidades{
-	float:left;
-	margin-right:100px;
-}
-
-.tituloRedes{
-	float:left;
-}
-
-#divInicial{
-	margin-left: auto;
-	margin-right: auto;
-	
-}
+/*CSS Icono Principal*/
 
 .logoTakeCare {
 	font-family: 'Exo 2', sans-serif;
 	
+}
+#divContenido{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+
+.contenidoPrincipal{
+	margin-left:50%;
 }
 
 

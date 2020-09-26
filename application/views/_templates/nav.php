@@ -82,7 +82,7 @@
             <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-user fa-fw mr-3"></span>
-                    <span class="menu-collapsed">SEGUNDO</span>
+                    <span class="menu-collapsed">Segundo</span>
                     <span class="submenu-icon ml-auto"></span>
                 </div>
             </a>
@@ -98,7 +98,7 @@
             <a href="#" class="bg-dark list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-tasks fa-fw mr-3"></span>
-                    <span class="menu-collapsed">CONFIGURACI�N PERFIL</span>    
+                    <span class="menu-collapsed">Configuración Perfil</span>    
                 </div>
             </a>
             <!-- Separator with title -->
@@ -109,13 +109,13 @@
             <a href="#" class="bg-dark list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-calendar fa-fw mr-3"></span>
-                    <span class="menu-collapsed">CALENDARIO</span>
+                    <span class="menu-collapsed">Calendario</span>
                 </div>
             </a>
             <a href="#" class="bg-dark list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-envelope-o fa-fw mr-3"></span>
-                    <span class="menu-collapsed">MENSAJES <span class="badge badge-pill badge-primary ml-2">5</span></span>
+                    <span class="menu-collapsed">Mensajes<span class="badge badge-pill badge-primary ml-2">5</span></span>
                 </div>
             </a>
             <!-- Separator without title -->

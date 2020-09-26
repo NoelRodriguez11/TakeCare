@@ -1,5 +1,5 @@
-<footer class="container row" id="divInicial">
-	<div class="row col-8">
+<footer class="container" id="divFooter">
+	<div class="bg-dark text-white">
 		<div class="col-4 categoriaEmpresa">
 		<h5>Empresa</h5>
 		<ul>

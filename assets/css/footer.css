@@ -1,0 +1,50 @@
+footer .row{ 
+    width: 100%;
+}
+
+footer a{
+	color: grey;
+    padding: 0;
+}
+
+footer .RRSS img{
+    height: 20px;
+    width: auto;
+    margin-left: 10px;
+}
+footer p.RRSS a{
+    padding: 7px;
+    display: inline-block;
+}
+
+footer .selectorIdioma a{
+    margin-right: 20px;
+}
+
+footer .copyright{
+    padding: 15px;
+    color:grey;
+    font-size: 80%;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.categoriaEmpresa{
+	float:left;
+	margin-right:100px;
+}
+
+.categoriaEspecialidades{
+	float:left;
+	margin-right:100px;
+}
+
+.tituloRedes{
+	float:left;
+}
+
+#divFooter{
+	margin-left: 30%;
+	margin-right: auto;
+	
+}

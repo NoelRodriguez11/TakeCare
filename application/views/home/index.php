@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container" id="divContenido">
+<div class="contenidoPrincipal">
 	<?php if ($rol == 'auth'):?>
     <h2>Bienvenido <b><?= $_SESSION['persona']->loginname?></b></h2>
     	<br>
@@ -7,21 +8,9 @@
     	</a><br>
     	<br/>
 	<?php elseif ($rol == 'admin'): ?>
-    	<h2>Bienvenido <b>Administrador</b></h2>
-    	<br>
-    	<a href="<?=base_url()?>persona/r">
-    		<button>Persona</button>
-    	</a><br>
-    	<a href="<?=base_url()?>pais/r">
-    		<button>Pais</button>
-    	</a><br>
-    	<a href="<?=base_url()?>producto/r">
-    		<button>Producto</button>
-    	</a><br>
-    	<a href="<?=base_url()?>categoria/r">
-    		<button>Categoría</button>
-    	</a><br>
+    	<code>AQUI IRIA EL CONTENIDO PRINCIPAL</code>
     	
 	<?php else: ?>
 	<?php endif;?>
+	</div>
 </div>
