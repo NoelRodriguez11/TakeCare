@@ -1,5 +1,5 @@
-<footer class="container" id="divFooter">
-	<div class="bg-dark text-white">
+<footer id="divFooter">
+	<div class="row">
 		<div class="col-4 categoriaEmpresa">
 		<h5>Empresa</h5>
 		<ul>

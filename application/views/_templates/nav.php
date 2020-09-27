@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -86,10 +85,10 @@
             <!-- Submenu content -->
             <div id='submenu2' class="collapse sidebar-submenu">
                 <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">2.1</span>
+                    <span class="menu-collapsed">General</span>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">2.2</span>
+                    <span class="menu-collapsed">Recuperar / Cambiar Contraseña</span>
                 </a>
             </div>            
             <a href="#" class="bg-dark list-group-item list-group-item-action">
@@ -106,7 +105,7 @@
             <a href="#" class="bg-dark list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-calendar fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Calendario</span>
+                    <span class="menu-collapsed">Calendario Citas</span>
                 </div>
             </a>
             <a href="#" class="bg-dark list-group-item list-group-item-action">
