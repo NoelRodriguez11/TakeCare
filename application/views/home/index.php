@@ -8,6 +8,10 @@
     	</a><br>
     	<br/>
 	<?php elseif ($rol == 'admin'): ?>
+	<!--  PRUEBA CENTRAR ELEMENTOS-->
+	<a href="<?=base_url()?>carrito/add">
+    		<button>Comprar Productos</button>
+    	</a><br>
     	<code>AQUI IRIA EL CONTENIDO PRINCIPAL</code>
     	
 	<?php else: ?>

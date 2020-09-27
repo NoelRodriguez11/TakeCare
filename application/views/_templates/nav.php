@@ -42,10 +42,6 @@
 </nav>
 
 
-
-
-
-
 <?php if (isset ($datosGen['persona'])): ?>  
 
 <!-- Bootstrap row -->
@@ -64,7 +60,7 @@
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-dashboard fa-fw mr-3"></span> 
                     <span class="menu-collapsed">Primero</span>
-                    <span class="submenu-icon ml-auto"></span>
+                    <span><i class="fas fa-angle-double-down"></i></span>
                 </div>
             </a>
             <!-- Submenu content -->
@@ -82,8 +78,9 @@
             <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-user fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Segundo</span>
-                    <span class="submenu-icon ml-auto"></span>
+                    <span class="menu-collapsed">Configuración Perfil</span>
+					<span><i class="fas fa-angle-double-down"></i></span>
+
                 </div>
             </a>
             <!-- Submenu content -->
@@ -98,7 +95,7 @@
             <a href="#" class="bg-dark list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
                     <span class="fa fa-tasks fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Configuración Perfil</span>    
+                    <span class="menu-collapsed">Tercero</span>    
                 </div>
             </a>
             <!-- Separator with title -->
@@ -136,6 +133,5 @@
             <!-- Logo -->   
         </ul><!-- List Group END-->
     </div><!-- sidebar-container END -->
-
 <?php endif;?>
 

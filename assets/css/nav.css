@@ -6,11 +6,8 @@
     min-height: 100vh;   
     background-color: #333;
     padding: 0;
-    float:left;
-    position:relative;
-    z-index:0;
-    clear:left;
-    display:block;
+    float: left;
+    
 }
 
 /* Sidebar sizes when expanded and expanded */
@@ -75,12 +72,13 @@
 }
 #divContenido{
 	width:100%;
-	height:100%;
-	position:relative;
+	height:100%;	
 }
 
 .contenidoPrincipal{
 	margin-left:50%;
+	position: relative;
+    display:block;
 }
 
 
