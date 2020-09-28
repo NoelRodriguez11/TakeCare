@@ -1,0 +1,29 @@
+.btn {
+	background-color: #00CCCC;
+	color: white;
+}
+
+#loginBoton {
+	border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    box-shadow: 0px 5px 0px #CCCCCC;
+    position: relative;
+    top: 0px;
+    transition: all ease 0.3s;
+}
+
+#loginBoton:active {
+	box-shadow: 0 3px 0 #339999;
+    top: 3px;
+}
+
+input:focus  {
+	background: #CCFFFF;
+}
+
+
+/*REVISAR*/
+a .forgot {
+	float: right;
+	background-color: red;
+}
