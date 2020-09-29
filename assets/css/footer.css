@@ -3,6 +3,7 @@ footer .row{
     background-color:#333;
     position:absolute;
    	bottom:0;
+   	margin-bottom:0;
 }
 
 footer a{
