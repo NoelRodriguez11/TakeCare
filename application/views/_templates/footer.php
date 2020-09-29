@@ -1,5 +1,5 @@
 <footer id="divFooter">
-	<div class="row">
+	<div>
 		<div class="col-4 categoriaEmpresa">
 		<h5>Empresa</h5>
 		<ul>
