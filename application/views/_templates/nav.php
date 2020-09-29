@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#">Diagnóstico Online</a></li>
-        <li><a href="#">Profesionales</a></li>
+        <li><a href="<?=base_url()?>profesional/r">Profesionales</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a><button type="button" onclick="cambiarModo()">
