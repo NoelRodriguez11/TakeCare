@@ -12,27 +12,37 @@
 						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
 					</div>        
 					<div class="form-group">
-						<button type="submit"  id="loginBoton" class="btn">Login</button>
-						<a href="#" id="btn_modal" class="forgot" onclick="ventrecuperarPWD();">Forgot Password?</a>
+						<button type="submit" id="loginBoton" class="btn">Login</button>
+						<a href="#" id="btn_modal" data-toggle="modal" class="forgot" data-target="#exampleModal" data-whatever="@getbootstrap">Forgot Password?</a>
 					</div>				
 				</form>
 				
 			</div>
 			
-			
-			<script type="text/javascript">
-			function ventrecuperarPWD(){
-				var top = screen.availHeight/2-100;
-				var left = screen.availWidth/2-100;
-				//var nombre=document.getElementById("texto").value;
-				var miVentana = window.open("","","width=1000, height=1000, top="+top+",left="+left+""); 
-				miVentana.document.open();
-				//miVentana.document.write("<h1>"+nombre+"</h1>");
-				miVentana.document.close();
-				}
-
-
-			</script>		
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Recuperación de contraseña</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Introduce email:</label>
+            <input type="text" class="form-control" id="btn_modal" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  id="loginBoton" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="loginBoton" class="btn btn-secondary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
     			
     			
     			

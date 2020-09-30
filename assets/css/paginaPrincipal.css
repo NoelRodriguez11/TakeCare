@@ -1,0 +1,56 @@
+#divContenido{
+	width:100%;
+	height:100%;
+	background-image:url("../../assets/img/banner.jpg") !important;
+}
+
+.contenidoPrincipal{
+	width:100%;
+}
+
+#buscador{
+	margin-left:25%;
+	margin-top:10%;
+
+}
+
+.acerca{
+	height:100%;
+	margin-top:2%;
+}
+
+.acerca h2{
+	text-align:center;
+	font-family: 'Exo 2', sans-serif;
+	color:grey;
+}
+
+.contenidoExplicativo{
+	margin-top:4%;
+	margin-left:32%;
+}
+
+.primeraExplicacion{
+	
+}
+
+.segundaExplicacion{
+	
+}
+
+.terceraExplicacion{
+	
+}
+
+.cuartaExplicacion{
+	
+}
+
+.textoexp1{
+	font-family: 'Exo 2', sans-serif;
+	font-weight:bold;
+}
+
+.textoexp2{
+	font-family: 'Exo 2', sans-serif;
+}
