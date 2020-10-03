@@ -1,22 +1,22 @@
 #divContenido{
-	width:100vw;
-	height:24vh;
+	width:190rem;
+	height:25rem;
 	background-image:url("../../assets/img/banner.jpg") !important;
 }
 
 .contenidoPrincipal{
-	width:95vw;
+	width:190rem;
 }
 
 #buscador{
-	margin-left:25vw;
-	margin-top:15vh;
+	margin-left:45rem;
+	margin-top:10rem;
 
 }
 
 .acerca{
-	height:35vh;
-	margin-top:2vh;
+	height:35rem;
+	margin-top:1rem;
 }
 
 .acerca h2{
@@ -26,8 +26,8 @@
 }
 
 .contenidoExplicativo{
-	margin-top:7vh;
-	margin-left:32vw;
+	margin-top:3rem;
+	margin-left:60rem;
 }
 
 .primeraExplicacion{
