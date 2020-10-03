@@ -6,5 +6,26 @@
 <code>Registrate para poder concretar una cita</code><br>
 <?php endif;?>
 
+<div class="divAnuncioProfesionales">
+Anuncio ejemplo
+<?php if ($datosGen['persona']==null):?>
+<button class="botonPedirCita btn btn-primary" disabled>Pedir cita</button>
+<?php endif;?>
+</div>
+
+<div class="divAnuncioProfesionales">
+Anuncio ejemplosfsdff<br>
+fsdffssfs
+<?php if ($datosGen['persona']==null):?>
+<button class="botonPedirCita btn btn-primary" disabled>Pedir cita</button>
+<?php endif;?>
+</div>
+
+<div class="divAnuncioProfesionales">
+Anuncio ejemplo
+<?php if ($datosGen['persona']==null):?>
+<button class="botonPedirCita btn btn-primary" disabled>Pedir cita</button>
+<?php endif;?>
+</div>
 </div>
 

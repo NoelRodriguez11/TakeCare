@@ -1,0 +1,13 @@
+.divAnuncioProfesionales{
+	margin: 1.5rem;
+	padding: 1.8rem !important;
+	border-radius: .5rem !important;
+	border:2px solid black;
+	
+}
+
+.botonPedirCita {
+	float:right;
+}
+
+

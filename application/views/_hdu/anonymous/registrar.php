@@ -1,9 +1,16 @@
 <div class="container">
+<br>
+¿Como quieres darte de alta?
+<button type="button" class=" btn-danger">Paciente</button>
+<button type="button" class=" btn-danger">Profesional</button>
+
 
 <h1>Nueva persona</h1>
 
 <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
 
+	
+	
 	<label for="id-log">Loginname</label>
 	<input id="id-log" type="text" name="loginname" required="required"/>
 	<br/>
@@ -30,7 +37,7 @@
 	<select id="id-pais" name="pais">
 		<option selected="selected" value=-1>---</option>
 		<?php foreach ($paises as $pais):?>
-		<option value="<?=$pais->id?>"><?= $pais->nombre?></option>
+		<option value="<?=$pais->id?>"><?=$pais->nombre?></option>
 		<?php endforeach;?>
 	</select>
 	<br/>

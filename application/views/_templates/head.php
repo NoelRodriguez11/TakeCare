@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/footer.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/login_registro.css">
+	<!-- CSS Anuncios de profesionales -->
+	<link rel="stylesheet" href="<?=base_url()?>assets/css/anunciosProfesionales.css">
+	
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="<?=base_url()?>assets/js/nav.js"></script>
    

@@ -7,10 +7,6 @@ class Profesional extends CI_Controller
     {
         frame($this, 'profesional/r');
     }
-    
-    
-    
-
-  
+     
 }
 ?>
