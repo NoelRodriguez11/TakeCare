@@ -55,28 +55,9 @@
             </li>
             <!-- /END Separator -->
             <!-- Menu with submenu -->
-            <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-dashboard fa-fw mr-3"></span> 
-                    <span class="menu-collapsed">Primero</span>
-                    <span><i class="fas fa-angle-double-down"></i></span>
-                </div>
-            </a>
-            <!-- Submenu content -->
-            <div id='submenu1' class="collapse sidebar-submenu">
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">1.1</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">1.2</span>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">1.3</span>
-                </a>
-            </div>
             <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-user fa-fw mr-3"></span>
+                    <span><i class="fas fa-cogs"></i></span>
                     <span class="menu-collapsed">Configuración Perfil</span>
 					<span><i class="fas fa-angle-double-down"></i></span>
 
@@ -85,16 +66,22 @@
             <!-- Submenu content -->
             <div id='submenu2' class="collapse sidebar-submenu">
                 <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                    <span class="menu-collapsed">General</span>
+                    <span class="menu-collapsed">Actualiza tus Datos</span>
                 </a>
                 <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
                     <span class="menu-collapsed">Recuperar / Cambiar Contraseña</span>
                 </a>
-            </div>            
+            </div> 
+           <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                  <span><i class="fas fa-notes-medical"></i></span>
+                  <span class="menu-collapsed">Chequeo Médico</span>
+                </div>
+            </a>                  
             <a href="#" class="bg-dark list-group-item list-group-item-action">
                 <div class="d-flex w-100 justify-content-start align-items-center">
-                    <span class="fa fa-tasks fa-fw mr-3"></span>
-                    <span class="menu-collapsed">Tercero</span>    
+                    <span><i class="fas fa-user-md"></i></span>
+                    <span class="menu-collapsed">Tratamiento</span>    
                 </div>
             </a>
             <!-- Separator with title -->
