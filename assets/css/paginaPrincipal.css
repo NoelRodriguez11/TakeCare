@@ -46,11 +46,27 @@
 	
 }
 
+.textoLogo{
+	font-family: 'Exo 2', sans-serif;
+	font-weight:700;
+}
+
 .textoexp1{
 	font-family: 'Exo 2', sans-serif;
-	font-weight:bold;
+	font-weight:600;
 }
 
 .textoexp2{
 	font-family: 'Exo 2', sans-serif;
+	font-weight: 400;
+}
+
+.fa-instagram {
+  color: transparent;
+  background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }

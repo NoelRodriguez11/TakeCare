@@ -97,6 +97,14 @@
         	<input id="id-nombre" type="text" name="nombre" required="required"/>
         	<br/>
         	
+        	<label for="id-especialidad">Especialidad</label>
+        	<select name="especialidad" id="id-especialidad">
+        	<option value="opcion1">Opcion 1</option>
+        	<option value="opcion2">Opcion 2</option>
+        	<option value="opcion3">Opcion 3</option>
+        	</select>
+        	<br/>
+        	
         	<label for="id-altura">Altura (en cm)</label>
         	<input id="id-altura" type="number" name="altura" required="required" min="0" max="400" value="175" />
         	<br/>

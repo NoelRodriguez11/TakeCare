@@ -13,15 +13,15 @@
  	</a>
   
    <a class="navbar-brand" href="<?=base_url()?>"> 
-    <span class="logoTakeCare">TakeCare</span>
+    <span class="logoTakeCare textoLogo">TakeCare</span>
   </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Diagnóstico Online</a></li>
-        <li><a href="<?=base_url()?>profesional/r">Profesionales</a></li>
+        <li><a class="textoexp2" href="#">Diagnóstico Online</a></li>
+        <li><a class="textoexp2" href="<?=base_url()?>profesional/r">Profesionales</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a><button type="button" onclick="cambiarModo()">
@@ -31,9 +31,9 @@
     	
 		
          <?php if ($datosGen['persona']!=null):?>
-        	<li><a>Bienvenid@ <?=$datosGen['persona']->loginname?></a></li><li><a href="<?=base_url()?>hdu/anonymous/logout">Salir</a></li>
+        	<li><a class="textoexp1">Bienvenid@ <?=$datosGen['persona']->loginname?></a></li><li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/logout">Salir</a></li>
         <?php else:?>
-        	<li><a href="<?=base_url()?>hdu/anonymous/registrar">Registro</a></li><li><a href="<?=base_url()?>hdu/anonymous/login">Login</a></li>
+        	<li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/registrar">Registro</a></li><li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/login">Login</a></li>
         <?php endif;?>
       </ul>
     </div><!-- /.navbar-collapse -->
