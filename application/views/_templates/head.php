@@ -27,6 +27,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="<?=base_url()?>assets/js/nav.js"></script>
    
+   <!-- Prueba para el footer -->
+   
+<!--    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<!-- 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+<!-- 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 
 	<title>TakeCare TFG</title>
 </head>

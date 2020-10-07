@@ -1,29 +1,15 @@
-<footer id="divFooter">
-	<div>
-		<div class="col-4 categoriaEmpresa">
-		<h5>Empresa</h5>
-		<ul>
-				<li><a class="dropdown-item" href="/contacto">Contactanos</a></li>
-				<li><a id="empresa" href="/conocenos">Conócenos</a></li>
-				<li><a id="empresa" href="/info">Información Legal</a></li>
-		</ul>	
-		</div>
-				
-		<div class="col-4 categoriaEspecialidades">
-		<h5>Especialidades</h5>
-			<ul>
-				<li><a class="clinicas" href="/podologia">Podología</a></li>
-				<li><a class="clinicas" href="/odontologia">Odontología</a></li>
-				<li><a class="clinicas" href="/oftalmología">Oftalmología</a></li>
-			</ul>
-		</div>
-	
-	<div class="col-4 tituloRedes">
-	<h5>Siguenos en las redes sociales</h5>
-		<div class="RRSS">
-		<a href="https://www.instagram.com/takecare"><img src="<?=base_url()?>/assets/img/redes/instagram.png" height="20" width="20"></a>
-		<a href="https://www.facebook.com/takecare"><img src="<?=base_url()?>/assets/img/redes/facebook.png" height="20" width="20"></a>
-		<a href="https://twitter.com/takecare"><img src="<?=base_url()?>/assets/img/redes/twitter.png" height="20" width="20"></a></div>
-	</div>
-	</div>
-</footer>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <div class="footer">
+      <div class="pie">
+              <a href='#'><i class="fa fa-twitch fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-twitter fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-rss fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-vine fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-flickr fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-linkedin fa-3x fa-fw"></i></a>
+
+      </div>
+    </div>
