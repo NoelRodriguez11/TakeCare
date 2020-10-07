@@ -6,7 +6,7 @@
 #loginBoton {
 	border: 1px solid #CCCCCC;
     border-radius: 5px;
-    box-shadow: 0px 1px 0px #CCCCCC;
+    box-shadow: 0px 2px 0px #CCCCCC;
     position: relative;
     top: 0px;
     transition: all ease 0.3s;

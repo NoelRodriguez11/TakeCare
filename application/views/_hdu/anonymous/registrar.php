@@ -2,15 +2,15 @@
 <br>
 
 
-  <h2>¿Como quieres darte de alta?</h2>
+  <h1>¿Como quieres darte de alta?</h1>
 
-    <button class="active btn-danger" data-toggle="tab" href="#paciente">Paciente</button>
-    <button class=" btn-danger" data-toggle="tab" href="#profesional">Profesional</button>
+    <button class="active btn btn-danger" data-toggle="tab" href="#paciente">Paciente</button>
+    <button class="btn btn-danger" data-toggle="tab" href="#profesional">Profesional</button>
 
 
   <div class="tab-content">
     <div id="paciente" class="tab-pane fade in active">
-    <h1>Nueva persona</h1>
+    <h2>Nueva persona</h2>
 
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         
@@ -73,7 +73,7 @@
         	<input id="id-foto" type="file" name="foto"/><br>
         	<img class="offset-1 col-2" id="id-out-foto" width="10%" height="10%" src="" alt=""/><br><br>
         	
-        	<input type="submit" value="Registrar"/>
+        	<input type="submit" value="Registrar" class="btn btnEstandar"/>
         </form>       
     </div>
     
@@ -81,7 +81,7 @@
 
    <div id="profesional" class="tab-pane fade">
     
-    <h1>Nuevo profesional</h1>
+    <h2>Nuevo profesional</h2>
 
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         
@@ -144,7 +144,7 @@
         	<input id="id-foto" type="file" name="foto"/><br>
         	<img class="offset-1 col-2" id="id-out-foto" width="10%" height="10%" src="" alt=""/><br><br>
         	
-        	<input type="submit" value="Registrar"/>
+        	<input type="submit" value="Registrar" class="btn btnEstandar"/>
         </form>
 
     </div>
