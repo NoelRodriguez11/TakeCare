@@ -2,7 +2,7 @@
 <br>
 
 
-  <h1>¿Como quieres darte de alta?</h1>
+  <h5>¿Como quieres darte de alta?</h5>
 
     <button class="active btn btn-danger" data-toggle="tab" href="#paciente">Paciente</button>
     <button class="btn btn-danger" data-toggle="tab" href="#profesional">Profesional</button>
@@ -10,7 +10,7 @@
 
   <div class="tab-content">
     <div id="paciente" class="tab-pane fade in active">
-    <h2>Nueva persona</h2>
+    <h1 class="textoexp1">Nuevo Paciente</h1>
 
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         
@@ -81,7 +81,7 @@
 
    <div id="profesional" class="tab-pane fade">
     
-    <h2>Nuevo profesional</h2>
+    <h1 class="textoexp1">Nuevo Profesional</h1>
 
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         

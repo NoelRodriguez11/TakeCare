@@ -1,8 +1,7 @@
 <div class="container col-6" id="divLogin">
 
-	<h1>Introduce tus credenciales</h1>
+	<h1 class="textoexp1">Acceso a perfil</h1>
 
-		<h4 class="modal-title">Logueate!</h4>	
 			<div class="modal-body">
 				<form class="form" action="<?=base_url().'hdu/anonymous/loginPost'?>" method="post">
 					<div class="form-group">
