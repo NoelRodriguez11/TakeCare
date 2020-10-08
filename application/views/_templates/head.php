@@ -12,6 +12,10 @@
 	<script src="<?=base_url()?>assets/js/popper.min.js" ></script> 
 	<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 	
+	<!-- FAVICON -->
+	
+	<link rel="icon" type="image/png" href="<?=base_url()?>assets/img/iconotc.png"/>
+
 <!-- 	--Fondo oscuro-- -->
 	
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
