@@ -16,7 +16,7 @@
 	
 	<link rel="icon" type="image/png" href="<?=base_url()?>assets/img/iconotc.png"/>
 
-<!-- 	--Fondo oscuro-- -->
+    <!-- Fondo oscuro -->
 	
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/modo.js"></script>
