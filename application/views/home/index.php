@@ -115,7 +115,7 @@
     	
     	
 	<?php else: ?>
-<div class="container" id="divContenido">
+<div  id="divContenido">
 	<div class="contenidoPrincipal">
 		<div class="col-lg-4" id="buscador">
 			<div class="input-group">
