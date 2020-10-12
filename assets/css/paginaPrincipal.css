@@ -4,10 +4,6 @@
 	background-image:url("../../assets/img/banner.jpg") !important;
 }
 
-.contenidoPrincipal{
-	width:190rem;
-}
-
 #buscador{
 	margin-left:45rem;
 	margin-top:10rem;
@@ -17,6 +13,7 @@
 .acerca{
 	height:35rem;
 	margin-top:1rem;
+	margin-bottom:500px;
 }
 
 .acerca h2{
