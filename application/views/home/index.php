@@ -166,6 +166,87 @@
             <br> 
             <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
         </div>
+        
+        <br>
+        
+        <div class="cuartaExplicacion">
+            <span class="logo4">LOGO4</span>
+            <a class="textoexp1" href="">Clases para empresas</a>
+            <br> 
+            <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
+        </div>
+        
+        <br>
+        
+        <div class="cuartaExplicacion">
+            <span class="logo4">LOGO4</span>
+            <a class="textoexp1" href="">Clases para empresas</a>
+            <br> 
+            <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
+        </div>
+        
+        <br>
+        
+        <div class="cuartaExplicacion">
+            <span class="logo4">LOGO4</span>
+            <a class="textoexp1" href="">Clases para empresas</a>
+            <br> 
+            <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
+        </div>
+        
+        <br>
+        
+        <div class="cuartaExplicacion">
+            <span class="logo4">LOGO4</span>
+            <a class="textoexp1" href="">Clases para empresas</a>
+            <br> 
+            <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
+        </div>
+        
+        <br>
+        
+        <div class="cuartaExplicacion">
+            <span class="logo4">LOGO4</span>
+            <a class="textoexp1" href="">Clases para empresas</a>
+            <br> 
+            <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
+        </div>
+        
+        <br>
+        
+        <div class="cuartaExplicacion">
+            <span class="logo4">LOGO4</span>
+            <a class="textoexp1" href="">Clases para empresas</a>
+            <br> 
+            <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
+        </div>
+        
+        <br>
+        
+        <div class="cuartaExplicacion">
+            <span class="logo4">LOGO4</span>
+            <a class="textoexp1" href="">Clases para empresas</a>
+            <br> 
+            <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
+        </div>
+        
+        <br>
+        
+        <div class="cuartaExplicacion">
+            <span class="logo4">LOGO4</span>
+            <a class="textoexp1" href="">Clases para empresas</a>
+            <br> 
+            <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
+        </div>
+        
+        <br>
+        
+        <div class="cuartaExplicacion">
+            <span class="logo4">LOGO4</span>
+            <a class="textoexp1" href="">Clases para empresas</a>
+            <br> 
+            <span class="textoexp2">formación para empresas y autónomos (in company), impartidas por los mejores formadores, pudiendo ser subvencionadas o bonificadas.</span>
+        </div>
 
      </div>
 </div>  
