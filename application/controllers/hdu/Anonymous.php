@@ -167,8 +167,8 @@ class Anonymous extends CI_Controller
         $data['token']=$token;
         $data['email']=$email;
         
-       /*  echo $token;
-        echo $email; */
+        echo $token;
+        echo $email; 
         
         if($this->persona_model->comprobarCodigo($token, $email)) {
             frame($this, '_hdu/anonymous/resetPass', $data);
@@ -178,9 +178,9 @@ class Anonymous extends CI_Controller
     
     
     
-   public function verifyKey()
+   public function cambiarContra()
     {
-        $this->load->model('persona_model');
+      
         
         $encryptedPassword = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
         $verificationKey = $_POST['token'];

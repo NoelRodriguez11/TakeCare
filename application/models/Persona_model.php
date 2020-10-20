@@ -108,7 +108,9 @@ class Persona_model extends CI_Model
         $usuario = R::findOne('persona', 'email=?', [$email]);
         
         if ($usuario == null) {
-            throw new Exception("Email no encontrado");
+           // throw new Exception("Email no encontrado");
+            PRG("Email no encontrado","/","danger" );
+          
         }
         return TRUE;
     }
@@ -134,13 +136,15 @@ class Persona_model extends CI_Model
         $usuario = R::findOne('persona', 'cod_recuperacion=? AND email=?',[$token, $email]);
         
         if ($usuario == null) {
-            throw new Exception("Datos incorrectos");
+            PRG("Datos incorrectos","/","danger" );
         }
         return TRUE;
     }
     
-    public function changePass($verification_key, $password){
-        $usuario = R::findOne( 'persona', 'verification_key = ? ', [ $verification_key ] );
+    
+    ///terminar
+    public function changePass($codigo, $password){
+        $usuario = R::findOne( 'persona', 'codigo = ? ', [ $verification_key ] );
         
         $usuario->password=$password;
         R::store($usuario);
