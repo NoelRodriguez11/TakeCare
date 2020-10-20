@@ -139,6 +139,16 @@ class Persona_model extends CI_Model
         return TRUE;
     }
     
+    public function changePass($verification_key, $password){
+        $usuario = R::findOne( 'persona', 'verification_key = ? ', [ $verification_key ] );
+        
+        $usuario->password=$password;
+        R::store($usuario);
+        
+        return true;
+        
+    }
+    
     
     
     

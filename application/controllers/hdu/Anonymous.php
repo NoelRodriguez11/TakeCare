@@ -120,8 +120,6 @@ class Anonymous extends CI_Controller
     //===========recuperar contraseña y enviar mails 
     public function recuperarPass()
     {
-      /*   $data['titulo']='Recuperar contraseña';
-        $data['modals']=['myLogin', 'myRegister']; */
         frame($this, '_hdu/anonymous/recuperarPass', $data);
     }
     
@@ -142,9 +140,9 @@ class Anonymous extends CI_Controller
             $from = "takecaretfg@gmail.com";
             $to = $email;
             $subject = "reset Password";
-            $message = "
-                        <p>Para hacer reset por favor haz clic <a href='" . base_url() . "_hdu/anonymous/resetPass/" . $verification_key ."'>aquí</a>.</p>
+            $message = "<p>Para hacer reset por favor haz clic en <a href='" . base_url() . "hdu/anonymous/resetPass/" . $verification_key . "/" . $email . "'>Cambiar contraseña</a>.</p>
                         <p>Gracias!!!</p>";
+      
             
             $headers = "From:" . $from;
             mail($to,$subject,$message, $headers);
@@ -160,26 +158,35 @@ class Anonymous extends CI_Controller
     
     public function resetPass()
     {
-        $token = $this->uri->segment(3);
-        $email = $this->uri->segment(4);
+        
+        $this->load->model('persona_model');
+        
+        $token = $this->uri->segment(4);
+        $email = $this->uri->segment(5);
         
         $data['token']=$token;
         $data['email']=$email;
         
+       /*  echo $token;
+        echo $email; */
+        
         if($this->persona_model->comprobarCodigo($token, $email)) {
             frame($this, '_hdu/anonymous/resetPass', $data);
         }
+       
     }
     
-    /* function verifyKey()
+    
+    
+   public function verifyKey()
     {
         $this->load->model('persona_model');
         
         $encryptedPassword = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
         $verificationKey = $_POST['token'];
-        $this->persona_model->cambiarPass($verificationKey, $encryptedPassword);
+        $this->persona_model->changePass($verificationKey, $encryptedPassword);
         
-        if ($this->persona_model->cambiarPass($verificationKey, $encryptedPassword)) {
+        if ($this->persona_model->changePass($verificationKey, $encryptedPassword)) {
             
             $data['message'] = '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
             
@@ -191,7 +198,7 @@ class Anonymous extends CI_Controller
         $this->session->set_flashdata('messageNewPassword', 'Cambio de contraseña realizado con éxito.');
         redirect(base_url());
         
-    } */
+    }
     
     public function logout() {
         if (session_status() == PHP_SESSION_NONE) {
