@@ -28,17 +28,19 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form class="form" action="<?=base_url().'hdu/anonymous/enviarMailRecuPass'?>" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Introduce email:</label>
-            <input type="text" class="form-control" id="btn_modal" id="recipient-name">
+            <input type="text" class="form-control" name ="email" id="btn_modal">
           </div>
-        </form>
+        
       </div>
       <div class="modal-footer">
         <button type="button"  id="loginBoton" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" id="loginBoton" class="btn btn-secondary">Send message</button>
+        <button type="submit" id="loginBoton" class="btn btn-secondary">Send message</button>
       </div>
+      
+</form>
     </div>
   </div>
 </div>

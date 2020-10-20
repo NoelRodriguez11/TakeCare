@@ -1,5 +1,7 @@
 <?php
 
+use phpDocumentor\Reflection\Types\This;
+
 class Anonymous extends CI_Controller
 {
 
@@ -20,7 +22,7 @@ class Anonymous extends CI_Controller
         if ($pwd == null || password_verify($pwd, password_hash("admin", PASSWORD_DEFAULT))) {
             R::nuke();
             $this->load->model('persona_model');
-            $this->persona_model->crearPersona('admin', 'admin',null,null,null,null, null);
+            $this->persona_model->crearPersona('admin', 'admin',null,null,null,null, null, null);
             
             $data['msg'] = "BD recreada";
         }
@@ -43,6 +45,7 @@ class Anonymous extends CI_Controller
         $loginname = isset($_POST['loginname']) ? $_POST['loginname'] : null;
         $password = isset($_POST['password']) ? $_POST['password'] : null;
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+        $email = isset($_POST['email']) ? $_POST['email'] : null;
         $altura = isset($_POST['altura']) ? $_POST['altura'] : null;
         $foto = isset($_FILES['foto']) ? ($_FILES['foto']) : null;
         $fechaNacimiento = isset($_POST['fechaNacimiento']) ? $_POST['fechaNacimiento'] : null;
@@ -65,7 +68,7 @@ class Anonymous extends CI_Controller
   
             //TRATAMIENTO PAIS
             try {
-              $id = $this->persona_model->crearPersona($loginname, $password,$nombre, $altura, $fechaNacimiento, $this->pais_model->getPaisById($pais), $extFoto);
+              $id = $this->persona_model->crearPersona($loginname, $password,$email ,$nombre, $altura, $fechaNacimiento, $this->pais_model->getPaisById($pais), $extFoto);
             }
             catch (Exception $e){
                 throw new Exception("Usuario ya existente");    
@@ -111,6 +114,84 @@ class Anonymous extends CI_Controller
             PRG($e->getMessage());
         }
     }
+    
+    
+    
+    //===========recuperar contraseña y enviar mails 
+    public function recuperarPass()
+    {
+      /*   $data['titulo']='Recuperar contraseña';
+        $data['modals']=['myLogin', 'myRegister']; */
+        frame($this, '_hdu/anonymous/recuperarPass', $data);
+    }
+    
+    public function enviarMailRecuPass()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('email', 'Email Address', 'required|trim|valid_email|is_unique[persona.email]');
+        
+        $this->load->model('persona_model');
+        
+        $email = $_POST['email'];
+        if ($this->persona_model->existEmail($email)) { // si ese mail existe en la base de datos
+            
+            $verification_key = md5(rand());
+            $this->persona_model->guardarCodigo($email, $verification_key);
+                    
+            
+            $from = "takecaretfg@gmail.com";
+            $to = $email;
+            $subject = "reset Password";
+            $message = "
+                        <p>Para hacer reset por favor haz clic <a href='" . base_url() . "_hdu/anonymous/resetPass/" . $verification_key ."'>aquí</a>.</p>
+                        <p>Gracias!!!</p>";
+            
+            $headers = "From:" . $from;
+            mail($to,$subject,$message, $headers);
+            echo "The email message was sent.";
+            echo $message;
+            
+        } else {
+            
+            $this->session->set_flashdata('messageRegister', 'Error en la comprobación de email');
+            redirect(base_url());
+        }
+    }
+    
+    public function resetPass()
+    {
+        $token = $this->uri->segment(3);
+        $email = $this->uri->segment(4);
+        
+        $data['token']=$token;
+        $data['email']=$email;
+        
+        if($this->persona_model->comprobarCodigo($token, $email)) {
+            frame($this, '_hdu/anonymous/resetPass', $data);
+        }
+    }
+    
+    /* function verifyKey()
+    {
+        $this->load->model('persona_model');
+        
+        $encryptedPassword = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+        $verificationKey = $_POST['token'];
+        $this->persona_model->cambiarPass($verificationKey, $encryptedPassword);
+        
+        if ($this->persona_model->cambiarPass($verificationKey, $encryptedPassword)) {
+            
+            $data['message'] = '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
+            
+        } else {
+            
+            $data['message'] = '<h1 align="center">Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.</h1>';
+        }
+        
+        $this->session->set_flashdata('messageNewPassword', 'Cambio de contraseña realizado con éxito.');
+        redirect(base_url());
+        
+    } */
     
     public function logout() {
         if (session_status() == PHP_SESSION_NONE) {

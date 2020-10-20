@@ -22,6 +22,10 @@
         	<input id="id-pwd" type="password" name="password" required="required"/>
         	<br/>
         	
+        	<label for="id-email">Email</label>
+        	<input id="id-email" type="text" name="email" required="required"/>
+        	<br/>
+        	
         	<label for="id-nombre">Nombre</label>
         	<input id="id-nombre" type="text" name="nombre" required="required"/>
         	<br/>

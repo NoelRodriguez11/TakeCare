@@ -19,7 +19,7 @@ class Persona_model extends CI_Model
     }
     
 
-    public function crearPersona($loginname, $password, $nombre, $altura, $fechaNacimiento, $pais, $extFoto)
+    public function crearPersona($loginname, $password, $email, $nombre, $altura, $fechaNacimiento, $pais, $extFoto)
     {
         if ( $loginname == null || $password == null) {
             throw new Exception("Loginname, nombre o password nulos");
@@ -37,8 +37,10 @@ class Persona_model extends CI_Model
         if ($loginname != "admin") {
         $persona->altura = $altura;
         $persona->nombre = $nombre;
+        $persona->email = $email;
         $persona->fechaNacimiento = $fechaNacimiento;
         $persona->extension_Foto= $extFoto;
+        $persona->cod_recuperacion = null;
         if ($pais!=null) $persona->nace= $pais;
         //CREACI�N DE NUEVA VENTA Y SU ASOCIACI�N CON LA PERSONA (EN CASO DE NO SER ADMIN)
         $venta = R::dispense('venta');
@@ -54,8 +56,7 @@ class Persona_model extends CI_Model
     }
     
     
-    public function actualizarPersona($id,$loginname, $nombre, $altura, $fechaNacimiento, $pais)
-    {
+    public function actualizarPersona($id,$loginname, $nombre, $altura, $fechaNacimiento, $pais) {
         $persona = R::findOne('persona','loginname=?',[$loginname]);
         if ($persona == null) {
             
@@ -100,6 +101,46 @@ class Persona_model extends CI_Model
     public function borrarPersona($id) {
         R::trash(R::load('persona',$id));
     }
+    
+    
+    public function existEmail($email) { 
+        
+        $usuario = R::findOne('persona', 'email=?', [$email]);
+        
+        if ($usuario == null) {
+            throw new Exception("Email no encontrado");
+        }
+        return TRUE;
+    }
+    
+    
+    public function guardarCodigo($email, $codigo) {
+        $persona = R::findOne('persona','email=?',[$email]);
+        if ($email == $persona->email) {
+         
+            $persona->cod_recuperacion = $codigo;
+            R::store($persona);
+            
+        }
+        
+        else {
+            $e = ($email == null ? new Exception("nulo") : new Exception("Email no existe"));
+            throw $e;
+        }
+    }
+    
+    
+    public function comprobarCodigo($token, $email) {
+        $usuario = R::findOne('persona', 'cod_recuperacion=? AND email=?',[$token, $email]);
+        
+        if ($usuario == null) {
+            throw new Exception("Datos incorrectos");
+        }
+        return TRUE;
+    }
+    
+    
+    
     
     
     /* public function crearPersona($nombre, $pwd, $idPaisNace, $idPaisReside, $idsAficionGusta, $idsAficionOdia)
