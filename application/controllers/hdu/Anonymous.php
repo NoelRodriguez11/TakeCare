@@ -117,7 +117,8 @@ class Anonymous extends CI_Controller
     
     
     
-    //===========recuperar contraseña y enviar mails 
+//==========================================================================================================================
+//RECUPERACIÓN DE CONTRASEÑA Y ENVIO DE EMAIL DE CONFIMACIÓN
     public function recuperarPass()
     {
         frame($this, '_hdu/anonymous/recuperarPass', $data);
