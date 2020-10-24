@@ -1,7 +1,7 @@
 
 
 <div align="center">
-![alt text](https://github.com/VRivers/takecare/blob/master/assets/img/iconotc.png?raw=true)
+<img src="https://github.com/VRivers/takecare/blob/master/assets/img/iconotc.png"/>
 <h1>TakeCare<h1>
 </div>
 	
