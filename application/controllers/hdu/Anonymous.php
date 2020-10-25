@@ -1,6 +1,5 @@
 <?php
 
-use phpDocumentor\Reflection\Types\This;
 
 class Anonymous extends CI_Controller
 {
@@ -116,9 +115,7 @@ class Anonymous extends CI_Controller
     }
     
     
-    
-//==========================================================================================================================
-//RECUPERACIÓN DE CONTRASEÑA Y ENVIO DE EMAIL DE CONFIMACIÓN
+
     public function recuperarPass()
     {
         frame($this, '_hdu/anonymous/recuperarPass', $data);
@@ -168,8 +165,8 @@ class Anonymous extends CI_Controller
         $data['token']=$token;
         $data['email']=$email;
         
-        echo $token;
-        echo $email; 
+//         echo $token;
+//         echo $email; 
         
         if($this->persona_model->comprobarCodigo($token, $email)) {
             frame($this, '_hdu/anonymous/resetPass', $data);
@@ -179,25 +176,32 @@ class Anonymous extends CI_Controller
     
     
     
-   public function cambiarContra()
-    {
+   public function cambiarContra() {
+       
+       $this->load->model('persona_model');
+       
+       $token = $this->input->post('token');
+       $email = $this->input->post('email');
+       
+//        echo $token . "<br>";
+//        echo $email;
+       
+       $encryptedPassword = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
       
         
-        $encryptedPassword = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-        $verificationKey = $_POST['token'];
-        $this->persona_model->changePass($verificationKey, $encryptedPassword);
-        
-        if ($this->persona_model->changePass($verificationKey, $encryptedPassword)) {
+        if ($this->persona_model->changePass($token, $email, $encryptedPassword)) {
             
-            $data['message'] = '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
+            echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
             
         } else {
             
-            $data['message'] = '<h1 align="center">Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.</h1>';
+            echo '<h1 align="center">Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.</h1>';
         }
         
-        $this->session->set_flashdata('messageNewPassword', 'Cambio de contraseña realizado con éxito.');
-        redirect(base_url());
+
+        
+        
+       // redirect(base_url());
         
     }
     
