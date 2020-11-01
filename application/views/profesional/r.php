@@ -11,17 +11,17 @@
         <div class="col-sm-1">
         <div class="divEstrellitas">
         <form>
-  			<p class="clasificacion" id="star3">
-  				<label for="radio1" class ="star">★</label>
-    				<input id="radio1" type="radio" name="estrellas" value="5">
-    			<label for="radio2" class ="star">★</label>
-   					<input id="radio2" type="radio" name="estrellas" value="4">
-                <label for="radio3" class ="star">★</label>
-                	<input id="radio3" type="radio" name="estrellas" value="3">
-                <label for="radio4" class ="star">★</label>
-                	<input id="radio4" type="radio" name="estrellas" value="2">
-                <label for="radio5" class ="star">★</label>
-                	<input id="radio5" type="radio" name="estrellas" value="1">
+  			<p class="clasificacion" id="star0">
+  				<label for="radio1" id="radio0_5" class ="star" onClick="pulsarStar(this.id);">★</label>
+    				<input type="radio" name="estrellas" value="5">
+    			<label for="radio2" id="radio0_4" class ="star" onClick="pulsarStar(this.id);">★</label>
+   					<input type="radio" name="estrellas" value="4">
+                <label for="radio3" id="radio0_3" class ="star" onClick="pulsarStar(this.id);">★</label>
+                	<input type="radio" name="estrellas" value="3">
+                <label for="radio4"  id="radio0_2" class ="star" onClick="pulsarStar(this.id);">★</label>
+                	<input type="radio" name="estrellas" value="2">
+                <label for="radio5" id="radio0_1" class ="star" onClick="pulsarStar(this.id);">★</label>
+                	<input type="radio" name="estrellas" value="1">
        			</p>	
 		</form>
         </div>
@@ -36,18 +36,18 @@
         <div class="col-sm-1">
         <div class="divEstrellitas">
         <form>
-  			<p class="clasificacion" id="star2">
-  				<label for="radio1" class ="star">★</label>
-    				<input id="radio1" type="radio" name="estrellas" value="5">
-    			<label for="radio2" class ="star">★</label>
-   					<input id="radio2" type="radio" name="estrellas" value="4">
-                <label for="radio3" class ="star">★</label>
-                	<input id="radio3" type="radio" name="estrellas" value="3">
-                <label for="radio4" class ="star">★</label>
-                	<input id="radio4" type="radio" name="estrellas" value="2">
-                <label for="radio5" class ="star">★</label>
-                	<input id="radio5" type="radio" name="estrellas" value="1">
-       			</p>	
+  			<p class="clasificacion" id="star1">
+  				<label for="radio1" id="radio1_5" class ="star" onClick="pulsarStar(this.id);">★</label>
+    				<input type="radio" name="estrellas" value="5">
+    			<label for="radio2" id="radio1_4" class ="star" onClick="pulsarStar(this.id);">★</label>
+   					<input type="radio" name="estrellas" value="4">
+                <label for="radio3" id="radio1_3" class ="star" onClick="pulsarStar(this.id);">★</label>
+                	<input type="radio" name="estrellas" value="3">
+                <label for="radio4"  id="radio1_2" class ="star" onClick="pulsarStar(this.id);">★</label>
+                	<input type="radio" name="estrellas" value="2">
+                <label for="radio5" id="radio1_1" class ="star" onClick="pulsarStar(this.id);">★</label>
+                	<input type="radio" name="estrellas" value="1">
+       			</p>			
 		</form>
         </div>
         <?php if ($datosGen['persona']==null):?>
@@ -59,19 +59,19 @@
 <div class="divAnuncioProfesionales row">
     <div class="col-sm-11" id="tituloAnuncios">Anuncio ejemplo 3</div>
         <div class="col-sm-1">
-        <div class="divEstrellitas" id ="star3" >
+        <div class="divEstrellitas" id ="star2">
         <form>
-  			<p class="clasificacion">
-  				<label for="radio1" class ="star">★</label>
-    				<input id="radio1" type="radio" name="estrellas" value="5">
-    			<label for="radio2" class ="star">★</label>
-   					<input id="radio2" type="radio" name="estrellas" value="4">
-                <label for="radio3" class ="star">★</label>
-                	<input id="radio3" type="radio" name="estrellas" value="3">
-                <label for="radio4" class ="star">★</label>
-                	<input id="radio4" type="radio" name="estrellas" value="2">
-                <label for="radio5" class ="star">★</label>
-                	<input id="radio5" type="radio" name="estrellas" value="1">
+  			<p class="clasificacion" id="star1">
+  				<label for="radio1" id="radio2_5" class ="star" onClick="pulsarStar(this.id);">★</label>
+    				<input type="radio" name="estrellas" value="5">
+    			<label for="radio2" id="radio2_4" class ="star" onClick="pulsarStar(this.id);">★</label>
+   					<input type="radio" name="estrellas" value="4">
+                <label for="radio3" id="radio2_3" class ="star" onClick="pulsarStar(this.id);">★</label>
+                	<input type="radio" name="estrellas" value="3">
+                <label for="radio4"  id="radio2_2" class ="star" onClick="pulsarStar(this.id);">★</label>
+                	<input type="radio" name="estrellas" value="2">
+                <label for="radio5" id="radio2_1" class ="star" onClick="pulsarStar(this.id);">★</label>
+                	<input type="radio" name="estrellas" value="1">
        			</p>	
 		</form>
         </div>
