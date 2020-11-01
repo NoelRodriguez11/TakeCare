@@ -34,7 +34,7 @@
    <!-- Prueba para el footer -->
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-	<title>TakeCare TFG</title>
+	<title>TakeCare TFG cambio</title>
 </head>
 
 <body>
