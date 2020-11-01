@@ -115,7 +115,8 @@ class Anonymous extends CI_Controller
     }
     
     
-
+    //=========================================================================================================================
+    //OPERACIONES DE LOGIN
     public function recuperarPass()
     {
         frame($this, '_hdu/anonymous/recuperarPass', $data);
@@ -137,14 +138,14 @@ class Anonymous extends CI_Controller
             
             $from = "takecaretfg@gmail.com";
             $to = $email;
-            $subject = "reset Password";
-            $message = "<p>Para hacer reset por favor haz clic en <a href='" . base_url() . "hdu/anonymous/resetPass/" . $verification_key . "/" . $email . "'>Cambiar contraseña</a>.</p>
+            $subject = "Reset Password";
+            $message = "<p>Para hacer reset por favor haz clic en el siguiente enlace <a href='" . base_url() . "hdu/anonymous/resetPass/" . $verification_key . "/" . $email . "'>Cambiar contraseña</a></p>
                         <p>Gracias!!!</p>";
       
             
             $headers = "From:" . $from;
             mail($to,$subject,$message, $headers);
-            echo "The email message was sent.";
+            echo "Se te ha enviado un mensaje, para recuperar tu contraseña, por favor, revisa tu correo electrónico.";
             echo $message;
             
         } else {

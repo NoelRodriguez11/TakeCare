@@ -3,6 +3,69 @@
 	padding: 2.7rem !important;
 	border-radius: .5rem !important;
 	border:2px solid grey;
+	height: 167px;
+	width: 837px;
 }
 
+#tituloAnuncios {
+	text-align:center;
+	font-family:'Exo 2', sans-serif;
+}
+
+
+.divEstrellitas {
+	height: 90px;
+	width: 170px;
+	padding-top:35px;
+	float:right;
+}
+
+
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+ 
+}
+
+#form p {
+  text-align: center;
+  
+}
+
+#form label {
+  font-size: 20px;
+ 
+  
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label.star{
+  color: grey;
+  font-size: 20px;
+  
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+
+label.star:hover,
+label.star:hover ~ label.star {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label.star {
+  color: orange;
+}
+
+/*=======BOTON PEDIR CITA ===========*/
+#botonPC {
+	float: right;
+}
 
