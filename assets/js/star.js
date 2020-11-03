@@ -1,4 +1,4 @@
-function pulsarStar(id) {
+function pulsarStar(id,idProfesional) {
 	var label_id = id.split("_")[0];
 	var puntuacion = id.split("_")[1]; 
 	
