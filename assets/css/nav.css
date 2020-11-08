@@ -1,8 +1,12 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-}
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 .fa-2x {
 font-size: 2em;
+}
+
+body{
+	height:100%;
+	position:relative;
 }
 
 .fa {
@@ -27,8 +31,9 @@ background:#212121;
 border-right:1px solid #e5e5e5;
 position:absolute;
 top:0;
-bottom:20;
-height:100%;
+/* bottom:20; */
+z-index:1;
+min-height:100%;
 left:0;
 width:60px;
 overflow:hidden;
@@ -84,6 +89,7 @@ width:190�px;
 
 .navbar {
 	margin-bottom:0;
+	z-index:2;
 }
 
 

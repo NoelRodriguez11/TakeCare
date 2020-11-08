@@ -4,16 +4,20 @@
 	background-image:url("../../assets/img/banner.jpg") !important;
 }
 
-#buscador{
-	margin-left:45rem;
-	margin-top:10rem;
+.contenidoPrincipal{
+	z-index:-1;
+}
 
+#buscador{
+	margin-left:70vh;
+	margin-top:10rem;
 }
 
 .acerca{
 	height:35rem;
 	margin-top:1rem;
 	margin-bottom:750px;
+	z-index:-1;
 }
 
 .acerca h2{
@@ -22,25 +26,9 @@
 	color:grey;
 }
 
-.contenidoExplicativo{
-	margin-top:3rem;
-	margin-left:60rem;
-}
-
-.primeraExplicacion{
-	
-}
-
-.segundaExplicacion{
-	
-}
-
-.terceraExplicacion{
-	
-}
-
-.cuartaExplicacion{
-	
+.explicacion{
+	margin-left:33%;
+	margin-bottom:5%;
 }
 
 .textoLogo{
@@ -50,12 +38,14 @@
 
 .textoexp1{
 	font-family: 'Exo 2', sans-serif;
-	font-weight:600;
+	font-size:large;
+	color:#043E75;
 }
 
 .textoexp2{
 	font-family: 'Exo 2', sans-serif;
-	font-weight: 400;
+	font-size:medium;
+	margin-left:2%;
 }
 
 .fa-instagram {
