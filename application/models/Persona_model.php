@@ -142,11 +142,7 @@ class Persona_model extends CI_Model
     }
     
     
-    ///terminar
     public function changePass($token, $email, $password){
-//echo $token;
-       // echo $email;
-       // echo $password;
         $usuario = R::findOne('persona', 'cod_recuperacion=? AND email=?',[$token, $email]);
         
         if($token == $usuario->cod_recuperacion && $email == $usuario->email) {
@@ -155,9 +151,9 @@ class Persona_model extends CI_Model
             
             return true;
         }
-        else 
+        else {
             return false;
-              
+        }
         
        
         
