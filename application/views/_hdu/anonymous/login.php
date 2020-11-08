@@ -33,7 +33,7 @@
             <label for="recipient-name" class="col-form-label">Introduce email:</label>
             <input type="text" class="form-control" name ="email" id="btn_modal">
           </div>
-        
+    
       </div>
       <div class="modal-footer">
         <button type="button"  id="loginBoton" class="btn btn-secondary" data-dismiss="modal">Close</button>
