@@ -6,9 +6,8 @@
 
     <button class="active btn btn-danger" data-toggle="tab" href="#paciente">Paciente</button>
     <button class="btn btn-danger" data-toggle="tab" href="#profesional">Profesional</button>
-
-
-  <div class="tab-content">
+<div class="row">
+  <div class="tab-content col-sm-5">
     <div id="paciente" class="tab-pane fade in active">
     <h1 class="textoexp1">Nuevo Paciente</h1>
 
@@ -160,5 +159,10 @@
         </form>
 
     </div>
-  </div>
+
+</div>
+<div class="imagenRegistro col-sm-7">
+<img src="../../assets/img/registro/pac2.jpg" alt="" />
+</div>
+</div>
 </div>

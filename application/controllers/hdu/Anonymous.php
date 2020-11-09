@@ -21,7 +21,34 @@ class Anonymous extends CI_Controller
         if ($pwd == null || password_verify($pwd, password_hash("admin", PASSWORD_DEFAULT))) {
             R::nuke();
             $this->load->model('persona_model');
+            $this->load->model('pais_model');
             $this->persona_model->crearPersona('admin', 'admin',null,null,null,null, null, null);
+            
+            //Creación de paises al inicializar la base de datos
+            $this->pais_model->crearPais('Alemania');
+            $this->pais_model->crearPais('Austria');
+            $this->pais_model->crearPais('Chequía');
+            $this->pais_model->crearPais('Croacía');
+            $this->pais_model->crearPais('Dinamarca');
+            $this->pais_model->crearPais('Eslovaquía');
+            $this->pais_model->crearPais('Eslovenía');
+            $this->pais_model->crearPais('España');
+            $this->pais_model->crearPais('Estonia');
+            $this->pais_model->crearPais('Finlandia');
+            $this->pais_model->crearPais('Francia');
+            $this->pais_model->crearPais('Grecía');
+            $this->pais_model->crearPais('Hungría');
+            $this->pais_model->crearPais('Irlanda');
+            $this->pais_model->crearPais('Italia');
+            $this->pais_model->crearPais('Letonia');
+            $this->pais_model->crearPais('Lituania');
+            $this->pais_model->crearPais('Luxemburgo');
+            $this->pais_model->crearPais('Malta');
+            $this->pais_model->crearPais('Paises Bajos');
+            $this->pais_model->crearPais('Polonia');
+            $this->pais_model->crearPais('Portugal');
+            $this->pais_model->crearPais('Rumanía');
+            $this->pais_model->crearPais('Malta');
             
             $data['msg'] = "BD recreada";
         }
@@ -87,6 +114,83 @@ class Anonymous extends CI_Controller
             PRG($e->getMessage(), '');
         }
         }
+        
+        
+//EN PRUEBAS REGISTRO DE PACIENTE Y PROFESIONAL---------------------------------------------------------------------------------------------      
+//         public function registrar()
+//         {
+//             $this->load->model('pais_model');
+//             $datos['paises'] = $this->pais_model->getPaises();
+//             frame($this, '_hdu/anonymous/registrar', $datos);
+//         }
+        
+//         public function registrarPost()
+//         {
+//             $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+//             $apellido1 = isset($_POST['apellido1']) ? $_POST['apellido1'] : null;
+//             $apellido2 = isset($_POST['apellido2']) ? $_POST['apellido2'] : null;
+//             $fechaNacimiento = isset($_POST['fechaNacimiento']) ? $_POST['fechaNacimiento'] : null;
+//             $dni = isset($_POST['dni']) ? $_POST['dni'] : null;
+//             $genero = isset($_POST['genero']) ? $_POST['genero'] : null;
+//             $sangre = isset($_POST['sangre']) ? $_POST['sangre'] : null;
+            
+//             //Variables de dirección
+//             $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : null;
+//             $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : null;
+//             $provincia = isset($_POST['provincia']) ? $_POST['provincia'] : null;
+//             $pais = isset($_POST['pais']) ? $_POST['pais'] : null;
+            
+//             $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : null;
+//             $email = isset($_POST['email']) ? $_POST['email'] : null;
+//             $password = isset($_POST['password']) ? $_POST['password'] : null;
+            
+//             $foto = isset($_FILES['foto']) ? ($_FILES['foto']) : null;
+            
+//             $tipoRegistro = isset($_POST['tipoRegistro']) ? $_POST['tipoRegistro'] : null;
+            
+//             try {
+//                 $extFoto =null;
+//                 if ($foto != null && $foto['error']==UPLOAD_ERR_OK) {
+//                     $name_and_ext = explode('.', $foto['name']);
+//                     $extFoto = $name_and_ext[sizeof($name_and_ext)-1];
+                    
+//                 }
+                
+                
+//                 $this->load->model('paciente_model');
+//                 $this->load->model('profesional_model');
+//                 $this->load->model('pais_model');
+                
+                
+//                 if ($pais == -1) {throw new Exception("Pais no especificado");}
+                
+//             //TRATAMIENTO USUARIO SEGÚN SU TIPO
+//             try {
+//                 if ($tipoRegistro == "pac"){
+//                     $id = $this->paciente_model->crearPaciente($loginname, $password,$email ,$nombre, $altura, $fechaNacimiento, $this->pais_model->getPaisById($pais), $extFoto);
+//                 }
+//                 elseif($tipoRegistro == "pro"){
+//                     $id = $this->profesional_model->crearProfesional($loginname, $password,$email ,$nombre, $altura, $fechaNacimiento, $this->pais_model->getPaisById($pais), $extFoto);
+//                 }
+//             }
+//             catch (Exception $e){
+//                 throw new Exception("Usuario ya existente");
+//             }
+            
+//             if ($extFoto != null) {
+                
+//                 $file_name = 'persona' . '-'. $id . '.'. $extFoto;
+//                 $carpeta = "assets/img/upload/persona/";
+                
+//                 copy($foto['tmp_name'], $carpeta . $file_name);
+                
+//             }
+            
+//             PRG('Usuario creado correctamente.', 'home', 'success');
+//         } catch (Exception $e) {
+//             PRG($e->getMessage(), '');
+//         }
+// }
     
     
 //=========================================================================================================================

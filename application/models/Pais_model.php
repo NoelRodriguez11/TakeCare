@@ -28,32 +28,6 @@ class Pais_model extends CI_Model
            $e = ($nombre==null?new Exception("nulo"):new Exception("Nombre de pais ya registrado, escoge otro"));
            throw $e;
         }
-    }
-    
-    
-    public function actualizarPais($id, $nombre)
-    {
-        $pais = R::findOne('pais','nombre=?',[$nombre]);
-        if ($nombre != null && $pais == null) {
-       
-            $pais = R::load('pais', $id);
-            $pais->nombre = $nombre;
-            R::store($pais);
-   
-        }
-        else if ($nombre != null && $pais =! null) {}
-        else {
-            $e = ($nombre == null ? new Exception("nulo") : new Exception("Nombre de pais ya registrado, escoge otro"));
-            throw $e;
-        }
-    }
-    
-    
-    public function borrarPais($id) {
-        R::trash(R::load('pais',$id));
-    }
-    
-    
-    
+    }   
 }
 ?>
