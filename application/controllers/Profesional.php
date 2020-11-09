@@ -7,6 +7,7 @@ class Profesional extends CI_Controller
     {
         frame($this, 'profesional/r');
     }
+
    
     public function u()
     {
@@ -50,6 +51,21 @@ class Profesional extends CI_Controller
         $this->profesional_model->borrarProfesional($id);
         redirect(base_url().'profesional/r');
     }
+
+    
+    public function enviarStar() {
+//         if(!isRolOK("admin")){
+//             PRG("Rol inadecuado");
+//         }
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        echo $id;
+        $nuevaValoracion = isset($_GET['nuevaValoracion']) ? $_GET['nuevaValoracion'] : null;
+        $this->load->model('profesional_model');
+        $this->profesional_model->setPuntuacionTotalValoraciones($id, $nuevaValoracion);
+  
+    }
+    
+    
 }
 
 ?>

@@ -1,4 +1,4 @@
-function pulsarStar(id) {
+function pulsarStar(id,idProfesional) {
 	var label_id = id.split("_")[0];
 	var puntuacion = id.split("_")[1]; 
 	
@@ -40,4 +40,17 @@ function pulsarStar(id) {
 		$("#" + label_id + "_2").css("color", "grey");
 		$("#" + label_id + "_1").css("color", "orange");
 	}
+	puntuacionStar(idProfesional,puntuacion);
 }
+function puntuacionStar(idProfesional,nuevaValoracion) {
+	$.ajax({
+		  type: "GET",
+		  url: base_url + "profesional/enviarStar?id="+ idProfesional + "&nuevaValoracion=" + nuevaValoracion,
+		  success:  function (response) {
+					//alert(response);
+					
+		        }
+
+		});
+}
+

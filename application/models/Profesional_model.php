@@ -83,6 +83,27 @@ class Profesional_model extends CI_Model
             throw $e;
         }
     }
+    
+    //=========== media valoraciones estrellas ===================//
+    public function setPuntuacionTotalValoraciones($id, $nuevaValoracion)
+    {
+        $profesional = R::findOne('profesional','id=?',[$id]);
+        
+       echo $id . "-----------" . $nuevaValoracion;
+        if ($profesional != null) {
+            if($profesional->valoracion == 0){
+                $profesional->valoracion = $nuevaValoracion;
+            }
+            else {
+                $profesional->valoracion = (($profesional->valoracion) + $nuevaValoracion)/2; //media de puntuaciones 
+            }
+           
+            R::store($profesional);
+        }
+    }
+    
+    
+    //=====================//
 
     public function verificarLogin($nombre, $pwd)
     {
