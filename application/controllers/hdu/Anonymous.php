@@ -22,7 +22,9 @@ class Anonymous extends CI_Controller
             R::nuke();
             $this->load->model('persona_model');
             $this->load->model('pais_model');
-            $this->persona_model->crearPersona('admin', 'admin',null,null,null,null, null, null);
+            $this->load->model('especialidad_model');
+            $this->persona_model->crearPersona('admin', 'admin',null,null,"admin",null, null, null, null, null, null, null, null, null);
+            $this->profesional_model->crearProfesional('adminpro', 'adminpro',null,null,"adminpro",null, null, null, null, null, null, null, null, null);
             
             //Creación de paises al inicializar la base de datos
             $this->pais_model->crearPais('Alemania');
@@ -48,7 +50,11 @@ class Anonymous extends CI_Controller
             $this->pais_model->crearPais('Polonia');
             $this->pais_model->crearPais('Portugal');
             $this->pais_model->crearPais('Rumanía');
-            $this->pais_model->crearPais('Malta');
+            
+            //Careación de modalidades
+            $this->especialidad_model->crearEspecialidad('Fisioterapia');
+            $this->especialidad_model->crearEspecialidad('Psicologia');
+            $this->especialidad_model->crearEspecialidad('Pedagogia');
             
             $data['msg'] = "BD recreada";
         }
@@ -62,20 +68,33 @@ class Anonymous extends CI_Controller
     public function registrar()
     {
         $this->load->model('pais_model');
+        $this->load->model('especialidad_model');
         $datos['paises'] = $this->pais_model->getPaises();
+        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
         frame($this, '_hdu/anonymous/registrar', $datos);
     }
     
     public function registrarPost()
     {
-        $loginname = isset($_POST['loginname']) ? $_POST['loginname'] : null;
-        $password = isset($_POST['password']) ? $_POST['password'] : null;
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+        $primerNombre = isset($_POST['primerNombre']) ? $_POST['primerNombre'] : null;
+        $segundoNombre = isset($_POST['segundoNombre']) ? $_POST['segundoNombre'] : null;
+        $dni = isset($_POST['dni']) ? $_POST['dni'] : null;
+        $password = isset($_POST['password']) ? $_POST['password'] : null;
         $email = isset($_POST['email']) ? $_POST['email'] : null;
-        $altura = isset($_POST['altura']) ? $_POST['altura'] : null;
+        $genero = isset($_POST['genero']) ? $_POST['genero'] : null;
         $foto = isset($_FILES['foto']) ? ($_FILES['foto']) : null;
+        $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : null;
+        $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : null;
+        $provincia = isset($_POST['provincia']) ? $_POST['provincia'] : null;
+        $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : null;
         $fechaNacimiento = isset($_POST['fechaNacimiento']) ? $_POST['fechaNacimiento'] : null;
         $pais = isset($_POST['pais']) ? $_POST['pais'] : null;
+        $especilidad = isset($_POST['especialidad']) ? $_POST['especialidad'] : null;
+        
+        
+        
+        $tipoUsuario = isset($_POST['tipoUsuario']) ? $_POST['tipoUsuario'] : null;
         
         try {
             $extFoto =null;
@@ -87,15 +106,22 @@ class Anonymous extends CI_Controller
             
             
             $this->load->model('persona_model');
+            $this->load->model('profesional_model');
             $this->load->model('pais_model');
+            $this->load->model('especialidad_model');
             
             
             if ($pais == -1) {throw new Exception("Pais no especificado");}
   
-            //TRATAMIENTO PAIS
+     
             try {
-              $id = $this->persona_model->crearPersona($loginname, $password,$email ,$nombre, $altura, $fechaNacimiento, $this->pais_model->getPaisById($pais), $extFoto);
-            }
+                if ($tipoUsuario == 1) {
+                    $id = $this->persona_model->crearPersona($nombre, $primerNombre,$segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $this->pais_model->getPaisById($pais),$fechaNacimiento, $extFoto);  
+                }
+                else {
+                
+                $id = $this->profesional_model->crearProfesional($nombre, $primerNombre,$segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $this->pais_model->getPaisById($pais),$fechaNacimiento, $this->especialidad_model->getEspecialidadById($especilidad),  $extFoto);
+                }}
             catch (Exception $e){
                 throw new Exception("Usuario ya existente");    
             }
