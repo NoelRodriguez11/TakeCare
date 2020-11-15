@@ -19,35 +19,37 @@ class Profesional_model extends CI_Model
     }
     
 
-    public function crearProfesional($loginname, $password, $nombre, $altura, $fechaNacimiento, $pais, $extFoto)
+    public function crearProfesional($nombre, $primerNombre,$segundoNombre ,$dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $especialidad,  $extFoto)
     {
-        if ( $loginname == null || $password == null) {
-            throw new Exception("Loginname, nombre o password nulos");
+        if ( $nombre == null || $password == null) {
+            throw new Exception(" nombre o password nulos");
         }
         
-        if (R::findOne('profesional', 'loginname=?', [$loginname]) != null) {
-            throw new Exception("Loginname duplicado");
+        if (R::findOne('profesional', 'dni=?', [$dni]) != null) {
+            throw new Exception("dni duplicado");
         }
         
         //CREACION DE PERSONA
         $profesional = R::dispense('profesional');
-        $profesional->loginname = $loginname;
-        $profesional->password = password_hash($password, PASSWORD_BCRYPT);
-
-        if ($loginname != "admin") {
-        $profesional->altura = $altura;
         $profesional->nombre = $nombre;
+        $profesional->primerNombre = $primerNombre;
+        $profesional->segundoNombre = $segundoNombre;
+        $profesional->password = password_hash($password, PASSWORD_BCRYPT);
+        
+        
+        $profesional->dni = $dni;
+        $profesional->direccion = $direccion;
+        $profesional->ciudad = $ciudad;
+        $profesional->provincia = $provincia;
         $profesional->fechaNacimiento = $fechaNacimiento;
         $profesional->extension_Foto= $extFoto;
+        $profesional->genero= $genero;
+        $profesional->email= $email;
+        $profesional->telefono= $telefono;
+        $profesional->especialidad=$especialidad;
+        $profesional->cod_recuperacion = null;
         if ($pais!=null) $profesional->nace= $pais;
-        //CREACI�N DE NUEVA VENTA Y SU ASOCIACI�N CON LA PERSONA (EN CASO DE NO SER ADMIN)
-        $venta = R::dispense('venta');
-        $venta->fecha = date('Y-m-d H:i:s');
-        $venta -> ventaencurso = $profesional;
-        R::store($venta);
         
-        $profesional->ventaencurso=$venta;
-        }
         
         return R::store($profesional);
         

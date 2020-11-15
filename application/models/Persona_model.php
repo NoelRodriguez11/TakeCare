@@ -19,37 +19,36 @@ class Persona_model extends CI_Model
     }
     
 
-    public function crearPersona($loginname, $password, $email, $nombre, $altura, $fechaNacimiento, $pais, $extFoto)
+    public function crearPersona($nombre, $primerNombre,$segundoNombre ,$dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $extFoto)
     {
-        if ( $loginname == null || $password == null) {
+        if ( $nombre == null || $password == null) {
             throw new Exception("Loginname, nombre o password nulos");
         }
         
-        if (R::findOne('persona', 'loginname=?', [$loginname]) != null) {
-            throw new Exception("Loginname duplicado");
+        if (R::findOne('persona', 'dni=?', [$dni]) != null) {
+            throw new Exception("dni duplicado");
         }
         
         //CREACION DE PERSONA
         $persona = R::dispense('persona');
-        $persona->loginname = $loginname;
+        $persona->nombre = $nombre;
+        $persona->primerNombre = $primerNombre;
+        $persona->segundoNombre = $segundoNombre;
         $persona->password = password_hash($password, PASSWORD_BCRYPT);
 
-        if ($loginname != "admin") {
-        $persona->altura = $altura;
-        $persona->nombre = $nombre;
-        $persona->email = $email;
+        
+        $persona->dni = $dni;
+        $persona->direccion = $direccion;
+        $persona->ciudad = $ciudad;
+        $persona->provincia = $provincia;
         $persona->fechaNacimiento = $fechaNacimiento;
         $persona->extension_Foto= $extFoto;
+        $persona->genero= $genero;
+        $persona->email= $email;
+        $persona->telefono= $telefono;
         $persona->cod_recuperacion = null;
         if ($pais!=null) $persona->nace= $pais;
-        //CREACI�N DE NUEVA VENTA Y SU ASOCIACI�N CON LA PERSONA (EN CASO DE NO SER ADMIN)
-        $venta = R::dispense('venta');
-        $venta->fecha = date('Y-m-d H:i:s');
-        $venta -> ventaencurso = $persona;
-        R::store($venta);
-        
-        $persona->ventaencurso=$venta;
-        }
+       
         
         return R::store($persona);
         

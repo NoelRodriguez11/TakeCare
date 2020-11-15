@@ -6,16 +6,56 @@
 
     <button class="active btn btn-danger" data-toggle="tab" href="#paciente">Paciente</button>
     <button class="btn btn-danger" data-toggle="tab" href="#profesional">Profesional</button>
-
-
-  <div class="tab-content">
+<div class="row">
+  <div class="tab-content col-sm-5">
     <div id="paciente" class="tab-pane fade in active">
     <h1 class="textoexp1">Nuevo Paciente</h1>
 
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         
-        	<label for="id-log">Loginname</label>
-        	<input id="id-log" type="text" name="loginname" required="required"/>
+        	<label for="id-nom">Nombre</label>
+        	<input id="id-nom" type="text" name="nombre" required="required"/>
+        	<br/>
+        	
+        	<label for="id-ape1">Primer Apellido</label>
+        	<input id="id-ape1" type="text" name="primerApellido" required="required"/>
+        	<br/>
+        	
+        	<label for="id-ape2">Segundo Apellido</label>
+        	<input id="id-ape2" type="text" name="segundoApellido" required="required"/>
+        	<br/>
+        	
+        	<label for="id-dni">DNI</label>
+        	<input id="id-dni" type="text" name="dni" required="required"/>
+        	<br/>
+        	
+        	<label for="id-fnac">Fecha de Nacimiento</label>
+        	<input id="id-fnac" type="date" name="fechaNacimiento" required="required" value="2000-02-29"/>
+        	<br/>
+        	
+        	<label for="id-genero">Genero</label>
+          	<select name="genero" id="id-genero">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            </select>
+            <br>
+
+        	
+        	<label for="id-direccion">Direccion</label>
+        	<input id="id-direccion" type="text" name="direccion" required="required"/>
+        	<br/>
+        	
+        	<label for="id-ciudad">Ciudad</label>
+        	<input id="id-ciudad" type="text" name="ciudad" required="required"/>
+        	<br/>
+        	
+        	<label for="id-provincia">Provincia</label>
+        	<input id="id-provincia" type="text" name="provincia" required="required"/>
+        	<br/>
+        	
+        	
+        	<label for="id-telefono">Telefono</label>
+        	<input id="id-telefono" type="text" name="telefono" required="required"/>
         	<br/>
         	
         	<label for="id-pwd">Contraseña</label>
@@ -26,21 +66,10 @@
         	<input id="id-email" type="text" name="email" required="required"/>
         	<br/>
         	
-        	<label for="id-nombre">Nombre</label>
-        	<input id="id-nombre" type="text" name="nombre" required="required"/>
-        	<br/>
-        	
-        	<label for="id-altura">Altura (en cm)</label>
-        	<input id="id-altura" type="number" name="altura" required="required" min="0" max="400" value="175" />
-        	<br/>
-        	
-        	<label for="id-fnac">Fecha de Nacimiento</label>
-        	<input id="id-fnac" type="date" name="fechaNacimiento" required="required" value="2000-02-29"/>
-        	<br/>
-        	
+        	<input type="hidden" name="tipoUsuario" value=1/>
+        	    
+        	       	
         	<label for="id-pais">Pais</label>
-        	
-        
         	<select id="id-pais" name="pais">
         		<option selected="selected" value=-1>---</option>
         		<?php foreach ($paises as $pais):?>
@@ -89,37 +118,77 @@
 
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         
-        	<label for="id-log">Loginname</label>
-        	<input id="id-log" type="text" name="loginname" required="required"/>
+        	<label for="id-nom">Nombre</label>
+        	<input id="id-nom" type="text" name="nombre" required="required"/>
         	<br/>
         	
-        	<label for="id-pwd">Contraseña</label>
-        	<input id="id-pwd" type="password" name="password" required="required"/>
+        	<label for="id-ape1">Primer Apellido</label>
+        	<input id="id-ape1" type="text" name="primerApellido" required="required"/>
         	<br/>
         	
-        	<label for="id-nombre">Nombre</label>
-        	<input id="id-nombre" type="text" name="nombre" required="required"/>
+        	<label for="id-ape2">Segundo Apellido</label>
+        	<input id="id-ape2" type="text" name="segundoApellido" required="required"/>
         	<br/>
         	
-        	<label for="id-especialidad">Especialidad</label>
-        	<select name="especialidad" id="id-especialidad">
-        	<option value="opcion1">Opcion 1</option>
-        	<option value="opcion2">Opcion 2</option>
-        	<option value="opcion3">Opcion 3</option>
-        	</select>
-        	<br/>
-        	
-        	<label for="id-altura">Altura (en cm)</label>
-        	<input id="id-altura" type="number" name="altura" required="required" min="0" max="400" value="175" />
+        	<label for="id-dni">DNI</label>
+        	<input id="id-dni" type="text" name="dni" required="required"/>
         	<br/>
         	
         	<label for="id-fnac">Fecha de Nacimiento</label>
         	<input id="id-fnac" type="date" name="fechaNacimiento" required="required" value="2000-02-29"/>
         	<br/>
         	
+        	<label for="id-genero">Genero</label>
+          	<select name="genero" id="id-genero">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            </select>
+            <br>
+        	
+        	
+        	<label for="id-direccion">Direccion</label>
+        	<input id="id-direccion" type="text" name="direccion" required="required"/>
+        	<br/>
+        	
+        	<label for="id-ciudad">Ciudad</label>
+        	<input id="id-ciudad" type="text" name="ciudad" required="required"/>
+        	<br/>
+        	
+        	<label for="id-provincia">Provincia</label>
+        	<input id="id-provincia" type="text" name="provincia" required="required"/>
+        	<br/>
+        	
+        	
+        	<label for="id-telefono">Telefono</label>
+        	<input id="id-telefono" type="text" name="telefono" required="required"/>
+        	<br/>
+        	
+        	<label for="id-pwd">Contraseña</label>
+        	<input id="id-pwd" type="password" name="password" required="required"/>
+        	<br/>
+        	
+        	<label for="id-email">Email</label>
+        	<input id="id-email" type="text" name="email" required="required"/>
+        	<br/>
+        	
+        	<label for="id-especialidad">Especialidad</label>
+        	<select name="especialidad" id="id-especialidad">
+        		<option selected="selected" value=-1>---</option>
+        		<?php foreach ($especialidades as $especialidad):?>
+        		<option value="<?=$especialidad->id?>"><?=$especialidad->nombre?></option>
+        		<?php endforeach;?>
+        	</select>
+        	<br/>
+        		
+        	<label for="id-fnac">Fecha de Nacimiento</label>
+        	<input id="id-fnac" type="date" name="fechaNacimiento" required="required" value="2000-02-29"/>
+        	<br/>
+        	
         	<label for="id-pais">Pais</label>
         	
-        
+        	
+        	<input type="hidden" name="tipoUsuario" value=2/>
+        	
         	<select id="id-pais" name="pais">
         		<option selected="selected" value=-1>---</option>
         		<?php foreach ($paises as $pais):?>
@@ -127,6 +196,7 @@
         		<?php endforeach;?>
         	</select>
         	<br/>
+
         	
         	<!-- JAVASCRIPT PARA VISUALIZAR LA FOTO -->
         	<script>
@@ -160,5 +230,10 @@
         </form>
 
     </div>
-  </div>
+
+</div>
+<div class="imagenRegistro col-sm-7">
+<img src="../../assets/img/registro/pac2.jpg" alt="" />
+</div>
+</div>
 </div>
