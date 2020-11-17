@@ -57,3 +57,77 @@
   background-clip: text;
   -webkit-background-clip: text;
 }
+
+/* CSS DE LO MAS BUSCADO */
+
+.profesionalesBuscados{
+	width: 990px;
+	margin: 0 auto;
+}
+
+.subtitulo{
+	text-align:center;
+	font-family:'Exo 2', sans-serif;
+	color:grey;
+}
+
+.profesionalesBuscados ul{
+	list-style-image: initial;
+	list-style: none;
+	padding-left:0;
+	margin-top:30px !important;
+	text-align: center;
+}
+
+.profesionalesBuscados li{
+	margin-left:0;
+	list-style-image: initial;
+	display: inline-block;
+    width: 166px;
+    height: 218px;
+    border-radius: 5px;
+    position: relative;
+    list-style: none;
+    padding-left: 0;	
+}
+
+.foo{
+	background-image: initial;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(232, 230, 227);
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: rgba(0,0,0,.5);
+    padding-top: 10px;
+    text-align: center;
+    transition: width 1s,height 1s,transform 1s;
+}
+
+.sprite-h2{
+	background-image: url(https://ta.azureedge.net/i/sprite_home5.png) !important;
+}
+
+.l1{
+	background-image:url("../img/traumatologo.jpg") !important;
+	background-size:282px 226px;
+}
+
+.l2{
+	background-image:url("../img/psicologo.jpg") !important;
+	background-size:205px 220px;
+
+}
+
+.l3{
+	background-image:url("../img/podologo.jpeg") !important;
+	background-size:282px 226px;
+}
+
+.l4{
+	background-image:url("../img/nutricionista.jpg") !important;
+	background-size:282px 226px;
+}
