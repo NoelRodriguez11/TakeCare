@@ -2,7 +2,7 @@
 <nav class="main-menu">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="<?=base_url()?>hdu/anonymous/configPerfil">
                         <i class="fa fa-cogs fa-2x"></i>
                         <span class="nav-text">
                      		Configuración perfil
