@@ -4,16 +4,20 @@
 	background-image:url("../../assets/img/banner.jpg") !important;
 }
 
-#buscador{
-	margin-left:45rem;
-	margin-top:10rem;
+.contenidoPrincipal{
+	z-index:-1;
+}
 
+#buscador{
+	margin-left:70vh;
+	margin-top:10rem;
 }
 
 .acerca{
 	height:35rem;
 	margin-top:1rem;
 	margin-bottom:750px;
+	z-index:-1;
 }
 
 .acerca h2{
@@ -22,25 +26,10 @@
 	color:grey;
 }
 
-.contenidoExplicativo{
-	margin-top:3rem;
-	margin-left:60rem;
-}
-
-.primeraExplicacion{
-	
-}
-
-.segundaExplicacion{
-	
-}
-
-.terceraExplicacion{
-	
-}
-
-.cuartaExplicacion{
-	
+.explicacion{
+	margin-left:31%;
+	margin-bottom:3%;
+	width:40%;
 }
 
 .textoLogo{
@@ -50,12 +39,14 @@
 
 .textoexp1{
 	font-family: 'Exo 2', sans-serif;
-	font-weight:600;
+	font-size:large;
+	color:#043E75;
 }
 
 .textoexp2{
 	font-family: 'Exo 2', sans-serif;
-	font-weight: 400;
+	font-size:medium;
+	margin-left:2%;
 }
 
 .fa-instagram {
@@ -66,4 +57,78 @@
   background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+/* CSS DE LO MAS BUSCADO */
+
+.profesionalesBuscados{
+	width: 990px;
+	margin: 0 auto;
+}
+
+.subtitulo{
+	text-align:center;
+	font-family:'Exo 2', sans-serif;
+	color:grey;
+}
+
+.profesionalesBuscados ul{
+	list-style-image: initial;
+	list-style: none;
+	padding-left:0;
+	margin-top:30px !important;
+	text-align: center;
+}
+
+.profesionalesBuscados li{
+	margin-left:0;
+	list-style-image: initial;
+	display: inline-block;
+    width: 166px;
+    height: 218px;
+    border-radius: 5px;
+    position: relative;
+    list-style: none;
+    padding-left: 0;	
+}
+
+.foo{
+	background-image: initial;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(232, 230, 227);
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: rgba(0,0,0,.5);
+    padding-top: 10px;
+    text-align: center;
+    transition: width 1s,height 1s,transform 1s;
+}
+
+.sprite-h2{
+	background-image: url(https://ta.azureedge.net/i/sprite_home5.png) !important;
+}
+
+.l1{
+	background-image:url("../img/traumatologo.jpg") !important;
+	background-size:282px 226px;
+}
+
+.l2{
+	background-image:url("../img/psicologo.jpg") !important;
+	background-size:205px 220px;
+
+}
+
+.l3{
+	background-image:url("../img/podologo.jpeg") !important;
+	background-size:282px 226px;
+}
+
+.l4{
+	background-image:url("../img/nutricionista.jpg") !important;
+	background-size:282px 226px;
 }
