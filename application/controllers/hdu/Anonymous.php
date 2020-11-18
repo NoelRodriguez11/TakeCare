@@ -24,7 +24,7 @@ class Anonymous extends CI_Controller
             $this->load->model('profesional_model');
             $this->load->model('pais_model');
             $this->load->model('especialidad_model');
-            $this->persona_model->crearPersona('admin', 'admin',null,null,"admin",null, null, null, null, null, null, null, null, null);
+            $this->persona_model->crearPersona('admin', 'admin',null,null,"admin",null, null, null, null, "admin@gmail.com", null, null, null, null);
             $this->profesional_model->crearProfesional('adminpro', 'adminpro',null,null,"adminpro",null, null, null, null, null, null, null, null, null, null);
             
             //Creación de paises al inicializar la base de datos
@@ -230,11 +230,11 @@ class Anonymous extends CI_Controller
 
     public function loginPost()
     {
-        $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+        $email = isset($_POST['email']) ? $_POST['email'] : null;
         $password = isset($_POST['password']) ? $_POST['password'] : null;
         $this->load->model('persona_model');
         try {
-            $persona = $this->persona_model->verificarLogin($nombre, $password);
+            $persona = $this->persona_model->verificarLogin($email, $password);
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
             }

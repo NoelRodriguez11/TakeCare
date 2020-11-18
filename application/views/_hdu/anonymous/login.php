@@ -5,14 +5,14 @@
 			<div class="modal-body">
 				<form class="form" action="<?=base_url().'hdu/anonymous/loginPost'?>" method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" name="nombre" placeholder="Username" required="required">		
+						<input type="text" class="form-control" name="email" placeholder="Email de usuario" required="required">		
 					</div>
 					<div class="form-group">
-						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+						<input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">	
 					</div>        
 					<div class="form-group">
 						<button type="submit" id="loginBoton" class="btn btnEstandar">Login</button>
-						<a href="#" id="btn_modal" data-toggle="modal" class="forgot" data-target="#exampleModal" data-whatever="@getbootstrap">Forgot Password?</a>
+						<a href="#" id="btn_modal" data-toggle="modal" class="forgot" data-target="#exampleModal" data-whatever="@getbootstrap">Recuperar Contraseña</a>
 					</div>				
 				</form>
 				

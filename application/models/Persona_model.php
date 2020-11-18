@@ -84,15 +84,15 @@ class Persona_model extends CI_Model
         }
     }
 
-    public function verificarLogin($nombre, $pwd)
+    public function verificarLogin($email, $pwd)
     {
-        $usuario = R::findOne('persona', 'loginname=?', [$nombre]);
+        $usuario = R::findOne('persona', 'email=?', [$email]);
         
         if ($usuario == null) {
-            throw new Exception("Usuario o contraseña no correctas");
+            throw new Exception("email o contraseña no correctas");
         }
         if (! password_verify($pwd, $usuario->password)) {
-            throw new Exception("Usuario o contraseña no correctas");
+            throw new Exception("email o contraseña no correctas");
         }
         return $usuario;
     }
