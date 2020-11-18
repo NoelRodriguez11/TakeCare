@@ -4,8 +4,8 @@
 
   <h5>¿Como quieres darte de alta?</h5>
 
-    <button class="active btn btn-danger" data-toggle="tab" href="#paciente">Paciente</button>
-    <button class="btn btn-danger" data-toggle="tab" href="#profesional">Profesional</button>
+    <button class="active btn btn-danger" onclick="cambiarImagenRegistro(1)" data-toggle="tab" href="#paciente">Paciente</button>
+    <button class="btn btn-danger" onclick="cambiarImagenRegistro(2)" id="btnProfesional" data-toggle="tab" href="#profesional">Profesional</button>
 <div class="row">
   <div class="tab-content col-sm-5">
     <div id="paciente" class="tab-pane fade in active">
@@ -233,7 +233,7 @@
 
 </div>
 <div class="imagenRegistro col-sm-7">
-<img src="../../assets/img/registro/pac2.jpg" alt="" />
+<img id="idimagenregistro" src="../../assets/img/registro/pac2.jpg" alt="" />
 </div>
 </div>
 </div>
