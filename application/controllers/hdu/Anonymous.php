@@ -347,6 +347,10 @@ class Anonymous extends CI_Controller
         
     }
     
+    public function configPerfil() {
+        frame($this, '_hdu/anonymous/configPerfil');
+    }
+    
     public function logout() {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();

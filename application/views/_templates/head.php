@@ -24,10 +24,11 @@
     <script type="text/javascript" src="<?=base_url()?>assets/js/cambioImagenRegistro.js"></script>
     <link rel="stylesheet" href="<?=base_url()?>assets/css/oscuro.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/paginaPrincipal.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/configPerfil.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/footer.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/login_registro.css">
-	<link rel="stylesheet" href="<?=base_url()?>assets/css/registro.css">
+	
 	<!-- CSS Anuncios de profesionales -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/anunciosProfesionales.css">
 	
