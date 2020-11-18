@@ -21,10 +21,11 @@ class Anonymous extends CI_Controller
         if ($pwd == null || password_verify($pwd, password_hash("admin", PASSWORD_DEFAULT))) {
             R::nuke();
             $this->load->model('persona_model');
+            $this->load->model('profesional_model');
             $this->load->model('pais_model');
             $this->load->model('especialidad_model');
             $this->persona_model->crearPersona('admin', 'admin',null,null,"admin",null, null, null, null, null, null, null, null, null);
-            $this->profesional_model->crearProfesional('adminpro', 'adminpro',null,null,"adminpro",null, null, null, null, null, null, null, null, null);
+            $this->profesional_model->crearProfesional('adminpro', 'adminpro',null,null,"adminpro",null, null, null, null, null, null, null, null, null, null);
             
             //Creación de paises al inicializar la base de datos
             $this->pais_model->crearPais('Alemania');
