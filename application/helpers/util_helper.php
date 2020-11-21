@@ -4,20 +4,51 @@
  * @param string $rol admin ó auth
  * @return boolean si el rol es adecuado para la función
  */
-function isRolOK($rol)
-{
-    $sol = false;
 
+function isRolOKPro($rol) {
+    $sol1 = false;
+    
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    $persona = isset($_SESSION['persona']) ? $_SESSION['persona'] : null;
-
-    if ($persona != null && ($rol == 'auth' || $persona->loginname == 'admin' && $rol == 'admin')) {
-        $sol = true;
+    $profesional = isset($_SESSION['profesional']) ? $_SESSION['profesional'] : null;
+    
+    if ($profesional != null && ($rol == 'profesional')) {
+        $sol1 = true;
     }
-    return $sol;
+    return $sol1;
+    
 }
+
+function isRolOKPac($rol) {
+    $sol2 = false;
+    
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    $paciente = isset($_SESSION['paciente']) ? $_SESSION['paciente'] : null;
+    
+    if ($paciente != null && ($rol == 'paciente') && $paciente->email !=null) {
+        $sol2 = true;
+    }
+    return $sol2;
+}
+
+
+// function isRolOK($rol)
+// {
+//     $sol = false;
+
+//     if (session_status() == PHP_SESSION_NONE) {
+//         session_start();
+//     }
+//     $persona = isset($_SESSION['persona']) ? $_SESSION['persona'] : null;
+
+//     if ($persona != null && ($rol == 'auth' || $persona->loginname == 'admin' && $rol == 'admin')) {
+//         $sol = true;
+//     }
+//     return $sol;
+// }
 
 function PRG($mensaje='Ha ocurrido algún error', $uri = '/', $severity = 'danger')
 {
