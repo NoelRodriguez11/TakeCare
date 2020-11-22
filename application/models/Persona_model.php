@@ -19,24 +19,23 @@ class Persona_model extends CI_Model
     }
     
 
-    public function crearPersona($nombre, $primerNombre,$segundoNombre ,$dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $extFoto)
+    public function crearPersona($nombre, $primerApellido,$segundoApellido ,$dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $grupoSanguineo, $pais,$fechaNacimiento, $extFoto)
     {
-        if ( $nombre == null || $password == null) {
-            throw new Exception("Loginname, nombre o password nulos");
+        if ( $email == null || $password == null) {
+            throw new Exception("email o password nulos");
         }
         
-        if (R::findOne('persona', 'dni=?', [$dni]) != null) {
-            throw new Exception("dni duplicado");
+        if ( R::findOne('profesional', 'email=?', [$email]) != null && R::findOne('profesional', 'dni=?', [$dni]) != null) {
+            throw new Exception("email o dni duplicado");
         }
         
         //CREACION DE PERSONA
         $persona = R::dispense('persona');
         $persona->nombre = $nombre;
-        $persona->primerNombre = $primerNombre;
-        $persona->segundoNombre = $segundoNombre;
+        $persona->primerApellido = $primerApellido;
+        $persona->segundoApellido = $segundoApellido;
         $persona->password = password_hash($password, PASSWORD_BCRYPT);
 
-        
         $persona->dni = $dni;
         $persona->direccion = $direccion;
         $persona->ciudad = $ciudad;
@@ -44,6 +43,7 @@ class Persona_model extends CI_Model
         $persona->fechaNacimiento = $fechaNacimiento;
         $persona->extension_Foto= $extFoto;
         $persona->genero= $genero;
+        $persona->grupoSanguineo = $grupoSanguineo;
         $persona->email= $email;
         $persona->telefono= $telefono;
         $persona->cod_recuperacion = null;

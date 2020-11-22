@@ -39,6 +39,20 @@
             <option value="mujer">Mujer</option>
             </select>
             <br>
+            
+            <label for="id-grupoSanguineo">Grupo Sanguineo</label>
+          	<select name="grupoSanguineo" id="id-grupoSanguineo">
+            <option value="0+">0+</option>
+            <option value="0-">0-</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            </select>
+            <br>
+        	
 
         	
         	<label for="id-direccion">Direccion</label>
@@ -144,7 +158,8 @@
             <option value="mujer">Mujer</option>
             </select>
             <br>
-        	
+            
+
         	
         	<label for="id-direccion">Direccion</label>
         	<input id="id-direccion" type="text" name="direccion" required="required"/>

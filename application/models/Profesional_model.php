@@ -19,24 +19,23 @@ class Profesional_model extends CI_Model
     }
     
 
-    public function crearProfesional($nombre, $primerNombre,$segundoNombre ,$dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $especialidad,  $extFoto)
+    public function crearProfesional($nombre, $primerApellido, $segundoApellido, $dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $especialidad,  $extFoto)
     {
-        if ( $nombre == null || $password == null) {
-            throw new Exception(" nombre o password nulos");
+        if ( $email == null || $password == null) {
+            throw new Exception("email o password nulos");
         }
         
-        if (R::findOne('profesional', 'dni=?', [$dni]) != null) {
-            throw new Exception("dni duplicado");
+        if ( R::findOne('profesional', 'email=?', [$email]) != null && R::findOne('profesional', 'dni=?', [$dni]) != null) {
+            throw new Exception("email o dni duplicado");
         }
         
         //CREACION DE PERSONA
         $profesional = R::dispense('profesional');
         $profesional->nombre = $nombre;
-        $profesional->primerNombre = $primerNombre;
-        $profesional->segundoNombre = $segundoNombre;
+        $profesional->primerApellido = $primerApellido;
+        $profesional->segundoApellido = $segundoApellido;
         $profesional->password = password_hash($password, PASSWORD_BCRYPT);
-        
-        
+          
         $profesional->dni = $dni;
         $profesional->direccion = $direccion;
         $profesional->ciudad = $ciudad;
@@ -49,6 +48,7 @@ class Profesional_model extends CI_Model
         $profesional->especialidad=$especialidad;
         $profesional->cod_recuperacion = null;
         if ($pais!=null) $profesional->nace= $pais;
+        $profesional->valoracion = 0;
         
         
         return R::store($profesional);
