@@ -24,9 +24,10 @@ class Anonymous extends CI_Controller
             $this->load->model('profesional_model');
             $this->load->model('pais_model');
             $this->load->model('especialidad_model');
-            $this->persona_model->crearPersona('admin', 'admin',null,null,"admin",null, null, null, null, "admin@gmail.com", null, null, null, null);
-            $this->profesional_model->crearProfesional('adminpro', 'adminpro',null,null,"adminpro",null, null, null, null, null, null, null, null, null, null);
             
+            //Admin de pacientes y de profesionales
+            $this->persona_model->crearPersona('admin', 'admin',null,null,"admin",null, null, null, null, "admin@gmail.com", null, null, null, null, null);
+           
             //Creación de paises al inicializar la base de datos
             $this->pais_model->crearPais('Alemania');
             $this->pais_model->crearPais('Austria');
@@ -52,10 +53,16 @@ class Anonymous extends CI_Controller
             $this->pais_model->crearPais('Portugal');
             $this->pais_model->crearPais('Rumanía');
             
-            //Careación de modalidades
+            //Creación de modalidades
             $this->especialidad_model->crearEspecialidad('Fisioterapia');
             $this->especialidad_model->crearEspecialidad('Psicologia');
             $this->especialidad_model->crearEspecialidad('Pedagogia');
+            
+            //Profesionales Hard-Coded
+            $this->profesional_model->crearProfesional('Antonio', 'Garcia', "Marquez","33344455Y","1234","Plaza castilla-leon, 7, 1-B", "Madrid", "Madrid", 57648393, "emailAntonio@gmail.com","Hombre" , $this->pais_model->getPaisById(5), "4/9/1994", $this->especialidad_model->getEspecialidadById(1), null);
+            $this->profesional_model->crearProfesional('Leire', 'Rivera', "Del Rio","76544455Y","1234","Calle robledal 8", "Coslada", "Madrid", 49539483, "emailLeire@gmail.com","Mujer", $this->pais_model->getPaisById(6), "4/9/1994", $this->especialidad_model->getEspecialidadById(1), null);
+            $this->profesional_model->crearProfesional('Daniel', 'Martinez', "Cabrales","93567455Y","1232","Calle Capitan America, 32", "Torrejon", "Madrid", 485337564, "emailDaniel@gmail.com","Hombre" , $this->pais_model->getPaisById(4),"4/9/1994", $this->especialidad_model->getEspecialidadById(2), null);
+            
             
             $data['msg'] = "BD recreada";
         }
@@ -84,6 +91,7 @@ class Anonymous extends CI_Controller
         $password = isset($_POST['password']) ? $_POST['password'] : null;
         $email = isset($_POST['email']) ? $_POST['email'] : null;
         $genero = isset($_POST['genero']) ? $_POST['genero'] : null;
+        $grupoSanguineo = isset($_POST['grupoSanguineo']) ? $_POST['grupoSanguineo'] : null;
         $foto = isset($_FILES['foto']) ? ($_FILES['foto']) : null;
         $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : null;
         $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : null;
@@ -117,7 +125,7 @@ class Anonymous extends CI_Controller
      
             try {
                 if ($tipoUsuario == 1) {
-                    $id = $this->persona_model->crearPersona($nombre, $primerNombre,$segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $this->pais_model->getPaisById($pais),$fechaNacimiento, $extFoto);  
+                    $id = $this->persona_model->crearPersona($nombre, $primerNombre,$segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $grupoSanguineo, $this->pais_model->getPaisById($pais),$fechaNacimiento, $extFoto);  
                 }
                 else {
                 
@@ -143,84 +151,6 @@ class Anonymous extends CI_Controller
         }
         
         
-//EN PRUEBAS REGISTRO DE PACIENTE Y PROFESIONAL---------------------------------------------------------------------------------------------      
-//         public function registrar()
-//         {
-//             $this->load->model('pais_model');
-//             $datos['paises'] = $this->pais_model->getPaises();
-//             frame($this, '_hdu/anonymous/registrar', $datos);
-//         }
-        
-//         public function registrarPost()
-//         {
-//             $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
-//             $apellido1 = isset($_POST['apellido1']) ? $_POST['apellido1'] : null;
-//             $apellido2 = isset($_POST['apellido2']) ? $_POST['apellido2'] : null;
-//             $fechaNacimiento = isset($_POST['fechaNacimiento']) ? $_POST['fechaNacimiento'] : null;
-//             $dni = isset($_POST['dni']) ? $_POST['dni'] : null;
-//             $genero = isset($_POST['genero']) ? $_POST['genero'] : null;
-//             $sangre = isset($_POST['sangre']) ? $_POST['sangre'] : null;
-            
-//             //Variables de dirección
-//             $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : null;
-//             $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : null;
-//             $provincia = isset($_POST['provincia']) ? $_POST['provincia'] : null;
-//             $pais = isset($_POST['pais']) ? $_POST['pais'] : null;
-            
-//             $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : null;
-//             $email = isset($_POST['email']) ? $_POST['email'] : null;
-//             $password = isset($_POST['password']) ? $_POST['password'] : null;
-            
-//             $foto = isset($_FILES['foto']) ? ($_FILES['foto']) : null;
-            
-//             $tipoRegistro = isset($_POST['tipoRegistro']) ? $_POST['tipoRegistro'] : null;
-            
-//             try {
-//                 $extFoto =null;
-//                 if ($foto != null && $foto['error']==UPLOAD_ERR_OK) {
-//                     $name_and_ext = explode('.', $foto['name']);
-//                     $extFoto = $name_and_ext[sizeof($name_and_ext)-1];
-                    
-//                 }
-                
-                
-//                 $this->load->model('paciente_model');
-//                 $this->load->model('profesional_model');
-//                 $this->load->model('pais_model');
-                
-                
-//                 if ($pais == -1) {throw new Exception("Pais no especificado");}
-                
-//             //TRATAMIENTO USUARIO SEGÚN SU TIPO
-//             try {
-//                 if ($tipoRegistro == "pac"){
-//                     $id = $this->paciente_model->crearPaciente($loginname, $password,$email ,$nombre, $altura, $fechaNacimiento, $this->pais_model->getPaisById($pais), $extFoto);
-//                 }
-//                 elseif($tipoRegistro == "pro"){
-//                     $id = $this->profesional_model->crearProfesional($loginname, $password,$email ,$nombre, $altura, $fechaNacimiento, $this->pais_model->getPaisById($pais), $extFoto);
-//                 }
-//             }
-//             catch (Exception $e){
-//                 throw new Exception("Usuario ya existente");
-//             }
-            
-//             if ($extFoto != null) {
-                
-//                 $file_name = 'persona' . '-'. $id . '.'. $extFoto;
-//                 $carpeta = "assets/img/upload/persona/";
-                
-//                 copy($foto['tmp_name'], $carpeta . $file_name);
-                
-//             }
-            
-//             PRG('Usuario creado correctamente.', 'home', 'success');
-//         } catch (Exception $e) {
-//             PRG($e->getMessage(), '');
-//         }
-// }
-    
-    
-//=========================================================================================================================
 //OPERACIONES DE LOGIN
     
     public function login()
