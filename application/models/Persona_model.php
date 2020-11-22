@@ -153,10 +153,27 @@ class Persona_model extends CI_Model
         else {
             return false;
         }
+
+    }
+    
+    //Recuperar datos para conf perfil
+    public function getDatosPersona($id) {
+        $usuario = R::findOne('persona', 'id=?',[$id]);
         
+        if ($usuario == null) {
+            PRG("Datos incorrectos","/","danger" );
+        }
+        return $usuario;
+    }
+    
+    public function changePassPerfil($id, $password){
+        $usuario = R::findOne('persona', 'id=?',[$id]);
        
+            $usuario->password=$password;
+            R::store($usuario);
         
     }
+  
     
     
     

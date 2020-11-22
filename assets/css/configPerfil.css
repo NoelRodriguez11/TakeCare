@@ -1,16 +1,8 @@
 #vistaperfil {
-	margin-top: 10px;
-	font-size: smaller;
-	margin-left: 25em;
+	margin: 40px;
+	font-size: 12px;
 }
 
-#paciente {
-	float: left;
-}
-#profesional {
-	float: left;
-}
- 
 .modal.right .modal-dialog {
 	position: fixed;
 	margin: auto;
