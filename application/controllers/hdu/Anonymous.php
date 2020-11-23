@@ -85,8 +85,8 @@ class Anonymous extends CI_Controller
     public function registrarPost()
     {
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
-        $primerNombre = isset($_POST['primerNombre']) ? $_POST['primerNombre'] : null;
-        $segundoNombre = isset($_POST['segundoNombre']) ? $_POST['segundoNombre'] : null;
+        $primerNombre= isset($_POST['primerApellido']) ? $_POST['primerApellido'] : null;
+        $segundoNombre = isset($_POST['segundoApellido']) ? $_POST['segundoApellido'] : null;
         $dni = isset($_POST['dni']) ? $_POST['dni'] : null;
         $password = isset($_POST['password']) ? $_POST['password'] : null;
         $email = isset($_POST['email']) ? $_POST['email'] : null;
@@ -125,11 +125,11 @@ class Anonymous extends CI_Controller
      
             try {
                 if ($tipoUsuario == 1) {
-                    $id = $this->persona_model->crearPersona($nombre, $primerNombre,$segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $grupoSanguineo, $this->pais_model->getPaisById($pais),$fechaNacimiento, $extFoto);  
+                    $id = $this->persona_model->crearPersona($nombre, $primerNombre, $segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $grupoSanguineo, $this->pais_model->getPaisById($pais),$fechaNacimiento, $extFoto);  
                 }
                 else {
                 
-                $id = $this->profesional_model->crearProfesional($nombre, $primerNombre,$segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $this->pais_model->getPaisById($pais),$fechaNacimiento, $this->especialidad_model->getEspecialidadById($especilidad),  $extFoto);
+                    $id = $this->profesional_model->crearProfesional($nombre, $primerNombre, $segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $this->pais_model->getPaisById($pais),$fechaNacimiento, $this->especialidad_model->getEspecialidadById($especilidad),  $extFoto);
                 }}
             catch (Exception $e){
                 throw new Exception("Usuario ya existente");    
@@ -277,8 +277,46 @@ class Anonymous extends CI_Controller
         
     }
     
-    public function configPerfil() {
-        frame($this, '_hdu/anonymous/configPerfil');
+    
+   
+    
+    public function cambiarContraPersona() {
+        session_start();
+        $this->load->model('persona_model');
+        
+        $id =  $_SESSION['persona']['id'];
+        
+        $pwd1 = $this->input->post('newpwd');
+        $pwd2 = $this->input->post('new1pwd');
+        
+        if ($pwd1 == $pwd2) {
+            $encryptedPassword = password_hash($this->input->post('newpwd'), PASSWORD_DEFAULT);
+            
+            if ($this->persona_model->changePassPerfil($id, $encryptedPassword)) {
+                
+                echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
+                session_destroy();
+            }
+            else {
+                
+                echo '<h1 align="center">Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.</h1>';
+            }
+        }
+        
+        else {
+            echo '<h1 align="center">Las contraseñas no coinciden.Intentalo de nuevo</h1>';
+        }
+        
+        
+    }
+  
+    public function configPerfil() {  
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        $this->load->model('persona_model');
+        $this->load->model('pais_model');
+        $datos['persona'] = $this->persona_model->getPersonaById($id);
+        $datos['paises'] = $this->pais_model->getPaises();
+        frame($this, '_hdu/anonymous/configPerfil', $datos);
     }
     
     public function logout() {

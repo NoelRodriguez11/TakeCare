@@ -93,10 +93,14 @@
 					<input id="id-provincia" type="text" class="form-control" name="provincia" />
 				</div>
 
-				<div class="form-group">
-					<label for="id-pais">Pais</label> 
-					<input id="id-pais" type="text" class="form-control" name="pais" />
-				</div>
+				<label for="id-pais">Pais</label>
+        	<select id="id-pais" class="form-control" name="pais">
+				<?php foreach ($paises as $pais):?>
+    				<?php if ($pais->nombre != $persona->nace->nombre) :?>
+    					<option value="<?=$pais->id?>"><?= $pais->nombre?></option>
+    				<?php endif;?>
+				<?php endforeach;?>
+        	</select>
 				<br />
 
 
@@ -116,43 +120,43 @@
         						
         						var nombre = persona.nombre;
    								$("#id-nombre").val(nombre);
-   								alert(nombre);
    								
-   								var primer_apellido = persona.primer_nombre;
+   								
+   								var primer_apellido = persona.primer_apellido;
    								$("#id-ape1").val(primer_apellido);
-   								alert(primer_apellido);
 
-   								var segundo_apellido = persona.segundo_nombre;
+   								
+   								var segundo_apellido = persona.segundo_apellido;
    								$("#id-ape2").val(segundo_apellido);
-   								alert(segundo_apellido);
 
+   								
    								var telefono = persona.telefono;
    								$("#id-tlf").val(telefono);
-   								alert(telefono);
+   								
 
    								var dni = persona.dni;
    								$("#id-dni").val(dni);
-   								alert(dni);
+   							
 
    								var grupo_sanguineo = persona.grupo_sanguineo;
    								$("#id-grsang").val(grupo_sanguineo);
-   								alert(grupo_sanguineo);
+   								
 
    								var direccion = persona.direccion;
    								$("#id-direccion").val(direccion);
-   								alert(direccion);
+   								
 
    								var ciudad = persona.ciudad;
    								$("#id-ciudad").val(ciudad);
-   								alert(ciudad);
+   								
 
    								var provincia = persona.provincia;
    								$("#id-provincia").val(provincia);
-   								alert(provincia);
+   								
 
-   								var pais = persona.pais;
-   								$("#id-pais").val(pais);
-   								alert(pais);  								
+   								var nace_id = persona.nace_id;
+   								$("#id-pais").val(nace_id);
+   								alert(nace_id); 								
    								
         			        }
 
@@ -175,8 +179,7 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<form class="form"
-							action="<?=base_url().'persona/changePassPerfil'?>" method="post">
+						<form class="form" action="<?=base_url().'hdu/anonymous/cambiarContraPersona'?>" method="post">
 							<div class="modal-body">
 
 								<!-- Cambiar url -->
@@ -186,15 +189,13 @@
 								<!--           </div> -->
 
 								<div class="form-group">
-									<label for="recipient-name" class="col-form-label">New
-										Password:</label> <input type="text" class="form-control"
-										name="newpwd" id="btn_modal">
+									<label for="recipient-name" class="col-form-label">New Password:</label> 
+										<input type="password" class="form-control" name="newpwd" id="btn_modal">
 								</div>
 
 								<div class="form-group">
-									<label for="recipient-name" class="col-form-label">Repeat New
-										Password:</label> <input type="text" class="form-control"
-										name="new1pwd" id="btn_modal">
+									<label for="recipient-name" class="col-form-label">Repeat New Password:</label> 
+									<input type="password" class="form-control" name="new1pwd" id="btn_modal">
 								</div>
 
 							</div>

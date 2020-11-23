@@ -168,11 +168,17 @@ class Persona_model extends CI_Model
     
     public function changePassPerfil($id, $password){
         $usuario = R::findOne('persona', 'id=?',[$id]);
+        
+        if ($usuario == null) {
+            PRG("Datos incorrectos","/","danger" );
+        }
+        
        
             $usuario->password=$password;
             R::store($usuario);
-        
+            return $usuario;
     }
+    
   
     
     
