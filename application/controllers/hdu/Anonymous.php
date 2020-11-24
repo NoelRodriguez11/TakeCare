@@ -57,6 +57,9 @@ class Anonymous extends CI_Controller
             $this->especialidad_model->crearEspecialidad('Fisioterapia');
             $this->especialidad_model->crearEspecialidad('Psicologia');
             $this->especialidad_model->crearEspecialidad('Pedagogia');
+            $this->especialidad_model->crearEspecialidad('Urología');
+            $this->especialidad_model->crearEspecialidad('Logopeda');
+            $this->especialidad_model->crearEspecialidad('Oftalmología');
             
             //Profesionales Hard-Coded
             $this->profesional_model->crearProfesional('Antonio', 'Garcia', "Marquez","33344455Y","1234","Plaza castilla-leon, 7, 1-B", "Madrid", "Madrid", 57648393, "emailAntonio@gmail.com","Hombre" , $this->pais_model->getPaisById(5), "4/9/1994", $this->especialidad_model->getEspecialidadById(1), null);

@@ -5,7 +5,11 @@ class Profesional extends CI_Controller
 
     public function r()
     {
-        frame($this, 'profesional/r');
+        $this->load->model('profesional_model');
+        $this->load->model('especialidad_model');
+        $datos['profesionales'] = $this->profesional_model->getProfesionales();
+        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        frame($this, 'profesional/r', $datos);
     }
 
    
@@ -63,7 +67,7 @@ class Profesional extends CI_Controller
         $this->profesional_model->setPuntuacionTotalValoraciones($id, $nuevaValoracion);
   
     }
-    
+      
     
 }
 

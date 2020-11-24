@@ -8,16 +8,42 @@
 <script type="text/javascript">
 	var base_url = "<?php echo base_url()?>";
 </script>
-<!-- Estos div de profesionales tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd -->
 
+<div class="filtroProfesionales">
+  Filtrar por especialidad: 
+  <select name="cars" id="cars">
+  <option value="" selected>--------------------</option>
+  <?php foreach ($especialidades as $especialidad):?>
+  <option value="<?=$especialidad->id?>"><?=$especialidad->nombre?></option>
+  <?php endforeach;?>
+  </select>   
+</div>
+
+
+
+
+<!-- Estos div de profesionales tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd -->
+<?php foreach ($profesionales as $profesional):?>
 <div class="divAnuncioProfesionales row">
-    	<div class="col-sm-11" id="tituloAnuncios">Anuncio ejemplo 1</div>
+        <!--Nombre del profesional -->
+    	<div class="col-sm-5" id="nombreProfesionales"><?=$profesional->nombre?> <?=$profesional->primerApellido?> <?=$profesional->segundoApellido?></div>
+        
+         <!--Especialidad -->
+    	<div class="col-sm-3 especialidadIndicador" >Especialidad:<div id="especialidadEstilo"><?=$profesional->especialidad->nombre?></div></div>
+    	
+    	  <!--Especialidad -->
+    	<div class="col-sm-3 provinciaIndicador" >Provincia:<div id="provinciaEstilo"><?=$profesional->provincia?></div></div>
+    	
+    	
+    	
+         <!--Boton de pedir cita -->
         <div class="col-sm-1">       
         <?php if ($datosGen['persona']==null):?>
         <button class="botonPedirCita btn btn-primary" id="botonPC" disabled>Pedir cita</button>
         <?php endif;?>
    		</div>
 </div>
+<?php endforeach;?>
 
 
 
