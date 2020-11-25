@@ -84,7 +84,7 @@
     	
 		
          <?php if ($datosGen['persona']!=null):?>
-        	<li><a class="textoexp1">Bienvenid@ <?=$datosGen['persona']->loginname?></a></li><li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/logout">Salir</a></li>
+        	<li><a class="textoexp1">Bienvenid@ <?=$datosGen['persona']->nombre?></a></li><li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/logout">Salir</a></li>
         <?php else:?>
         	<li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/registrar">Registro</a></li><li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/login">Login</a></li>
         <?php endif;?>

@@ -19,6 +19,10 @@ class Profesional_model extends CI_Model
         return R::findAll('profesional');
     }
     
+    public function getProfesionalByEmail($email){
+        return R::findOne('profesional', 'email=?', [$email]);
+    }
+    
 
     public function crearProfesional($nombre, $primerApellido, $segundoApellido, $dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $especialidad,  $extFoto)
     {
@@ -108,9 +112,9 @@ class Profesional_model extends CI_Model
     
     //=====================//
 
-    public function verificarLogin($nombre, $pwd)
+    public function verificarLogin($email, $pwd)
     {
-        $usuario = R::findOne('profesional', 'loginname=?', [$nombre]);
+        $usuario = R::findOne('profesional', 'email=?', [$email]);
         
         if ($usuario == null) {
             throw new Exception("Usuario o contraseña no correctas");

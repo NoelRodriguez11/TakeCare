@@ -9,7 +9,8 @@
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" name="password" placeholder="Contraseña" required="required">	
-					</div>        
+					</div>
+      
 					<div class="form-group">
 						<button type="submit" id="loginBoton" class="btn btnEstandar">Login</button>
 						<a href="#" id="btn_modal" data-toggle="modal" class="forgot" data-target="#exampleModal" data-whatever="@getbootstrap">Recuperar Contraseña</a>

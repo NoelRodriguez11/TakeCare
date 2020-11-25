@@ -18,6 +18,10 @@ class Persona_model extends CI_Model
         return R::findAll('persona');
     }
     
+    public function getPersonaByEmail($email){
+        return R::findOne('persona', 'email=?', [$email]);
+    }
+    
 
     public function crearPersona($nombre, $primerApellido,$segundoApellido ,$dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $grupoSanguineo, $pais,$fechaNacimiento, $extFoto)
     {

@@ -57,9 +57,12 @@ class Anonymous extends CI_Controller
             $this->especialidad_model->crearEspecialidad('Fisioterapia');
             $this->especialidad_model->crearEspecialidad('Psicologia');
             $this->especialidad_model->crearEspecialidad('Pedagogia');
-            $this->especialidad_model->crearEspecialidad('Urología');
-            $this->especialidad_model->crearEspecialidad('Logopeda');
+            $this->especialidad_model->crearEspecialidad('Dermatología');
+            $this->especialidad_model->crearEspecialidad('Logopedia');
             $this->especialidad_model->crearEspecialidad('Oftalmología');
+            $this->especialidad_model->crearEspecialidad('Optometría');
+            $this->especialidad_model->crearEspecialidad('Otorrinolaringologia');
+            $this->especialidad_model->crearEspecialidad('Otología');
             
             //Profesionales Hard-Coded
             $this->profesional_model->crearProfesional('Antonio', 'Garcia', "Marquez","33344455Y","1234","Plaza castilla-leon, 7, 1-B", "Madrid", "Madrid", 57648393, "emailAntonio@gmail.com","Hombre" , $this->pais_model->getPaisById(5), "4/9/1994", $this->especialidad_model->getEspecialidadById(1), null);
@@ -166,16 +169,35 @@ class Anonymous extends CI_Controller
         $email = isset($_POST['email']) ? $_POST['email'] : null;
         $password = isset($_POST['password']) ? $_POST['password'] : null;
         $this->load->model('persona_model');
-        try {
-            $persona = $this->persona_model->verificarLogin($email, $password);
+        $this->load->model('profesional_model');
+        
+        if ($this->persona_model->getPersonaByEmail($email) != null){
+            try {
+                $persona = $this->persona_model->verificarLogin($email, $password);
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
+                $_SESSION['persona'] = $persona;
+                redirect(base_url());
+            } catch (Exception $e) {
+                PRG($e->getMessage());
+            }
+            }
+            
+        else {
+            try {
+            $profesional = $this->profesional_model->verificarLogin($email, $password);
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
             }
-            $_SESSION['persona'] = $persona;
+            $_SESSION['persona'] = $profesional;
             redirect(base_url());
-        } catch (Exception $e) {
-            PRG($e->getMessage());
+           } catch (Exception $e) {
+               PRG($e->getMessage());
+           }
         }
+        
+             
     }
     
     
