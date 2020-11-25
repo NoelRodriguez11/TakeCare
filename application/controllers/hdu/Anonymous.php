@@ -190,7 +190,7 @@ class Anonymous extends CI_Controller
             if (session_status() == PHP_SESSION_NONE) {
                 session_start();
             }
-            $_SESSION['persona'] = $profesional;
+            $_SESSION['profesional'] = $profesional;
             redirect(base_url());
            } catch (Exception $e) {
                PRG($e->getMessage());

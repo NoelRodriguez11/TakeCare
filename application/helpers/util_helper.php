@@ -20,15 +20,15 @@ function isRolOKPro($rol) {
     
 }
 
-function isRolOKPac($rol) {
+function isRolOKPer($rol) {
     $sol2 = false;
     
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    $paciente = isset($_SESSION['paciente']) ? $_SESSION['paciente'] : null;
+    $persona = isset($_SESSION['persona']) ? $_SESSION['persona'] : null;
     
-    if ($paciente != null && ($rol == 'paciente') && $paciente->email !=null) {
+    if ($persona != null && ($rol == 'persona') && $persona->email !=null) {
         $sol2 = true;
     }
     return $sol2;

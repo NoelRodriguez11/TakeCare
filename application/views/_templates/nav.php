@@ -52,14 +52,14 @@
         </nav>
         
         
-    <?php elseif (isset ($datosGen['profesional'])): ?> 
+<?php elseif (isset ($datosGen['profesional'])): ?> 
 <nav class="main-menu">
             <ul>
                 <li>
                     <a href="<?=base_url()?>profesional/configPerfil">
                         <i class="fa fa-cogs fa-2x"></i>
                         <span class="nav-text">
-                     		Configuración perfil
+                     		Configuración profesional
                         </span>
                     </a>
                   
@@ -141,11 +141,13 @@
 		
          <?php if ($datosGen['persona']!=null):?>
         	<li><a class="textoexp1">Bienvenid@ <?=$datosGen['persona']->nombre?></a></li><li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/logout">Salir</a></li>
+         <?php elseif ($datosGen['profesional']!=null):?>
+        	<li><a class="textoexp1">Bienvenid@ <?=$datosGen['profesional']->nombre?></a></li><li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/logout">Salir</a></li>
         <?php else:?>
         	<li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/registrar">Registro</a></li><li><a class="textoexp1" href="<?=base_url()?>hdu/anonymous/login">Login</a></li>
         <?php endif;?>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 

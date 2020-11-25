@@ -1,4 +1,4 @@
-	<?php if ($rol == 'auth'):?>
+<?php if ($rol == 'auth'):?>
 <div  id="divContenido">
 	<div class="contenidoPrincipal">
 		<div class="col-lg-4" id="buscador">
