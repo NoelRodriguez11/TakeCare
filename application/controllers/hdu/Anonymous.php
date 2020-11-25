@@ -305,44 +305,44 @@ class Anonymous extends CI_Controller
     
    
     
-    public function cambiarContraPersona() {
-        session_start();
-        $this->load->model('persona_model');
+//     public function cambiarContraPersona() {
+//         session_start();
+//         $this->load->model('persona_model');
         
-        $id =  $_SESSION['persona']['id'];
+//         $id =  $_SESSION['persona']['id'];
         
-        $pwd1 = $this->input->post('newpwd');
-        $pwd2 = $this->input->post('new1pwd');
+//         $pwd1 = $this->input->post('newpwd');
+//         $pwd2 = $this->input->post('new1pwd');
         
-        if ($pwd1 == $pwd2) {
-            $encryptedPassword = password_hash($this->input->post('newpwd'), PASSWORD_DEFAULT);
+//         if ($pwd1 == $pwd2) {
+//             $encryptedPassword = password_hash($this->input->post('newpwd'), PASSWORD_DEFAULT);
             
-            if ($this->persona_model->changePassPerfil($id, $encryptedPassword)) {
+//             if ($this->persona_model->changePassPerfil($id, $encryptedPassword)) {
                 
-                echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
-                session_destroy();
-            }
-            else {
+//                 echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
+//                 session_destroy();
+//             }
+//             else {
                 
-                echo '<h1 align="center">Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.</h1>';
-            }
-        }
+//                 echo '<h1 align="center">Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.</h1>';
+//             }
+//         }
         
-        else {
-            echo '<h1 align="center">Las contraseñas no coinciden.Intentalo de nuevo</h1>';
-        }
+//         else {
+//             echo '<h1 align="center">Las contraseñas no coinciden.Intentalo de nuevo</h1>';
+//         }
         
         
-    }
+//     }
   
-    public function configPerfil() {  
-        $id = isset($_GET['id']) ? $_GET['id'] : null;
-        $this->load->model('persona_model');
-        $this->load->model('pais_model');
-        $datos['persona'] = $this->persona_model->getPersonaById($id);
-        $datos['paises'] = $this->pais_model->getPaises();
-        frame($this, '_hdu/anonymous/configPerfil', $datos);
-    }
+//     public function configPerfil() {  
+//         $id = isset($_GET['id']) ? $_GET['id'] : null;
+//         $this->load->model('persona_model');
+//         $this->load->model('pais_model');
+//         $datos['persona'] = $this->persona_model->getPersonaById($id);
+//         $datos['paises'] = $this->pais_model->getPaises();
+//         frame($this, '_hdu/anonymous/configPerfil', $datos);
+//     }
     
     public function logout() {
         if (session_status() == PHP_SESSION_NONE) {

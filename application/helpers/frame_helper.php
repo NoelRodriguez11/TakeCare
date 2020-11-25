@@ -6,6 +6,7 @@ function frame($controller,$view,$data=[]) {
         session_start();
     }
     $data['datosGen']['persona'] = isset($_SESSION['persona'])?$_SESSION['persona']:null;
+    $data['datosGen']['profesional'] = isset($_SESSION['profesional'])?$_SESSION['profesional']:null;
     
     $controller->load->view('_templates/header',$data);
     $controller->load->view('_templates/nav',$data);

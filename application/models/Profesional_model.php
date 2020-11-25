@@ -130,6 +130,30 @@ class Profesional_model extends CI_Model
     }
     
     
+    //Recuperar datos para conf perfil
+    public function getDatosProfesional($id) {
+        $usuario = R::findOne('profesional', 'id=?',[$id]);
+        
+        if ($usuario == null) {
+            PRG("Datos incorrectos","/","danger" );
+        }
+        return $usuario;
+    }
+    
+    public function changePassPerfil($id, $password){
+        $usuario = R::findOne('profesional', 'id=?',[$id]);
+        
+        if ($usuario == null) {
+            PRG("Datos incorrectos","/","danger" );
+        }
+        
+        
+        $usuario->password=$password;
+        R::store($usuario);
+        return $usuario;
+    }
+    
+    
     /* public function crearProfesional($nombre, $pwd, $idPaisNace, $idPaisReside, $idsAficionGusta, $idsAficionOdia)
      {
      $ok = ($nombre != null && $idPaisNace != null && $idPaisReside != null);

@@ -2,7 +2,61 @@
 <nav class="main-menu">
             <ul>
                 <li>
-                    <a href="<?=base_url()?>hdu/anonymous/configPerfil">
+                    <a href="<?=base_url()?>persona/configPerfil">
+                        <i class="fa fa-cogs fa-2x"></i>
+                        <span class="nav-text">
+                     		Configuración perfil
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                      <i class="fa fa-stethoscope fa-2x"></i>
+                        <span class="nav-text">
+                            Chequeo Médico
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-user-md fa-2x"></i>
+                        <span class="nav-text">
+                            Tratamiento
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-calendar-alt fa-2x"></i>
+                        <span class="nav-text">
+                            Calendario
+                        </span>
+                    </a>
+                   
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                           Citas 
+                        </span>
+                    </a>
+                </li>
+                <li>
+                </li>
+                </ul>
+                
+        </nav>
+        
+        
+    <?php elseif (isset ($datosGen['profesional'])): ?> 
+<nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="<?=base_url()?>profesional/configPerfil">
                         <i class="fa fa-cogs fa-2x"></i>
                         <span class="nav-text">
                      		Configuración perfil
@@ -51,6 +105,8 @@
                 
         </nav>
 <?php endif;?>
+
+
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
