@@ -10,9 +10,9 @@
 </script>
 
 <div class="filtroProfesionales">
-  Filtrar por especialidad: 
-  <select name="cars" id="cars">
-  <option value="" selected>--------------------</option>
+  <p class="textoexp2">Selecciona una especialidad:</p>
+  <select name="especialidad" id="idEspecialidad" onchange="myFunction()">
+  <option value="0" selected>- - - -</option>
   <?php foreach ($especialidades as $especialidad):?>
   <option value="<?=$especialidad->id?>"><?=$especialidad->nombre?></option>
   <?php endforeach;?>
@@ -20,28 +20,31 @@
 </div>
 
 
-
-
 <!-- Estos div de profesionales tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd -->
 <?php foreach ($profesionales as $profesional):?>
-<div class="divAnuncioProfesionales row">
+<div class="divAnuncioProfesionales">
+
+		<!--Foto del profesional -->
+		<div class="row">
+		<img class="divFotoPerfil col-sm-4" style="margin:0;" src="<?=base_url()?>/assets/img/imagenesPerfil/pro<?=$profesional->id?>.jpg"/>
+		
+        <button class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Pedir cita</button>
+       
+		</div>
+            
+		<div class="row">
         <!--Nombre del profesional -->
-    	<div class="col-sm-5" id="nombreProfesionales"><?=$profesional->nombre?> <?=$profesional->primerApellido?> <?=$profesional->segundoApellido?></div>
+    	<div class="col-sm-6" id="nombreProfesionales">
+    	
+    	<?=$profesional->nombre?> <?=$profesional->primerApellido?> <?=$profesional->segundoApellido?>
+    	</div>
         
          <!--Especialidad -->
     	<div class="col-sm-3 especialidadIndicador" >Especialidad:<div id="especialidadEstilo"><?=$profesional->especialidad->nombre?></div></div>
     	
     	  <!--Especialidad -->
     	<div class="col-sm-3 provinciaIndicador" >Provincia:<div id="provinciaEstilo"><?=$profesional->provincia?></div></div>
-    	
-    	
-    	
-         <!--Boton de pedir cita -->
-        <div class="col-sm-1">       
-        <?php if ($datosGen['persona']==null):?>
-        <button class="botonPedirCita btn btn-primary" id="botonPC" disabled>Pedir cita</button>
-        <?php endif;?>
-   		</div>
+    	</div>
 </div>
 <?php endforeach;?>
 
