@@ -52,16 +52,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <!-- El 1 es el id del profesional -->
 <div class="divAnuncioProfesionales row">
     <div class="col-sm-11" id="tituloAnuncios">Anuncio ejemplo 2</div>

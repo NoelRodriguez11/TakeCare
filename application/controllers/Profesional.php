@@ -100,7 +100,7 @@ class Profesional extends CI_Controller
         
     }
     
-    public function configPerfil() {
+    public function configPerfilPro() {
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('profesional_model');
         $this->load->model('pais_model');
