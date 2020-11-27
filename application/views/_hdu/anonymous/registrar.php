@@ -64,7 +64,7 @@
         	<br/>
         	
             <label for="id-provincia">Provincia</label>
-            <select id="id-provincia">
+            <select id="id-provincia" name="provincia">
                 <option value='alava'>Álava</option>
                 <option value='albacete'>Albacete</option>
                 <option value='alicante'>Alicante/Alacant</option>
@@ -223,7 +223,7 @@
         	<br/>
         	
         	<label for="id-provincia">Provincia</label>
-            <select id="id-provincia">
+            <select id="id-provincia" name="provincia">
                 <option value='alava'>Álava</option>
                 <option value='albacete'>Albacete</option>
                 <option value='alicante'>Alicante/Alacant</option>
