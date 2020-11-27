@@ -138,10 +138,12 @@ class Anonymous extends CI_Controller
             try {
                 if ($tipoUsuario == 1) {
                     $id = $this->persona_model->crearPersona($nombre, $primerNombre, $segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $grupoSanguineo, $this->pais_model->getPaisById($pais),$fechaNacimiento, $extFoto);  
+            
                 }
                 else {
                 
                     $id = $this->profesional_model->crearProfesional($nombre, $primerNombre, $segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $this->pais_model->getPaisById($pais),$fechaNacimiento, $this->especialidad_model->getEspecialidadById($especilidad),$clinica, $extFoto);
+                   
                 }}
             catch (Exception $e){
                 throw new Exception("Usuario ya existente");    

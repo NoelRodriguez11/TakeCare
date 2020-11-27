@@ -59,34 +59,7 @@ class Persona_model extends CI_Model
     }
     
     
-    public function actualizarPersona($id,$loginname, $nombre, $altura, $fechaNacimiento, $pais) {
-        $persona = R::findOne('persona','loginname=?',[$loginname]);
-        if ($persona == null) {
-            
-            $persona = R::load('persona', $id);
-            $persona->loginname = $loginname;
-            $persona->altura = $altura;
-            $persona->nombre = $nombre;
-            $persona->fechaNacimiento = $fechaNacimiento;
-            $persona->nace = $pais;
-            R::store($persona);
-            
-        }
-        
-        else if ($loginname == $persona->loginname && $id == $persona->id){
-
-            $persona = R::load('persona', $id);
-            $persona->altura = $altura;
-            $persona->nombre = $nombre;
-            $persona->fechaNacimiento = $fechaNacimiento;
-            $persona->nace = $pais;
-            R::store($persona);
-        }
-        else {
-            $e = ($loginname == null ? new Exception("nulo") : new Exception("Nombre de persona ya registrado, escoge otro"));
-            throw $e;
-        }
-    }
+  
 
     public function verificarLogin($email, $pwd)
     {
@@ -168,6 +141,29 @@ class Persona_model extends CI_Model
             PRG("Datos incorrectos","/","danger" );
         }
         return $usuario;
+    }
+    
+    
+    public function actualizarPersona($id,$nombre, $telefono, $direccion, $ciudad, $provincia, $pais) {
+        $persona = R::findOne('persona','id=?',[$id]);
+        echo $id;
+        if ($persona != null) {
+            
+            $persona = R::load('persona', $id);
+            $persona->nombre = $nombre;
+            $persona->telefono = $telefono;
+            $persona->direcion = $direccion;
+            $persona->ciudad = $ciudad;
+            $persona->provincia = $provincia;
+            $persona->nace = $pais;
+            R::store($persona);
+         
+        }
+        else {
+            
+            $e =  new Exception("Los campos no se han actualizado correctamente");
+            throw $e;
+        }
     }
     
     public function changePassPerfil($id, $password){

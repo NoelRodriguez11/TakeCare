@@ -80,7 +80,7 @@
          			  				url: base_url + "profesional/obtenerDatos?id="+ idProfesional,
          			 				success:  function (response) {
          							var profesional = JSON.parse(response);
-        						
+        								alert(response);
          							var nombrep = profesional.nombre;
     									$("#id-nombrep").val(nombrep);
     									alert(nombrep);
@@ -96,7 +96,7 @@
     									alert(id_correop);
    								
     									var valoraciones = profesional.valoracion;
-    									$("#id-valoracionp").val(id-valoracionp);							
+    									$("#id-valoracionp").val(valoraciones);							
     									alert(valoracionesp);
          			        }
 

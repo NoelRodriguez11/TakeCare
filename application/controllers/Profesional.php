@@ -103,9 +103,7 @@ class Profesional extends CI_Controller
     public function configPerfilPro() {
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('profesional_model');
-        $this->load->model('pais_model');
         $datos['profesional'] = $this->profesional_model->getProfesionalById($id);
-        $datos['paises'] = $this->pais_model->getPaises();
         frame($this, 'profesional/configPerfil', $datos);
     }
     
@@ -114,8 +112,8 @@ class Profesional extends CI_Controller
         //             PRG("Rol inadecuado");
         //         }
         $id = isset($_GET['id']) ? $_GET['id'] : null;
-        $this->load->model('persona_model');
-        echo $this->persona_model->getDatosPersona($id);
+        $this->load->model('profesional_model');
+        echo $this->profesional_model->getDatosProfesional($id);
         
         
     }

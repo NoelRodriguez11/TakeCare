@@ -106,6 +106,31 @@ class Persona extends CI_Controller
         frame($this, 'persona/configPerfil', $datos);
     }
     
+    public function configPerfilPost() {
+        session_start();
+        $this->load->model('persona_model');
+        $this->load->model('pais_model');
+        
+        $id =  $_SESSION['persona']['id'];
+        //echo "id: " . $id;
+        $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+        $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : null;
+        $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : null;
+        $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : null;
+        $provincia = isset($_POST['provincia']) ? $_POST['provincia'] : null;
+        $pais = isset($_POST['pais']) ? $_POST['pais'] : null;
+        
+        try {
+            $this->persona_model->actualizarPersona($id, $nombre, $telefono, $direccion, $ciudad, $provincia, $this->pais_model->getPaisById($pais));
+            redirect(base_url() . 'persona/configPerfil');
+        } catch (Exception $e) {
+            session_start();
+            $_SESSION['_msg']['texto'] = $e->getMessage();
+            $_SESSION['_msg']['uri'] = 'persona/configPerfil';
+            redirect(base_url() . 'msg');
+        }
+    }
+    
     public function obtenerDatos() {
         //         if(!isRolOK("admin")){
         //             PRG("Rol inadecuado");
