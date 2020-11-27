@@ -24,7 +24,7 @@ class Profesional_model extends CI_Model
     }
     
 
-    public function crearProfesional($nombre, $primerApellido, $segundoApellido, $dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $especialidad,  $extFoto)
+    public function crearProfesional($nombre, $primerApellido, $segundoApellido, $dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $especialidad, $clinica,  $extFoto)
     {
         if ( $email == null || $password == null) {
             throw new Exception("email o password nulos");
@@ -53,6 +53,7 @@ class Profesional_model extends CI_Model
         $profesional->especialidad=$especialidad;
         $profesional->cod_recuperacion = null;
         if ($pais!=null) $profesional->nace= $pais;
+        $profesional->clinica = $clinica;
         $profesional->valoracion = 0;
         
         

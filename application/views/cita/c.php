@@ -1,5 +1,5 @@
 <div class="container">
-<h1 class="textoexp1-1" >Crear citas</h1>
+<h1 class="textoexp1-1" >Pedir cita con "INSERTAR NOMBRE DE PROFESIONAL POR ID"</h1>
 
 			<div class="modal-body" id="divCrearCitas">
 				<form class="form" action="<?=base_url()?>cita/cPost" method="post">
@@ -16,14 +16,6 @@
 						</select>
 					</div>
 					
-					<div class="form-group">
-						Profesional
-							<select name="idProfesional">
-								<?php foreach ($profesionales as $profesional):?>
-									<option value="<?=$profesional->id?>"><?=$profesional->nombre?></option>
-								<?php endforeach;?>
-							</select>
-					</div> 
 					 
 					<div class="form-group">
 					<label for="iddp">Diagnóstico particular</label>

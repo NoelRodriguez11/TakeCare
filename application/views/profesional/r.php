@@ -26,10 +26,16 @@
 
 		<!--Foto del profesional -->
 		<div class="row">
-		<img class="divFotoPerfil col-sm-4" style="margin:0;" src="<?=base_url()?>/assets/img/imagenesPerfil/pro<?=$profesional->id?>.jpg"/>
+		<img class="divFotoPerfil col-sm-4" style="margin:0;" src="<?=base_url()?>/assets/img/upload/profesional/pro<?=$profesional->id?>.jpg"/>
 		
-        <button class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Pedir cita</button>
+      
+       	<form action="<?=base_url()?>cita/c" method="get">
+			<input type="hidden" name="id" value="<?=$profesional->id?>">
+			<button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Pedir cita</button>
+		</form>
        
+       
+      
 		</div>
             
 		<div class="row">
