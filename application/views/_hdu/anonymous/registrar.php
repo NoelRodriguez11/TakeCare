@@ -8,7 +8,7 @@
     <button class="btn btn-danger" onclick="cambiarImagenRegistro(2)" id="btnProfesional" data-toggle="tab" href="#profesional">Profesional</button>
 <div class="row">
   <div class="tab-content col-sm-5">
-    <div id="paciente" class="tab-pane fade in active">
+    <div id="paciente" class="tab-pane fade in active ">
     <h1 class="textoexp1">Nuevo Paciente</h1>
 
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
@@ -34,7 +34,7 @@
         	<br/>
         	
         	<label for="id-genero">Genero</label>
-          	<select name="genero" id="id-genero">
+          	<select id="id-genero" name="genero">
             <option value="hombre">Hombre</option>
             <option value="mujer">Mujer</option>
             </select>
@@ -118,7 +118,7 @@
         	
         	<label for="id-foto">Foto</label>
         	<input id="id-foto" type="file" name="foto"/><br>
-        	<img class="offset-1 col-2" id="id-out-foto" width="10%" height="10%" src="" alt=""/><br><br>
+        	<img class="" id="id-out-foto" width="20%" height="20%" src="../../assets/img/noimage.png" alt=""/><br><br>
         	
         	<input type="submit" value="Registrar" class="btn btnEstandar"/>
         </form>       
@@ -126,7 +126,7 @@
     
      
 
-   <div id="profesional" class="tab-pane fade">
+	<div id="profesional" class="tab-pane fade">
     
     <h1 class="textoexp1">Nuevo Profesional</h1>
 
@@ -199,11 +199,11 @@
         	<input id="id-fnac" type="date" name="fechaNacimiento" required="required" value="2000-02-29"/>
         	<br/>
         	
-        	<label for="id-pais">Pais</label>
+        	<label for="id-clinica">Clínica <i style="color:#a4a6a5; font-size: 1.2rem;">(Dejar en blanco si eres autónomo)</i></label>
+        	<input id="id-clinica" type="text" name="clinica"/>
+        	<br/>
         	
-        	
-        	<input type="hidden" name="tipoUsuario" value=2/>
-        	
+        	<label for="id-pais">Pais</label>	
         	<select id="id-pais" name="pais">
         		<option selected="selected" value=-1>---</option>
         		<?php foreach ($paises as $pais):?>
@@ -211,6 +211,8 @@
         		<?php endforeach;?>
         	</select>
         	<br/>
+        	
+        	<input type="hidden" name="tipoUsuario" value=2/>
 
         	
         	<!-- JAVASCRIPT PARA VISUALIZAR LA FOTO -->
@@ -239,7 +241,7 @@
         	
         	<label for="id-foto">Foto</label>
         	<input id="id-foto" type="file" name="foto"/><br>
-        	<img class="offset-1 col-2" id="id-out-foto" width="10%" height="10%" src="" alt=""/><br><br>
+        	<img class="" id="id-out-foto" width="20%" height="20%" src="../../assets/img/noimage.png" alt=""/><br><br>
         	
         	<input type="submit" value="Registrar" class="btn btnEstandar"/>
         </form>

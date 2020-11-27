@@ -1,0 +1,59 @@
+#paciente input{
+	margin: 3px;
+	display: inline-block;
+  	float: left;
+	
+}
+
+#profesional input{
+	margin: 3px;
+	display: inline-block;
+  	float: left;
+}
+
+#paciente select{
+	margin: 3px;
+	display: inline-block;
+  	float: left;
+	
+}
+
+#profesional select{
+	margin: 3px;
+	display: inline-block;
+  	float: left;
+}
+
+#paciente label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 200px;
+    text-align: left;
+}
+
+#profesional label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: left;
+}
+
+#paciente img{
+	
+	display:inline-block;
+	float:left;
+	
+}
+
+#profesional img{
+	
+	display:inline-block;
+	float:left;
+
+}
+
+
+
+

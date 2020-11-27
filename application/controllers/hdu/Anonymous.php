@@ -108,6 +108,7 @@ class Anonymous extends CI_Controller
         $fechaNacimiento = isset($_POST['fechaNacimiento']) ? $_POST['fechaNacimiento'] : null;
         $pais = isset($_POST['pais']) ? $_POST['pais'] : null;
         $especilidad = isset($_POST['especialidad']) ? $_POST['especialidad'] : null;
+        $clinica = isset($_POST['clinica']) ? $_POST['clinica'] : null;
         
         
         

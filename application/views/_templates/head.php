@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/footer.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/login_registro.css">
+	<link rel="stylesheet" href="<?=base_url()?>assets/css/registroCampos.css">
 	
 	<!-- CSS Anuncios de profesionales -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/anunciosProfesionales.css">
