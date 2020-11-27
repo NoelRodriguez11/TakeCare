@@ -1,0 +1,46 @@
+
+
+.especialidadIndicadorCita {
+	font-family:'Exo 2', sans-serif;
+	font-size: 125%;
+	top:75%;
+	color:grey;
+	
+}
+.especialidadEstiloCita {
+
+	font-family:'Exo 2', sans-serif;
+	font-size: 125%;
+	top:75%;
+	color: rgb(156, 10, 10);
+}
+
+.provinciaIndicadorCita {
+	font-family:'Exo 2', sans-serif;
+	font-size: 125%;
+	top:75%;
+	color:grey;
+	
+}
+.provinciaEstiloCita {
+
+	font-family:'Exo 2', sans-serif;
+	font-size: 125%;
+	top:75%;
+	color: rgb(156, 10, 10);
+}
+
+.divAnunc button{
+    top:80%;
+}
+
+
+
+
+
+
+
+
+
+
+

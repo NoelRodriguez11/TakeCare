@@ -7,8 +7,9 @@ class Cita extends CI_Controller {
     }
     
     public function c() {
+        $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('profesional_model');
-        $data['profesionales'] = $this->profesional_model->getProfesionales();
+        $data['profesional'] = $this->profesional_model->getProfesionalById($id);
         frame($this,'cita/c',$data);
     }
     

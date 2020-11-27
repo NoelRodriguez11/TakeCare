@@ -28,6 +28,7 @@
 		<div class="row">
 		<img class="divFotoPerfil col-sm-4" style="margin:0;" src="<?=base_url()?>/assets/img/upload/profesional/pro<?=$profesional->id?>.jpg"/>
 		
+
       
        	<form action="<?=base_url()?>cita/c" method="get">
 			<input type="hidden" name="id" value="<?=$profesional->id?>">
