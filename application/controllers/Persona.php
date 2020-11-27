@@ -114,7 +114,7 @@ class Persona extends CI_Controller
         $id =  $_SESSION['persona']['id'];
         //echo "id: " . $id;
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
-        $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : null;
+        $telefono = isset($_POST['tlf']) ? $_POST['tlf'] : null;
         $direccion = isset($_POST['direccion']) ? $_POST['direccion'] : null;
         $ciudad = isset($_POST['ciudad']) ? $_POST['ciudad'] : null;
         $provincia = isset($_POST['provincia']) ? $_POST['provincia'] : null;
