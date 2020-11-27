@@ -5,7 +5,7 @@
 
 			<form action="<?=base_url()?>hdu/anonymous/configPerfilPost" method="post" enctype="multipart/form-data">
 
-				<!-- JAVASCRIPT PARA VISUALIZAR LA FOTO -->
+				<!-- JAVASCRIPT PARA VISUALIZAR LA FOTO   -->
 				<script>
         	$(".main-menu").hide();
         	$(window).on("load", (function (){

@@ -1,5 +1,6 @@
 <div class="container col-6" id="vistaperfil">
-	<div id="profesional" class="tab-pane fade">
+	<div class="tab-content">
+	<div id="profesional" class="tab-pane fade in active">
 
 			<h1 class="textoexp1">Configuracion Perfil Profesional</h1>
 
@@ -146,4 +147,5 @@
 					</div>
 				</form>
 			</div>
+	</div>
 </div>
