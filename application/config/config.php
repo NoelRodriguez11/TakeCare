@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = ''; //defecto vacio 000webhost https://takecare-proyecto.000webhostapp.com
+$config['base_url'] = 'https://takecare-proyecto.000webhostapp.com'; //defecto vacio 000webhost https://takecare-proyecto.000webhostapp.com
 
 /*
 |--------------------------------------------------------------------------
