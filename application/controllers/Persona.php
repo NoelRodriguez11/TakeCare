@@ -122,7 +122,8 @@ class Persona extends CI_Controller
         
         try {
             $this->persona_model->actualizarPersona($id, $nombre, $telefono, $direccion, $ciudad, $provincia, $this->pais_model->getPaisById($pais));
-            redirect(base_url() . 'persona/configPerfil');
+            PRG('Tus datos han sido actualizados correctamente', 'persona/configPerfil', 'info');
+            //redirect(base_url() . 'persona/configPerfil');
         } catch (Exception $e) {
             session_start();
             $_SESSION['_msg']['texto'] = $e->getMessage();
