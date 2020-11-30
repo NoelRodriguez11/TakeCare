@@ -3,6 +3,8 @@
 
 			<div class="modal-body" id="divCrearCitas">
 				<form class="form" action="<?=base_url()?>caso/cPost" method="post">
+					<input type="hidden" name="idProfesional" value=<?=$profesional->id?>>
+					<input type="hidden" name="idPersona" value=<?=$datosGen['persona']->id?>>
 
 					
 					<div class="form-group">				                     
@@ -29,7 +31,7 @@
 					<br>
 						<textarea name="diagnosticoPrevio" placeholder="Indica brevemente tus sintomas actuales y dolencias" rows="4" cols="50"></textarea>
 					</div>
-					<input type="hidden" name="idProfesional" value="<?=$profesional->id?>">
+
 					<div class="form-group">
 						<button type="submit" id="loginBoton" class="btn btnEstandar">Enviar Solicitud</button>
 					</div>				

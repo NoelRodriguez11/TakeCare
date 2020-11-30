@@ -16,17 +16,18 @@ class Caso_model extends CI_Model
     }
     
     
-    public function crearCaso($fechahora,$idProfesional, $diagnosticoPrevio)
+    public function crearCaso($fechahora,$idProfesional,$idPersona, $diagnosticoPrevio)
     {
         $caso = R::findOne('caso','fecha_inicio=?',[$fechahora],'id_profesional=?',[$idProfesional]);
-        
+       
         $ok = ($caso==null && $fechahora!=null && $idProfesional!=null);
         if ($ok) {
             $caso = R::dispense('caso');
             $caso->fechaInicio = $fechahora;
             $caso->fechaFin = null;
             $caso->fechaAsignacion = null; 
-            $caso->idProfesional = $idProfesional;
+            $caso->persona = $idPersona;
+            $caso->profesional = $idProfesional;
             $caso->diagnosticoGeneral = $diagnosticoPrevio;
             $caso->estado = "Pendiente de aceptación";
             return R::store($caso);

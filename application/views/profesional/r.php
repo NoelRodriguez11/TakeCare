@@ -31,7 +31,7 @@
 
       
        	<form action="<?=base_url()?>caso/c" method="get">
-			<input type="hidden" name="id" value="<?=$profesional->id?>">
+			<input type="hidden" name="idProfesional" value="<?=$profesional->id?>">
 			<button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Enviar Solicitud</button>
 		</form>
        

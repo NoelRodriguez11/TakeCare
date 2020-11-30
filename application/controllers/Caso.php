@@ -7,9 +7,11 @@ class Caso extends CI_Controller {
     }
     
     public function c() {
-        $id = isset($_GET['id']) ? $_GET['id'] : null;
+        
+       
+        $idProfesional = isset($_GET['idProfesional']) ? $_GET['idProfesional'] : null;
         $this->load->model('profesional_model');
-        $data['profesional'] = $this->profesional_model->getProfesionalById($id);
+        $data['profesional'] = $this->profesional_model->getProfesionalById($idProfesional);
         frame($this,'caso/c',$data);
     }
     
@@ -17,15 +19,17 @@ class Caso extends CI_Controller {
     {
         $this->load->model('caso_model');
         $this->load->model('profesional_model');
+        $this->load->model('persona_model');
         
         $fechahora = isset($_POST['fechahora']) ? $_POST['fechahora'] : null;
         $idProfesional = isset($_POST['idProfesional']) ? $_POST['idProfesional'] : null;
+        $idPersona = isset($_POST['idPersona']) ? $_POST['idPersona'] : null;
         $diagnosticoPrevio = isset($_POST['diagnosticoPrevio']) ? $_POST['diagnosticoPrevio'] : null;
         
         
         try {
-            $this->caso_model->crearCaso($fechahora,$this->profesional_model->getProfesionalById($idProfesional), $diagnosticoPrevio);
-            PRG('Solicitud de consulta enviada.', 'home', 'primary');
+            $this->caso_model->crearCaso($fechahora,$this->profesional_model->getProfesionalById($idProfesional),$this->persona_model->getPersonaById($idPersona), $diagnosticoPrevio);
+            PRG('Solicitud de consulta enviada.', 'home', 'success');
         }
         catch (Exception $e) {
             session_start();
