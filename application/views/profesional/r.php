@@ -30,9 +30,9 @@
 		
 
       
-       	<form action="<?=base_url()?>cita/c" method="get">
+       	<form action="<?=base_url()?>caso/c" method="get">
 			<input type="hidden" name="id" value="<?=$profesional->id?>">
-			<button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Pedir cita</button>
+			<button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Enviar Solicitud</button>
 		</form>
        
        <div class="divEstrellitas">

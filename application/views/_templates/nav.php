@@ -14,7 +14,7 @@
                     <a href="#">
                       <i class="fa fa-stethoscope fa-2x"></i>
                         <span class="nav-text">
-                            Chequeo Médico
+                            Mis citas
                         </span>
                     </a>
                     
@@ -25,8 +25,7 @@
                         <span class="nav-text">
                             Tratamiento
                         </span>
-                    </a>
-                    
+                    </a>  
                 </li>
                 <li class="has-subnav">
                     <a href="#">
@@ -36,14 +35,6 @@
                         </span>
                     </a>
                    
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-bar-chart-o fa-2x"></i>
-                        <span class="nav-text">
-                           Citas 
-                        </span>
-                    </a>
                 </li>
                 <li>
                 </li>
@@ -59,7 +50,7 @@
                     <a href="<?=base_url()?>profesional/configPerfilPro">
                         <i class="fa fa-cogs fa-2x"></i>
                         <span class="nav-text">
-                     		Configuración profesional
+                     		Configuración perfil
                         </span>
                     </a>
                   
@@ -68,7 +59,7 @@
                     <a href="#">
                       <i class="fa fa-stethoscope fa-2x"></i>
                         <span class="nav-text">
-                            Chequeo Médico
+                            Tus casos
                         </span>
                     </a>
                     
@@ -77,7 +68,7 @@
                     <a href="#">
                        <i class="fa fa-user-md fa-2x"></i>
                         <span class="nav-text">
-                            Tratamiento
+                            Casos Pendientes
                         </span>
                     </a>
                     
@@ -86,7 +77,7 @@
                     <a href="#">
                        <i class="fa fa-calendar-alt fa-2x"></i>
                         <span class="nav-text">
-                            Calendario
+                            (¿Casos cerrados?)
                         </span>
                     </a>
                    
@@ -95,7 +86,7 @@
                     <a href="#">
                         <i class="fa fa-bar-chart-o fa-2x"></i>
                         <span class="nav-text">
-                           Citas 
+                           (Esta la dejamos por si se nos ocurre algo)
                         </span>
                     </a>
                 </li>
