@@ -472,6 +472,4 @@ class Anonymous extends CI_Controller
         
     }
 }
-
-
 ?>
