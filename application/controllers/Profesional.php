@@ -82,7 +82,7 @@ class Profesional extends CI_Controller
         if ($pwd1 == $pwd2) {
             $encryptedPassword = password_hash($this->input->post('new1pwd'), PASSWORD_DEFAULT);
             
-            if ($this->persona_model->changePassPerfil($id, $encryptedPassword)) {
+            if ($this->profesional_model->changePassPerfil($id, $encryptedPassword)) {
                 
                 echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
                 session_destroy();
@@ -100,11 +100,34 @@ class Profesional extends CI_Controller
         
     }
     
-    public function configPerfilPro() {
+    public function configPerfil() {
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('profesional_model');
         $datos['profesional'] = $this->profesional_model->getProfesionalById($id);
         frame($this, 'profesional/configPerfil', $datos);
+    }
+    
+    public function configPerfilPost() {
+        session_start();
+        $this->load->model('profesional_model');
+        
+        $id =  $_SESSION['profesional']['id'];
+        //echo "id: " . $id;
+        $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
+        $email = isset($_POST['email']) ? $_POST['email'] : null;
+        echo "correo: " . $email;
+        $telefono = isset($_POST['tlf']) ? $_POST['tlf'] : null;
+        
+        try {
+            $this->profesional_model->actualizarProfesional($id, $nombre, $email, $telefono);
+            PRG('Tus datos han sido actualizados correctamente', 'profesional/configPerfil', 'info');
+            //redirect(base_url() . 'persona/configPerfil');
+        } catch (Exception $e) {
+            session_start();
+            $_SESSION['_msg']['texto'] = $e->getMessage();
+            $_SESSION['_msg']['uri'] = 'profesional/configPerfil';
+            redirect(base_url() . 'msg');
+        }
     }
     
     public function obtenerDatos() {

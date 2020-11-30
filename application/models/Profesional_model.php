@@ -62,32 +62,22 @@ class Profesional_model extends CI_Model
     }
     
     
-    public function actualizarProfesional($id,$loginname, $nombre, $altura, $fechaNacimiento, $pais)
-    {
-        $profesional = R::findOne('profesional','loginname=?',[$loginname]);
-        if ($profesional == null) {
+    public function actualizarProfesional($id,$nombre,$email,$telefono) {
+        $profesional = R::findOne('profesional','id=?',[$id]);
+        echo $id;
+        if ($profesional != null) {
             
             $profesional = R::load('profesional', $id);
-            $profesional->loginname = $loginname;
-            $profesional->altura = $altura;
             $profesional->nombre = $nombre;
-            $profesional->fechaNacimiento = $fechaNacimiento;
-            $profesional->nace = $pais;
+            $profesional->email = $email;
+            $profesional->telefono = $telefono;
+         
             R::store($profesional);
             
-        }
-        
-        else if ($loginname == $profesional->loginname && $id == $profesional->id){
-
-            $profesional = R::load('profesional', $id);
-            $profesional->altura = $altura;
-            $profesional->nombre = $nombre;
-            $profesional->fechaNacimiento = $fechaNacimiento;
-            $profesional->nace = $pais;
-            R::store($profesional);
         }
         else {
-            $e = ($loginname == null ? new Exception("nulo") : new Exception("Nombre de profesional ya registrado, escoge otro"));
+            
+            $e =  new Exception("Los campos no se han actualizado correctamente");
             throw $e;
         }
     }
@@ -128,6 +118,61 @@ class Profesional_model extends CI_Model
     
     public function borrarProfesional($id) {
         R::trash(R::load('profesional',$id));
+    }
+    
+    //FORGOT PWD 
+    public function existEmail($email) {
+        
+        $usuario = R::findOne('profesional', 'email=?', [$email]);
+        
+        if ($usuario == null) {
+            // throw new Exception("Email no encontrado");
+            PRG("Email no encontrado","/","danger" );
+            
+        }
+        return TRUE;
+    }
+    
+    
+    public function guardarCodigo($email, $codigo) {
+        $profesional = R::findOne('profesional','email=?',[$email]);
+        if ($email == $profesional->email) {
+            
+            $profesional->cod_recuperacion = $codigo;
+            R::store($profesional);
+            
+        }
+        
+        else {
+            $e = ($email == null ? new Exception("nulo") : new Exception("Email no existe"));
+            throw $e;
+        }
+    }
+    
+    
+    public function comprobarCodigo($token, $email) {
+        $usuario = R::findOne('profesional', 'cod_recuperacion=? AND email=?',[$token, $email]);
+        
+        if ($usuario == null) {
+            PRG("Datos incorrectos","/","danger" );
+        }
+        return TRUE;
+    }
+    
+    
+    public function changePass($token, $email, $password){
+        $usuario = R::findOne('profesional', 'cod_recuperacion=? AND email=?',[$token, $email]);
+        
+        if($token == $usuario->cod_recuperacion && $email == $usuario->email) {
+            $usuario->password=$password;
+            R::store($usuario);
+            
+            return true;
+        }
+        else {
+            return false;
+        }
+        
     }
     
     

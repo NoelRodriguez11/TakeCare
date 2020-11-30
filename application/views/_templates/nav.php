@@ -47,7 +47,7 @@
 <nav class="main-menu">
             <ul>
                 <li>
-                    <a href="<?=base_url()?>profesional/configPerfilPro">
+                    <a href="<?=base_url()?>profesional/configPerfil">
                         <i class="fa fa-cogs fa-2x"></i>
                         <span class="nav-text">
                      		Configuración perfil
