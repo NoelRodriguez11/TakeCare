@@ -382,7 +382,7 @@ class Anonymous extends CI_Controller
         //         echo $email;
         
         if($this->profesional_model->comprobarCodigo($token, $email)) {
-            frame($this, '_hdu/anonymous/resetPassPro', $data);
+            frame($this, '_hdu/anonymous/resetPass', $data);
         }
         
     }
