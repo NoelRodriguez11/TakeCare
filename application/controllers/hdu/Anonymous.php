@@ -348,7 +348,7 @@ class Anonymous extends CI_Controller
             
             
             $message = '<html><body>';
-            $message .='<p style="text-align:center; color:#9A0606; font-size: x-large;font-variant: small-caps; padding: 10px; vertical-align: middle;">Para hacer reset por favor haz clic en el siguiente enlace <a href="' . base_url() . 'hdu/anonymous/resetPass/' . $verification_key . '/' . $email . '">Cambiar contraseña</a></p>';
+            $message .='<p style="text-align:center; color:#9A0606; font-size: x-large;font-variant: small-caps; padding: 10px; vertical-align: middle;">Para hacer reset por favor haz clic en el siguiente enlace <a href="' . base_url() . 'hdu/anonymous/resetPassPro/' . $verification_key . '/' . $email . '">Cambiar contraseña</a></p>';
             $message .='<p style="text-align: center;color: #9A0606;font-size: x-large; font-variant: small-caps;padding: 10px; vertical-align: middle;">Gracias!!!</p>';
             $message .='<img src="https://takecare-proyecto4.000webhostapp.com/assets/img/iconotc.png" width="50px" height="50" alt="takecare Logo">';
             $message .= '</body></html>';
