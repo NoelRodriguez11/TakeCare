@@ -41,11 +41,12 @@
 	color: rgb(156, 10, 10);
 }
 
+
 .textoCasosContenido {
 	font-family:'Exo 2', sans-serif;
 	font-size: 100%;
-	top:75%;
 	color: black;
+	width:80%;
 }
 
 

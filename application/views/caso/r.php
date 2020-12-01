@@ -1,26 +1,22 @@
 <div class="container">
-
 <h1 class="textoexp1-enunciados">Casos pendientes</h1>
 
-
-
-<!-- Estos div de casoes tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd    -->
 <?php foreach ($casos as $caso):?>
 <div class="divCasosPendientes">
 		<div class="row">
-            <!--Nombre del caso -->
+                <!--Nombre del paciente -->
             	<div class="col-sm-2 tituloCasosIndicador" >Paciente:<div id="nombrePersona">
             	<?=$caso->persona->nombre?> <?=$caso->persona->primerApellido?> <?=$caso->persona->segundoApellido?>
             	</div></div>
             	
-            	            	  <!--Especialidad -->
+            	<!--fecha solicitada -->
             	<div class="col-sm-2 tituloCasosIndicador" >Fecha Solicitada:<div class="textoCasosContenido"><?=$caso->fechaInicio?></div></div>
                 
-                 <!--Especialidad -->
+                 <!--diagnostico -->
             	<div class="col-sm-5 tituloCasosIndicador" >Diagnostico Preliminar:<div class="textoCasosContenido"><?=$caso->diagnosticoGeneral?></div></div>
             	
 
-            	<form class="col-sm-1" action="<?=base_url()?>profesional/rechazarCaso" method="get">
+            	<form class="col-sm-1" action="<?=base_url()?>profesional/cambiarPropuesta" method="get">
         			<input type="hidden" name="idProfesional" value="<?=$caso->id?>">
         			<button title="Rechazar Caso" onclick="submit()" class="botonCambioPropuesta btn btn-primary textoexp2-sinMargen" id="botonPC">Cambiar propuesta</button>
         		</form>           	
@@ -36,7 +32,7 @@
         		</form>
     		</div>	   
 		</div>       
-</div>
 <?php endforeach;?>
 </div>
+
 
