@@ -1,9 +1,9 @@
 <div class="container">
 
-<h1 class="textoexp1">Listado Completo de Profesionales</h1>
-<h5>En esta seccion podrás consultar el listado completo de profesionales dados de alta en la pagina</h5>
-<?php if ($datosGen['persona']==null):?>
-<code>Registrate para poder concretar una cita</code><br>
+<h1 class="textoexp1-enunciados">Listado Completo de Profesionales</h1>
+<h5 class="textoexp2-sinMargen">En esta seccion podrás consultar el listado completo de profesionales dados de alta en la pagina</h5>
+<?php if ($datosGen['persona']==null && $datosGen['profesional']==null):?>
+<p class="noregistrado">Registrate para empezar a contactar</p><br>
 <?php endif;?>
 <script type="text/javascript">
 	var base_url = "<?php echo base_url()?>";
@@ -32,7 +32,7 @@
       
        	<form action="<?=base_url()?>caso/c" method="get">
 			<input type="hidden" name="idProfesional" value="<?=$profesional->id?>">
-			<button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Enviar Solicitud</button>
+			<?php if ($datosGen['profesional']==null):?><button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Enviar Solicitud</button><?php endif;?>
 		</form>
        
        <div class="divEstrellitas">
