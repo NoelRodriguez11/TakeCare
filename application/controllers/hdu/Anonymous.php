@@ -201,6 +201,7 @@ class Anonymous extends CI_Controller
             }
             
         else {
+            if ($this->profesional_model->getProfesionalByEmail($email) != null){
             try {
             $profesional = $this->profesional_model->verificarLogin($email, $password);
             if (session_status() == PHP_SESSION_NONE) {
@@ -212,7 +213,7 @@ class Anonymous extends CI_Controller
                PRG($e->getMessage());
            }
         }
-        
+        }
              
     }
     
@@ -250,7 +251,7 @@ class Anonymous extends CI_Controller
             $message = '<html><body>';
             $message .='<p style="text-align:center; color:#9A0606; font-size: x-large;font-variant: small-caps; padding: 10px; vertical-align: middle;">Para hacer reset por favor haz clic en el siguiente enlace <a href="' . base_url() . 'hdu/anonymous/resetPass/' . $verification_key . '/' . $email . '">Cambiar contraseña</a></p>';
             $message .='<p style="text-align: center;color: #9A0606;font-size: x-large; font-variant: small-caps;padding: 10px; vertical-align: middle;">Gracias!!!</p>';
-            $message .='<img src="https://takecare-proyecto.000webhostapp.com/assets/img/iconotc.png" width="50px" height="50" alt="takecare Logo">';
+            $message .='<img src="https://takecare-proyecto4.000webhostapp.com/assets/img/iconotc.png" width="50px" height="50" alt="takecare Logo">';
             $message .= '</body></html>';
             
             
@@ -348,7 +349,7 @@ class Anonymous extends CI_Controller
             
             
             $message = '<html><body>';
-            $message .='<p style="text-align:center; color:#9A0606; font-size: x-large;font-variant: small-caps; padding: 10px; vertical-align: middle;">Para hacer reset por favor haz clic en el siguiente enlace <a href="' . base_url() . 'hdu/anonymous/resetPass/' . $verification_key . '/' . $email . '">Cambiar contraseña</a></p>';
+            $message .='<p style="text-align:center; color:#9A0606; font-size: x-large;font-variant: small-caps; padding: 10px; vertical-align: middle;">Para hacer reset por favor haz clic en el siguiente enlace <a href="' . base_url() . 'hdu/anonymous/resetPassPro/' . $verification_key . '/' . $email . '">Cambiar contraseña</a></p>';
             $message .='<p style="text-align: center;color: #9A0606;font-size: x-large; font-variant: small-caps;padding: 10px; vertical-align: middle;">Gracias!!!</p>';
             $message .='<img src="https://takecare-proyecto4.000webhostapp.com/assets/img/iconotc.png" width="50px" height="50" alt="takecare Logo">';
             $message .= '</body></html>';
@@ -382,7 +383,7 @@ class Anonymous extends CI_Controller
         //         echo $email;
         
         if($this->profesional_model->comprobarCodigo($token, $email)) {
-            frame($this, '_hdu/anonymous/resetPass', $data);
+            frame($this, '_hdu/anonymous/resetPassPro', $data);
         }
         
     }
