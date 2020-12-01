@@ -201,6 +201,7 @@ class Anonymous extends CI_Controller
             }
             
         else {
+            if ($this->profesional_model->getProfesionalByEmail($email) != null){
             try {
             $profesional = $this->profesional_model->verificarLogin($email, $password);
             if (session_status() == PHP_SESSION_NONE) {
@@ -212,7 +213,7 @@ class Anonymous extends CI_Controller
                PRG($e->getMessage());
            }
         }
-        
+        }
              
     }
     
