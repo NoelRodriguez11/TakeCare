@@ -5,7 +5,7 @@ class Caso_model extends CI_Model
      
     public function getCasos()
     {
-       return R::findAll('caso','ORDER BY nombre ASC');
+       return R::findAll('caso','ORDER BY fecha_inicio');
      
     }
     

@@ -3,7 +3,10 @@
 class Caso extends CI_Controller {
 
     public function r() {
-        frame($this, 'caso/r');
+        
+        $this->load->model('caso_model');
+        $datos['casos'] = $this->caso_model->getCasos();
+        frame($this, 'caso/r', $datos);
     }
     
     public function c() {
