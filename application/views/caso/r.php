@@ -4,7 +4,7 @@
 
 
 
-<!-- Estos div de casoes tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd -->
+<!-- Estos div de casoes tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd    -->
 <?php foreach ($casos as $caso):?>
 <div class="divCasosPendientes">
 		<div class="row">
