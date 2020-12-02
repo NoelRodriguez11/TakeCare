@@ -1,6 +1,6 @@
 <?php
 
-class Especilidad extends CI_Controller
+class Especialidad extends CI_Controller
 {
     
     public function r()

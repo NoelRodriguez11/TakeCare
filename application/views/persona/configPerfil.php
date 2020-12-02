@@ -29,6 +29,87 @@
         			$('#id-out-foto').attr("src",result);
         		}});}));
         	</script>
+        	
+        	<script type="text/javascript">
+				function validarNombre() {
+            		var nombre=document.getElementById("id-nombre").value.trim();
+                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+        
+                    if (nombre.length < 2 && nombre.length > 20) {
+                        document.getElementById("errorNombre").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
+                    }
+                    else if (!rgExp.test(nombre)){
+                        document.getElementById("errorNombre").innerHTML="El nombre tiene caracteres no validos";
+                    }
+                    else {
+                        document.getElementById("errorNombre").innerHTML="";
+                    }
+                }
+                
+                function validarTelefono() {
+            		var telefono=document.getElementById("id-tlf").value.trim();
+                    var rgExp= /^[9876][0-9]{8}$/;
+        
+                    if (telefono.length != 9) {
+                        document.getElementById("errorTelefono").innerHTML="El teléfono no tiene 9 caracteres";
+                    }
+                    else if (!rgExp.test(telefono)){
+                        document.getElementById("errorTelefono").innerHTML="El telefono tiene caracteres no validos";
+                    }
+                    else {
+                        document.getElementById("errorTelefono").innerHTML="";
+                    }
+                }
+                
+                function validarDireccion() {
+            		var direccion=document.getElementById("id-direccion").value.trim();
+                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+        
+                    if (direccion.length < 2 && direccion.length > 20) {
+                        document.getElementById("errorDireccion").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
+                    }
+                    
+                    else if (!rgExp.test(direccion)){
+                        document.getElementById("errorDireccion").innerHTML="El nombre tiene caracteres no validos";
+                    }
+                    else {
+                        document.getElementById("errorDireccion").innerHTML="";
+                    }
+                }
+                
+                function validarCiudad() {
+            		var ciudad=document.getElementById("id-ciudad").value.trim();
+                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{3,30}$/;
+        
+                    if (ciudad.length < 3 && ciudad.length > 30) {
+                        document.getElementById("errorCiudad").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
+                    }
+                    else if (!rgExp.test(ciudad)){
+                        document.getElementById("errorCiudad").innerHTML="El nombre tiene caracteres no validos";
+                    }
+                    else {
+                        document.getElementById("errorCiudad").innerHTML="";
+                    }
+                    }
+                    
+                    function deshabilitarBoton() {
+                	var spanNombre = document.getElementsById("errorNombre").innerHTML;
+                	var spanTelefono = document.getElementsById("errorTelefono").innerHTML;
+                	var spanCiudad = document.getElementsById("errorCiudad").innerHTML;
+                	var spanDireccion = document.getElementsById("errorDireccion").innerHTML;
+                	
+                	
+                	var boton = document.getElementById("botonConfirmar");
+                	
+                	if (spanNombre.length > 0 || spanTelefono.length > 0 || spanCiudad.length > 0 || spanDireccion.length > 0) {
+                		boton.disabled = true;
+                	}
+                	else {
+                		boton.disabled = false;
+                	}
+                }
+                    
+			</script>
 
 				<div class="col-xs-8">
 					<label for="id-foto">Foto</label> 
@@ -38,7 +119,8 @@
 
 				<div class="col-xs-8">
 					<label for="id-nombre">Nombre</label> 
-					<input id="id-nombre" type="text" class="form-control" name="nombre" />
+					<input id="id-nombre" type="text" class="form-control" name="nombre" onkeyup="validarNombre(),deshabilitarBoton()"/>
+					<span style="float:right" class="errorNombre"></span>
 				</div>
 
 				<div class="col-xs-8">
@@ -59,7 +141,8 @@
 
 				<div class="col-xs-8">
 					<label for="id-tlf">Telefono</label> 
-					<input id="id-tlf" type="text" class="form-control" name="tlf" />
+					<input id="id-tlf" type="text" class="form-control" name="tlf" onkeyup="validarTelefono()"/>
+					<span style="float:right" class="errorTelefono"></span>
 				</div>
 
 				<div class="col-xs-8">
@@ -74,12 +157,14 @@
 
 				<div class="col-xs-8">
 					<label for="id-direccion">Dirección</label> 
-					<input id="id-direccion" type="text" name="direccion" class="form-control" />
+					<input id="id-direccion" type="text" name="direccion" class="form-control" onkeyup="validarDireccion()" />
+					<span style="float:right" id="errorDireccion"></span>
 				</div>
 
 				<div class="col-xs-8">
 					<label for="id-ciudad">Ciudad</label> 
-					<input id="id-ciudad" type="text" class="form-control" name="ciudad" />
+					<input id="id-ciudad" type="text" class="form-control" name="ciudad" onkeyup="validarCiudad()" />
+					<span style="float:right" id="errorCiudad"></span>
 				</div>
 
 			<div class="col-xs-8">
@@ -214,7 +299,7 @@
         	}
         	</script>
 
-				<input type="submit" value="Guardar Cambios" class="btn btnEstandar" />
+				<input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="botonConfirmar"/>
 			</form>
 
 			<div class="modal right fade" class="modal custom show"

@@ -1,7 +1,6 @@
 <div class="container">
 <br>
 
-
   <h5>¿Como quieres darte de alta?</h5>
 
     <button class="active btn btn-danger" onclick="cambiarImagenRegistro(1)" data-toggle="tab" href="#paciente">Paciente</button>
