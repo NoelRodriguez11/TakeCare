@@ -3,7 +3,7 @@
 
 						<input type="hidden" name="token" value="<?=$this->uri->segment(4)?>">	
 						<input type="hidden" name="email" value="<?=$this->uri->segment(5)?>">	
-					<div class="form-group">
+						<div class="form-group">
 						Nueva Contraseña 
 						<input type="password" class="form-control" name="password" placeholder="Password" required="required">	
 						<br>
