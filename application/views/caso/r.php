@@ -1,9 +1,12 @@
 <div class="container">
 <h1 class="textoexp1-enunciados">Mis casos</h1>
 
+<?php if(count($casos)==0):?>
+<p class="tituloCasosIndicador">No tienes casos pendientes por revisar</p>
+<?php else:?>
   
 <?php foreach ($casos as $caso):?>
-<?php if($caso->profesional->id == $datosGen["profesional"]->id && $caso->estado=="aceptado"):?>
+<?php if($caso->profesional->id == $datosGen["profesional"]->id):?>
 <div class="divCasosAceptados">
 		<div class="row">
                 <!--Nombre del paciente -->
@@ -41,10 +44,10 @@
             	
     		</div>	   
 		</div>
-<?php else:?>
- <p class="tituloCasosIndicador">No tienes casos en curso actualmente</p> 
+
 <?php endif;?>      
 <?php endforeach;?>
+<?php endif;?>    
 
 </div>
 

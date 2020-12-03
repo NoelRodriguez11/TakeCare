@@ -9,6 +9,12 @@ class Caso_model extends CI_Model
      
     }
     
+    public function getCasosByEstado($estado)
+    {
+        return R::findAll('caso','estado=?',[$estado]);
+        
+    }
+    
     
     public function getCasoById($id)
     {

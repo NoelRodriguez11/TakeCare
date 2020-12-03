@@ -11,10 +11,10 @@
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="<?=base_url()?>caso/rCasosPendientesPac">
                       <i class="fa fa-stethoscope fa-2x"></i>
                         <span class="nav-text">
-                            Mis citas
+                            Solicitudes pendientes
                         </span>
                     </a>
                     
