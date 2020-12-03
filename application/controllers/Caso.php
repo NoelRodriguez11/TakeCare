@@ -42,6 +42,14 @@ class Caso extends CI_Controller {
         }
     }
     
+    public function dPost() {
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $this->load->model('caso_model');
+        $this->caso_model->borrarCaso($id);
+        PRG('Caso descartado', 'caso/r', 'danger');
+    }
+    
     
 }
 ?>

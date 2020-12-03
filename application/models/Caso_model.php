@@ -40,6 +40,10 @@ class Caso_model extends CI_Model
         }
     }
     
+    public function borrarCaso($id) {
+        R::trash(R::load('caso',$id));
+    }
+    
     
 }
 ?>

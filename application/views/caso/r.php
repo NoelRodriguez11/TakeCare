@@ -2,6 +2,7 @@
 <h1 class="textoexp1-enunciados">Casos pendientes</h1>
 
 <?php foreach ($casos as $caso):?>
+<?php if($caso->profesional->id == $datosGen["profesional"]->id):?>
 <div class="divCasosPendientes">
 		<div class="row">
                 <!--Nombre del paciente -->
@@ -21,17 +22,20 @@
         			<button title="Rechazar Caso" onclick="submit()" class="botonCambioPropuesta btn btn-primary textoexp2-sinMargen" id="botonPC">Cambiar propuesta</button>
         		</form>           	
             	
-            	<form class="col-sm-1" action="<?=base_url()?>profesional/rechazarCaso" method="get">
-        			<input type="hidden" name="idProfesional" value="<?=$caso->id?>">
+            	<form class="col-sm-1" action="<?=base_url()?>caso/dPost" method="post">
+        			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
         			<button title="Rechazar Caso" onclick="submit()" class="botonCasoAceptarRechazar btn btn-danger" id="botonPC"><i class="fa fa-times fa-2x ajusteIcono"></i> </button>
         		</form>
+        		
+
         		
                 <form class="col-sm-1" action="<?=base_url()?>profesional/aceptarCaso" method="get">
         			<input type="hidden" name="idProfesional" value="<?=$caso->id?>">
         			<button title="Aceptar Caso" onclick="submit()" class="botonCasoAceptarRechazar btn btn-success" id="botonPC"><i class="fa fa-check fa-2x ajusteIcono"></i> </button>
         		</form>
     		</div>	   
-		</div>       
+		</div> 
+<?php endif;?>      
 <?php endforeach;?>
 </div>
 
