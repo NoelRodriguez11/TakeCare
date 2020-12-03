@@ -29,7 +29,7 @@ class Caso_model extends CI_Model
             $caso->persona = $idPersona;
             $caso->profesional = $idProfesional;
             $caso->diagnosticoGeneral = $diagnosticoPrevio;
-            $caso->estado = "Pendiente de aceptación";
+            $caso->estado = "pendiente";
             return R::store($caso);
         }
         else {
@@ -38,6 +38,16 @@ class Caso_model extends CI_Model
 //             }
                 PRG("Los datos o son nulos o ya estan registrados");
         }
+    }
+    
+    public function cambiarEstado($id) {
+        $caso = R::findOne('caso','id=?',[$id]);
+             
+            $caso = R::load('caso', $id);
+            $caso->estado = "aceptado";
+
+            R::store($caso);
+            
     }
     
     public function borrarCaso($id) {

@@ -56,16 +56,16 @@
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="<?=base_url()?>caso/r">
                       <i class="fa fa-stethoscope fa-2x"></i>
                         <span class="nav-text">
-                            Tus casos
+                            Mis casos
                         </span>
                     </a>
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="<?=base_url()?>caso/r">
+                    <a href="<?=base_url()?>caso/rCasosPendientes">
                        <i class="fa fa-user-md fa-2x"></i>
                         <span class="nav-text">
                             Casos Pendientes

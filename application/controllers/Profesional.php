@@ -140,6 +140,18 @@ class Profesional extends CI_Controller
         
         
     }
+    
+    //ACEPTAR CASO
+    public function aceptarCaso() {
+
+        $id = isset($_GET['idCaso']) ? $_GET['idCaso'] : null;
+        $this->load->model('caso_model');
+        echo $this->caso_model->cambiarEstado($id);
+        PRG('Caso Aceptado', 'caso/r', 'success');
+        
+        
+    }
+    
         
         
     

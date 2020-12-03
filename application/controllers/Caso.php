@@ -2,12 +2,21 @@
 
 class Caso extends CI_Controller {
 
+    public function rCasosPendientes() {
+        
+        $this->load->model('caso_model');
+        $datos['casos'] = $this->caso_model->getCasos();
+        frame($this, 'caso/rCasosPendientes', $datos);
+    }
+    
     public function r() {
         
         $this->load->model('caso_model');
         $datos['casos'] = $this->caso_model->getCasos();
         frame($this, 'caso/r', $datos);
     }
+    
+    
     
     public function c() {
         
