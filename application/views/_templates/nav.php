@@ -77,7 +77,7 @@
                     <a href="#">
                        <i class="fa fa-calendar-alt fa-2x"></i>
                         <span class="nav-text">
-                            (¿Casos cerrados?)
+                            Casos cerrados
                         </span>
                     </a>
                    

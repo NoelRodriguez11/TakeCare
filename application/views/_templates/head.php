@@ -37,8 +37,8 @@
 	<!-- CSS Citas de profesionales -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/citasProfesionales.css">
 	
-	<!-- CSS Casos pendientes de profesionales -->
-	<link rel="stylesheet" href="<?=base_url()?>assets/css/casosPendientesProfesional.css">
+	<!-- CSS Casos de profesionales -->
+	<link rel="stylesheet" href="<?=base_url()?>assets/css/casosProfesional.css">
 	
 
 	
