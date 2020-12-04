@@ -55,6 +55,7 @@ class Anonymous extends CI_Controller
             
             //Creación de modalidades
             $this->especialidad_model->crearEspecialidad('Fisioterapia');
+            $this->especialidad_model->crearEspecialidad('Traumatología');
             $this->especialidad_model->crearEspecialidad('Psicologia');
             $this->especialidad_model->crearEspecialidad('Pedagogia');
             $this->especialidad_model->crearEspecialidad('Dermatología');
