@@ -5,28 +5,28 @@ class Caso extends CI_Controller {
     public function rCasosPendientes() {
         
         $this->load->model('caso_model');
-        $datos['casos'] = $this->caso_model->getCasosByEstado("pendiente");
+        $datos['casos'] = $this->caso_model->getCasosByEstado("Pendiente");
         frame($this, 'caso/rCasosPendientes', $datos);
     }
     
     public function rCasosPendientesPac() {
         
         $this->load->model('caso_model');
-        $datos['casos'] = $this->caso_model->getCasosByEstado("pendiente");
+        $datos['casos'] = $this->caso_model->getCasosByEstado("Pendiente");
         frame($this, 'caso/rCasosPendientesPac', $datos);
     }
     
     public function rCasosRechazados() {
         
         $this->load->model('caso_model');
-        $datos['casos'] = $this->caso_model->getCasosByEstado("rechazados");
+        $datos['casos'] = $this->caso_model->getCasosByEstado("Rechazada");
         frame($this, 'caso/rCasosRechazados', $datos);
     }
       
     public function r() {
         
         $this->load->model('caso_model');
-        $datos['casos'] = $this->caso_model->getCasosByEstado("aceptado");
+        $datos['casos'] = $this->caso_model->getCasosByEstado("Aceptada");
         frame($this, 'caso/r', $datos);
     }
     
@@ -71,12 +71,10 @@ class Caso extends CI_Controller {
         $this->load->model('caso_model');
         $this->caso_model->borrarCaso($id);
         
-        if($datosGen["profesional"] != null){
+        if($_SESSION["profesional"]->nombre != null){
             PRG('Caso descartado', 'caso/r', 'danger');
         }
-        else {
-            PRG('Solicitud eliminada', 'caso/rCasospendientesPac', 'danger');
-        }
+
     }
     
     

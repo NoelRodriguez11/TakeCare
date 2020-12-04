@@ -141,7 +141,7 @@ class Profesional extends CI_Controller
         
     }
     
-    //ACEPTAR CASO
+//-----------------------------------------------------------ACEPTAR CASO------------------------------------------------------------------------------------
     public function aceptarCaso() {
 
         $id = isset($_GET['idCaso']) ? $_GET['idCaso'] : null;

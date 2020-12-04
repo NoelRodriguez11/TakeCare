@@ -508,6 +508,9 @@ class Anonymous extends CI_Controller
         if (isset($_SESSION['persona'])) {
             unset($_SESSION['persona']);
         }
+        if (isset($_SESSION['profesional'])) {
+            unset($_SESSION['profesional']);
+        }
         session_destroy();
         redirect(base_url());
         

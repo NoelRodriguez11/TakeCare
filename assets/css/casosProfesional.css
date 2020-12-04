@@ -60,6 +60,14 @@
 	width:80%;
 }
 
+.estadoSolicitudPaciente {
+	font-family:'Exo 2', sans-serif;
+	font-size: 180%;
+	color: rgb(64, 122, 214);
+	width:80%;
+	margin-left:4%;
+}
+
 
 
 

@@ -35,7 +35,7 @@ class Caso_model extends CI_Model
             $caso->persona = $idPersona;
             $caso->profesional = $idProfesional;
             $caso->diagnosticoGeneral = $diagnosticoPrevio;
-            $caso->estado = "pendiente";
+            $caso->estado = "Pendiente";
             return R::store($caso);
         }
         else {
@@ -50,7 +50,7 @@ class Caso_model extends CI_Model
         $caso = R::findOne('caso','id=?',[$id]);
              
             $caso = R::load('caso', $id);
-            $caso->estado = "aceptado";
+            $caso->estado = "Aceptada";
 
             R::store($caso);
             
