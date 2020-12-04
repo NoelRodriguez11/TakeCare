@@ -46,11 +46,11 @@ class Caso_model extends CI_Model
         }
     }
     
-    public function cambiarEstado($id) {
+    public function cambiarEstado($id, $estado) {
         $caso = R::findOne('caso','id=?',[$id]);
              
             $caso = R::load('caso', $id);
-            $caso->estado = "Aceptada";
+            $caso->estado = $estado;
 
             R::store($caso);
             

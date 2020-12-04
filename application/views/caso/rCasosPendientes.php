@@ -17,23 +17,24 @@
             	<div class="col-sm-2 tituloCasosIndicador" >Fecha Solicitada:<div class="textoCasosContenido"><?=$caso->fechaInicio?></div></div>
                 
                  <!--diagnostico -->
-            	<div class="col-sm-5 tituloCasosIndicador" >Diagnostico Preliminar:<div class="textoCasosContenido"><?=$caso->diagnosticoGeneral?></div></div>
+            	<div class="col-sm-5 tituloCasosIndicador" >Diagnostico Preliminar:<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoGeneral?></div></div>
             	
 
-            	<form class="col-sm-1" action="<?=base_url()?>profesional/cambiarPropuesta" method="get">
+            	<form class="col-sm-1" action="<?=base_url()?>profesional/cambiarPropuesta" method="post">
         			<input type="hidden" name="idProfesional" value="<?=$caso->id?>">
         			<button title="Rechazar Caso" onclick="submit()" class="botonCambioPropuesta btn btn-primary textoexp2-sinMargen" id="botonPC">Cambiar propuesta</button>
         		</form>           	
             	
-            	<form class="col-sm-1" action="<?=base_url()?>caso/dPost" method="post">
+            	<form class="col-sm-1" action="<?=base_url()?>profesional/rechazarCaso" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
         			<button title="Rechazar Caso" onclick="submit()" class="botonCasoAceptarRechazar btn btn-danger" id="botonPC"><i class="fa fa-times fa-2x ajusteIcono"></i> </button>
         		</form>
-        		
-
-        		
-                <form class="col-sm-1" action="<?=base_url()?>profesional/aceptarCaso" method="get">
+        		       		
+                <form class="col-sm-1" action="<?=base_url()?>profesional/aceptarCaso" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+        			<input type="hidden" name="idProfesional" value="<?=$caso->profesional->id?>">
+        			<input type="hidden" name="idPaciente" value="<?=$caso->persona->id?>">
+        			<input type="hidden" name="fechaHora" value="<?=$caso->fechaInicio?>">
         			<button title="Aceptar Caso" onclick="submit()" class="botonCasoAceptarRechazar btn btn-success" id="botonPC"><i class="fa fa-check fa-2x ajusteIcono"></i> </button>
         		</form>
     		</div>	   

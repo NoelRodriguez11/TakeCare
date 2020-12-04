@@ -58,6 +58,8 @@
 	font-size: 100%;
 	color: black;
 	width:80%;
+	display:block;
+	
 }
 
 .estadoSolicitudPaciente {

@@ -1,12 +1,14 @@
 #divContenido{
 	width:100%;
 	height:30rem;
-	background-image:url("../../assets/img/banner.jpg") !important;
+ 	background-image:url("../../assets/img/banner.jpg") !important; 
+ 	background-size:100% 100%;
 }
 
 .contenidoPrincipal{
 	z-index:-1;
 }
+
 
 #buscador{
 	margin-left:70vh;

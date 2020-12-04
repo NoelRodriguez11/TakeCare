@@ -30,6 +30,13 @@ class Caso extends CI_Controller {
         frame($this, 'caso/r', $datos);
     }
     
+    public function rPacientes() {
+        
+        $this->load->model('caso_model');
+        $datos['casos'] = $this->caso_model->getCasos();
+        frame($this, 'caso/rPacientes', $datos);
+    }
+    
     
     
     public function c() {
@@ -65,18 +72,17 @@ class Caso extends CI_Controller {
         }
     }
     
+    
+    
     public function dPost() {
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $this->load->model('caso_model');
         $this->caso_model->borrarCaso($id);
-        
-        if($_SESSION["profesional"]->nombre != null){
-            PRG('Caso descartado', 'caso/r', 'danger');
+        redirect(base_url().'caso/rPacientes');
         }
 
     }
     
     
-}
 ?>

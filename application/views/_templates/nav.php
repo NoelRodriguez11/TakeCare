@@ -11,10 +11,10 @@
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="<?=base_url()?>caso/rCasosPendientesPac">
+                    <a href="<?=base_url()?>caso/rPacientes">
                       <i class="fa fa-stethoscope fa-2x"></i>
                         <span class="nav-text">
-                            Solicitudes pendientes
+                            Mis Solicitudes
                         </span>
                     </a>
                     
@@ -23,7 +23,7 @@
                     <a href="#">
                        <i class="fa fa-user-md fa-2x"></i>
                         <span class="nav-text">
-                            Tratamiento
+                            Mis tratamientos
                         </span>
                     </a>  
                 </li>
