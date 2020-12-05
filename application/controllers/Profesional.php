@@ -83,18 +83,19 @@ class Profesional extends CI_Controller
             $encryptedPassword = password_hash($this->input->post('new1pwd'), PASSWORD_DEFAULT);
             
             if ($this->profesional_model->changePassPerfil($id, $encryptedPassword)) {
-                
-                echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
+                PRG('Has cambiado tu contraseña, intenta acceder','home','info');
+               // echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
                 session_destroy();
             }
             else {
-                
-                echo '<h1 align="center">Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.</h1>';
+                PRG('Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.');
+               // echo '<h1 align="center">Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.</h1>';
             }
         }
         
         else {
-            echo '<h1 align="center">Las contraseñas no coinciden. Intentalo de nuevo</h1>';
+            PRG('Las contraseñas no coinciden. Inténtalo de nuevo');
+            //echo '<h1 align="center">Las contraseñas no coinciden. Intentalo de nuevo</h1>';
         }
         
         
