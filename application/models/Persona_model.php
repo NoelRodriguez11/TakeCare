@@ -51,6 +51,7 @@ class Persona_model extends CI_Model
         $persona->email= $email;
         $persona->telefono= $telefono;
         $persona->cod_recuperacion = null;
+		$persona->caducidad_codigo = null;
         if ($pais!=null) $persona->nace= $pais;
        
         
@@ -93,10 +94,15 @@ class Persona_model extends CI_Model
     
     
     public function guardarCodigo($email, $codigo) {
+		$date = new DateTime();
+		$date -> modify ('+5 minute');
+		$date ->format('d-m-Y H:i:s');
+		
         $persona = R::findOne('persona','email=?',[$email]);
         if ($email == $persona->email) {
          
             $persona->cod_recuperacion = $codigo;
+			$persona->caducidad_codigo = $date;
             R::store($persona);
             
         }
@@ -110,10 +116,19 @@ class Persona_model extends CI_Model
     
     public function comprobarCodigo($token, $email) {
         $usuario = R::findOne('persona', 'cod_recuperacion=? AND email=?',[$token, $email]);
-        
+       
         if ($usuario == null) {
             PRG("Datos incorrectos","/","danger" );
         }
+		
+		$fechaGuardada = DateTime::createFromFormat('d-m-Y H:i:s', $usuario->caducidad_codigo );
+		$fechaActual= new DateTime();
+		$fechaActual->format('d-m-Y H:i:s');
+		
+		if($fechaGuardada > $fechaActual){
+			PRG("Enlace caducado","/","danger" );
+		}
+		
         return TRUE;
     }
     

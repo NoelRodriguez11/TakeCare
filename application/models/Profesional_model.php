@@ -52,6 +52,7 @@ class Profesional_model extends CI_Model
         $profesional->telefono= $telefono;
         $profesional->especialidad=$especialidad;
         $profesional->cod_recuperacion = null;
+		$profesional->caducidad_codigo = null;
         if ($pais!=null) $profesional->nace= $pais;
         $profesional->clinica = $clinica;
         $profesional->valoracion = 0;
@@ -135,10 +136,15 @@ class Profesional_model extends CI_Model
     
     
     public function guardarCodigo($email, $codigo) {
+		$date = new DateTime();
+		$date -> modify ('+5 minute');
+		$date ->format('d-m-Y H:i:s');
+		
         $profesional = R::findOne('profesional','email=?',[$email]);
         if ($email == $profesional->email) {
             
             $profesional->cod_recuperacion = $codigo;
+			$persona->caducidad_codigo = $date;
             R::store($profesional);
             
         }
@@ -152,10 +158,19 @@ class Profesional_model extends CI_Model
     
     public function comprobarCodigo($token, $email) {
         $usuario = R::findOne('profesional', 'cod_recuperacion=? AND email=?',[$token, $email]);
-        
+	
         if ($usuario == null) {
             PRG("Datos incorrectos","/","danger" );
         }
+		
+		$fechaGuardada = DateTime::createFromFormat('d-m-Y H:i:s', $usuario->caducidad_codigo );
+		$fechaActual= new DateTime();
+		$fechaActual->format('d-m-Y H:i:s');
+		
+		if($fechaGuardada > $fechaActual){
+			PRG("Enlace caducado","/","danger" );
+		}
+		
         return TRUE;
     }
     

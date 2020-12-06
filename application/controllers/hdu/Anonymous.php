@@ -234,59 +234,57 @@ class Anonymous extends CI_Controller
         $this->load->model('profesional_model');
         
         $email = $_POST['email'];
-        
+		
+
         if ($this->persona_model->getPersonaByEmail($email) != null){
             
             $verification_key = md5(rand());
             $this->persona_model->guardarCodigo($email, $verification_key);
             
-            
-            $from = "takecaretfg@gmail.com";
-            $to = $email;
-            $subject = "Reset Password";
-            
-            $headers  = 'MIME-Version: 1.0' . "\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers .= "From:" . $from;
-            
-            
-            $message = '<html><body>';
+			$from = "no-reply@takecaretfg.com";
+			
+			$to_email = $email;
+			$subject = 'Reset Password';
+			
+			$message = '<html><body>';
             $message .='<p style="text-align:center; color:#9A0606; font-size: x-large;font-variant: small-caps; padding: 10px; vertical-align: middle;">Para hacer reset por favor haz clic en el siguiente enlace <a href="' . base_url() . 'hdu/anonymous/resetPass/' . $verification_key . '/' . $email . '">Cambiar contraseña</a></p>';
             $message .='<p style="text-align: center;color: #9A0606;font-size: x-large; font-variant: small-caps;padding: 10px; vertical-align: middle;">Gracias!!!</p>';
             $message .='<img src="https://takecare-proyecto4.000webhostapp.com/assets/img/iconotc.png" width="50px" height="50" alt="takecare Logo">';
             $message .= '</body></html>';
-            
-            
-            mail($to,$subject,$message, $headers);
+			
+			 $headers  = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers .= "From:" . $from;
+			mail($to_email,$subject,$message,$headers);
+			
             PRG('Se te ha enviado un mensaje, para recuperar tu contraseña, por favor, revisa tu bandeja de entrada y si no lo encuentas ve a spam.', 'home', 'info');
             //frame($this, '_hdu/anonymous/mensajeEnviado');
             //echo "Se te ha enviado un mensaje, para recuperar tu contraseña, por favor, revisa tu correo electrónico.";
             //echo $message;
         }
-        
+       
         else if ($this->profesional_model->getProfesionalByEmail($email) != null) {
             
             $verification_key = md5(rand());
             $this->profesional_model->guardarCodigo($email, $verification_key);
             
             
-            $from = "takecaretfg@gmail.com";
-            $to = $email;
-            $subject = "Reset Password";
-            
-            $headers  = 'MIME-Version: 1.0' . "\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers .= "From:" . $from;
-            
-            
-            $message = '<html><body>';
+           $from = "no-reply@takecaretfg.com";
+			
+			$to_email = $email;
+			$subject = 'Reset Password';
+			
+			$message = '<html><body>';
             $message .='<p style="text-align:center; color:#9A0606; font-size: x-large;font-variant: small-caps; padding: 10px; vertical-align: middle;">Para hacer reset por favor haz clic en el siguiente enlace <a href="' . base_url() . 'hdu/anonymous/resetPassPro/' . $verification_key . '/' . $email . '">Cambiar contraseña</a></p>';
             $message .='<p style="text-align: center;color: #9A0606;font-size: x-large; font-variant: small-caps;padding: 10px; vertical-align: middle;">Gracias!!!</p>';
             $message .='<img src="https://takecare-proyecto4.000webhostapp.com/assets/img/iconotc.png" width="50px" height="50" alt="takecare Logo">';
             $message .= '</body></html>';
-            
-            
-            mail($to,$subject,$message, $headers);
+			
+			 $headers  = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers .= "From:" . $from;
+			mail($to_email,$subject,$message,$headers);
+			
             PRG('Se te ha enviado un mensaje, para recuperar tu contraseña, por favor, revisa tu bandeja de entrada y si no lo encuentas ve a spam.', 'home', 'info');
             //frame($this, '_hdu/anonymous/mensajeEnviado');
             //echo "Se te ha enviado un mensaje, para recuperar tu contraseña, por favor, revisa tu correo electrónico.";
@@ -294,8 +292,8 @@ class Anonymous extends CI_Controller
         }
         
         else {
-            
-            $this->session->set_flashdata('messageRegister', 'Error en la comprobación de email');
+            //$this->session->set_flashdata('messageRegister', 'Error en la comprobación de email');
+			PRG('Error en la comprobación de email', 'home', 'error');
             redirect(base_url());
         }
     }
