@@ -27,6 +27,7 @@ class Caso_model extends CI_Model
         $caso = R::findOne('caso','fecha_inicio=?',[$fechahora],'id_profesional=?',[$idProfesional]);
        
         $ok = ($caso==null && $fechahora!=null && $idProfesional!=null);
+        
         if ($ok) {
             $caso = R::dispense('caso');
             $caso->fechaInicio = $fechahora;

@@ -148,18 +148,21 @@ class Profesional extends CI_Controller
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $idProfesional = isset($_POST['idProfesional']) ? $_POST['idProfesional'] : null;
         $idPaciente = isset($_POST['idPaciente']) ? $_POST['idPaciente'] : null;
-        $fechaCita = isset($_POST['fechaCita']) ? $_POST['fechaCita'] : null;
+        $fechaCita = isset($_POST['fechaHora']) ? $_POST['fechaHora'] : null;
 
         $this->load->model('caso_model');
         $this->load->model('cita_model');
+        $this->load->model('profesional_model');
+        $this->load->model('persona_model');
                
         $this->caso_model->cambiarEstado($id, "Aceptada");
-        $this->cita_model->crearCita($fechaCita, $idProfesional, $idPaciente);
+        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente));
                   
         PRG('Caso Aceptado', 'caso/r', 'success');
                 
     }
-    
+
+//-----------------------------------------------------------RECHAZAR CASO------------------------------------------------------------------------------------
     public function rechazarCaso() {
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
