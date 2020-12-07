@@ -19,7 +19,7 @@
             	<div class="col-sm-3 tituloCasosIndicador" >Fecha Solicitada:<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div></div>
                 
                  <!--diagnostico -->
-            	<div class="col-sm-4 tituloCasosIndicador" >Diagnostico Preliminar:
+            	<div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar:
             	<?php if($caso->diagnosticoGeneral != "(No especificado por el paciente)"):?>
             		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoGeneral?></div>
             	<?php else:?>
