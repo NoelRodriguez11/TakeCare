@@ -66,11 +66,11 @@ class Anonymous extends CI_Controller
             $this->especialidad_model->crearEspecialidad('Otología');
             
             //Profesionales Hard-Coded
-            $this->profesional_model->crearProfesional('Antonio', 'Garcia', "Marquez","33344455Y","1234","Plaza castilla-leon, 7, 1-B", "Madrid", "Madrid", 57648393, "emailAntonio@gmail.com","Hombre" , $this->pais_model->getPaisById(5), "4/9/1994", $this->especialidad_model->getEspecialidadById(1),"Autonomo/a", null);
-            $this->profesional_model->crearProfesional('Leire', 'Rivera', "Del Rio","76544455Y","1234","Calle robledal 8", "Coslada", "Madrid", 49539483, "emailLeire@gmail.com","Mujer", $this->pais_model->getPaisById(6), "4/9/1994", $this->especialidad_model->getEspecialidadById(1),"Clinica Las lagunas", null);
-            $this->profesional_model->crearProfesional('Daniel', 'Martinez', "Cabrales","93567455Y","1232","Calle Capitan America, 32", "Torrejon", "Madrid", 485337564, "emailDaniel@gmail.com","Hombre" , $this->pais_model->getPaisById(4),"4/9/1994", $this->especialidad_model->getEspecialidadById(2),"Autonomo/a", null);
-            $this->profesional_model->crearProfesional('Alberto', 'Pascual', "Jimenez", "34256542V","1233", "Calle de Segovia, 21", "Madrid", "Madrid", 663283456, "emailAlberto@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "29/3/1998", $this->especialidad_model->getEspecialidadById(3),"Garrigues médicos", null);
-            $this->profesional_model->crearProfesional('Raul', 'Camargo', "Torremocha", "74757596B", "1233", "Calle de la Madera, 1", "Madrid", "Madrid", 776534345, "emailRaul@gmail.com", "Hombre", $this->pais_model->getPaisById(7), "16/8/1995", $this->especialidad_model->getEspecialidadById(4),"Autonomo/a", null);
+            $this->profesional_model->crearProfesional('Antonio', 'Garcia', "Marquez","33344455Y","1234","Plaza castilla-leon, 7, 1-B", "Conde de Casal", "Madrid", 576483934, "emailAntonio@gmail.com","Hombre" , $this->pais_model->getPaisById(5), "4/9/1994", $this->especialidad_model->getEspecialidadById(1),"Autonomo/a","Tarde", "17:00-21:00", null);
+            $this->profesional_model->crearProfesional('Leire', 'Rivera', "Del Rio","76544455Y","1234","Calle robledal 8", "Coslada", "Madrid", 495394831, "emailLeire@gmail.com","Mujer", $this->pais_model->getPaisById(6), "4/9/1994", $this->especialidad_model->getEspecialidadById(1),"Clinica Las lagunas","Mañana y Tarde","09:00-18:00", null);
+            $this->profesional_model->crearProfesional('Daniel', 'Martinez', "Cabrales","93567455Y","1232","Calle Capitan America, 32", "Torrejon de Ardoz", "Madrid", 485337564, "emailDaniel@gmail.com","Hombre" , $this->pais_model->getPaisById(4),"4/9/1994", $this->especialidad_model->getEspecialidadById(2),"Autonomo/a","Tarde","15:00-21:30", null);
+            $this->profesional_model->crearProfesional('Alberto', 'Pascual', "Jimenez", "34256542V","1233", "Calle de Segovia, 21", "Madrid", "Madrid", 663283456, "emailAlberto@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "29/3/1998", $this->especialidad_model->getEspecialidadById(3),"Garrigues médicos","Mañana","08:00-14:00", null);
+            $this->profesional_model->crearProfesional('Raul', 'Camargo', "Torremocha", "74757596B", "1233", "Calle de la Madera, 1", "Madrid", "Madrid", 776534345, "emailRaul@gmail.com", "Hombre", $this->pais_model->getPaisById(7), "16/8/1995", $this->especialidad_model->getEspecialidadById(4),"Autonomo/a","Mañana","10:00-14:00", null);
             
             
             $data['msg'] = "BD recreada";
@@ -110,6 +110,9 @@ class Anonymous extends CI_Controller
         $pais = isset($_POST['pais']) ? $_POST['pais'] : null;
         $especilidad = isset($_POST['especialidad']) ? $_POST['especialidad'] : null;
         $clinica = isset($_POST['clinica']) ? $_POST['clinica'] : null;
+        $turno = isset($_POST['turno']) ? $_POST['turno'] : null;
+        $franja = isset($_POST['franja']) ? $_POST['franja'] : null;
+
         
         if($clinica == null){
             $clinica = "Autonomo/a";
@@ -143,7 +146,7 @@ class Anonymous extends CI_Controller
                 }
                 else {
                 
-                    $id = $this->profesional_model->crearProfesional($nombre, $primerNombre, $segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $this->pais_model->getPaisById($pais),$fechaNacimiento, $this->especialidad_model->getEspecialidadById($especilidad),$clinica, $extFoto);
+                    $id = $this->profesional_model->crearProfesional($nombre, $primerNombre, $segundoNombre ,$dni,$password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $this->pais_model->getPaisById($pais),$fechaNacimiento, $this->especialidad_model->getEspecialidadById($especilidad),$clinica,$turno,$franja, $extFoto);
                    
                 }}
             catch (Exception $e){

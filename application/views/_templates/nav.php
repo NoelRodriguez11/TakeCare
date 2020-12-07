@@ -11,16 +11,16 @@
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="<?=base_url()?>caso/rPacientes">
+                    <a href="<?=base_url()?>caso/rPacientesSolicitudes">
                       <i class="fa fa-stethoscope fa-2x"></i>
                         <span class="nav-text">
-                            Mis Solicitudes
+                            Historial de Solicitudes
                         </span>
                     </a>
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="<?=base_url()?>caso/rPacientes">
                        <i class="fa fa-user-md fa-2x"></i>
                         <span class="nav-text">
                             Mis tratamientos

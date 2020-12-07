@@ -14,7 +14,7 @@
             	</div></div>
             	
             	<!--fecha solicitada -->
-            	<div class="col-sm-2 tituloCasosIndicador" >Fecha Solicitada:<div class="textoCasosContenido"><?=$caso->fechaInicio?></div></div>
+            	<div class="col-sm-2 tituloCasosIndicador" >Fecha Solicitada:<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div></div>
                 
                  <!--diagnostico -->
             	<div class="col-sm-5 tituloCasosIndicador" >Diagnostico Preliminar:<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoGeneral?></div></div>

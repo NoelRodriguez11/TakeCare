@@ -22,6 +22,8 @@
     <script type="text/javascript" src="<?=base_url()?>assets/js/modo.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/star.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/cambioImagenRegistro.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/js/separacionFechaYHora.js"></script>
+    
     <link rel="stylesheet" href="<?=base_url()?>assets/css/oscuro.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/paginaPrincipal.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/configPerfil.css">
@@ -39,6 +41,9 @@
 	
 	<!-- CSS Casos de profesionales -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/casosProfesional.css">
+	
+	<!-- CSS Casos (tratamientos) de pacientes -->
+	<link rel="stylesheet" href="<?=base_url()?>assets/css/casosPacientes.css">
 	
 
 	

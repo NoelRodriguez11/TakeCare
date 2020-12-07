@@ -3,8 +3,8 @@
 	padding: 1.4rem !important;
 	border-radius: .5rem !important;
 	border:2px solid grey;
-	height: 180px;
-	width: 837px;
+	height: 190px;
+	width: 950px;
 	background: rgb(230,230,230);
 	background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(248,248,248,1) 26%, rgba(248,248,248,1) 100%);
 }
@@ -26,12 +26,26 @@
 	color:grey;
 	
 }
+
+.horario {
+	margin-left: 4.1%;
+}
+
+
 #especialidadEstilo {
 
 	font-family:'Exo 2', sans-serif;
 	font-size: 125%;
 	top:75%;
 	color: rgb(156, 10, 10);
+}
+
+#especialidadEstiloHorario {
+
+	font-family:'Exo 2', sans-serif;
+	font-size: 125%;
+	top:75%;
+	color: rgb(50, 61, 115);
 }
 
 .provinciaIndicador {
@@ -59,7 +73,7 @@
 	border-radius: .5rem !important;
 	border:0.3px solid grey;
 	height: 75px;
-	width: 837px;
+	width: 950px;
 	background-color: rgb(230, 230, 230);
 	text-align: center;
 	padding-top: 1%;

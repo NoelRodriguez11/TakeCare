@@ -1,0 +1,44 @@
+.divTratamientoPacientes{
+	margin: 1.5rem;
+	padding: 1.4rem !important;
+	border-radius: .5rem !important;
+	border:2px solid grey;
+	height: 10%;
+	width: 100%;
+	background: rgb(230,230,230);
+	background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(248,248,248,1) 26%, rgba(248,248,248,1) 100%);
+}
+
+
+.textoCasosContenidoConFormatoFechaHora {
+	font-family:'Exo 2', sans-serif;
+	font-size: 100%;
+	color: black;
+	
+}
+
+.tituloCasosIndicadorPaciente {
+	font-family:'Exo 2', sans-serif;
+	font-size: 130%;
+	top:75%;
+	color: rgb(156, 10, 10);
+	background: rgb(209, 209, 209);
+	border-radius: .5rem !important;
+	border:1px solid rgb(230,230,230);
+}
+
+.textoCasosContenidoPaciente {
+	font-family:'Exo 2', sans-serif;
+	font-size: 120%;
+	color: black;
+	width:80%;
+	display:block;
+	
+}
+
+
+
+
+
+
+

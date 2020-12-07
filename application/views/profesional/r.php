@@ -49,12 +49,14 @@
         </div>
         
          <!--Horario -->
-    	<div class="col-sm-2 especialidadIndicador" >Horario:<div id="especialidadEstilo">(en pruebas)</div></div>
+    	<div class="col-sm-2 especialidadIndicador horario" >Horario:<div id="especialidadEstiloHorario"><?=$profesional->turno?><br><?=$profesional->franja?></div></div>
       
 		
        	<form action="<?=base_url()?>caso/c" method="get">
 			<input type="hidden" name="idProfesional" value="<?=$profesional->id?>">
-			<?php if ($datosGen['profesional']==null):?><button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Enviar Solicitud</button><?php endif;?>
+	
+			<button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Enviar Solicitud</button>
+
 		</form>
        
 
@@ -68,10 +70,14 @@
     	</div>
         
          <!--Especialidad -->
-    	<div class="col-sm-3 especialidadIndicador" >Especialidad:<div id="especialidadEstilo"><?=$profesional->especialidad->nombre?></div></div>
+    	<div class="col-sm-2 especialidadIndicador" >Especialidad:<div id="especialidadEstilo"><?=$profesional->especialidad->nombre?></div></div>
     	
     	  <!--Especialidad -->
-    	<div class="col-sm-3 provinciaIndicador" >Provincia:<div id="provinciaEstilo"><?=$profesional->provincia?></div></div>
+    	<div class="col-sm-2 provinciaIndicador" >Ubicación:<div id="provinciaEstilo"><?=$profesional->ciudad?>, <?=$profesional->provincia?></div></div>
+    	
+    	<div class="col-sm-2 provinciaIndicador" >Telefono:<div id="provinciaEstilo"><?=$profesional->telefono?></div></div>
+    	
+    	
     	</div>
 </div>
 <?php endforeach;?>

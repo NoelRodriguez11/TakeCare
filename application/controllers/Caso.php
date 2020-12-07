@@ -1,7 +1,9 @@
 <?php
 
 class Caso extends CI_Controller {
-
+    
+    
+// Casos READ de profesional del bean CASOS
     public function rCasosPendientes() {
         
         $this->load->model('caso_model');
@@ -9,12 +11,6 @@ class Caso extends CI_Controller {
         frame($this, 'caso/rCasosPendientes', $datos);
     }
     
-    public function rCasosPendientesPac() {
-        
-        $this->load->model('caso_model');
-        $datos['casos'] = $this->caso_model->getCasosByEstado("Pendiente");
-        frame($this, 'caso/rCasosPendientesPac', $datos);
-    }
     
     public function rCasosRechazados() {
         
@@ -29,11 +25,21 @@ class Caso extends CI_Controller {
         $datos['casos'] = $this->caso_model->getCasosByEstado("Aceptada");
         frame($this, 'caso/r', $datos);
     }
+
+// casos READ de persona del bean CASOS
+    public function rPacientesSolicitudes() {
+        
+        $this->load->model('caso_model');
+        $datos['casos'] = $this->caso_model->getCasos();
+        frame($this, 'caso/rPacientesSolicitudes', $datos);
+    }
     
     public function rPacientes() {
         
         $this->load->model('caso_model');
-        $datos['casos'] = $this->caso_model->getCasos();
+        $this->load->model('especialidad_model');
+        $datos['casos'] = $this->caso_model->getCasosByEstado("Aceptada");
+        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
         frame($this, 'caso/rPacientes', $datos);
     }
     
@@ -58,6 +64,10 @@ class Caso extends CI_Controller {
         $idProfesional = isset($_POST['idProfesional']) ? $_POST['idProfesional'] : null;
         $idPersona = isset($_POST['idPersona']) ? $_POST['idPersona'] : null;
         $diagnosticoPrevio = isset($_POST['diagnosticoPrevio']) ? $_POST['diagnosticoPrevio'] : null;
+        
+        if ($diagnosticoPrevio == null){
+            $diagnosticoPrevio = "(No especificado por el paciente)";
+        }
         
         
         try {

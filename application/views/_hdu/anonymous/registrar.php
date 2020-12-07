@@ -58,7 +58,7 @@
         	<input id="id-direccion" type="text" name="direccion" required="required"/>
         	<br/>
         	
-        	<label for="id-ciudad">Ciudad</label>
+        	<label for="id-ciudad">Ciudad/Zona</label>
         	<input id="id-ciudad" type="text" name="ciudad" required="required"/>
         	<br/>
         	
@@ -143,6 +143,7 @@
         		<?php endforeach;?>
         	</select>
         	<br/>
+
         	
         	<!-- JAVASCRIPT PARA VISUALIZAR LA FOTO -->
         	<script>
@@ -217,7 +218,7 @@
         	<input id="id-direccion" type="text" name="direccion" required="required"/>
         	<br/>
         	
-        	<label for="id-ciudad">Ciudad</label>
+        	<label for="id-ciudad">Ciudad/Zona</label>
         	<input id="id-ciudad" type="text" name="ciudad" required="required"/>
         	<br/>
         	
@@ -316,6 +317,20 @@
         		<?php endforeach;?>
         	</select>
         	<br/>
+        	
+        	        	
+        	<label for="id-turno">Turno</label>
+          	<select name="turno" id="id-turno">
+            <option value="Mañana">Mañana</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Mañana y Tarde">Mañana y Tarde</option>
+            </select> 
+            
+            <label for="id-franja">Franja Horaria</label>
+        	<input id="id-franja" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required"/>
+        	<br/>
+            
+            <br>
         	
         	<input type="hidden" name="tipoUsuario" value=2/>
 
