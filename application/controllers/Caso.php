@@ -66,6 +66,7 @@ class Caso extends CI_Controller {
         $diagnosticoPrevio = isset($_POST['diagnosticoPrevio']) ? $_POST['diagnosticoPrevio'] : null;
         
         if ($diagnosticoPrevio == null){
+            
             $diagnosticoPrevio = "(No especificado por el paciente)";
         }
         
