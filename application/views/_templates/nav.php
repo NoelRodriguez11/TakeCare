@@ -1,4 +1,48 @@
-<?php if (isset ($datosGen['persona'])): ?> 
+<?php if (isset ($datosGen['persona']) && ($_SESSION['persona']->dni == 'admin')): ?> 
+<nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="<?=base_url()?>especialidad/r">
+                        <i class="fa fa-cogs fa-2x"></i>
+                        <span class="nav-text">
+                     		Lista de especialidades
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="<?=base_url()?>sintoma/r">
+                      <i class="fa fa-stethoscope fa-2x"></i>
+                        <span class="nav-text">
+                            Lista de sintomas
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="<?=base_url()?>persona/d">
+                       <i class="fa fa-user-md fa-2x"></i>
+                        <span class="nav-text">
+                            Borrar Pacientes
+                        </span>
+                    </a>  
+                </li>
+                <li class="has-subnav">
+                    <a href="<?=base_url()?>profesional/d">
+                       <i class="fa fa-calendar-alt fa-2x"></i>
+                        <span class="nav-text">
+                            Borrar Profesionales
+                        </span>
+                    </a>
+                   
+                </li>
+                <li>
+                </li>
+                </ul>
+                
+        </nav>
+
+<?php elseif (isset ($datosGen['persona'])): ?> 
 <nav class="main-menu">
             <ul>
                 <li>

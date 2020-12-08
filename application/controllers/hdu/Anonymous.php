@@ -26,8 +26,9 @@ class Anonymous extends CI_Controller
             $this->load->model('especialidad_model');
             
             //Admin de pacientes y de profesionales
-            $this->persona_model->crearPersona('TakeCare', 'takecare',"takecare","65433890Y","admin",null, null, null, null, "admin@gmail.com", "Hombre", "A+", "España", "4-9-1994", null);
-           
+            $this->persona_model->crearPersona('TakeCare', 'takecare',"takecare","65433890Y","admin",null, null, null, null, "victor@gmail.com", "Hombre", "A+", "España", "4-9-1994", null);
+            $this->persona_model->crearPersona('admin', 'admin',"admin","admin","admin",null, null, null, null, "admin@gmail.com", "Hombre", "A+", "España", "4-9-1994", null);
+            $this->persona_model->crearPersona('Noel', 'noel',"noel","noel","noel",null, null, null, null, "noel@gmail.com", "Hombre", "A+", "España", "4-9-1994", null);
             //Creación de paises al inicializar la base de datosdatos
             $this->pais_model->crearPais('Alemania');
             $this->pais_model->crearPais('Austria');

@@ -14,6 +14,9 @@ class Especialidad_model extends CI_Model
         return R::load('especialidad', $id);
     }
     
+    public function borrarEspecialidad($id) {
+        R::trash(R::load('especialidad',$id));
+    }
     
     public function crearEspecialidad($nombre)
     {
@@ -28,6 +31,25 @@ class Especialidad_model extends CI_Model
            $e = ($nombre==null?new Exception("nulo"):new Exception("Nombre de especialidad ya registrado, escoge otro"));
            throw $e;
         }
-    }   
+    }
+    
+    public function actualizarEspecialidad($id, $nombre)
+    {
+        $especialidad = R::findOne('especialidad','nombre=?',[$nombre]);
+        if ($especialidad == null) {
+            $especialidad = R::load('especialidad', $id);
+            $especialidad->nombre = $nombre;
+            R::store($especialidad);
+        }
+        
+        else if ($nombre == $especialidad->nombre && $id == $especialidad->id){
+            $especialidad = R::load('especialidad', $id);
+            R::store($especialidad);
+        }
+        else {
+            $e = ($nombre == null ? new Exception("nulo") : new Exception("Nombre de especialidad ya registrado, escoge otro"));
+            throw $e;
+        }
+    }
 }
 ?>

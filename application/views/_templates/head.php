@@ -28,9 +28,19 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/css/paginaPrincipal.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/configPerfil.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
+<!-- JavaScript para las expresiones regulares de Registro y Login -->
+    <script type="text/javascript" src="<?=base_url()?>assets/js/RegExp.js"></script>
+    
+    <!-- CSS Footer -->
     <link rel="stylesheet" href="<?=base_url()?>assets/css/footer.css">
+    
+    <!-- CSS Login -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/login_registro.css">
+	
+	<!-- CSS Registro -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/registroCampos.css">
+	
+	<!-- CSS Footer -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/estiloPedirCita.css">
 	
 	<!-- CSS Anuncios de profesionales -->

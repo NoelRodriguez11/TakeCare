@@ -6,9 +6,6 @@
 
 			<form action="<?=base_url()?>hdu/anonymous/configPerfilPost" method="post" enctype="multipart/form-data">
 
-
-
-
 				<!-- JAVASCRIPT PARA VISUALIZAR LA FOTO -->
 				<script>
         	$(".main-menu").hide();
@@ -34,82 +31,6 @@
         		}});}));
         	</script>
         	
-        	<script type="text/javascript">
-				function validarNombre() {
-            		var nombre=document.getElementById("id-nombre").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
-        
-                    if (nombre.length < 2 && nombre.length > 20) {
-                        document.getElementById("errorNombre").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
-                    }
-                    else if (!rgExp.test(nombre)){
-                        document.getElementById("errorNombre").innerHTML="El nombre tiene caracteres no validos";
-                    }
-                    else {
-                        document.getElementById("errorNombre").innerHTML="";
-                    }
-                }
-                
-                function validarTelefono() {
-            		var telefono=document.getElementById("id-tlf").value.trim();
-                    var rgExp= /^[9876][0-9]{8}$/;
-        
-                    if (telefono.length != 9) {
-                        document.getElementById("errorTelefono").innerHTML="El teléfono no tiene 9 caracteres";
-                    }
-                    else if (!rgExp.test(telefono)){
-                        document.getElementById("errorTelefono").innerHTML="El telefono tiene caracteres no validos";
-                    }
-                    else {
-                        document.getElementById("errorTelefono").innerHTML="";
-                    }
-                }
-                
-                function validarDireccion() {
-            		var direccion=document.getElementById("id-direccion").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
-        
-                    if (direccion.length < 2 && direccion.length > 20) {
-                        document.getElementById("errorDireccion").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
-                    }
-                    
-                    else if (!rgExp.test(direccion)){
-                        document.getElementById("errorDireccion").innerHTML="El nombre tiene caracteres no validos";
-                    }
-                    else {
-                        document.getElementById("errorDireccion").innerHTML="";
-                    }
-                }
-                
-                function validarCiudad() {
-            		var ciudad=document.getElementById("id-ciudad").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{3,30}$/;
-        
-                    if (ciudad.length < 3 && ciudad.length > 30) {
-                        document.getElementById("errorCiudad").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
-                    }
-                    else if (!rgExp.test(ciudad)){
-                        document.getElementById("errorCiudad").innerHTML="El nombre tiene caracteres no validos";
-                    }
-                    else {
-                        document.getElementById("errorCiudad").innerHTML="";
-                    }
-                    }
-                    
-                    function deshabilitarBoton() {
-                	var spanNombre = document.getElementById("errorNombre");
-                	var boton = document.getElementById("botonConfirmar");
-                	
-                	if (spanNombre.length > 0) {
-                		boton.disabled = true;
-                	}
-                	else {
-                		boton.disabled = false;
-                	}
-                }
-                    
-			</script>
-
 				<div class="form-group">
 					<label for="id-foto2">Foto</label> <input id="id-foto2" type="file"
 						name="foto2" /><br> <img class="offset-1 col-2" id="id-out-foto2"
