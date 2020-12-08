@@ -80,9 +80,11 @@ class Persona extends CI_Controller
             $encryptedPassword = password_hash($this->input->post('newpwd'), PASSWORD_DEFAULT);
             
             if ($this->persona_model->changePassPerfil($id, $encryptedPassword)) {
-                PRG('Has cambiado tu contraseña, intenta acceder','home','info');
-               // echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
                 session_destroy();
+                PRG('Has cambiado tu contraseña, intenta acceder','home','info');
+                
+               // echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
+               
             }
             else {
                 PRG('Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.');

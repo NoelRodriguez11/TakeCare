@@ -83,9 +83,10 @@ class Profesional extends CI_Controller
             $encryptedPassword = password_hash($this->input->post('new1pwd'), PASSWORD_DEFAULT);
             
             if ($this->profesional_model->changePassPerfil($id, $encryptedPassword)) {
+                session_destroy();
                 PRG('Has cambiado tu contraseña, intenta acceder','home','info');
                // echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
-                session_destroy();
+                
             }
             else {
                 PRG('Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.');
@@ -114,10 +115,9 @@ class Profesional extends CI_Controller
         
         $id =  $_SESSION['profesional']['id'];
         //echo "id: " . $id;
-        $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
-        $email = isset($_POST['email']) ? $_POST['email'] : null;
-        echo "correo: " . $email;
-        $telefono = isset($_POST['tlf']) ? $_POST['tlf'] : null;
+        $nombre = isset($_POST['nombrep']) ? $_POST['nombrep'] : null;
+        $email = isset($_POST['correop']) ? $_POST['correop'] : null;
+        $telefono = isset($_POST['tlfp']) ? $_POST['tlfp'] : null;
         
         try {
             $this->profesional_model->actualizarProfesional($id, $nombre, $email, $telefono);

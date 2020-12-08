@@ -1,7 +1,7 @@
 <div class="container col-6" id="vistaperfil">
 	<div class="tab-content">
 		<div id="paciente" class="tab-pane fade in active">
-			<h1 class="textoexp1">Configuracion Perfil Paciente</h1>
+			<h1 class="textoexp1-enunciados">Configuracion Perfil Paciente</h1>
 
 			<form action="<?=base_url()?>persona/configPerfilPost" method="post" enctype="multipart/form-data">
 
