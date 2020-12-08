@@ -184,6 +184,18 @@ class Profesional extends CI_Controller
         
         
     }
+
+    public function agregarSintoma() {
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $sintoma = isset($_POST['sintoma']) ? $_POST['sintoma'] : null;
+        $this->load->model('caso_model');
+        $this->caso_model->agregarSintoma($id, $sintoma);
+        redirect(base_url() . 'cita/rProfesional');
+        
+        
+    }
+    
     
         
         

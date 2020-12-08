@@ -23,6 +23,7 @@
     <script type="text/javascript" src="<?=base_url()?>assets/js/star.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/cambioImagenRegistro.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/separacionFechaYHora.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/js/agregarSintoma.js"></script>
     
     <link rel="stylesheet" href="<?=base_url()?>assets/css/oscuro.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/paginaPrincipal.css">

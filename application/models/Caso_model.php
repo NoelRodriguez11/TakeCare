@@ -67,6 +67,17 @@ class Caso_model extends CI_Model
         
     }
     
+    public function agregarSintoma($id, $sintoma) {
+        $caso = R::findOne('caso','id=?',[$id]);
+        
+        $caso = R::load('caso', $id);
+        
+        $caso->sintoma = $sintoma;
+        
+        R::store($caso);
+        
+    }
+    
     public function borrarCaso($id) {
         R::trash(R::load('caso',$id));
     }
