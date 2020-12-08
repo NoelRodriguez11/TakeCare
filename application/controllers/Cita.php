@@ -2,8 +2,13 @@
 
 class Cita extends CI_Controller {
 
-    public function r() {
-        frame($this, 'cita/r');
+    public function rPaciente() {
+        
+        $this->load->model('caso_model');
+        $this->load->model('especialidad_model');
+        $datos['casos'] = $this->caso_model->getCasosByEstado("Aceptada");
+        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        frame($this, 'cita/rPaciente', $datos);
     }
     
     public function c() {

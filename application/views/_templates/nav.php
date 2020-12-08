@@ -27,15 +27,15 @@
                         </span>
                     </a>  
                 </li>
-                <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-calendar-alt fa-2x"></i>
-                        <span class="nav-text">
-                            Calendario
-                        </span>
-                    </a>
+<!--                 <li class="has-subnav"> -->
+<!--                     <a href="#"> -->
+<!--                        <i class="fa fa-calendar-alt fa-2x"></i> -->
+<!--                         <span class="nav-text"> -->
+<!--                             Calendario -->
+<!--                         </span> -->
+<!--                     </a> -->
                    
-                </li>
+<!--                 </li> -->
                 <li>
                 </li>
                 </ul>
@@ -82,14 +82,14 @@
                     </a>
                    
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-bar-chart-o fa-2x"></i>
-                        <span class="nav-text">
-                           (Esta la dejamos por si se nos ocurre algo)
-                        </span>
-                    </a>
-                </li>
+<!--                 <li> -->
+<!--                     <a href="#"> -->
+<!--                         <i class="fa fa-bar-chart-o fa-2x"></i> -->
+<!--                         <span class="nav-text"> -->
+<!--                            (Esta la dejamos por si se nos ocurre algo) -->
+<!--                         </span> -->
+<!--                     </a> -->
+<!--                 </li> -->
                 <li>
                 </li>
                 </ul>

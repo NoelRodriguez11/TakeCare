@@ -144,7 +144,17 @@ class Persona extends CI_Controller
     }
    
    
-    
+//----------------------------------Finalizar tratamiento-------------------------------------------------------------   
+
+    public function finalizarTratamiento() {
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $this->load->model('caso_model');
+        $this->caso_model->cambiarEstado($id, "Finalizada");
+        PRG('Tratamiento Finalizado', 'caso/rPacientes', 'danger');
+        
+        
+    }
     
 //     public function u()
 //     {

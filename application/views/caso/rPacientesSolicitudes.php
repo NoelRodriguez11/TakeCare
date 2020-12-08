@@ -18,10 +18,10 @@
                 
                  <!--diagnostico -->
             	 <div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar:
-            	<?php if($caso->diagnosticoGeneral != "(No especificado por el paciente)"):?>
-            		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoGeneral?></div>
+            	<?php if($caso->diagnosticoPreliminar != "(No especificado por el paciente)"):?>
+            		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoPreliminar?></div>
             	<?php else:?>
-            		<div class="textoCasosContenido" style="word-wrap: break-word; color:grey"><i><?=$caso->diagnosticoGeneral?></i></div>	
+            		<div class="textoCasosContenido" style="word-wrap: break-word; color:grey"><i><?=$caso->diagnosticoPreliminar?></i></div>	
             	<?php endif;?>
             	</div>
             	
@@ -32,6 +32,8 @@
             	style="color:rgb(220, 53, 69) !important;"
             	<?php elseif($caso->estado == "Aceptada"):?>
             	style="color:rgb(40, 167, 69) !important;"
+            	<?php elseif($caso->estado == "Finalizada"):?>
+            	style="color:rgb(45, 45, 92) !important;"
             	<?php endif;?>
             	>
             	<?=$caso->estado?></div></div>
@@ -47,7 +49,14 @@
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
         			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Ver Seguimiento</button>
         		</form>
+        		
+        		<?php elseif($caso->estado == "Finalizada"):?>
+            	<form class="col-sm-1" action="<?=base_url()?>caso/#" method="post">
+        			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+        			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Información Completa</button>
+        		</form>
         		<?php else:?>
+        		
          		<form class="col-sm-1" action="<?=base_url()?>caso/dPost" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
         			<button title="Anular la solicitud" onclick="submit()" class="botonCambioPropuesta btn btn-danger" id="botonPC">Anular Solicitud</button>

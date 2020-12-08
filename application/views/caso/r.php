@@ -20,10 +20,10 @@
                 
                  <!--diagnostico -->
             	<div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar:
-            	<?php if($caso->diagnosticoGeneral != "(No especificado por el paciente)"):?>
-            		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoGeneral?></div>
+            	<?php if($caso->diagnosticoPreliminar != "(No especificado por el paciente)"):?>
+            		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoPreliminar?></div>
             	<?php else:?>
-            		<div class="textoCasosContenido" style="word-wrap: break-word; color:grey"><i><?=$caso->diagnosticoGeneral?></i></div>	
+            		<div class="textoCasosContenido" style="word-wrap: break-word; color:grey"><i><?=$caso->diagnosticoPreliminar?></i></div>	
             	<?php endif;?>
             	</div>
             	

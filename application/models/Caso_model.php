@@ -35,7 +35,8 @@ class Caso_model extends CI_Model
             $caso->fechaAsignacion = null; 
             $caso->persona = $idPersona;
             $caso->profesional = $idProfesional;
-            $caso->diagnosticoGeneral = $diagnosticoPrevio;
+            $caso->diagnosticoPreliminar = $diagnosticoPrevio;
+            $caso->diagnosticoGeneral = null;
             $caso->estado = "Pendiente";
             return R::store($caso);
         }
