@@ -4,31 +4,6 @@
 			<h1 class="textoexp1-enunciados">Configuracion Perfil Paciente</h1>
 
 			<form action="<?=base_url()?>persona/configPerfilPost" method="post" enctype="multipart/form-data">
-
-				<!-- JAVASCRIPT PARA VISUALIZAR LA FOTO   -->
-				<script>
-        	$(".main-menu").hide();
-        	$(window).on("load", (function (){
-        		$(function() {
-        			$("#id-foto").change(function(e) {addImage(e);});
-        
-        		function addImage (e){
-        			var file = e.target.files[0];
-        			var imageType = /image.*/;
-        
-        			if (!file.type.match(imageType)) return;
-        
-        			var reader = new FileReader();
-        			reader.onload = fileOnLoad;
-        			reader.readAsDataURL(file);
-        			
-        		}
-        
-        		function fileOnLoad(e) {
-        			var result=e.target.result;
-        			$('#id-out-foto').attr("src",result);
-        		}});}));
-        	</script>
         	
         	<script type="text/javascript">
 				function validarNombre() {
@@ -110,12 +85,6 @@
                 }
                     
 			</script>
-
-				<div class="col-xs-8">
-					<label for="id-foto">Foto</label> 
-					<input id="id-foto" type="file" name="foto" /><br> 
-					<img class="img-circle" id="id-out-foto" width="20%" height="20%" src="" alt="" /><br>
-				</div>
 
 				<div class="col-xs-8">
 					<label for="id-nombre">Nombre</label> 
