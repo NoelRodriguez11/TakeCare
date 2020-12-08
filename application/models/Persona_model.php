@@ -121,11 +121,18 @@ class Persona_model extends CI_Model
             PRG("Datos incorrectos","/","danger" );
         }
 		
-		$fechaGuardada = DateTime::createFromFormat('d-m-Y H:i:s', $usuario->caducidad_codigo );
-		$fechaActual= new DateTime();
-		$fechaActual->format('d-m-Y H:i:s');
+		//$fechaGuardada = DateTime::createFromFormat('d-m-Y H:i:s', $usuario->caducidad_codigo);
+		$time = strtotime($usuario->caducidad_codigo);
+		$fechaGuardada = date('d-m-Y H:i:s',$time);
+		$fechaActual = date("d-m-Y H:i:s");
+		//PRG("paraaaaa" . $fechaActual . "Fecha guardada ". $fechaGuardada ,"/","danger" );
 		
-		if($fechaGuardada > $fechaActual){
+// 		$fechaActual= new DateTime();
+// 		$fechaActual = $fechaActual->format('d-m-Y H:i:s');
+// 		$fechaActual = DateTime::createFromFormat('d-m-Y H:i:s', $fechaActual);
+		//PRG("paraaaaa" .$fechaActual . "Fecha guardada ".$fechaGuardada ,"/","danger" );
+		//echo "<script>console.log('paraaaaa'".$fechaActual . " ' Fecha guardada' ".$fechaGuardada .")</script>"; 
+		if($fechaGuardada < $fechaActual){
 			PRG("Enlace caducado","/","danger" );
 		}
 		

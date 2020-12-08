@@ -22,7 +22,7 @@
 					
 					<div class="form-group">
 						<label for="idfh">Fecha y hora cita preliminar</label>
-							<input id="idfh" type="datetime-local" name="fechahora" placeholder="fecha y hora" required="required"/>		
+							<input id="idfh" type="datetime-local" name="fechahora"  placeholder="fecha y hora" required="required"/>		
 					</div>
 					
 					 
@@ -36,6 +36,11 @@
 						<button type="submit" id="loginBoton" class="btn btnEstandar">Enviar Solicitud</button>
 					</div>				
 				</form>
+				
+				<script type="text/javascript">
+				var today = new Date().toISOString();
+				document.getElementById("idfh").min = today.slice(0,16);
+				</script>
 				
 			</div>
  </div>

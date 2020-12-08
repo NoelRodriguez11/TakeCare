@@ -146,7 +146,7 @@ class Profesional_model extends CI_Model
         if ($email == $profesional->email) {
             
             $profesional->cod_recuperacion = $codigo;
-			$persona->caducidad_codigo = $date;
+			$profesional->caducidad_codigo = $date;
             R::store($profesional);
             
         }
@@ -165,11 +165,11 @@ class Profesional_model extends CI_Model
             PRG("Datos incorrectos","/","danger" );
         }
 		
-		$fechaGuardada = DateTime::createFromFormat('d-m-Y H:i:s', $usuario->caducidad_codigo );
-		$fechaActual= new DateTime();
-		$fechaActual->format('d-m-Y H:i:s');
+        $time = strtotime($usuario->caducidad_codigo);
+        $fechaGuardada = date('d-m-Y H:i:s',$time);
+        $fechaActual = date("d-m-Y H:i:s");
 		
-		if($fechaGuardada > $fechaActual){
+		if($fechaGuardada < $fechaActual){
 			PRG("Enlace caducado","/","danger" );
 		}
 		
