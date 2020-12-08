@@ -1,12 +1,10 @@
 <div  id="divContenido">
 	<div class="contenidoPrincipal">
 		<div class="col-lg-4" id="buscador">
-			<div class="input-group">
 			<form action="<?= base_url()?>Buscador/filtroSelect" method="post">
-				<input type="text" class="busca" name="palabras" placeholder="Buscar...">
+				<input type="text" name="palabras" class="form-control" placeholder="Buscar...">
 				<input class="btn btn-default" type="submit" value="Buscar">
 			</form>
-			</div>
 		</div>
 	</div>
 </div>
