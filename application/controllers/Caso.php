@@ -25,7 +25,7 @@ class Caso extends CI_Controller {
         $datos['casos'] = $this->caso_model->getCasosByEstado("Aceptada");
         frame($this, 'caso/r', $datos);
     }
-s
+
 // casos READ de persona del bean CASOS
     public function rPacientesSolicitudes() {
         
