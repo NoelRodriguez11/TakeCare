@@ -24,6 +24,7 @@ class Anonymous extends CI_Controller
             $this->load->model('profesional_model');
             $this->load->model('pais_model');
             $this->load->model('especialidad_model');
+            $this->load->model('sintoma_model');
             
             //Admin de pacientes y de profesionales
             $this->persona_model->crearPersona('nombre', 'apellido1',"apellido2","65433890Y","1234",null, null, null, null, "ejemplo@gmail.com", "Hombre", "A+", "España", "4-9-1994", null);
@@ -53,7 +54,7 @@ class Anonymous extends CI_Controller
             $this->pais_model->crearPais('Portugal');
             $this->pais_model->crearPais('Rumanía');
             
-            //Creación de modalidades
+            //Creación de especialidades
             $this->especialidad_model->crearEspecialidad('Fisioterapia');
             $this->especialidad_model->crearEspecialidad('Traumatología');
             $this->especialidad_model->crearEspecialidad('Psicologia');
@@ -65,6 +66,97 @@ class Anonymous extends CI_Controller
             $this->especialidad_model->crearEspecialidad('Otorrinolaringologia');
             $this->especialidad_model->crearEspecialidad('Otología');
             
+            //Creación de Sintomas
+            $this->sintoma_model->crearSintoma('Absceso');
+            $this->sintoma_model->crearSintoma('Acidez de estómago');
+            $this->sintoma_model->crearSintoma('Aftas bucales');
+            $this->sintoma_model->crearSintoma('Alopecía Areata');
+            $this->sintoma_model->crearSintoma('Anhidrosis');
+            $this->sintoma_model->crearSintoma('Anisocoria');
+            $this->sintoma_model->crearSintoma('Ascitis');
+            $this->sintoma_model->crearSintoma('Asma por ejercicio');
+            $this->sintoma_model->crearSintoma('Atragantamiento');
+            $this->sintoma_model->crearSintoma('Aumento del apetito');
+            $this->sintoma_model->crearSintoma('Cansancio');
+            $this->sintoma_model->crearSintoma('Chalación');
+            $this->sintoma_model->crearSintoma('Cistitis');
+            $this->sintoma_model->crearSintoma('Cloasma');
+            $this->sintoma_model->crearSintoma('Daltonismo');
+            $this->sintoma_model->crearSintoma('Dedo en martillo');           
+            $this->sintoma_model->crearSintoma('Dermatitis de las manos');
+            $this->sintoma_model->crearSintoma('Dislocación');
+            $this->sintoma_model->crearSintoma('Dismenorrea');
+            $this->sintoma_model->crearSintoma('Dismenorrea primaria y secundaria');
+            $this->sintoma_model->crearSintoma('Disminución del apetito');
+            $this->sintoma_model->crearSintoma('Dispepsia');
+            $this->sintoma_model->crearSintoma('Dolor abdominal');
+            $this->sintoma_model->crearSintoma('Dolor de cadera');
+            $this->sintoma_model->crearSintoma('Dolor de garganta');
+            $this->sintoma_model->crearSintoma('Dolor de las piernas');
+            $this->sintoma_model->crearSintoma('Dolor de mamas');
+            $this->sintoma_model->crearSintoma('Dolor de oído');            
+            $this->sintoma_model->crearSintoma('Dolor de ojos');
+            $this->sintoma_model->crearSintoma('Dolor de pies');
+            $this->sintoma_model->crearSintoma('Edema');
+            $this->sintoma_model->crearSintoma('Encopresis');
+            $this->sintoma_model->crearSintoma('Epilepsia');
+            $this->sintoma_model->crearSintoma('Estrés');
+            $this->sintoma_model->crearSintoma('Exoftalmos');
+            $this->sintoma_model->crearSintoma('Gases intestinales');
+            $this->sintoma_model->crearSintoma('Gastritis');
+            $this->sintoma_model->crearSintoma('Ginecomastia');
+            $this->sintoma_model->crearSintoma('Halitosis');
+            $this->sintoma_model->crearSintoma('Hipocondría');
+            $this->sintoma_model->crearSintoma('Hipotermia');
+            $this->sintoma_model->crearSintoma('Ictericia');
+            $this->sintoma_model->crearSintoma('Inflamación del párpado');
+            $this->sintoma_model->crearSintoma('Labios agrietados');           
+            $this->sintoma_model->crearSintoma('Mareo');
+            $this->sintoma_model->crearSintoma('Mareo a causa del movimiento');
+            $this->sintoma_model->crearSintoma('Mordese las uñas');
+            $this->sintoma_model->crearSintoma('Neumotórax');
+            $this->sintoma_model->crearSintoma('Neuralgia');
+            $this->sintoma_model->crearSintoma('Neuralgia del trigémino');
+            $this->sintoma_model->crearSintoma('Nistagmo');
+            $this->sintoma_model->crearSintoma('Ojos rojos');
+            $this->sintoma_model->crearSintoma('Ojos secos');
+            $this->sintoma_model->crearSintoma('Orzuelo');
+            $this->sintoma_model->crearSintoma('Palpitaciones');
+            $this->sintoma_model->crearSintoma('Pérdida de olfato');
+            $this->sintoma_model->crearSintoma('Pérdida de pelo');
+            $this->sintoma_model->crearSintoma('Pérdida de peso');
+            $this->sintoma_model->crearSintoma('Picaduras de insectos');
+            $this->sintoma_model->crearSintoma('Pie cavo');            
+            $this->sintoma_model->crearSintoma('Pie plano');
+            $this->sintoma_model->crearSintoma('Presbicia');
+            $this->sintoma_model->crearSintoma('Prostatitis');
+            $this->sintoma_model->crearSintoma('Acidez Gástrica');
+            $this->sintoma_model->crearSintoma('Queloide');
+            $this->sintoma_model->crearSintoma('Rosácea');
+            $this->sintoma_model->crearSintoma('Rotura de tímpano');
+            $this->sintoma_model->crearSintoma('Sangre en el semen');
+            $this->sintoma_model->crearSintoma('Sangre en las heces');
+            $this->sintoma_model->crearSintoma('Sarro en los dientes');
+            $this->sintoma_model->crearSintoma('Seborrea');
+            $this->sintoma_model->crearSintoma('Sed excesiva');
+            $this->sintoma_model->crearSintoma('Sialorrea');
+            $this->sintoma_model->crearSintoma('Síndrome de Gilbert');
+            $this->sintoma_model->crearSintoma('Tapón de oído');
+            $this->sintoma_model->crearSintoma('Telangiectasias');           
+            $this->sintoma_model->crearSintoma('Temblor hereditario esencial');
+            $this->sintoma_model->crearSintoma('Temblores');
+            $this->sintoma_model->crearSintoma('Temblores en las manos');
+            $this->sintoma_model->crearSintoma('Tenesmo');
+            $this->sintoma_model->crearSintoma('Tic facial');
+            $this->sintoma_model->crearSintoma('Tortícolis');
+            $this->sintoma_model->crearSintoma('Tos crónica');
+            $this->sintoma_model->crearSintoma('Tratamiento de la epilepsia');
+            $this->sintoma_model->crearSintoma('Tratamiento de las picaduras de insectos');
+            $this->sintoma_model->crearSintoma('Uña encarnada');
+            $this->sintoma_model->crearSintoma('Xerostomía');
+
+            
+                              
             //Profesionales Hard-Coded
             $this->profesional_model->crearProfesional('Antonio', 'Garcia', "Marquez","33344455Y","1234","Plaza castilla-leon, 7, 1-B", "Conde de Casal", "Madrid", 576483934, "emailAntonio@gmail.com","Hombre" , $this->pais_model->getPaisById(5), "4/9/1994", $this->especialidad_model->getEspecialidadById(1),"Autonomo/a","Tarde", "17:00-21:00", null);
             $this->profesional_model->crearProfesional('Leire', 'Rivera', "Del Rio","76544455Y","1234","Calle robledal 8", "Coslada", "Madrid", 495394831, "emailLeire@gmail.com","Mujer", $this->pais_model->getPaisById(6), "4/9/1994", $this->especialidad_model->getEspecialidadById(1),"Clinica Las lagunas","Mañana y Tarde","09:00-18:00", null);
