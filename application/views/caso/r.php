@@ -1,60 +1,70 @@
 <div class="container">
-<h1 class="textoexp1-enunciados">Mis casos</h1>
+<h1 class="textoexp1-enunciados">Mis Casos</h1>
 
 <?php if(count($casos)==0):?>
-<p class="tituloCasosIndicador">No tienes casos pendientes por revisar</p>
+<p class="tituloCasosIndicador">No tienes ningún caso actualmente en curso</p>
 <?php else:?>
-  
 <?php foreach ($casos as $caso):?>
 <?php if($caso->profesional->id == $datosGen["profesional"]->id):?>
-<div class="divCasosAceptados">
+<div class="divTratamientoPacientes">
 		<div class="row">
-                <!--Nombre del paciente -->
-                <div class="row">
-            	<div class="col-sm-4 tituloCasosIndicador" >Paciente:<div id="nombrePersona">
+                <!--Nombre del profesional -->
+            	<div class="col-sm-2 tituloCasosIndicador" >Paciente:<div id="nombrePersona">
             	<?=$caso->persona->nombre?> <?=$caso->persona->primerApellido?> <?=$caso->persona->segundoApellido?>
             	</div></div>
             	
+            	<div class="col-sm-2 tituloCasosIndicador" ></div>
+            	
             	<!--fecha solicitada -->
-            	<div class="col-sm-3 tituloCasosIndicador" >Fecha Solicitada:<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div></div>
+            	<div class="col-sm-3 tituloCasosIndicadorPaciente" style="overflow: hidden;" ><p style="float: left;">Próxima cita:</p><p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p></div>
                 
-                 <!--diagnostico -->
-            	<div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar:
-            	<?php if($caso->diagnosticoPreliminar != "(No especificado por el paciente)"):?>
-            		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoPreliminar?></div>
-            	<?php else:?>
-            		<div class="textoCasosContenido" style="word-wrap: break-word; color:grey"><i><?=$caso->diagnosticoPreliminar?></i></div>	
-            	<?php endif;?>
-            	</div>
-            	
-            	</div>
-            	
-            	
-				<div class="row">
-            	<form class="col-sm-3" action="<?=base_url()?>profesional/cambiarPro" method="get">
+                <div class="col-sm-1"></div>
+     			
+            	<form class="col-sm-2" action="<?=base_url()?>cita/rProfesional" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
-        			<button title="Rechazar Caso" onclick="submit()" class="botonCambioPropuesta btn btn-primary textoexp2-sinMargen" id="botonPC">Editar diagnostico</button>
-        		</form>    
-        		
-        		<form class="col-sm-3" action="<?=base_url()?>profesional/cambiarPropuesta" method="get">
-        			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
-        			<button title="Rechazar Caso" onclick="submit()" class="botonCambioPropuesta btn btn-info textoexp2-sinMargen" id="botonPC">Nueva Cita</button>
+        			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Ver Información Completa</button>
         		</form>
-        		    
-            	<form class="col-sm-3" action="<?=base_url()?>profesional/cambiarPropuesta" method="get">
-        			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
-        			<button title="Rechazar Caso" onclick="submit()" class="botonCambioPropuesta btn btn-success textoexp2-sinMargen" id="botonPC">Dar de alta</button>
-        		</form> 
-        		</div>          	
-            	
-            	
+        		
+        		<button class="botonCambioPropuesta btn btn-success col-sm-2" data-toggle="modal" data-target="#exampleModalCenter" style="width: 15%;">
+                  Dar de Alta
+                </button>
+        		
+        		
+<!--         		MODAL PARA CONFIRMAR EL FIN DEL TRATAMIENTO -->
+        		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title tituloCasosIndicador" id="exampleModalLongTitle" style="font-size: 180% !important; color:rgb(40, 167, 69) !important;">Alta médica</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body textoCasosContenidoPaciente">
+                        ¿Estas seguro de que quieres dar el caso como finalizado? <br>
+                        
+                      </div>
+                      <div class="modal-footer">
+                        
+                       <form action="<?=base_url()?>persona/finalizarTratamiento" method="post">
+            				<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+            				<button type="button" onclick="submit()" class="btn btn-success" id="botonPC">Finalizar</button>
+            				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            				
+        			   </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+ 
     		</div>	   
-		</div>
+		</div> 
 
-<?php endif;?>      
+<?php endif;?>
 <?php endforeach;?>
-<?php endif;?>    
 
+<?php endif;?>  
+ 
 </div>
 
 

@@ -10,7 +10,13 @@
             	<?=$caso->persona->nombre?> <?=$caso->persona->primerApellido?> <?=$caso->persona->segundoApellido?>
             	</div></div>
             	
-            	<div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar:<div class="textoCasosContenidoPaciente" style="word-wrap: break-word;"><?=$caso->diagnosticoPreliminar?></div></div>
+            	<div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar:
+            	<?php if($caso->diagnosticoPreliminar != "(No especificado por el paciente)"):?>
+            		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoPreliminar?></div>
+            	<?php else:?>
+            		<div class="textoCasosContenido" style="word-wrap: break-word; color:grey"><i><?=$caso->diagnosticoPreliminar?></i></div>	
+            	<?php endif;?>
+            	</div>
             	
             
             	<!--fecha solicitada -->

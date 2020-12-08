@@ -31,12 +31,11 @@ class Caso_model extends CI_Model
         if ($ok) {
             $caso = R::dispense('caso');
             $caso->fechaInicio = $fechahora;
-            $caso->fechaFin = null;
-            $caso->fechaAsignacion = null; 
+            $caso->fechaFin = ""; 
             $caso->persona = $idPersona;
             $caso->profesional = $idProfesional;
             $caso->diagnosticoPreliminar = $diagnosticoPrevio;
-            $caso->diagnosticoGeneral = null;
+            $caso->diagnosticoGeneral = "";
             $caso->estado = "Pendiente";
             return R::store($caso);
         }
