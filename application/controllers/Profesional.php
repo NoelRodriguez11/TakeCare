@@ -172,6 +172,18 @@ class Profesional extends CI_Controller
         
         
     }
+
+//-----------------------------------------------------------Editar diagnostico------------------------------------------------------------------------------------
+    public function editarDiagnostico() {
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $diagnosticoGeneral = isset($_POST['diagnosticoGeneral']) ? $_POST['diagnosticoGeneral'] : null;
+        $this->load->model('caso_model');
+        $this->caso_model->editarDiagnostico($id, $diagnosticoGeneral);
+        redirect(base_url() . 'cita/rProfesional');
+        
+        
+    }
     
         
         

@@ -28,13 +28,14 @@
 }
 
 .botonCambioPropuesta {
+	font-family:'Exo 2', sans-serif;
 	height: 4rem;
 	margin-top: 1.5rem;
 }
 
 .ajusteIcono {
 	display: inline-block;
-    width: 100%;	
+    width: 110%;	
 }
 
 #nombrePersona {

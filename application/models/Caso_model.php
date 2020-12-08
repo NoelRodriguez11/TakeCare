@@ -56,6 +56,16 @@ class Caso_model extends CI_Model
             R::store($caso);
             
     }
+
+    public function editarDiagnostico($id, $diagnosticoGeneral) {
+        $caso = R::findOne('caso','id=?',[$id]);
+        
+        $caso = R::load('caso', $id);
+        $caso->diagnosticoGeneral = $diagnosticoGeneral;
+        
+        R::store($caso);
+        
+    }
     
     public function borrarCaso($id) {
         R::trash(R::load('caso',$id));

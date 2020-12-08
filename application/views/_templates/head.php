@@ -57,6 +57,11 @@
 	
 	<!-- CSS información completa del tratamiento desde el lado del paciente -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/informacionCompletaCasoPaciente.css">
+
+	<!-- CSS información completa del tratamiento desde el lado del profesional -->
+	<link rel="stylesheet" href="<?=base_url()?>assets/css/informacionCompletaCasoProfesional.css">
+	
+	
 	
 
 	

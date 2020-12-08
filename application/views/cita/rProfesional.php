@@ -40,7 +40,7 @@
                       Editar
                     </button>
                 </div>
-                <?=$caso->diagnosticoGeneral?>           	
+               <textarea class="textareaDiagnostico" disabled><?=$caso->diagnosticoGeneral?></textarea>   	
             </div>
             
          	<div class="divisorVertical col-sm-5"></div>
@@ -75,7 +75,7 @@
     	</div>  
     	</div>  
     	 
-<!--     	 MODAL PARA EDITAR EL DIAGNOSTICO -->
+
     	<div class="row">
     			<div class="col-sm-9"></div>
     		    <form class="col-sm-2" action="<?=base_url()?>cita/rPaciente" method="post">
@@ -84,17 +84,20 @@
         		</form>
         		 	 		
     	</div>   
-    	        		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    	
+    	<!--     	 MODAL PARA EDITAR EL DIAGNOSTICO -->
+    	       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title tituloCasosIndicador" id="exampleModalLongTitle" style="font-size: 180% !important; color:rgb(40, 96, 144);">Editar Diagnostico General</h5>
                         </button>
                       </div>
-                      <textarea class="modal-body textoCasosContenidoPaciente" maxlength=1000 style="width: 99.5%; height:250px;left:2px;"><?=$caso->diagnosticoGeneral?></textarea>
+                                            
                       <div class="modal-footer">
                         
-                       <form action="<?=base_url()?>persona/finalizarTratamiento" method="post">
+                       <form action="<?=base_url()?>profesional/editarDiagnostico" method="post">
+                       		<textarea name="diagnosticoGeneral" class="modal-body textoCasosContenidoPaciente" maxlength=1000 style="width: 100%; height:250px; margin-bottom: 1rem;"><?=$caso->diagnosticoGeneral?></textarea>
             				<input type="hidden" name="idCaso" value="<?=$caso->id?>">
             				<button type="button" onclick="submit()" class="btn btn-primary" id="botonPC">Editar</button>
             				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
