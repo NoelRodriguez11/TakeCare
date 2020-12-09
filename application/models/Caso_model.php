@@ -9,9 +9,15 @@ class Caso_model extends CI_Model
      
     }
     
+    public function getCasosByProfesionalIdandEstado($idProfesional, $estado)
+    {
+        return R::findAll('caso','profesional=?', [$idProfesional], 'estado', [$estado]);
+        
+    }
+    
     public function getCasosByEstado($estado)
     {
-        return R::findAll('caso','estado=?',[$estado],'ORDER BY fecha_inicio');
+        return R::findAll('caso','estado=?',[$estado],'ORDER BY fecha_inicio ASC');
         
     }
     

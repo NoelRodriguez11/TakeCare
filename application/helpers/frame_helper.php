@@ -13,5 +13,6 @@ function frame($controller,$view,$data=[]) {
     $controller->load->view($view,$data);
     $controller->load->view('_templates/footer',$data);
     $controller->load->view('_templates/end');
+   
 }
 ?>

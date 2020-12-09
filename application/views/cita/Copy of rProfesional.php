@@ -1,6 +1,7 @@
 <div class="container">
 <h1 class="textoexp1-enunciados">Información sobre el tratamiento</h1>
 
+<?php foreach ($casos as $caso):?>
 <?php if($caso->profesional->id == $datosGen["profesional"]->id):?>
 <div class="divInformacionTratamiento">
 		<div class="row">
@@ -244,7 +245,7 @@
 </div> 
 
 <?php endif;?>
-
+<?php endforeach;?>
 
  
 </div>

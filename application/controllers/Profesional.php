@@ -178,9 +178,17 @@ class Profesional extends CI_Controller
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $diagnosticoGeneral = isset($_POST['diagnosticoGeneral']) ? $_POST['diagnosticoGeneral'] : null;
+        
+        $this->load->model('afeccion_model');
         $this->load->model('caso_model');
+        $this->load->model('sintoma_model');
+        $this->load->model('especialidad_model');
+        
         $this->caso_model->editarDiagnostico($id, $diagnosticoGeneral);
-        redirect(base_url() . 'cita/rProfesional');
+        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        $datos['sintomas'] = $this->sintoma_model->getSintomas();
+        $datos['caso'] = $this->caso_model->getCasoById($id);
+        frame($this, 'cita/rProfesional', $datos);
         
         
     }
@@ -197,8 +205,16 @@ class Profesional extends CI_Controller
         $sintoma7 = isset($_POST['sintoma7']) ? $_POST['sintoma7'] : null;
         
         $this->load->model('afeccion_model');
+        $this->load->model('caso_model');
+        $this->load->model('sintoma_model');
+        $this->load->model('especialidad_model');
+        
+
         $this->afeccion_model->agregarSintoma($id,$sintoma1, $sintoma2, $sintoma3, $sintoma4, $sintoma5, $sintoma6, $sintoma7);
-        redirect(base_url() . 'cita/rProfesional');
+        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        $datos['sintomas'] = $this->sintoma_model->getSintomas();
+        $datos['caso'] = $this->caso_model->getCasoById($id);
+        frame($this, 'cita/rProfesional', $datos);
            
     }
 
@@ -209,7 +225,7 @@ class Profesional extends CI_Controller
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $this->load->model('caso_model');
         $this->caso_model->cambiarEstado($id, "Finalizada");
-        PRG('El paciente ha sido dado de alta', 'caso/rPacientes', 'success');
+        PRG('El paciente ha sido dado de alta', 'caso/r', 'success');
         
         
     }

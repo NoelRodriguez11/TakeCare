@@ -15,8 +15,11 @@ class Cita extends CI_Controller {
         
         $this->load->model('caso_model');
         $this->load->model('especialidad_model');
-        $datos['casos'] = $this->caso_model->getCasosByEstado("Finalizada");
+        $this->load->model('sintoma_model');
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $datos['caso'] = $this->caso_model->getCasoById($id);
         $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        $datos['sintomas'] = $this->sintoma_model->getSintomas();
         frame($this, 'cita/rPaciente', $datos);
     }
     
@@ -25,10 +28,21 @@ class Cita extends CI_Controller {
         $this->load->model('caso_model');
         $this->load->model('especialidad_model');
         $this->load->model('sintoma_model');
-        $datos['casos'] = $this->caso_model->getCasosByEstado("Aceptada");
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $datos['caso'] = $this->caso_model->getCasoById($id);
         $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
         frame($this, 'cita/rProfesional', $datos);
+    }
+    
+    public function rCasosCerrados() {
+        
+        $this->load->model('caso_model');
+        $this->load->model('especialidad_model');
+        
+        $datos['casos'] = $this->caso_model->getCasosByEstado("Finalizada");
+        frame($this, 'caso/rCasosCerrados', $datos);
     }
     
     public function rProfesionalFinalizada() {
@@ -36,7 +50,8 @@ class Cita extends CI_Controller {
         $this->load->model('caso_model');
         $this->load->model('especialidad_model');
         $this->load->model('sintoma_model');
-        $datos['casos'] = $this->caso_model->getCasosByEstado("Finalizada");
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $datos['caso'] = $this->caso_model->getCasoById($id);
         $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
         frame($this, 'cita/rProfesional', $datos);

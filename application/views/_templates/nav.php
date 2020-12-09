@@ -118,7 +118,7 @@
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="<?=base_url()?>cita/rCasosCerrados">
                        <i class="fa fa-medkit fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                             Casos cerrados
