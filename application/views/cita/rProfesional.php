@@ -36,7 +36,7 @@
          	<div class="col-sm-6" style="word-wrap: break-word;">
              	 <div class="row">
              		<div class="tituloCasosIndicadorInformacionPaciente col-sm-8" >Diagnóstico General</div>
-             		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#exampleModalCenter" style="width: 15%;height:32px; bottom: 1.5rem; left: 7rem;">
+             		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#diagnosticoModalCenter" style="width: 15%;height:32px; bottom: 1.5rem; left: 7rem;">
                       Editar
                     </button>
                 </div>
@@ -48,7 +48,7 @@
          	<div class="col-sm-5" style=" word-wrap: break-word;">
          		<div class="row">
              		<div class="tituloCasosIndicadorInformacionPaciente col-sm-8" >Síntomas</div>
-             		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#exampleModalCenter" style="width: 30%; height:32px; bottom: 1.5rem; left: 5rem;">
+             		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#sintomasModalCenter" style="width: 30%; height:32px; bottom: 1.5rem; left: 5rem;">
                       Agregar Sintomas
                     </button>
                 </div>
@@ -86,7 +86,7 @@
     	</div>   
     	
     	<!--     	 MODAL PARA EDITAR EL DIAGNOSTICO -->
-    	       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    	       <div class="modal fade" id="diagnosticoModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -101,6 +101,37 @@
             				<input type="hidden" name="idCaso" value="<?=$caso->id?>">
             				<button type="button" onclick="submit()" class="btn btn-primary" id="botonPC">Editar</button>
             				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            				
+        			   </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+<!--     	 MODAL PARA AGREGAR SINTOMAS -->
+    	       <div class="modal fade" id="sintomasModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title tituloCasosIndicador" id="exampleModalLongTitle" style="font-size: 180% !important; color:rgb(40, 96, 144);">Agregar Síntomas</h5>
+                        </button>
+                      </div>
+                                            
+                      <div class="modal-footer">
+                        
+                       <form action="<?=base_url()?>profesional/agregarSintoma" method="post">
+                      
+                            <select name="sintoma" id="sintoma">
+                            <?php foreach ($sintomas as $sintoma):?>
+                              <option value="<?=$sintoma->nombre?>"><?=$sintoma->nombre?></option>
+                            <?php endforeach;?>
+                            </select>
+            				<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+            				
+            				<button type="button" onclick="agregarSintoma()" class="btn btn-info" id="botonAgregar">Añadir</button>          				
+            				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            				<textarea id="listaSintomas" name="listaSintomas" disabled class="modal-body textareaDiagnostico" maxlength=1000 style="width: 100%; height:180px; margin-bottom: 1rem; background-color:rgb(255, 255, 255) !important;"></textarea>
+            				<button type="button" onclick="submit()" class="btn btn-primary" id="botonPC">Aceptar</button>
             				
         			   </form>
                       </div>
