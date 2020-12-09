@@ -43,7 +43,7 @@
          	<div class="col-sm-5" style=" word-wrap: break-word;">
          		<div class="row">
              		<div class="tituloCasosIndicadorInformacionPaciente col-sm-8" >Síntomas</div>
-             		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#sintomasModalCenter" style="width: 30%; height:32px; bottom: 1.5rem; left: 5rem;">
+             		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#sintomasModalCenter" style="width: 19%; height:32px; bottom: 1.5rem; left: 9rem;">
                       Editar
                     </button>
                 </div>                  
