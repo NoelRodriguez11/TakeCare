@@ -168,7 +168,7 @@
         <li><a class="textoexp2" href="<?=base_url()?>profesional/r">Profesionales</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a><button type="button" onclick="cambiarModo()">
+        <li><a><button type="button" onclick="cambiarModo();">
         	<span><i class="fas fa-lightbulb"></i></span>
     	</button></a>
     	</li>

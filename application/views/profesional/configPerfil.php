@@ -29,7 +29,26 @@
 					<label for="id-valoracionp">Valoraciones</label> 
 					<input id="id-valoracionp" type="text" class="form-control"	name="valoracionp" disabled="disabled" />
 				</div>
-				<br />
+				<div class="col-xs-8">
+                    <label for="id-clinicap">Clínica</label> 
+                    <input id="id-clinicap" type="text" class="form-control" name="clinicap" onkeyup="validarClinicaPro(),deshabilitarBotonPro()" />
+                    <span style="float:right" class="errorClinicaPro"></span>
+                </div>
+
+                <div class="col-xs-8">
+                    <label for="id-turnop">Turno</label>
+                      <select name="turnop" id="id-turnop">
+                    <option value="Mañana">Mañana</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Mañana y Tarde">Mañana y Tarde</option>
+                    </select> 
+                </div>
+
+                <div class="col-xs-8">
+                    <label for="id-franja">Franja Horaria</label>
+                    <input id="id-franja" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required" onkeyup="validarFranjaPro(),deshabilitarBotonPro()"/>
+                    <span style="float:right" class="errorFranjaPro"></span>
+                </div>
 				
 				<script type="text/javascript"> 
 
