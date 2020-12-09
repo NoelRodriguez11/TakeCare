@@ -1,95 +1,89 @@
-<div class="container col-6" id="vistaperfil">
+<div class="container" id="vistaperfil">
 	<div class="tab-content">
 		<div id="paciente" class="tab-pane fade in active">
-			<h1 class="textoexp1-enunciados">Configuracion Perfil Paciente</h1>
-
-			<form action="<?=base_url()?>persona/configPerfilPost" method="post" enctype="multipart/form-data">
-        	
-        	<script type="text/javascript">
-				function validarNombre() {
+		
+		<script type="text/javascript">
+			function validarNombrePac() {
             		var nombre=document.getElementById("id-nombre").value.trim();
                     var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (nombre.length < 2 && nombre.length > 20) {
-                        document.getElementById("errorNombre").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
+                        document.getElementById("errorNombrePac").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
                     }
                     else if (!rgExp.test(nombre)){
-                        document.getElementById("errorNombre").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorNombrePac").innerHTML="El nombre tiene caracteres no validos";
                     }
                     else {
-                        document.getElementById("errorNombre").innerHTML="";
+                        document.getElementById("errorNombrePac").innerHTML="";
                     }
                 }
-                
-                function validarTelefono() {
-            		var telefono=document.getElementById("id-tlf").value.trim();
+         
+function validarTelefonoPac() {
+            		var telefono=document.getElementById("id-telefono").value.trim();
                     var rgExp= /^[9876][0-9]{8}$/;
         
                     if (telefono.length != 9) {
-                        document.getElementById("errorTelefono").innerHTML="El teléfono no tiene 9 caracteres";
+                        document.getElementById("errorTelefonoPac").innerHTML="El teléfono no tiene 9 caracteres";
                     }
                     else if (!rgExp.test(telefono)){
-                        document.getElementById("errorTelefono").innerHTML="El telefono tiene caracteres no validos";
+                        document.getElementById("errorTelefonoPac").innerHTML="El telefono tiene caracteres no validos";
                     }
                     else {
-                        document.getElementById("errorTelefono").innerHTML="";
+                        document.getElementById("errorTelefonoPac").innerHTML="";
                     }
                 }
                 
-                function validarDireccion() {
+function validarDireccionPac() {
             		var direccion=document.getElementById("id-direccion").value.trim();
                     var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (direccion.length < 2 && direccion.length > 20) {
-                        document.getElementById("errorDireccion").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
+                        document.getElementById("errorDireccionPac").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
                     }
                     
                     else if (!rgExp.test(direccion)){
-                        document.getElementById("errorDireccion").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorDireccionPac").innerHTML="El nombre tiene caracteres no validos";
                     }
                     else {
-                        document.getElementById("errorDireccion").innerHTML="";
+                        document.getElementById("errorDireccionPac").innerHTML="";
                     }
                 }
                 
-                function validarCiudad() {
+function validarCiudadPac() {
             		var ciudad=document.getElementById("id-ciudad").value.trim();
                     var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{3,30}$/;
         
                     if (ciudad.length < 3 && ciudad.length > 30) {
-                        document.getElementById("errorCiudad").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
+                        document.getElementById("errorCiudadPac").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
                     }
                     else if (!rgExp.test(ciudad)){
-                        document.getElementById("errorCiudad").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorCiudadPac").innerHTML="El nombre tiene caracteres no validos";
                     }
                     else {
-                        document.getElementById("errorCiudad").innerHTML="";
+                        document.getElementById("errorCiudadPac").innerHTML="";
                     }
                     }
-                    
-                    function deshabilitarBoton() {
-                	var spanNombre = document.getElementsById("errorNombre").innerHTML;
-                	var spanTelefono = document.getElementsById("errorTelefono").innerHTML;
-                	var spanCiudad = document.getElementsById("errorCiudad").innerHTML;
-                	var spanDireccion = document.getElementsById("errorDireccion").innerHTML;
+                   
+function deshabilitarBotonPac() {
+                	var spanNombre = document.getElementById("errorNombrePac");
+                	var boton = document.getElementById("botonConfirmarPac");
                 	
-                	
-                	var boton = document.getElementById("botonConfirmar");
-                	
-                	if (spanNombre.length > 0 || spanTelefono.length > 0 || spanCiudad.length > 0 || spanDireccion.length > 0) {
+                	if (spanNombre.length > 0) {
                 		boton.disabled = true;
                 	}
                 	else {
                 		boton.disabled = false;
                 	}
                 }
-                    
-			</script>
+		</script>
+			<h1 class="textoexp1-enunciados">Configuracion Perfil Paciente</h1>
+
+			<form action="<?=base_url()?>persona/configPerfilPost" method="post" enctype="multipart/form-data">
 
 				<div class="col-xs-8">
 					<label for="id-nombre">Nombre</label> 
-					<input id="id-nombre" type="text" class="form-control" name="nombre" onkeyup="validarNombre(),deshabilitarBoton()"/>
-					<span style="float:right" class="errorNombre"></span>
+					<input id="id-nombre" type="text" class="form-control" name="nombre" onkeyup="validarNombrePac(),deshabilitarBotonPac()"/>
+					<span style="float:right" id="errorNombrePac"></span>
 				</div>
 
 				<div class="col-xs-8">
@@ -110,8 +104,8 @@
 
 				<div class="col-xs-8">
 					<label for="id-tlf">Telefono</label> 
-					<input id="id-tlf" type="text" class="form-control" name="tlf" onkeyup="validarTelefono()"/>
-					<span style="float:right" class="errorTelefono"></span>
+					<input id="id-tlf" type="text" class="form-control" name="tlf" onkeyup="validarTelefonoPac(),deshabilitarBotonPac()"/>
+					<span style="float:right" id="errorTelefonoPac"></span>
 				</div>
 
 				<div class="col-xs-8">
@@ -126,14 +120,14 @@
 
 				<div class="col-xs-8">
 					<label for="id-direccion">Dirección</label> 
-					<input id="id-direccion" type="text" name="direccion" class="form-control" onkeyup="validarDireccion()" />
-					<span style="float:right" id="errorDireccion"></span>
+					<input id="id-direccion" type="text" name="direccion" class="form-control" onkeyup="validarDireccionPac(),deshabilitarBotonPac()"/>
+					<span style="float:right" id="errorDireccionPac"></span>
 				</div>
 
 				<div class="col-xs-8">
 					<label for="id-ciudad">Ciudad</label> 
-					<input id="id-ciudad" type="text" class="form-control" name="ciudad" onkeyup="validarCiudad()" />
-					<span style="float:right" id="errorCiudad"></span>
+					<input id="id-ciudad" type="text" class="form-control" name="ciudad" onkeyup="validarCiudadPac(),deshabilitarBotonPac()" />
+					<span style="float:right" id="errorCiudadPac"></span>
 				</div>
 
 			<div class="col-xs-8">
@@ -268,7 +262,7 @@
         	}
         	</script>
 
-				<input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="botonConfirmar"/>
+				<input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="botonConfirmarPac"/>
 			</form>
 
 			<div class="modal right fade" class="modal custom show"

@@ -8,6 +8,7 @@ class Buscador extends CI_Controller {
         $palabras = $this->input->post('palabras');
         
             $this->load->model('buscador_model');
+            $this->load->model('especialidad_model');
             
             $ProfesionalEspecialidad = $this->buscador_model->filtro($palabras);
             

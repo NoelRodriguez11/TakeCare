@@ -23,7 +23,7 @@ class Persona extends CI_Controller
         $this->load->model('pais_model');
         $data['persona'] = $this->persona_model->getPersonaById($id);
         $data['paises'] = $this->pais_model->getPaises();
-        frame($this, 'persona/u', $data);
+        frame($this, 'persona/d', $data);
         
         
     }
@@ -49,9 +49,15 @@ class Persona extends CI_Controller
         } catch (Exception $e) {
             session_start();
             $_SESSION['_msg']['texto'] = $e->getMessage();
-            $_SESSION['_msg']['uri'] = 'persona/r';
+            $_SESSION['_msg']['uri'] = 'persona/d';
             redirect(base_url() . 'msg');
         }
+    }
+    
+    public function d(){
+        $this->load->model('persona_model');
+        $datos['personas'] = $this->persona_model->getPersonas();
+        frame($this, 'persona/d', $datos);
     }
     
     public function dPost() {
@@ -62,7 +68,7 @@ class Persona extends CI_Controller
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $this->load->model('persona_model');
         $this->persona_model->borrarPersona($id);
-        redirect(base_url().'persona/r');
+        redirect(base_url().'persona/d');
     }
     
     //CONFIGURACION PERFIL

@@ -9,6 +9,6 @@
 	Nombre
 	<input type="text" name="nombre" required id="nombreId" />
 	<br>
-	<input type="submit" value="Registrar"/>
+	<input type="submit" value="Registrar" id="loginBoton" class="btn btn-secondary"/>
 	</form>
 </div>
