@@ -59,6 +59,7 @@ class Caso extends CI_Controller {
         $this->load->model('caso_model');
         $this->load->model('profesional_model');
         $this->load->model('persona_model');
+        $this->load->model('afeccion_model');
         
         $fechahora = isset($_POST['fechahora']) ? $_POST['fechahora'] : null;
         $idProfesional = isset($_POST['idProfesional']) ? $_POST['idProfesional'] : null;
@@ -72,7 +73,9 @@ class Caso extends CI_Controller {
         
         
         try {
-            $this->caso_model->crearCaso($fechahora,$this->profesional_model->getProfesionalById($idProfesional),$this->persona_model->getPersonaById($idPersona), $diagnosticoPrevio);
+                 
+            $this->caso_model->crearCaso($fechahora,$this->profesional_model->getProfesionalById($idProfesional),$this->persona_model->getPersonaById($idPersona), $diagnosticoPrevio,
+            $this->afeccion_model->getAfeccionById($this->afeccion_model->crearAfeccion($fechahora, $this->profesional_model->getProfesionalById($idProfesional),$this->persona_model->getPersonaById($idPersona),"Ninguno", "Ninguno", "Ninguno", "Ninguno", "Ninguno", "Ninguno", "Ninguno")));
             PRG('Solicitud de consulta enviada.', 'home', 'success');
         }
         catch (Exception $e) {

@@ -187,13 +187,19 @@ class Profesional extends CI_Controller
 
     public function agregarSintoma() {
         
-        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
-        $sintoma = isset($_POST['sintoma']) ? $_POST['sintoma'] : null;
-        $this->load->model('caso_model');
-        $this->caso_model->agregarSintoma($id, $sintoma);
+        $id = isset($_POST['idAfeccion']) ? $_POST['idAfeccion'] : null;
+        $sintoma1 = isset($_POST['sintoma1']) ? $_POST['sintoma1'] : null;
+        $sintoma2 = isset($_POST['sintoma2']) ? $_POST['sintoma2'] : null;
+        $sintoma3 = isset($_POST['sintoma3']) ? $_POST['sintoma3'] : null;
+        $sintoma4 = isset($_POST['sintoma4']) ? $_POST['sintoma4'] : null;
+        $sintoma5 = isset($_POST['sintoma5']) ? $_POST['sintoma5'] : null;
+        $sintoma6 = isset($_POST['sintoma6']) ? $_POST['sintoma6'] : null;
+        $sintoma7 = isset($_POST['sintoma7']) ? $_POST['sintoma7'] : null;
+        
+        $this->load->model('afeccion_model');
+        $this->afeccion_model->agregarSintoma($id,$sintoma1, $sintoma2, $sintoma3, $sintoma4, $sintoma5, $sintoma6, $sintoma7);
         redirect(base_url() . 'cita/rProfesional');
-        
-        
+           
     }
     
     

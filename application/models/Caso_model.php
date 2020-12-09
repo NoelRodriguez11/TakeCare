@@ -22,7 +22,7 @@ class Caso_model extends CI_Model
     }
     
     
-    public function crearCaso($fechahora,$idProfesional,$idPersona, $diagnosticoPrevio)
+    public function crearCaso($fechahora,$idProfesional,$idPersona, $diagnosticoPrevio, $afeccion)
     {
         $caso = R::findOne('caso','fecha_inicio=?',[$fechahora],'id_profesional=?',[$idProfesional]);
        
@@ -37,6 +37,7 @@ class Caso_model extends CI_Model
             $caso->diagnosticoPreliminar = $diagnosticoPrevio;
             $caso->diagnosticoGeneral = "";
             $caso->estado = "Pendiente";
+            $caso->afeccion = $afeccion;
             return R::store($caso);
         }
         else {

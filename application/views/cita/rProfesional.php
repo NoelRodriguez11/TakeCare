@@ -22,12 +22,7 @@
             	<!--fecha solicitada -->
             	<div class="col-sm-3 tituloCasosIndicadorPaciente" style="overflow: hidden;" ><p style="float: left;">Próxima cita:</p><p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p></div>
                 <div class="col-sm-1"></div>
-               
-     			
-
-        		
-        		
- 
+             
     	</div>	
     	
     	<hr class="divisorHorizontal">
@@ -49,12 +44,16 @@
          		<div class="row">
              		<div class="tituloCasosIndicadorInformacionPaciente col-sm-8" >Síntomas</div>
              		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#sintomasModalCenter" style="width: 30%; height:32px; bottom: 1.5rem; left: 5rem;">
-                      Agregar Sintomas
+                      Editar
                     </button>
-                </div>
-     	
-     	
-     	
+                </div>                  
+                      	<p style="font-size:110%;<?php if($caso->afeccion->sintoma1 == "Ninguno"):?>display:none;<?php endif;?>font-family:'Exo 2', sans-serif;">● <?=$caso->afeccion->sintoma1?></p>
+                      	<p style="font-size:110%;<?php if($caso->afeccion->sintoma2 == "Ninguno"):?>display:none;<?php endif;?>font-family:'Exo 2', sans-serif;">● <?=$caso->afeccion->sintoma2?></p>
+                      	<p style="font-size:110%;<?php if($caso->afeccion->sintoma3 == "Ninguno"):?>display:none;<?php endif;?>font-family:'Exo 2', sans-serif;">● <?=$caso->afeccion->sintoma3?></p>
+                      	<p style="font-size:110%;<?php if($caso->afeccion->sintoma4 == "Ninguno"):?>display:none;<?php endif;?>font-family:'Exo 2', sans-serif;">● <?=$caso->afeccion->sintoma4?></p> 
+                      	<p style="font-size:110%;<?php if($caso->afeccion->sintoma5 == "Ninguno"):?>display:none;<?php endif;?>font-family:'Exo 2', sans-serif;">● <?=$caso->afeccion->sintoma5?></p> 
+                      	<p style="font-size:110%;<?php if($caso->afeccion->sintoma6 == "Ninguno"):?>display:none;<?php endif;?>font-family:'Exo 2', sans-serif;">● <?=$caso->afeccion->sintoma6?></p> 
+                      	<p style="font-size:110%;<?php if($caso->afeccion->sintoma7 == "Ninguno"):?>display:none;<?php endif;?>font-family:'Exo 2', sans-serif;">● <?=$caso->afeccion->sintoma7?></p>                 
      		</div>
 
     			
@@ -120,18 +119,120 @@
                       <div class="modal-footer">
                         
                        <form action="<?=base_url()?>profesional/agregarSintoma" method="post">
-                      
-                            <select name="sintoma" id="sintoma">
-                            <?php foreach ($sintomas as $sintoma):?>
-                              <option value="<?=$sintoma->nombre?>"><?=$sintoma->nombre?></option>
-                            <?php endforeach;?>
+                       
+                      		<input type="hidden" name="idAfeccion" value="<?=$caso->afeccion->id?>">
+                      		
+                      		<div class="row">
+                      		<div class="col-sm-3" style="margin-bottom:2.7rem;"></div>
+                            <select name="sintoma1" id="sintoma1" class="col-sm-5">
+                            <?php if($caso->afeccion->sintoma1 != "Ninguno"):?>
+                            <option value="Ninguno">Ninguno</option>
+                            <?php endif;?>
+                            <option value="<?=$caso->afeccion->sintoma1?>" selected><?=$caso->afeccion->sintoma1?></option>
+                              <?php foreach ($sintomas as $sintoma):?>
+                              	<?php if($sintoma->nombre != $caso->afeccion->sintoma1):?>
+                              	<option value="<?=$sintoma->nombre?>"><?=$sintoma->nombre?></option>
+                              	<?php endif;?>
+                              <?php endforeach;?>
                             </select>
-            				<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+            				</div>
             				
-            				<button type="button" onclick="agregarSintoma()" class="btn btn-info" id="botonAgregar">Añadir</button>          				
-            				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            				<textarea id="listaSintomas" name="listaSintomas" disabled class="modal-body textareaDiagnostico" maxlength=1000 style="width: 100%; height:180px; margin-bottom: 1rem; background-color:rgb(255, 255, 255) !important;"></textarea>
-            				<button type="button" onclick="submit()" class="btn btn-primary" id="botonPC">Aceptar</button>
+            				<div class="row">
+                      		<div class="col-sm-3" style="margin-bottom:2.7rem;"></div>
+                            <select name="sintoma2" id="sintoma2" class="col-sm-5">
+                            <?php if($caso->afeccion->sintoma2 != "Ninguno"):?>
+                            <option value="Ninguno">Ninguno</option>
+                            <?php endif;?>
+                              <option value="<?=$caso->afeccion->sintoma2?>" selected><?=$caso->afeccion->sintoma2?></option>
+                              <?php foreach ($sintomas as $sintoma):?>
+                              	<?php if($sintoma->nombre != $caso->afeccion->sintoma2):?>
+                              	<option value="<?=$sintoma->nombre?>"><?=$sintoma->nombre?></option>
+                              	<?php endif;?>
+                              <?php endforeach;?>
+                            </select>
+            				</div>
+            				
+            				<div class="row">
+                      		<div class="col-sm-3" style="margin-bottom:2.7rem;"></div>
+                            <select name="sintoma3" id="sintoma3" class="col-sm-5">
+                            <?php if($caso->afeccion->sintoma3 != "Ninguno"):?>
+                            <option value="Ninguno">Ninguno</option>
+                            <?php endif;?>
+                              <option value="<?=$caso->afeccion->sintoma3?>" selected><?=$caso->afeccion->sintoma3?></option>
+                              <?php foreach ($sintomas as $sintoma):?>
+                              	<?php if($sintoma->nombre != $caso->afeccion->sintoma3):?>
+                              	<option value="<?=$sintoma->nombre?>"><?=$sintoma->nombre?></option>
+                              	<?php endif;?>
+                              <?php endforeach;?>
+                            </select>
+            				</div>
+            				
+            				<div class="row">
+                      		<div class="col-sm-3" style="margin-bottom:2.7rem;"></div>
+                            <select name="sintoma4" id="sintoma4" class="col-sm-5">
+                            <?php if($caso->afeccion->sintoma4 != "Ninguno"):?>
+                            <option value="Ninguno">Ninguno</option>
+                            <?php endif;?>
+                              <option value="<?=$caso->afeccion->sintoma4?>" selected><?=$caso->afeccion->sintoma4?></option>
+                              <?php foreach ($sintomas as $sintoma):?>
+                              	<?php if($sintoma->nombre != $caso->afeccion->sintoma4):?>
+                              	<option value="<?=$sintoma->nombre?>"><?=$sintoma->nombre?></option>
+                              	<?php endif;?>
+                              <?php endforeach;?>
+                            </select>
+            				</div>
+            				            				
+            				<div class="row">
+                      		<div class="col-sm-3" style="margin-bottom:2.7rem;"></div>
+                            <select name="sintoma5" id="sintoma5" class="col-sm-5">
+                            <?php if($caso->afeccion->sintoma4 != "Ninguno"):?>
+                            <option value="Ninguno">Ninguno</option>
+                            <?php endif;?>
+                              <option value="<?=$caso->afeccion->sintoma5?>" selected><?=$caso->afeccion->sintoma5?></option>
+                              <?php foreach ($sintomas as $sintoma):?>
+                              	<?php if($sintoma->nombre != $caso->afeccion->sintoma5):?>
+                              	<option value="<?=$sintoma->nombre?>"><?=$sintoma->nombre?></option>
+                              	<?php endif;?>
+                              <?php endforeach;?>
+                            </select>
+            				</div>  
+  
+  
+            			
+            				<div class="row">
+                      		<div class="col-sm-3" style="margin-bottom:2.7rem;"></div>
+                            <select name="sintoma6" id="sintoma6" class="col-sm-5">
+                            <?php if($caso->afeccion->sintoma6 != "Ninguno"):?>
+                            <option value="Ninguno">Ninguno</option>
+                            <?php endif;?>
+                              <option value="<?=$caso->afeccion->sintoma6?>" selected><?=$caso->afeccion->sintoma6?></option>
+                              <?php foreach ($sintomas as $sintoma):?>
+                              	<?php if($sintoma->nombre != $caso->afeccion->sintoma6):?>
+                              	<option value="<?=$sintoma->nombre?>"><?=$sintoma->nombre?></option>
+                              	<?php endif;?>
+                              <?php endforeach;?>
+                            </select>
+            				</div>    
+            				
+            				<div class="row">
+                      		<div class="col-sm-3" style="margin-bottom:2.7rem;"></div>
+                            <select name="sintoma7" id="sintoma7" class="col-sm-5">
+                            <?php if($caso->afeccion->sintoma7 != "Ninguno"):?>
+                            <option value="Ninguno">Ninguno</option>
+                            <?php endif;?>
+                              <option value="<?=$caso->afeccion->sintoma7?>" selected><?=$caso->afeccion->sintoma7?></option>
+                              <?php foreach ($sintomas as $sintoma):?>
+                              	<?php if($sintoma->nombre != $caso->afeccion->sintoma7):?>
+                              	<option value="<?=$sintoma->nombre?>"><?=$sintoma->nombre?></option>
+                              	<?php endif;?>
+                              <?php endforeach;?>
+                            </select>
+            				</div>                				
+            				
+            				   
+            				<div class="row"> 
+            				<button type="button" onclick="submit()" class="btn btn-primary col-sm-2" id="botonPC" style="margin-right: 2rem;">Editar</button>
+            				</div>  
             				
         			   </form>
                       </div>
