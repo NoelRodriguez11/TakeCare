@@ -15,14 +15,14 @@ class Profesional extends CI_Controller
    
     public function u()
     {
-
+        
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('profesional_model');
         $this->load->model('pais_model');
         $data['profesional'] = $this->profesional_model->getProfesionalById($id);
         $data['paises'] = $this->pais_model->getPaises();
-        frame($this, 'profesional/u', $data);
-             
+        frame($this, 'profesional/d', $data);
+        
     }
     
     public function uPost() {
@@ -39,13 +39,21 @@ class Profesional extends CI_Controller
         
         try {
             $this->profesional_model->actualizarProfesional($id, $loginname, $nombre, $altura, $fechaNacimiento, $this->pais_model->getPaisById($pais));
-            redirect(base_url() . 'profesional/r');
+            redirect(base_url() . 'profesional/d');
         } catch (Exception $e) {
             session_start();
             $_SESSION['_msg']['texto'] = $e->getMessage();
-            $_SESSION['_msg']['uri'] = 'profesional/r';
+            $_SESSION['_msg']['uri'] = 'profesional/d';
             redirect(base_url() . 'msg');
         }
+    }
+    
+    public function d(){
+        $this->load->model('profesional_model');
+        $this->load->model('especialidad_model');
+        $datos['profesionales'] = $this->profesional_model->getProfesionales();
+        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        frame($this, 'profesional/d', $datos);
     }
     
     public function dPost() {
@@ -53,7 +61,7 @@ class Profesional extends CI_Controller
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $this->load->model('profesional_model');
         $this->profesional_model->borrarProfesional($id);
-        redirect(base_url().'profesional/r');
+        redirect(base_url().'profesional/d');
     }
 
     

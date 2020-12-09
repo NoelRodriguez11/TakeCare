@@ -14,7 +14,7 @@ function validarNombre() {
                 }
 
 function validarApellidoUno() {
-            		var apellidoUno=document.getElementById("id-nombre").value.trim();
+            		var apellidoUno=document.getElementById("id-ape1").value.trim();
                     var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (apellidoUno.length < 2 && apellidoUno.length > 20) {
@@ -29,7 +29,7 @@ function validarApellidoUno() {
                 }
 
 function validarApellidoDos() {
-            		var ApellidoDos=document.getElementById("id-nombre").value.trim();
+            		var ApellidoDos=document.getElementById("id-ape2").value.trim();
                     var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (ApellidoDos.length < 2 && ApellidoDos.length > 20) {
@@ -44,7 +44,7 @@ function validarApellidoDos() {
                 }
 
 function validarDNI() {
-            		var dni=document.getElementById("id-nombre").value.trim();
+            		var dni=document.getElementById("id-dni").value.trim();
                     var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (dni.length < 2 && dni.length > 20) {
@@ -59,7 +59,7 @@ function validarDNI() {
                 }
                 
 function validarTelefono() {
-            		var telefono=document.getElementById("id-tlf").value.trim();
+            		var telefono=document.getElementById("id-telefono").value.trim();
                     var rgExp= /^[9876][0-9]{8}$/;
         
                     if (telefono.length != 9) {
@@ -105,7 +105,7 @@ function validarCiudad() {
                     }
 
 function validarEmail() {
-            		var email=document.getElementById("id-ciudad").value.trim();
+            		var email=document.getElementById("id-email").value.trim();
                     var rgExp= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         
                     if (email.length < 3 && email.length > 30) {
@@ -120,7 +120,7 @@ function validarEmail() {
                     }
 
 function validarTurno() {
-            		var turno=document.getElementById("id-ciudad").value.trim();
+            		var turno=document.getElementById("id-franja").value.trim();
                     var rgExp= /^(?:0?[1-9]|1[0-2]):[0-5][0-9]/;
         
                     if (turno.length < 3 && turno.length > 30) {
