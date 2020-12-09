@@ -2,8 +2,8 @@
 	<div class="contenidoPrincipal">
 		<div class="col-lg-4" id="buscador">
 			<form action="<?= base_url()?>Buscador/filtroSelect" method="post">
-				<input type="text" name="palabras" class="form-control" placeholder="Buscar...">
-				<input class="btn btn-default" type="submit" value="Buscar">
+				<input type="text" name="palabras" id="buscabusca" placeholder="Buscar...">
+				<input type="submit" id="loginBoton" class="btn btn-light" value="Buscar">
 			</form>
 		</div>
 	</div>
