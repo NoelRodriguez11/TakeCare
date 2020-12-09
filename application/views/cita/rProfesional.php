@@ -63,15 +63,13 @@
     	
  		<hr class="divisorHorizontal">
      	<div class="row">
-     	<div class="col-sm-8" style="word-wrap: break-word;">
-     	<div class="tituloCasosIndicadorInformacionPaciente" >Citas</div>
-     	<div class="contenedoresInformacionCitas" >Cita de prueba</div>
-     	<div class="contenedoresInformacionCitas" >Cita de prueba</div>
-     	<div class="contenedoresInformacionCitas" >Cita de prueba</div>
-     	<div class="contenedoresInformacionCitas" >Cita de prueba</div>
-    			
-	 		
-    	</div>  
+         	<div class="col-sm-8" style="word-wrap: break-word;">
+             	<div class="tituloCasosIndicadorInformacionPaciente" >Citas</div>
+             	<div class="contenedoresInformacionCitas" >Cita de prueba</div>
+    
+        			
+    	 		
+        	</div>  
     	</div>  
     	 
 
@@ -245,4 +243,4 @@
 <?php endforeach;?>
 
  
-</div><
+</div>

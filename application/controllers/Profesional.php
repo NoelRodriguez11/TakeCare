@@ -173,7 +173,7 @@ class Profesional extends CI_Controller
         
     }
 
-//-----------------------------------------------------------Editar diagnostico------------------------------------------------------------------------------------
+//-----------------------------------------------------------Editar diagnostico y sintomas------------------------------------------------------------------------------------
     public function editarDiagnostico() {
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
@@ -201,8 +201,18 @@ class Profesional extends CI_Controller
         redirect(base_url() . 'cita/rProfesional');
            
     }
+
+//-----------------------------------------------------------Dar de alta paciente------------------------------------------------------------------------------------
     
-    
+    public function finalizarTratamiento() {
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $this->load->model('caso_model');
+        $this->caso_model->cambiarEstado($id, "Finalizada");
+        PRG('El paciente ha sido dado de alta', 'caso/rPacientes', 'success');
+        
+        
+    }
         
         
     

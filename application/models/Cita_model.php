@@ -26,7 +26,6 @@ class Cita_model extends CI_Model
             $cita->fecha = $fechahora;
             $cita->persona = $idPersona;
             $cita->profesional = $idProfesional;
-            $cita->diagnosticoCita = null;
             return R::store($cita);
         }
         else {

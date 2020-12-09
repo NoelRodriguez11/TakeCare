@@ -46,7 +46,7 @@
                       </div>
                       <div class="modal-footer">
                         
-                       <form action="<?=base_url()?>persona/finalizarTratamiento" method="post">
+                       <form action="<?=base_url()?>profesional/finalizarTratamiento" method="post">
             				<input type="hidden" name="idCaso" value="<?=$caso->id?>">
             				<button type="button" onclick="submit()" class="btn btn-success" id="botonPC">Finalizar</button>
             				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

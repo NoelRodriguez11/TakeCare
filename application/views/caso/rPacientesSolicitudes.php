@@ -45,13 +45,13 @@
         		</form>
          		
          		<?php elseif($caso->estado == "Aceptada"):?>
-            	<form class="col-sm-1" action="<?=base_url()?>caso/#" method="post">
+            	<form class="col-sm-1" action="<?=base_url()?>cita/rPaciente" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
         			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Ver Seguimiento</button>
         		</form>
         		
         		<?php elseif($caso->estado == "Finalizada"):?>
-            	<form class="col-sm-1" action="<?=base_url()?>caso/#" method="post">
+            	<form class="col-sm-1" action="<?=base_url()?>cita/rPaciente" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
         			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Información Completa</button>
         		</form>
