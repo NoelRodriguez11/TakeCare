@@ -3,7 +3,7 @@
             <ul>
                 <li>
                     <a href="<?=base_url()?>especialidad/r">
-                        <i class="fa fa-cogs fa-2x"></i>
+                        <i class="fa fa-stethoscope fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                      		Lista de especialidades
                         </span>
@@ -12,7 +12,7 @@
                 </li>
                 <li class="has-subnav">
                     <a href="<?=base_url()?>sintoma/r">
-                      <i class="fa fa-stethoscope fa-2x"></i>
+                      <i class="fa fa-stethoscope fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                             Lista de sintomas
                         </span>
@@ -21,7 +21,7 @@
                 </li>
                 <li class="has-subnav">
                     <a href="<?=base_url()?>persona/d">
-                       <i class="fa fa-user-md fa-2x"></i>
+                       <i class="fa fa-user-md fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                             Borrar Pacientes
                         </span>
@@ -29,7 +29,7 @@
                 </li>
                 <li class="has-subnav">
                     <a href="<?=base_url()?>profesional/d">
-                       <i class="fa fa-calendar-alt fa-2x"></i>
+                       <i class="fa fa-user-md fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                             Borrar Profesionales
                         </span>
@@ -47,7 +47,7 @@
             <ul>
                 <li>
                     <a href="<?=base_url()?>persona/configPerfil">
-                        <i class="fa fa-cogs fa-2x"></i>
+                        <i class="fa fa-cogs fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                      		Configuración perfil
                         </span>
@@ -56,7 +56,7 @@
                 </li>
                 <li class="has-subnav">
                     <a href="<?=base_url()?>caso/rPacientesSolicitudes">
-                      <i class="fa fa-stethoscope fa-2x"></i>
+                      <i class="fa fa-stethoscope fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                             Historial de Solicitudes
                         </span>
@@ -65,7 +65,7 @@
                 </li>
                 <li class="has-subnav">
                     <a href="<?=base_url()?>caso/rPacientes">
-                       <i class="fa fa-user-md fa-2x"></i>
+                       <i class="fa fa-user-md fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                             Mis tratamientos
                         </span>
@@ -92,7 +92,7 @@
             <ul>
                 <li>
                     <a href="<?=base_url()?>profesional/configPerfil">
-                        <i class="fa fa-cogs fa-2x"></i>
+                        <i class="fa fa-cogs fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                      		Configuración perfil
                         </span>
@@ -101,7 +101,7 @@
                 </li>
                 <li class="has-subnav">
                     <a href="<?=base_url()?>caso/r">
-                      <i class="fa fa-stethoscope fa-2x"></i>
+                      <i class="fa fa-stethoscope fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                             Mis casos
                         </span>
@@ -110,7 +110,7 @@
                 </li>
                 <li class="has-subnav">
                     <a href="<?=base_url()?>caso/rCasosPendientes">
-                       <i class="fa fa-user-md fa-2x"></i>
+                       <i class="fa fa-user-md fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                             Casos Pendientes
                         </span>
@@ -119,7 +119,7 @@
                 </li>
                 <li class="has-subnav">
                     <a href="#">
-                       <i class="fa fa-calendar-alt fa-2x"></i>
+                       <i class="fa fa-medkit fa-2x" style="top:3px;"></i>
                         <span class="nav-text">
                             Casos cerrados
                         </span>

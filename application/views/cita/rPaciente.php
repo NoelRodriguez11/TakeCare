@@ -16,7 +16,13 @@
             	
             
             	<!--fecha solicitada -->
-            	<div class="col-sm-3 tituloCasosIndicadorPaciente" style="overflow: hidden;" ><p style="float: left;">Próxima cita:</p><p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p></div>
+            	<div class="col-sm-3 tituloCasosIndicadorPaciente" style="overflow: hidden;" ><p style="float: left;">
+            	<?php if($caso->estado == "Aceptada"):?>
+            	Próxima cita:
+            	<?php elseif($caso->estado == "Finalizada"):?>
+            	Última cita:
+            	<?php endif;?>
+            	</p><p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p></div>
                 <div class="col-sm-1"></div>
              
     	</div>	
@@ -61,7 +67,8 @@
         	</div>  
     	</div>  
     	 
-
+    	 
+    	<?php if($caso->estado == "Aceptada"):?>  	
     	<div class="row">
     			<div class="col-sm-9"></div>
     		    <form class="col-sm-2" action="<?=base_url()?>cita/rPaciente" method="post">
@@ -69,7 +76,7 @@
         			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Solicitar cambio de cita</button>
         		</form>    		 	 		
     	</div>   
-    	
+    	<?php endif;?>
              
 </div> 
 

@@ -11,12 +11,32 @@ class Cita extends CI_Controller {
         frame($this, 'cita/rPaciente', $datos);
     }
     
+    public function rPacienteFinalizada() {
+        
+        $this->load->model('caso_model');
+        $this->load->model('especialidad_model');
+        $datos['casos'] = $this->caso_model->getCasosByEstado("Finalizada");
+        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        frame($this, 'cita/rPaciente', $datos);
+    }
+    
     public function rProfesional() {
         
         $this->load->model('caso_model');
         $this->load->model('especialidad_model');
         $this->load->model('sintoma_model');
         $datos['casos'] = $this->caso_model->getCasosByEstado("Aceptada");
+        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        $datos['sintomas'] = $this->sintoma_model->getSintomas();
+        frame($this, 'cita/rProfesional', $datos);
+    }
+    
+    public function rProfesionalFinalizada() {
+        
+        $this->load->model('caso_model');
+        $this->load->model('especialidad_model');
+        $this->load->model('sintoma_model');
+        $datos['casos'] = $this->caso_model->getCasosByEstado("Finalizada");
         $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
         frame($this, 'cita/rProfesional', $datos);
