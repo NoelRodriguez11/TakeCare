@@ -33,8 +33,30 @@
  }
 
  footer {
- 
+ width:100%;
  margin-top: 40%;
 
-
  }
+ 
+button#aceptar{
+	color:white;
+	background-color: #A42121;
+	padding: 8px;
+	border-radius: 5px;
+	
+}
+#barraaceptacion {
+	display:block;
+	position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    min-height: 20px;
+    background-color:rgb(94, 94, 94, 0.5);
+    color: #fff;
+    z-index: 99999;
+    line-height: 10px;
+}
