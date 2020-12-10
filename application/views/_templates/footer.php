@@ -3,19 +3,25 @@
 
 <div class="container">
 
-
-        <div class="text-center center-block">
-        <br>
-            <p>- TakeCare 2020 -</p>
-            <br/>
-            <a href="<?=base_url()?>home/avisoLegal" style="float: right;padding-top: 20px; float: left; ">Aviso Legal</a>
-    		<a href="<?=base_url()?>home/quienesSomos" style="float: right;padding-top: 10px;float: left ">Quienes Somos</a>
-           	
-                <a href="https://www.facebook.com/profile.php?id=100057232210381"><i id="social-fb" class="fa fa-facebook fa-3x social"></i></a>
-	            <a href="https://twitter.com/TakeCareTFG"><i id="social-tw" class="fa fa-twitter fa-3x social"></i></a>
-	            <a href="https://www.instagram.com/bootsnipp"><i id="social-ig" class="fa fa-instagram fa-3x social"></i></a>
-	            <a href="mailto:takecaretfg@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-
+			<br><br>
+            <div class="row">
+                 <div class="text-center center-block"> 
+                        <a href="https://www.facebook.com/profile.php?id=100057232210381"><i id="social-fb" class="fa fa-facebook fa-3x social"></i></a>
+        	            <a href="https://twitter.com/TakeCareTFG"><i id="social-tw" class="fa fa-twitter fa-3x social"></i></a>
+        	            <a href="https://www.instagram.com/bootsnipp"><i id="social-ig" class="fa fa-instagram fa-3x social"></i></a>
+        	            <a href="mailto:takecaretfg@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+				</div>
+    				<div class="col-sm-10">
+    				</div>
+				<div class="col-sm-2" style="bottom: 5rem"> 
+					<div>
+                        <a href="<?=base_url()?>home/avisoLegal">Aviso Legal</a>
+                    </div>
+                    <div>
+                		<a href="<?=base_url()?>home/quienesSomos">Quienes Somos</a>
+                	</div>
+            	</div>
+			</div>
 <br>
 
 <br />
@@ -72,8 +78,6 @@
 </script>
 		
 	
-
-	</div>
-	</div>
+</div>
 
 </footer>
