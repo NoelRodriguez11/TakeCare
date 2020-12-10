@@ -6,7 +6,13 @@
 <?php else:?>
 <?php foreach ($casos as $caso):?>
 <?php if($caso->persona->id == $datosGen["persona"]->id):?>
+
+<?php if($caso->alertaCambioPropuesta == false):?>
 <div class="divCasosPendientes">
+<?php else:?>
+<div class="divCasosPendientesAlerta">
+<?php endif;?>
+
 		<div class="row">
                 <!--Nombre del paciente -->
             	<div class="col-sm-2 tituloCasosIndicador" >Profesional:<div id="nombrePersona">
@@ -14,7 +20,12 @@
             	</div></div>
             	
             	<!--fecha solicitada -->
+            	<?php if($caso->alertaCambioPropuesta == false):?>
             	<div class="col-sm-2 tituloCasosIndicador" >Fecha Solicitada:<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div></div>
+            	<?php else:?>
+            	<div class="col-sm-2 tituloCasosIndicador" ><i class="fas fa-bell"></i> Nueva fecha propuesta <i class="fas fa-bell"></i>:<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div>
+            	</div>
+                <?php endif;?>
                 
                  <!--diagnostico -->
             	 <div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar:
@@ -62,11 +73,23 @@
         		</form>
         		<?php else:?>
         		
+        		<?php if($caso->alertaCambioPropuesta == false):?>
          		<form class="col-sm-1" action="<?=base_url()?>caso/dPost" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
         			<button title="Anular la solicitud" onclick="submit()" class="botonCambioPropuesta btn btn-danger" id="botonPC">Anular Solicitud</button>
         		</form>
+        		<?php else:?>
+        		<form class="col-sm-1" action="<?=base_url()?>persona/rechazarNuevaFecha" method="post">
+        			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+        			<button title="Rechazar la nueva fecha propuesta" onclick="submit()" class="botonCambioPropuesta btn btn-danger" id="botonPC">Rechazar nueva fecha</button>
+        		</form> 		
+        		 <form class="col-sm-1" action="<?=base_url()?>persona/aceptarNuevaFecha" method="post">
+        			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+        			<button title="Aceptar nueva fecha" onclick="submit()" class="botonCambioPropuesta btn btn-success" id="botonPC">  Aceptar nueva fecha &nbsp </button>
+        		</form>
+        		<?php endif;?> 
         		<?php endif;?>   
+        		 
     		</div>	   
 		</div> 
 

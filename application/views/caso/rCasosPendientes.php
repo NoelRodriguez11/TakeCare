@@ -26,14 +26,15 @@
             	</div>
             	
 
-            	<form class="col-sm-1" action="<?=base_url()?>profesional/cambiarPropuesta" method="post">
-        			<input type="hidden" name="idProfesional" value="<?=$caso->id?>">
-        			<button title="Rechazar Caso" onclick="submit()" class="botonCambioPropuesta btn btn-primary textoexp2-sinMargen" id="botonPC">Cambiar propuesta</button>
+            	<form class="col-sm-1" action="<?=base_url()?>profesional/cambiarPropuesta" method="get">
+        			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+        			<button title="Cambiar Propuesta" onclick="submit()" class="botonCambioPropuesta btn btn-primary textoexp2-sinMargen" id="botonPC"
+        			<?php if($caso->alertaCambioPropuesta == true):?>disabled<?php endif;?>>Cambiar propuesta</button>
         		</form>           	
             	
             	<form class="col-sm-1" action="<?=base_url()?>profesional/rechazarCaso" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
-        			<button title="Rechazar Caso" onclick="submit()" class="botonCasoAceptarRechazar btn btn-danger" id="botonPC"><i class="fa fa-times fa-2x ajusteIcono"></i> </button>
+        			<button title="Rechazar Caso" onclick="submit()" class="botonCasoAceptarRechazar btn btn-danger" id="botonPC" <?php if($caso->alertaCambioPropuesta == true):?>disabled<?php endif;?>><i class="fa fa-times fa-2x ajusteIcono"></i> </button>
         		</form>
         		       		
                 <form class="col-sm-1" action="<?=base_url()?>profesional/aceptarCaso" method="post">
@@ -41,11 +42,11 @@
         			<input type="hidden" name="idProfesional" value="<?=$caso->profesional->id?>">
         			<input type="hidden" name="idPaciente" value="<?=$caso->persona->id?>">
         			<input type="hidden" name="fechaHora" value="<?=$caso->fechaInicio?>">
-        			<button title="Aceptar Caso" onclick="submit()" class="botonCasoAceptarRechazar btn btn-success" id="botonPC"><i class="fa fa-check fa-2x ajusteIcono"></i> </button>
+        			<button title="Aceptar Caso" onclick="submit()" class="botonCasoAceptarRechazar btn btn-success" id="botonPC" <?php if($caso->alertaCambioPropuesta == true):?>disabled<?php endif;?>><i class="fa fa-check fa-2x ajusteIcono"></i> </button>
         		</form>
     		</div>	   
-		</div> 
-
+</div> 
+		
 <?php endif;?>      
 <?php endforeach;?>
 <?php endif;?>  

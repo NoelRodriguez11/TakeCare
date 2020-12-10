@@ -35,6 +35,9 @@
 						<button type="submit" id="loginBoton" class="btn btnEstandar">Crear cita</button>
 					</div>				
 				</form>
-				
+				<script type="text/javascript">
+				var today = new Date().toISOString();
+				document.getElementById("idfh").min = today.slice(0,16);
+				</script>				
 			</div>
  </div>

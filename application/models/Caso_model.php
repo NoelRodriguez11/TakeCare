@@ -44,6 +44,7 @@ class Caso_model extends CI_Model
             $caso->diagnosticoGeneral = "";
             $caso->estado = "Pendiente";
             $caso->afeccion = $afeccion;
+            $caso->alertaCambioPropuesta = false;
             return R::store($caso);
         }
         else {
@@ -51,6 +52,26 @@ class Caso_model extends CI_Model
 //                 throw $e;
 //             }
                 PRG("Los datos o son nulos o ya estan registrados");
+        }
+    }
+    
+    public function modificarFechaInicio($id, $fechahora)
+    {
+        $caso = R::findOne('caso','id=?',[$id]);
+        
+        $ok = ($caso!=null && $fechahora!=null);
+        
+        if ($ok) {
+            $caso = R::load('caso', $id);
+            $caso->fechaInicio = $fechahora;
+            $caso->alertaCambioPropuesta = true;
+            return R::store($caso);
+        }
+        else {
+            //             if ($e = ($fechahora == null?new Exception("nulo"):new Exception("Fecha y hora, ya registradas escoge otra") || $idEspecialidad == null?new Exception("nulo"):new Exception("Especicialidad ya existente escoge otra") || $idProfesional == null?new Exception("nulo"):new Exception("Profesional ya registrado, escoge otro"))) {
+            //                 throw $e;
+            //             }
+            PRG("Los datos o son nulos o ya estan registrados");
         }
     }
     
@@ -62,6 +83,16 @@ class Caso_model extends CI_Model
 
             R::store($caso);
             
+    }
+
+    public function cambiarAlerta($id, $alerta) {
+        $caso = R::findOne('caso','id=?',[$id]);
+        
+        $caso = R::load('caso', $id);
+        $caso->alertaCambioPropuesta = $alerta;
+        
+        R::store($caso);
+        
     }
 
     public function editarDiagnostico($id, $diagnosticoGeneral) {

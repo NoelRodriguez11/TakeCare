@@ -18,8 +18,18 @@
             	</div>
             	
             
-            	<!--fecha solicitada -->
-            	<div class="col-sm-3 tituloCasosIndicadorPaciente" style="overflow: hidden;" ><p style="float: left;">Próxima cita:</p><p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p></div>
+            	<?php if($caso->estado == "Aceptada"):?>
+            	<div class="col-sm-3 tituloCasosIndicadorPaciente" style="overflow: hidden;" >
+                	<p style="float: left;">Próxima cita:</p>
+                	<p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p>
+            	</div>
+            	<?php else:?>
+            	<div class="col-sm-3 tituloCasosIndicadorPaciente" style="overflow: hidden;" >
+                	<p style="float: left;">Última cita:</p>
+                	<p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p>
+            	</div>
+            	<?php endif;?>
+            	
                 <div class="col-sm-1"></div>
              
     	</div>	
@@ -30,11 +40,12 @@
          	<div class="col-sm-6" style="word-wrap: break-word;">
              	 <div class="row">
              		<div class="tituloCasosIndicadorInformacionPaciente col-sm-8" >Diagnóstico General</div>
-             		<?php if($caso->estado == "Aceptada"):?> 
-             		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#diagnosticoModalCenter" style="width: 15%;height:32px; bottom: 1.5rem; left: 7rem;">
+             		
+             		<button class="botonCambioPropuesta btn btn-info col-sm-4"   data-toggle="modal" data-target="#diagnosticoModalCenter" 
+             		style="<?php if($caso->estado == "Finalizada"):?>visibility:hidden;<?php endif;?> width: 15%;height:32px; bottom: 1.5rem; left: 7rem;">
                       Editar
                     </button>
-                    <?php endif;?>
+                   
                     
                 </div>
                <textarea class="textareaDiagnostico" disabled><?=$caso->diagnosticoGeneral?></textarea>   	
@@ -45,11 +56,12 @@
          	<div class="col-sm-5" style=" word-wrap: break-word;">
          		<div class="row">
              		<div class="tituloCasosIndicadorInformacionPaciente col-sm-8" >Síntomas</div>
-             		<?php if($caso->estado == "Aceptada"):?> 
-             		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#sintomasModalCenter" style="width: 19%; height:32px; bottom: 1.5rem; left: 9rem;">
+             	
+             		<button class="botonCambioPropuesta btn btn-info col-sm-4" data-toggle="modal" data-target="#sintomasModalCenter" 
+             		style="<?php if($caso->estado == "Finalizada"):?>visibility:hidden;<?php endif;?> width: 19%; height:32px; bottom: 1.5rem; left: 9rem;">
                       Editar
                     </button>
-                    <?php endif;?>
+                   
                 </div>                  
                       	<p style="font-size:110%;<?php if($caso->afeccion->sintoma1 == "Ninguno"):?>display:none;<?php endif;?>font-family:'Exo 2', sans-serif;">● <?=$caso->afeccion->sintoma1?></p>
                       	<p style="font-size:110%;<?php if($caso->afeccion->sintoma2 == "Ninguno"):?>display:none;<?php endif;?>font-family:'Exo 2', sans-serif;">● <?=$caso->afeccion->sintoma2?></p>

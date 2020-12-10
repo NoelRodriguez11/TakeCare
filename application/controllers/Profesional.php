@@ -164,7 +164,7 @@ class Profesional extends CI_Controller
         $this->load->model('persona_model');
                
         $this->caso_model->cambiarEstado($id, "Aceptada");
-        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente));
+        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente), $this->caso_model->getCasoById($id), "Primera Cita" );
                   
         PRG('Caso Aceptado', 'caso/r', 'success');
                 
@@ -178,6 +178,29 @@ class Profesional extends CI_Controller
         $this->caso_model->cambiarEstado($id, "Rechazada");
         PRG('Caso Rechazado', 'caso/rCasosPendientes', 'danger');
         
+        
+    }
+    
+//-----------------------------------------------------------ACEPTAR CASO------------------------------------------------------------------------------------
+    public function cambiarPropuesta() {
+        
+        $id = isset($_GET['idCaso']) ? $_GET['idCaso'] : null;
+        $this->load->model('caso_model');
+        $datos['caso'] = $this->caso_model->getCasoById($id);
+        frame($this, 'cita/cPropuesta', $datos);
+        
+    }
+    
+    public function cambiarPropuestaPost() {
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $fechaHora = isset($_POST['fechaHora']) ? $_POST['fechaHora'] : null;
+        
+        $this->load->model('caso_model');
+        $this->caso_model->modificarFechaInicio($id, $fechaHora);
+        $this->caso_model->cambiarAlerta($id, true);
+ 
+        PRG('Propuesta de cambio enviada', 'caso/rCasosPendientes', 'success');
         
     }
 

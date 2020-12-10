@@ -9,6 +9,17 @@
 	background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(248,248,248,1) 26%, rgba(248,248,248,1) 100%);
 }
 
+.divCasosPendientesAlerta{
+	margin: 1.5rem;
+	padding: 1.4rem !important;
+	border-radius: .5rem !important;
+	border:2px solid grey;
+	height: 11%;
+	width: 100%;
+	background: rgb(248,215,218);
+	background: linear-gradient(90deg, rgba(248,215,218,1) 12%, rgba(248,248,248,1) 40%);
+}
+
 .divCasosAceptados{
 	margin: 1.5rem;
 	padding: 1.4rem !important;

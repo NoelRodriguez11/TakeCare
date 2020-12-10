@@ -3,11 +3,11 @@
 class Cita extends CI_Controller {
 
     public function rPaciente() {
-        
+             
         $this->load->model('caso_model');
-        $this->load->model('especialidad_model');
-        $datos['casos'] = $this->caso_model->getCasosByEstado("Aceptada");
-        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $datos['caso'] = $this->caso_model->getCasoById($id);
         frame($this, 'cita/rPaciente', $datos);
     }
     
@@ -26,12 +26,10 @@ class Cita extends CI_Controller {
     public function rProfesional() {
         
         $this->load->model('caso_model');
-        $this->load->model('especialidad_model');
         $this->load->model('sintoma_model');
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $datos['caso'] = $this->caso_model->getCasoById($id);
-        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
         frame($this, 'cita/rProfesional', $datos);
     }

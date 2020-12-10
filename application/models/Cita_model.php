@@ -15,17 +15,19 @@ class Cita_model extends CI_Model
         return R::load('cita', $id);
     }
     
-    public function crearCita($fechahora,$idProfesional,$idPersona)
+    public function crearCita($fechahora,$idProfesional,$idPersona, $idCaso, $caracter)
     {
-        $cita = R::findOne('cita','fecha=?',[$fechahora],'id_profesional=?',[$idProfesional],'id_persona=?',[$idPersona]);
+        $cita = R::findOne('cita','fecha=?',[$fechahora],'id_profesional=?',[$idProfesional],'id_persona=?',[$idPersona], 'id_caso=?', [$idCaso]);
         
-        $ok = ($cita==null && $fechahora!=null && $idProfesional!=null && $idPersona != null);
+        $ok = ($cita==null && $fechahora!=null && $idProfesional!=null && $idPersona != null && $idCaso != null);
         
         if ($ok) {
             $cita = R::dispense('cita');
             $cita->fecha = $fechahora;
             $cita->persona = $idPersona;
             $cita->profesional = $idProfesional;
+            $cita->caso = $idCaso;
+            $cita->caracter = $caracter;
             return R::store($cita);
         }
         else {

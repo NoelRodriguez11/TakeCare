@@ -164,6 +164,28 @@ class Persona extends CI_Controller
         
     }
     
+//----------------------------------Aceptar y rechazar nuevas fechas-------------------------------------------------------------
+    
+    public function aceptarNuevaFecha() {
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $this->load->model('caso_model');
+        $this->caso_model->cambiarEstado($id, "Aceptada");
+        $this->caso_model->cambiarAlerta($id, false);
+        PRG('Propuesta Aceptada', 'caso/rPacientesSolicitudes', 'success');
+      
+    }
+    
+    public function rechazarNuevaFecha() {
+        
+        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $this->load->model('caso_model');
+        $this->caso_model->cambiarEstado($id, "Rechazada");
+        $this->caso_model->cambiarAlerta($id, false);
+        PRG('Propuesta Rechazada. Envie una nueva solicitud o pongase en contacto', 'caso/rPacientesSolicitudes', 'danger');
+        
+    }
+    
 //     public function u()
 //     {
 //         $id = isset($_GET['id']) ? $_GET['id'] : null;

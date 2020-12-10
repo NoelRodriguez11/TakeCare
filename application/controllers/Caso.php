@@ -91,9 +91,18 @@ class Caso extends CI_Controller {
     public function dPost() {
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
-        $this->load->model('caso_model');
-        $this->caso_model->borrarCaso($id);
-        redirect(base_url().'caso/rPacientes');
+        $alertaPropuestaCambio = isset($_POST['alerta']) ? $_POST['alerta'] : null;
+        
+        if($alertaPropuestaCambio == true){
+            $this->load->model('caso_model');
+            $this->caso_model->borrarCaso($id);
+           PRG("Propuesta de profesional rechazada. En caso de querer reintentarlo realiza una nueva solicitud o ponte en contacto");
+        }
+        else {
+            $this->load->model('caso_model');
+            $this->caso_model->borrarCaso($id);
+            redirect(base_url().'caso/rPacientes');
+        }
         }
 
     }
