@@ -7,8 +7,10 @@
         <div class="text-center center-block">
         <br>
             <p>- TakeCare 2020 -</p>
-            <br />
-           		
+            <br/>
+            <a href="<?=base_url()?>home/avisoLegal" style="float: right;padding-top: 20px; float: left; ">Aviso Legal</a>
+    		<a href="<?=base_url()?>home/quienesSomos" style="float: right;padding-top: 10px;float: left ">Quienes Somos</a>
+           	
                 <a href="https://www.facebook.com/profile.php?id=100057232210381"><i id="social-fb" class="fa fa-facebook fa-3x social"></i></a>
 	            <a href="https://twitter.com/TakeCareTFG"><i id="social-tw" class="fa fa-twitter fa-3x social"></i></a>
 	            <a href="https://www.instagram.com/bootsnipp"><i id="social-ig" class="fa fa-instagram fa-3x social"></i></a>

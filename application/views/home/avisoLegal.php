@@ -10,7 +10,7 @@
 					</h3>
 					<br>
 				
-					<p>Take Care es una web dedicada web para que la gente que acceda a ella pueda recibir 
+					<p>Take Care es una web dedicada para que la gente que acceda a ella pueda recibir 
 						una completa asistencia médica, tanto para la parte del diagnóstico como para la
 						gestión de tratamiento con un profesional.A través de este AVISO LEGAL se
 						pretende regular el acceso y uso, y en general, la relación entre

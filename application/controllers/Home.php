@@ -9,8 +9,14 @@ class Home extends CI_Controller {
         }
         frame($this,'home/index', $data);
         
-        //frame($this,'home/avisoLegal', $data);
     
+    }
+    public function avisoLegal() {
+        frame($this,'home/avisoLegal');
+    }
+    
+    public function quienesSomos() {
+        frame($this,'home/quienesSomos');
     }
 }
 ?>

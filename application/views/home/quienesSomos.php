@@ -13,7 +13,7 @@
 					<p>Take Care nace en el año 2020 como proyecto de fin de
 						curso del Ciclo Formativo de Grado Superior en Desarrollo de
 						Aplicaciones Web impartido en el IES Rey Fernando VI, con la
-						finalidad exclusiva de oner en contacto a profesionales autónomos y 
+						finalidad exclusiva de poner en contacto a profesionales autónomos y 
 						clínicas con pacientes que requieren de algún tipo de servicio médico, 
 						proporcionando una herramienta además de seguimiento del tratamiento 
 						hasta su finalización.
