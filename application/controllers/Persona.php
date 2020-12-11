@@ -62,9 +62,9 @@ class Persona extends CI_Controller
     
     public function dPost() {
         
-        if(!isRolOK("admin")){
-            PRG("Rol inadecuado");
-        }
+//         if(!isRolOK("admin")){
+//             PRG("Rol inadecuado");
+//         }
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $this->load->model('persona_model');
         $this->persona_model->borrarPersona($id);
