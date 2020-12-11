@@ -16,6 +16,15 @@
 	font-size: 100%;
 }
 
+.botonInformacionCita {
+	display: table-cell;
+	vertical-align: middle;
+	width:4rem;
+
+}
+
+
+
 
 
 

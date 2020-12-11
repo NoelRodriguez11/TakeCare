@@ -5,9 +5,14 @@ class Cita_model extends CI_Model
      
     public function getCitas()
     {
-       //return R::findAll('cita','ORDER BY nombre ASC');
-        return R::findAll('cita');
+       return R::findAll('cita','ORDER BY id ASC');
     }
+    
+    public function getCitasByCasoId($idCaso)
+    {
+        return R::findAll('cita','caso_id=?',[$idCaso],'ORDER BY id ASC');
+    }
+    
     
     
     public function getCitaById($id)
@@ -15,7 +20,7 @@ class Cita_model extends CI_Model
         return R::load('cita', $id);
     }
     
-    public function crearCita($fechahora,$idProfesional,$idPersona, $idCaso, $caracter)
+    public function crearCita($fechahora,$idProfesional,$idPersona, $idCaso, $caracter, $estado="Aceptada")
     {
         $cita = R::findOne('cita','fecha=?',[$fechahora],'id_profesional=?',[$idProfesional],'id_persona=?',[$idPersona], 'id_caso=?', [$idCaso]);
         
@@ -28,6 +33,7 @@ class Cita_model extends CI_Model
             $cita->profesional = $idProfesional;
             $cita->caso = $idCaso;
             $cita->caracter = $caracter;
+            $cita->estado = $estado;
             return R::store($cita);
         }
         else {

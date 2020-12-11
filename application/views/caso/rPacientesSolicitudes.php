@@ -15,20 +15,20 @@
 
 		<div class="row">
                 <!--Nombre del paciente -->
-            	<div class="col-sm-2 tituloCasosIndicador" >Profesional:<div id="nombrePersona">
+            	<div class="col-sm-2 tituloCasosIndicador" >Profesional<div id="nombrePersona">
             	<?=$caso->profesional->nombre?> <?=$caso->profesional->primerApellido?> <?=$caso->profesional->segundoApellido?>
             	</div></div>
             	
             	<!--fecha solicitada -->
             	<?php if($caso->alertaCambioPropuesta == false):?>
-            	<div class="col-sm-2 tituloCasosIndicador" >Fecha Solicitada:<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div></div>
+            	<div class="col-sm-2 tituloCasosIndicador" >Fecha Solicitada<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div></div>
             	<?php else:?>
-            	<div class="col-sm-2 tituloCasosIndicador" ><i class="fas fa-bell"></i> Nueva fecha propuesta <i class="fas fa-bell"></i>:<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div>
+            	<div class="col-sm-2 tituloCasosIndicador" ><i class="fas fa-bell"></i> Nueva fecha propuesta <i class="fas fa-bell"></i><div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div>
             	</div>
                 <?php endif;?>
                 
                  <!--diagnostico -->
-            	 <div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar:
+            	 <div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar
             	<?php if($caso->diagnosticoPreliminar != "(No especificado por el paciente)"):?>
             		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoPreliminar?></div>
             	<?php else:?>
@@ -37,7 +37,7 @@
             	</div>
             	
             	<!--estado de la solicitud -->
-            	<div class="col-sm-3 tituloCasosIndicador" >Estado de la solicitud:
+            	<div class="col-sm-3 tituloCasosIndicador" >Estado de la solicitud
             	<div class="estadoSolicitudPaciente"
             	<?php if($caso->estado == "Rechazada"):?>
             	style="color:rgb(220, 53, 69) !important;"
@@ -85,6 +85,9 @@
         		</form> 		
         		 <form class="col-sm-1" action="<?=base_url()?>persona/aceptarNuevaFecha" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+        			<input type="hidden" name="idProfesional" value="<?=$caso->profesional->id?>">
+        			<input type="hidden" name="idPaciente" value="<?=$caso->persona->id?>">
+        			<input type="hidden" name="fechaHora" value="<?=$caso->fechaInicio?>">
         			<button title="Aceptar nueva fecha" onclick="submit()" class="botonCambioPropuesta btn btn-success" id="botonPC">  Aceptar nueva fecha &nbsp </button>
         		</form>
         		<?php endif;?> 

@@ -5,11 +5,11 @@
 <div class="divInformacionTratamiento">
 		<div class="row">
                 <!--Nombre del profesional -->
-            	<div class="col-sm-4 tituloCasosIndicador" >Paciente:<div id="nombrePersona">
+            	<div class="col-sm-4 tituloCasosIndicador" >Paciente<div id="nombrePersona">
             	<?=$caso->persona->nombre?> <?=$caso->persona->primerApellido?> <?=$caso->persona->segundoApellido?>
             	</div></div>
             	
-            	<div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar:
+            	<div class="col-sm-4 tituloCasosIndicador" >Diagnóstico Preliminar
             	<?php if($caso->diagnosticoPreliminar != "(No especificado por el paciente)"):?>
             		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoPreliminar?></div>
             	<?php else:?>
@@ -20,13 +20,13 @@
             
             	<?php if($caso->estado == "Aceptada"):?>
             	<div class="col-sm-3 tituloCasosIndicadorPaciente" style="overflow: hidden;" >
-                	<p style="float: left;">Próxima cita:</p>
-                	<p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p>
+                	<p style="float: left;">Próxima cita</p>
+                	<p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=end($citas)->fecha?></p>
             	</div>
             	<?php else:?>
             	<div class="col-sm-3 tituloCasosIndicadorPaciente" style="overflow: hidden;" >
-                	<p style="float: left;">Última cita:</p>
-                	<p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p>
+                	<p style="float: left;">Fecha de Alta</p>
+                	<p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=end($citas)->fecha?></p>
             	</div>
             	<?php endif;?>
             	
@@ -79,9 +79,50 @@
     	
  		<hr class="divisorHorizontal">
      	<div class="row">
-         	<div class="col-sm-8" style="word-wrap: break-word;">
+         	<div class="col-sm-10" style="word-wrap: break-word;">
              	<div class="tituloCasosIndicadorInformacionPaciente" >Citas</div>
-             	<div class="contenedoresInformacionCitas" >Cita de prueba</div>
+             	<div class="row" >
+             		<div class="col-sm-1"></div>
+             		<div class="col-sm-2"></div>
+             		<div class="col-sm-4 tituloCasosIndicador">Fecha y Hora</div> 
+             		<div class="col-sm-2 tituloCasosIndicador">Caracter</div>          	
+             	</div>
+             	<?php $i = 1;?>
+             	<?php foreach($citas as $cita):?>
+             	<div class="contenedoresInformacionCitas row" >
+             		<?php if($cita->caracter == "Primera Cita" || $cita->caracter == "Ultima cita"):?>
+             		<div class="col-sm-1"><?= $i?></div>
+             		<div class="col-sm-2"></div>
+             		<div class="col-sm-4 textoCasosContenidoConFormatoFechaHoraInformacion"><?= $cita->fecha?></div> 
+             		<div class="col-sm-3"><?= $cita->caracter?></div>
+             		<button class="botonInformacionCita btn btn-danger btn-sm" style="visibility: hidden">✖</button>
+             		
+             		<?php else:?> 
+             		 <div class="col-sm-1"><?= $i?></div>
+             		<div class="col-sm-2"></div>
+             		<div class="col-sm-4 textoCasosContenidoConFormatoFechaHoraInformacion"><?= $cita->fecha?></div> 
+             		<div class="col-sm-3"><?= $cita->caracter?></div>
+             		<div class="col-sm-2">
+             			
+                 		<?php if($caso->estado == "Aceptada"):?> 
+                 		    <form style="float:right;" action="<?=base_url()?>cita/dPost" method="post">
+                       		<button  class="botonInformacionCita btn btn-danger btn-sm">✖</button>
+                       		</form>
+                      		<form style="float:right; visibility:hidden;" action="<?=base_url()?>cita/#" method="post">
+                       		<button class="botonInformacionCita btn btn-info btn-sm"><i class="fas fa-edit"></i></button> 
+                       		</form>                    		
+                     		<form style="float:right; visibility:hidden;" action="<?=base_url()?>cita/#" method="post">
+                      		<button class="botonInformacionCita btn btn-success btn-sm"><i class="fas fa-check"></i></button>  
+                      		</form>
+
+                   		<?php endif;?>
+                   		
+                   		
+             		</div>
+             		<?php endif;?>             	            	
+             	</div>
+             	<?php $i++;?>
+             	<?php endforeach;?>
     
         			
     	 		
@@ -90,11 +131,11 @@
     	 
 		<?php if($caso->estado == "Aceptada"):?> 
     	<div class="row">
-    			<div class="col-sm-9"></div>
-    		    <form class="col-sm-2" action="<?=base_url()?>cita/rPaciente" method="post">
+    			  <div class="col-sm-11"></div>
+    			  <form class="col-sm-1" action="<?=base_url()?>cita/c" method="post">
         			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
-        			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Solicitar cambio de cita</button>
-        		</form>       		 	 		
+        			<button title="Nueva cita" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Nueva Cita</button>
+        		</form>   		 	 		
     	</div>   
     	<?php endif;?>
     	

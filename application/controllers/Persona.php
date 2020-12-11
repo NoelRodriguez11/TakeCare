@@ -169,10 +169,21 @@ class Persona extends CI_Controller
     public function aceptarNuevaFecha() {
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        $idProfesional = isset($_POST['idProfesional']) ? $_POST['idProfesional'] : null;
+        $idPaciente = isset($_POST['idPaciente']) ? $_POST['idPaciente'] : null;
+        $fechaCita = isset($_POST['fechaHora']) ? $_POST['fechaHora'] : null;
+        
         $this->load->model('caso_model');
+        $this->load->model('cita_model');
+        $this->load->model('profesional_model');
+        $this->load->model('persona_model');
+        $this->load->model('caso_model');
+        
         $this->caso_model->cambiarEstado($id, "Aceptada");
         $this->caso_model->cambiarAlerta($id, false);
+        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente), $this->caso_model->getCasoById($id), "Primera Cita" );
         PRG('Propuesta Aceptada', 'caso/rPacientesSolicitudes', 'success');
+        
       
     }
     

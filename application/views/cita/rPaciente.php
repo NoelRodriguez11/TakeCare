@@ -19,9 +19,9 @@
             	<?php if($caso->estado == "Aceptada"):?>
             	Próxima cita:
             	<?php elseif($caso->estado == "Finalizada"):?>
-            	Última cita:
+            	Fecha de alta:
             	<?php endif;?>
-            	</p><p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></p></div>
+            	</p><p style="float: right;" class="textoCasosContenidoConFormatoFechaHora"><?=end($citas)->fecha?></p></div>
                 <div class="col-sm-1"></div>
              
     	</div>	

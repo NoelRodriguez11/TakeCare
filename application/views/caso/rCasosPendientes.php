@@ -9,15 +9,15 @@
 <div class="divCasosPendientes">
 		<div class="row">
                 <!--Nombre del paciente -->
-            	<div class="col-sm-2 tituloCasosIndicador" >Paciente:<div id="nombrePersona">
+            	<div class="col-sm-2 tituloCasosIndicador" >Paciente<div id="nombrePersona">
             	<?=$caso->persona->nombre?> <?=$caso->persona->primerApellido?> <?=$caso->persona->segundoApellido?>
             	</div></div>
             	
             	<!--fecha solicitada -->
-            	<div class="col-sm-2 tituloCasosIndicador" >Fecha Solicitada:<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div></div>
+            	<div class="col-sm-2 tituloCasosIndicador" >Fecha Solicitada<div class="textoCasosContenidoConFormatoFechaHora"><?=$caso->fechaInicio?></div></div>
                 
                  <!--diagnostico -->
-            	<div class="col-sm-5 tituloCasosIndicador" >Diagnóstico Preliminar:
+            	<div class="col-sm-5 tituloCasosIndicador" >Diagnóstico Preliminar
             	<?php if($caso->diagnosticoPreliminar != "(No especificado por el paciente)"):?>
             		<div class="textoCasosContenido" style="word-wrap: break-word;"><?=$caso->diagnosticoPreliminar?></div>
             	<?php else:?>
