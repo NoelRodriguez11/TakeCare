@@ -71,6 +71,26 @@ class Persona extends CI_Controller
         redirect(base_url().'persona/d');
     }
     
+    public function borrarCuenta(){
+        $this->load->model('persona_model');
+        $datos['personas'] = $this->persona_model->getPersonas();
+        frame($this, 'persona/configPerfil', $datos);
+    }
+    
+    public function borrarCuentaPost() {
+        $id = isset($_POST['id']) ? $_POST['id'] : null;
+        $this->load->model('persona_model');
+        $this->persona_model->borrarPersona($id);
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (isset($_SESSION['persona'])) {
+            unset($_SESSION['persona']);
+        }
+        session_destroy();
+        redirect(base_url());
+    }
+    
     //CONFIGURACION PERFIL
     
     public function cambiarContraPersona() {

@@ -4,7 +4,7 @@
 		
 		<script type="text/javascript">
 			function validarNombrePac() {
-            		var nombre=document.getElementById("id-nombre").value.trim();
+            		var nombre = document.getElementById("id-nombrepac").value.trim();
                     var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (nombre.length < 2 && nombre.length > 20) {
@@ -19,14 +19,14 @@
                 }
          
 function validarTelefonoPac() {
-            		var telefono=document.getElementById("id-telefono").value.trim();
+            		var telefono = document.getElementById("id-tlfpac").value.trim();
                     var rgExp= /^[9876][0-9]{8}$/;
         
                     if (telefono.length != 9) {
                         document.getElementById("errorTelefonoPac").innerHTML="El teléfono no tiene 9 caracteres";
                     }
                     else if (!rgExp.test(telefono)){
-                        document.getElementById("errorTelefonoPac").innerHTML="El telefono tiene caracteres no validos";
+                        document.getElementById("errorTelefonoPac").innerHTML="El teléfono tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorTelefonoPac").innerHTML="";
@@ -34,15 +34,15 @@ function validarTelefonoPac() {
                 }
                 
 function validarDireccionPac() {
-            		var direccion=document.getElementById("id-direccion").value.trim();
+            		var direccion = document.getElementById("id-direccionpac").value.trim();
                     var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (direccion.length < 2 && direccion.length > 20) {
-                        document.getElementById("errorDireccionPac").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
+                        document.getElementById("errorDireccionPac").innerHTML="La dirección tiene menos de 2 caracteres o mas de 20 caracteres";
                     }
                     
                     else if (!rgExp.test(direccion)){
-                        document.getElementById("errorDireccionPac").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorDireccionPac").innerHTML="La dirección tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorDireccionPac").innerHTML="";
@@ -50,14 +50,14 @@ function validarDireccionPac() {
                 }
                 
 function validarCiudadPac() {
-            		var ciudad=document.getElementById("id-ciudad").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{3,30}$/;
+            		var ciudad = document.getElementById("id-ciudadpac").value.trim();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{3,30}$/;
         
                     if (ciudad.length < 3 && ciudad.length > 30) {
-                        document.getElementById("errorCiudadPac").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
+                        document.getElementById("errorCiudadPac").innerHTML="La ciudad tiene menos de 3 caracteres o mas de 30 caracteres";
                     }
                     else if (!rgExp.test(ciudad)){
-                        document.getElementById("errorCiudadPac").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorCiudadPac").innerHTML="La ciudad tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorCiudadPac").innerHTML="";
@@ -65,10 +65,13 @@ function validarCiudadPac() {
                     }
                    
 function deshabilitarBotonPac() {
-                	var spanNombre = document.getElementById("errorNombrePac");
+                	var spanNombre = document.getElementById("errorNombrePac").innerHTML;
+                	var spanTelefono = document.getElementById("errorTelefonoPac").innerHTML;
+                	var spanDireccion = document.getElementById("errorDireccionPac").innerHTML;
+                	var spanCiudad = document.getElementById("errorCiudadPac").innerHTML;
                 	var boton = document.getElementById("botonConfirmarPac");
                 	
-                	if (spanNombre.length > 0) {
+                	if (spanNombre.length > 0 || spanTelefono.length > 0 || spanDireccion.length > 0 || spanCiudad.length > 0) {
                 		boton.disabled = true;
                 	}
                 	else {
@@ -81,19 +84,19 @@ function deshabilitarBotonPac() {
 			<form action="<?=base_url()?>persona/configPerfilPost" method="post" enctype="multipart/form-data">
 
 				<div class="col-xs-8">
-					<label for="id-nombre">Nombre</label> 
-					<input id="id-nombre" type="text" class="form-control" name="nombre" onkeyup="validarNombrePac(),deshabilitarBotonPac()"/>
+					<label for="id-nombrepac">Nombre</label> 
+					<input id="id-nombrepac" type="text" class="form-control" name="nombre" onkeyup="validarNombrePac(),deshabilitarBotonPac()"/>
 					<span style="float:right" id="errorNombrePac"></span>
 				</div>
 
 				<div class="col-xs-8">
-					<label for="id-ape1">Primer Apellido</label> 
-					<input id="id-ape1" type="text" class="form-control" name="apellido1" disabled="disabled" />
+					<label for="id-ape1pac">Primer Apellido</label> 
+					<input id="id-ape1pac" type="text" class="form-control" name="apellido1" disabled="disabled" />
 				</div>
 
 				<div class="col-xs-8">
-					<label for="id-ape2">Segundo Apellido</label> 
-					<input id="id-ape2" type="text" class="form-control" name="apellido2" disabled="disabled" />
+					<label for="id-ape2pac">Segundo Apellido</label> 
+					<input id="id-ape2pac" type="text" class="form-control" name="apellido2" disabled="disabled" />
 				</div>
 
 				<div class="form-group">
@@ -103,14 +106,14 @@ function deshabilitarBotonPac() {
 
 
 				<div class="col-xs-8">
-					<label for="id-tlf">Telefono</label> 
-					<input id="id-tlf" type="text" class="form-control" name="tlf" onkeyup="validarTelefonoPac(),deshabilitarBotonPac()"/>
+					<label for="id-tlfpac">Teléfono</label> 
+					<input id="id-tlfpac" type="text" class="form-control" name="tlf" onkeyup="validarTelefonoPac(),deshabilitarBotonPac()"/>
 					<span style="float:right" id="errorTelefonoPac"></span>
 				</div>
 
 				<div class="col-xs-8">
-					<label for="id-dni">DNI</label> 
-					<input id="id-dni" type="text" class="form-control" name="dni" disabled="disabled" />
+					<label for="id-dnipac">DNI</label> 
+					<input id="id-dnipac" type="text" class="form-control" name="dni" disabled="disabled" />
 				</div>
 
 				<div class="col-xs-8">
@@ -119,14 +122,14 @@ function deshabilitarBotonPac() {
 				</div>
 
 				<div class="col-xs-8">
-					<label for="id-direccion">Dirección</label> 
-					<input id="id-direccion" type="text" name="direccion" class="form-control" onkeyup="validarDireccionPac(),deshabilitarBotonPac()"/>
+					<label for="id-direccionpac">Dirección</label> 
+					<input id="id-direccionpac" type="text" name="direccion" class="form-control" onkeyup="validarDireccionPac(),deshabilitarBotonPac()"/>
 					<span style="float:right" id="errorDireccionPac"></span>
 				</div>
 
 				<div class="col-xs-8">
-					<label for="id-ciudad">Ciudad</label> 
-					<input id="id-ciudad" type="text" class="form-control" name="ciudad" onkeyup="validarCiudadPac(),deshabilitarBotonPac()" />
+					<label for="id-ciudadpac">Ciudad</label> 
+					<input id="id-ciudadpac" type="text" class="form-control" name="ciudad" onkeyup="validarCiudadPac(),deshabilitarBotonPac()" />
 					<span style="float:right" id="errorCiudadPac"></span>
 				</div>
 
@@ -199,81 +202,47 @@ function deshabilitarBotonPac() {
 				<?php endforeach;?>
         	</select>
         	</div>
-				
-
-
-
-				<script type="text/javascript">
-
-        	var base_url = "<?php echo base_url()?>";
-        	
-       			var idPersona = "<?php echo $_SESSION['persona']['id']?>";
-        		recuperarDatos(idPersona);
-        	function recuperarDatos(idPersona) {
-        		$.ajax({
-        			  type: "GET",
-        			  url: base_url + "persona/obtenerDatos?id="+ idPersona,
-        			  success:  function (response) {
-        						var persona = JSON.parse(response);
-        						
-        						var nombre = persona.nombre;
-   								$("#id-nombre").val(nombre);
-   								
-   								
-   								var primer_apellido = persona.primer_apellido;
-   								$("#id-ape1").val(primer_apellido);
-
-   								
-   								var segundo_apellido = persona.segundo_apellido;
-   								$("#id-ape2").val(segundo_apellido);
-
-   								
-   								var telefono = persona.telefono;
-   								$("#id-tlf").val(telefono);
-   								
-
-   								var dni = persona.dni;
-   								$("#id-dni").val(dni);
-   							
-
-   								var grupo_sanguineo = persona.grupo_sanguineo;
-   								$("#id-grsang").val(grupo_sanguineo);
-   								
-
-   								var direccion = persona.direccion;
-   								$("#id-direccion").val(direccion);
-   								
-
-   								var ciudad = persona.ciudad;
-   								$("#id-ciudad").val(ciudad);
-   								
-
-   								var provincia_id = persona.provincia;
-   								$("#id-provincia").val(provincia_id);
-   								
-
-   								var nace_id = persona.nace_id;
-   								$("#id-pais").val(nace_id);
-   																
-   								
-        			        }
-
-        			});
-        	}
-        	</script>
-
+				<br/>
 				<input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="botonConfirmarPac"/>
 			</form>
+			
+				<button class="botonCambioPropuesta btn btn-danger col-sm-2" data-toggle="modal" data-target="#BorrarCuenta" style="width: 15%;">
+                  Borrar Cuenta
+                </button>
+                
+				<!-- MODAL PARA BORRAR PERSONA  -->
+				<div class="modal fade" id="BorrarCuenta" tabindex="-1" role="dialog" aria-labelledby="BorrarProfesionalTitle" aria-hidden="true">
+                  		<div class="modal-dialog modal-dialog-centered" role="document">
+                    		<div class="modal-content">
+                      			<div class="modal-header">
+                        			<h5 class="modal-title Borrar Profesional" id="exampleModalLongTitle" style="font-size: 180% !important; color:rgb(40, 167, 69) !important;">Borrar Profesional</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                      			</div>
+                    <div class="modal-body textoBorrarProfesional">
+                       	 ¿Estas seguro de que quieres borrar tu cuenta? <br>
+                    </div>
+                     <div class="modal-footer">
+                        
+                       <form action="<?=base_url()?>persona/borrarCuentaPost" method="post">
+            				<input type="hidden" id="id-id" name="id" value="<?=$persona->id?>">
+            				<button type="button" onclick="submit()" class="btn btn-danger" id="botonPC">Borrar</button>
+            				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            		   </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
 
-			<div class="modal right fade" class="modal custom show"
-				id="exampleModal" tabindex="-1" role="dialog"
-				aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal right fade" class="modal custom show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel">Cambiar contraseña</h5>
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
@@ -310,6 +279,68 @@ function deshabilitarBotonPac() {
 			</div>
 
 		</div>
+		
+		<script type="text/javascript">
+
+        	var base_url = "<?php echo base_url()?>";
+        	
+       			var idPersona = "<?php echo $_SESSION['persona']['id']?>";
+        		recuperarDatos(idPersona);
+        	function recuperarDatos(idPersona) {
+        		$.ajax({
+        			  type: "GET",
+        			  url: base_url + "persona/obtenerDatos?id="+ idPersona,
+        			  success:  function (response) {
+        						var persona = JSON.parse(response);
+        						
+        						var nombre = persona.nombre;
+   								$("#id-nombrepac").val(nombre);
+   								
+   								var id = persona.id;
+   								$("#id-id").val(id);
+   								
+   								
+   								var primer_apellido = persona.primer_apellido;
+   								$("#id-ape1pac").val(primer_apellido);
+
+   								
+   								var segundo_apellido = persona.segundo_apellido;
+   								$("#id-ape2pac").val(segundo_apellido);
+
+   								
+   								var telefono = persona.telefono;
+   								$("#id-tlfpac").val(telefono);
+   								
+
+   								var dni = persona.dni;
+   								$("#id-dnipac").val(dni);
+   							
+
+   								var grupo_sanguineo = persona.grupo_sanguineo;
+   								$("#id-grsang").val(grupo_sanguineo);
+   								
+
+   								var direccion = persona.direccion;
+   								$("#id-direccionpac").val(direccion);
+   								
+
+   								var ciudad = persona.ciudad;
+   								$("#id-ciudadpac").val(ciudad);
+   								
+
+   								var provincia_id = persona.provincia;
+   								$("#id-provincia").val(provincia_id);
+   								
+
+   								var nace_id = persona.nace_id;
+   								$("#id-pais").val(nace_id);
+   																
+   								
+        			        }
+
+        			});
+        	}
+        	</script>
 
 
 		

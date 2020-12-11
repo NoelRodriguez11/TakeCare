@@ -8,8 +8,6 @@
 <div class="divAnuncioProfesionales">
 
 		<!--Foto del persona -->
-		<div class="row">
-		<img class="divFotoPerfil col-sm-2" style="margin:0;" src="<?=base_url()?>/assets/img/upload/persona/persona-<?=$persona->id?>.jpg"/>
             
 		<div class="row">
         <!--Nombre del persona -->
@@ -25,10 +23,8 @@
         	<div id="provinciaEstilo">
         		<form action="<?=base_url()?>persona/dPost" method="post">
             		<input type="hidden" name="id" value="<?=$persona->id?>">
-                    	<button onclick="submit()">
-                    		<img src="<?=base_url()?>/assets/img/basura.png" height="20" width="20">
-                    	</button>
-            	</form>
+                    	<button onclick="submit()" class="botonPedirCita btn btn-danger" id="botonPC">Borrar</button>
+        		</form>
             </div>
         </div>
     	</div>

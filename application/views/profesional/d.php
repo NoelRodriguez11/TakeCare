@@ -36,12 +36,20 @@
                     	<input type="radio" name="estrellas" value="2">
                     <label for="radio5" id="radio<?=$profesional->id?>_1" class ="star" onClick="pulsarStar(this.id,<?=$profesional->id?>);">★</label>
                     	<input type="radio" name="estrellas" value="1">
-           		</p>			
+           			</p>			
     		</form>
         </div>
         
          <!--Horario -->
-    	<div class="col-sm-2 especialidadIndicador horario">Horario:<div id="especialidadEstiloHorario"><?=$profesional->turno?><br><?=$profesional->franja?></div></div>
+    	<div class="col-sm-2 especialidadIndicador horario" >Horario:<div id="especialidadEstiloHorario"><?=$profesional->turno?><br><?=$profesional->franja?></div></div>
+      
+		
+       	<form action="<?=base_url()?>profesional/dPost" method="post">
+            		<input type="hidden" name="id" value="<?=$profesional->id?>">
+                    	<button onclick="submit()" class="botonPedirCita btn btn-danger col-sm-3" id="botonPC">Borrar</button>
+        </form>
+       
+
 		</div>
             
 		<div class="row">
@@ -52,21 +60,14 @@
     	</div>
         
          <!--Especialidad -->
-    	<div class="col-sm-2 especialidadIndicador">Especialidad:<div id="especialidadEstilo"><?=$profesional->especialidad->nombre?></div></div>
+    	<div class="col-sm-2 especialidadIndicador" >Especialidad:<div id="especialidadEstilo"><?=$profesional->especialidad->nombre?></div></div>
     	
     	  <!--Especialidad -->
-    	<div class="col-sm-2 provinciaIndicador">Ubicación:<div id="provinciaEstilo"><?=$profesional->ciudad?>, <?=$profesional->provincia?></div></div>
+    	<div class="col-sm-2 provinciaIndicador" >Ubicación:<div id="provinciaEstilo"><?=$profesional->ciudad?>, <?=$profesional->provincia?></div></div>
     	
-    	<div class="col-sm-2 provinciaIndicador">
-        	<div id="provinciaEstilo">
-        		<form action="<?=base_url()?>profesional/dPost" method="post">
-            		<input type="hidden" name="id" value="<?=$profesional->id?>">
-                    	<button onclick="submit()">
-                    		<img src="<?=base_url()?>/assets/img/basura.png" height="20" width="20">
-                    	</button>
-            	</form>
-            </div>
-        </div>
+    	<div class="col-sm-2 provinciaIndicador" >Telefono:<div id="provinciaEstilo"><?=$profesional->telefono?></div></div>
+    	
+    	
     	</div>
 </div>
 <?php endforeach;?>

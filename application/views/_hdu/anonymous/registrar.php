@@ -1,11 +1,10 @@
 <div class="container">
 <br>
-
   <h5>¿Como quieres darte de alta?</h5>
   <script type="text/javascript">
   	function validarNombre() {
-            		var nombre=document.getElementById("id-nom").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+            		var nombre = document.getElementById("id-nom").value.trim();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (nombre.length < 2 && nombre.length > 20) {
                         document.getElementById("errorNombre").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
@@ -19,14 +18,14 @@
                 }
 
 function validarApellidoUno() {
-            		var apellidoUno=document.getElementById("id-ape1").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+            		var apellidoUno = document.getElementById("id-ape1").value.trim();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,30}$/;
         
-                    if (apellidoUno.length < 2 && apellidoUno.length > 20) {
-                        document.getElementById("errorApellidoUno").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
+                    if (apellidoUno.length < 2 && apellidoUno.length > 30) {
+                        document.getElementById("errorApellidoUno").innerHTML="El primer apellido tiene menos de 2 caracteres o mas de 20 caracteres";
                     }
                     else if (!rgExp.test(apellidoUno)){
-                        document.getElementById("errorApellidoUno").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorApellidoUno").innerHTML="El primer apellido tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorApellidoUno").innerHTML="";
@@ -34,14 +33,14 @@ function validarApellidoUno() {
                 }
 
 function validarApellidoDos() {
-            		var ApellidoDos=document.getElementById("id-ape2").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+            		var ApellidoDos = document.getElementById("id-ape2").value.trim();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,30}$/;
         
-                    if (ApellidoDos.length < 2 && ApellidoDos.length > 20) {
-                        document.getElementById("errorApellidoDos").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
+                    if (ApellidoDos.length < 2 && ApellidoDos.length > 30) {
+                        document.getElementById("errorApellidoDos").innerHTML="El segundo apellido tiene menos de 2 caracteres o mas de 20 caracteres";
                     }
                     else if (!rgExp.test(ApellidoDos)){
-                        document.getElementById("errorApellidoDos").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorApellidoDos").innerHTML="El segundo apellido tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorApellidoDos").innerHTML="";
@@ -49,14 +48,14 @@ function validarApellidoDos() {
                 }
 
 function validarDNI() {
-            		var dni=document.getElementById("id-dni").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+            		var dni = document.getElementById("id-dni").value.trim();
+                    var rgExp = /^\d{8}[ABCDEFGHJKLMNPQRSTUVWXYZ]$/;
         
-                    if (dni.length < 2 && dni.length > 20) {
-                        document.getElementById("errorDNI").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
+                    if (dni.length !=9) {
+                        document.getElementById("errorDNI").innerHTML="El dni no tiene 9 caracteres";
                     }
                     else if (!rgExp.test(dni)){
-                        document.getElementById("errorDNI").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorDNI").innerHTML="El dni tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorDNI").innerHTML="";
@@ -64,86 +63,61 @@ function validarDNI() {
                 }
                 
 function validarTelefono() {
-            		var telefono=document.getElementById("id-telefono").value.trim();
-                    var rgExp= /^[9876][0-9]{8}$/;
+            		var telefono = document.getElementById("id-telefono").value.trim();
+                    var rgExp = /^[9876][0-9]{8}$/;
         
                     if (telefono.length != 9) {
                         document.getElementById("errorTelefono").innerHTML="El teléfono no tiene 9 caracteres";
                     }
                     else if (!rgExp.test(telefono)){
-                        document.getElementById("errorTelefono").innerHTML="El telefono tiene caracteres no validos";
+                        document.getElementById("errorTelefono").innerHTML="El teléfono tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorTelefono").innerHTML="";
                     }
                 }
-                
-function validarDireccion() {
-            		var direccion=document.getElementById("id-direccion").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
-        
-                    if (direccion.length < 2 && direccion.length > 20) {
-                        document.getElementById("errorDireccion").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
-                    }
-                    
-                    else if (!rgExp.test(direccion)){
-                        document.getElementById("errorDireccion").innerHTML="El nombre tiene caracteres no validos";
-                    }
-                    else {
-                        document.getElementById("errorDireccion").innerHTML="";
-                    }
-                }
-                
-function validarCiudad() {
-            		var ciudad=document.getElementById("id-ciudad").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{3,30}$/;
-        
-                    if (ciudad.length < 3 && ciudad.length > 30) {
-                        document.getElementById("errorCiudad").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
-                    }
-                    else if (!rgExp.test(ciudad)){
-                        document.getElementById("errorCiudad").innerHTML="El nombre tiene caracteres no validos";
-                    }
-                    else {
-                        document.getElementById("errorCiudad").innerHTML="";
-                    }
-                    }
-
+                             
 function validarEmail() {
-            		var email=document.getElementById("id-email").value.trim();
+            		var email = document.getElementById("id-email").value.trim();
                     var rgExp= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         
                     if (email.length < 3 && email.length > 30) {
-                        document.getElementById("errorEmail").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
+                        document.getElementById("errorEmail").innerHTML="El email tiene menos de 3 caracteres o mas de 30 caracteres";
                     }
                     else if (!rgExp.test(email)){
-                        document.getElementById("errorEmail").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorEmail").innerHTML="El email tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorEmail").innerHTML="";
                     }
                     }
 
-function validarTurno() {
-            		var turno=document.getElementById("id-franja").value.trim();
-                    var rgExp= /^(?:0?[1-9]|1[0-2]):[0-5][0-9]/;
+function validarFranja() {
+            		var franja = document.getElementById("id-franja").value.trim();
+                    var rgExp1 = /^(?:0?[1-9]|1[0-2]):[0-5][0-9]/;
+                    var rgExp2 = /^(?:0?[1-9]|1[0-2]):[0-5][0-9]/; 
         
-                    if (turno.length < 3 && turno.length > 30) {
-                        document.getElementById("errorTurno").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
+                    if (franja.length < 3 && franja.length > 30) {
+                        document.getElementById("errorFranja").innerHTML=" El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
                     }
-                    else if (!rgExp.test(turno)){
-                        document.getElementById("errorTurno").innerHTML="El nombre tiene caracteres no validos";
+                    else if (!rgExp.test(franja)){
+                        document.getElementById("errorFranja").innerHTML="El nombre tiene caracteres no validos";
                     }
                     else {
-                        document.getElementById("errorTurno").innerHTML="";
+                        document.getElementById("errorFranja").innerHTML="";
                     }
                     }
                     
 function deshabilitarBoton() {
-                	var spanNombre = document.getElementById("errorNombre");
-                	var boton = document.getElementById("botonConfirmar");
+                	var spanNombre = document.getElementById("errorNombre").innerHTML;
+                	var spanApellidoUno = document.getElementById("errorApellidoUno").innerHTML;
+                	var spanApellidoDos = document.getElementById("errorApellidoDos").innerHTML;
+                	var spanDNI = document.getElementById("errorDNI").innerHTML;
+                	var spanTelefono = document.getElementById("errorTelefono").innerHTML;
+                	var spanEmail = document.getElementById("errorEmail").innerHTML;
+                	var boton = document.getElementById("botonRegistrar");
                 	
-                	if (spanNombre.length > 0) {
+                	if (spanNombre.length > 0 || spanApellidoUno.length > 0 || spanApellidoDos.length > 0 || spanDNI.length > 0 || spanTelefono.length > 0 || spanEmail.length > 0) {
                 		boton.disabled = true;
                 	}
                 	else {
@@ -162,22 +136,22 @@ function deshabilitarBoton() {
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         
         	<label for="id-nom">Nombre</label>
-        	<input id="id-nom" type="text" name="nombre" required="required"/>
+        	<input id="id-nom" type="text" name="nombre" required="required" onkeyup="validarNombre(),deshabilitarBoton()"/>
         	<span id="errorNombre" style="float:right"></span>
         	<br/>
         	
         	<label for="id-ape1">Primer Apellido</label>
-        	<input id="id-ape1" type="text" name="primerApellido" required="required"/>
+        	<input id="id-ape1" type="text" name="primerApellido" required="required" onkeyup="validarApellidoUno(),deshabilitarBoton()"/>
         	<span id="errorApellidoUno" style="float:right"></span>
         	<br/>
         	
         	<label for="id-ape2">Segundo Apellido</label>
-        	<input id="id-ape2" type="text" name="segundoApellido" required="required"/>
+        	<input id="id-ape2" type="text" name="segundoApellido" required="required" onkeyup="validarApellidoDos(),deshabilitarBoton()"/>
         	<span id="errorApellidoDos" style="float:right"></span>
         	<br/>
         	
         	<label for="id-dni">DNI</label>
-        	<input id="id-dni" type="text" name="dni" required="required"/>
+        	<input id="id-dni" type="text" name="dni" placeholder="00000000A" required="required" onkeyup="validarDNI(),deshabilitarBoton()"/>
         	<span id="errorDNI" style="float:right"></span>
         	<br/>
         	
@@ -276,7 +250,7 @@ function deshabilitarBoton() {
         	
         	
         	<label for="id-telefono">Telefono</label>
-        	<input id="id-telefono" type="text" name="telefono" required="required"/>
+        	<input id="id-telefono" type="text" name="telefono" required="required" onkeyup="validarTelefono(),deshabilitarBoton()"/>
         	<span id="errorTelefono" style="float:right"></span>
         	<br/>
         	
@@ -285,7 +259,7 @@ function deshabilitarBoton() {
         	<br/>
         	
         	<label for="id-email">Email</label>
-        	<input id="id-email" type="text" name="email" required="required"/>
+        	<input id="id-email" type="text" name="email" placeholder="ejemplo@gmail.com" required="required" onkeyup="validarEmail(),deshabilitarBoton()"/>
         	<span id="errorEmail" style="float:right"></span>
         	<br/>
         	
@@ -330,7 +304,7 @@ function deshabilitarBoton() {
         	<input id="id-foto" type="file" name="foto"/><br>
         	<img class="" id="id-out-foto" width="20%" height="20%" src="../../assets/img/noimage.png" alt=""/><br><br>
         	
-        	<input type="submit" value="Registrar" class="btn btnEstandar"/>
+        	<input type="submit" value="Registrar" class="btn btnEstandar" id="botonRegistrar"/>
         </form>       
     </div>
     
@@ -343,22 +317,22 @@ function deshabilitarBoton() {
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         
         	<label for="id-nom">Nombre</label>
-        	<input id="id-nom" type="text" name="nombre" required="required"/>
+        	<input id="id-nom" type="text" name="nombre" required="required" onkeyup="validarNombre(),deshabilitarBoton()"/>
         	<span id="errorNombre" style="float:right"></span>
         	<br/>
         	
         	<label for="id-ape1">Primer Apellido</label>
-        	<input id="id-ape1" type="text" name="primerApellido" required="required"/>
+        	<input id="id-ape1" type="text" name="primerApellido" required="required" onkeyup="validarApellidoUno(),deshabilitarBoton()"/>
         	<span id="errorApellidoUno" style="float:right"></span>
         	<br/>
         	
         	<label for="id-ape2">Segundo Apellido</label>
-        	<input id="id-ape2" type="text" name="segundoApellido" required="required"/>
+        	<input id="id-ape2" type="text" name="segundoApellido" required="required" onkeyup="validarApellidoDos(),deshabilitarBoton()"/>
         	<span id="errorApellidoDos" style="float:right"></span>
         	<br/>
         	
         	<label for="id-dni">DNI</label>
-        	<input id="id-dni" type="text" name="dni" required="required"/>
+        	<input id="id-dni" type="text" name="dni" required="required" onkeyup="validarDNI(),deshabilitarBoton()"/>
         	<span id="errorDNI" style="float:right"></span>
         	<br/>
         	
@@ -375,13 +349,13 @@ function deshabilitarBoton() {
             
 
         	
-        	<label for="id-direccion">Direccion</label>
-        	<input id="id-direccion" type="text" name="direccion" required="required"/>
+        	<label for="id-direccion">Dirección</label>
+        	<input id="id-direccion" type="text" name="direccion" required="required" onkeyup="validarDireccion(),deshabilitarBoton()"/>
         	<span id="errorDireccion" style="float:right"></span>
         	<br/>
         	
         	<label for="id-ciudad">Ciudad/Zona</label>
-        	<input id="id-ciudad" type="text" name="ciudad" required="required"/>
+        	<input id="id-ciudad" type="text" name="ciudad" required="required" onkeyup="validarCiudad(),deshabilitarBoton()"/>
         	<span id="errorCiudad" style="float:right"></span>
         	<br/>
         	
@@ -443,8 +417,8 @@ function deshabilitarBoton() {
             <br/>
         	
         	
-        	<label for="id-telefono">Telefono</label>
-        	<input id="id-telefono" type="text" name="telefono" required="required"/>
+        	<label for="id-telefono">Teléfono</label>
+        	<input id="id-telefono" type="text" name="telefono" required="required" onkeyup="validarTelefono(),deshabilitarBoton()"/>
         	<span id="errorTelefono" style="float:right"></span>
         	<br/>
         	
@@ -453,7 +427,7 @@ function deshabilitarBoton() {
         	<br/>
         	
         	<label for="id-email">Email</label>
-        	<input id="id-email" type="text" name="email" required="required"/>
+        	<input id="id-email" type="text" name="email" required="required" onkeyup="validarEmail(),deshabilitarBoton()"/>
         	<span id="errorEmail" style="float:right"></span>
         	<br/>
         	
@@ -471,7 +445,7 @@ function deshabilitarBoton() {
         	<br/>
         	
         	<label for="id-clinica">Clínica <i style="color:#a4a6a5; font-size: 1.2rem;">(Dejar en blanco si eres autónomo)</i></label>
-        	<input id="id-clinica" type="text" name="clinica"/>
+        	<input id="id-clinica" type="text" name="clinica" onkeyup="validarClinica(),deshabilitarBoton()"/>
         	<span id="errorClinica" style="float:right"></span>
         	<br/>
         	
@@ -493,7 +467,7 @@ function deshabilitarBoton() {
             </select> 
             
             <label for="id-franja">Franja Horaria</label>
-        	<input id="id-franja" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required"/>
+        	<input id="id-franja" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required" onkeyup="validarFranja(),deshabilitarBoton()"/>
         	<span id="errorFranja" style="float:right"></span>
         	<br/>
             
@@ -530,7 +504,7 @@ function deshabilitarBoton() {
         	<input id="id-foto" type="file" name="foto"/><br>
         	<img class="" id="id-out-foto" width="20%" height="20%" src="../../assets/img/noimage.png" alt=""/><br><br>
         	
-        	<input type="submit" value="Registrar" class="btn btnEstandar"/>
+        	<input type="submit" id="botonRegistrar" value="Registrar" class="btn btnEstandar"/>
         </form>
 
     </div>

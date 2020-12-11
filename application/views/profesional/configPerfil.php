@@ -2,8 +2,8 @@
 	<div class="tab-content">
 	<script type="text/javascript">
 		function validarNombrePro() {
-            		var nombre=document.getElementById("id-nombrep").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+            		var nombre = document.getElementById("id-nombrep").value.trim();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (nombre.length < 2 && nombre.length > 20) {
                         document.getElementById("errorNombrePro").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
@@ -17,14 +17,14 @@
                 }
            
 function validarTelefonoPro() {
-            		var telefono=document.getElementById("id-telefono").value.trim();
+            		var telefono=document.getElementById("id-telefonop").value.trim();
                     var rgExp= /^[9876][0-9]{8}$/;
         
                     if (telefono.length != 9) {
                         document.getElementById("errorTelefonoPro").innerHTML="El teléfono no tiene 9 caracteres";
                     }
                     else if (!rgExp.test(telefono)){
-                        document.getElementById("errorTelefonoPro").innerHTML="El telefono tiene caracteres no validos";
+                        document.getElementById("errorTelefonoPro").innerHTML="El teléfono tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorTelefonoPro").innerHTML="";
@@ -32,14 +32,14 @@ function validarTelefonoPro() {
                 }
 
 function validarEmailPro() {
-            		var email=document.getElementById("id-email").value.trim();
+            		var email=document.getElementById("id-correop").value.trim();
                     var rgExp= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         
                     if (email.length < 3 && email.length > 30) {
-                        document.getElementById("errorEmailPro").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
+                        document.getElementById("errorEmailPro").innerHTML="El email tiene menos de 3 caracteres o mas de 30 caracteres";
                     }
                     else if (!rgExp.test(email)){
-                        document.getElementById("errorEmailPro").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorEmailPro").innerHTML="El email tiene caracteres no validos";
                     }
                     else {
                         document.getElementById("errorEmailPro").innerHTML="";
@@ -47,28 +47,31 @@ function validarEmailPro() {
                     }
 
 function validarClinicaPro() {
-            		var clinica = document.getElementById("id-franja").value.trim();
+            		var clinica = document.getElementById("id-clinicap").value.trim();
                     var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,30}$/;
         
-                    if (turno.length < 3 && turno.length > 30) {
-                        document.getElementById("errorClinicaPro").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
+                    if (clinica.length < 3 && clinica.length > 30) {
+                        document.getElementById("errorClinicaPro").innerHTML="La clínica tiene menos de 3 caracteres o mas de 30 caracteres";
                     }
                     else if (!rgExp.test(turno)){
-                        document.getElementById("errorClinicaPro").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorClinicaPro").innerHTML="La clínica tiene caracteres no validos";
+                    }
+                    else if (clinica.length == 0) {
+                        document.getElementById("errorClinicaPro").innerHTML="";
                     }
                     else {
-                        document.getElementById("errorClinicaPro").innerHTML="";
+                    	document.getElementById("errorClinicaPro").innerHTML="";
                     }
                     }
 
 function validarFranjaPro() {
-            		var turno=document.getElementById("id-franja").value.trim();
-                    var rgExp= /^(?:0?[1-9]|1[0-2]):[0-5][0-9]/;
+            		var franja = document.getElementById("id-franjap").value.trim();
+                    var rgExp = /^(?:0?[1-9]|1[0-2]):[0-5][0-9]/;
         
-                    if (turno.length < 3 && turno.length > 30) {
+                    if (franja.length < 3 && franja.length > 30) {
                         document.getElementById("errorFranjaPro").innerHTML="El nombre tiene menos de 3 caracteres o mas de 30 caracteres";
                     }
-                    else if (!rgExp.test(turno)){
+                    else if (!rgExp.test(franja)){
                         document.getElementById("errorFranjaPro").innerHTML="El nombre tiene caracteres no validos";
                     }
                     else {
@@ -78,9 +81,12 @@ function validarFranjaPro() {
                     
 function deshabilitarBotonPro() {
                 	var spanNombre = document.getElementById("errorNombrePro").innerHTML;
+                	var spanTelefono = document.getElementById("errorTelefonoPro").innerHTML;
+                	var spanEmail = document.getElementById("errorEmailPro").innerHTML;
+                	var spanFranja = document.getElementById("errorFranjaPro").innerHTML;
                 	var boton = document.getElementById("botonConfirmarPro");
                 	
-                	if (spanNombre.length > 0) {
+                	if (spanNombre.length > 0 || spanTelefono.length > 0 || spanEmail.length > 0 || spanFranja.length > 0) {
                 		boton.disabled = true;
                 	}
                 	else {
@@ -126,16 +132,6 @@ function deshabilitarBotonPro() {
                     <input id="id-clinicap" type="text" class="form-control" name="clinicap" onkeyup="validarClinicaPro(),deshabilitarBotonPro()" />
                     <span style="float:right" class="errorClinicaPro"></span>
                 </div>
-
-                <div class="col-xs-8">
-                    <label for="id-turnop">Turno</label>
-                      <select name="turnop" id="id-turnop">
-				
-				<div class="col-xs-8">
-					<label for="id-clinicap">Clínica</label> 
-					<input id="id-clinicap" type="text" class="form-control" name="clinicap" onkeyup="validarClinicaPro(),deshabilitarBotonPro()" />
-					<span style="float:right" class="errorClinicaPro"></span>
-				</div>
 				
 				<div class="col-xs-8">
 					<label for="id-turnop">Turno</label>
@@ -148,61 +144,46 @@ function deshabilitarBotonPro() {
                 </div>
 
                 <div class="col-xs-8">
-                    <label for="id-franja">Franja Horaria</label>
-                    <input id="id-franja" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required" onkeyup="validarFranjaPro(),deshabilitarBotonPro()"/>
+                    <label for="id-franjap">Franja Horaria</label>
+                    <input id="id-franjap" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required" onkeyup="validarFranjaPro(),deshabilitarBotonPro()"/>
                     <span style="float:right" class="errorFranjaPro"></span>
                 </div>
-				</div>
-				
-				<div class="col-xs-8">
-					<label for="id-franja">Franja Horaria</label>
-        			<input id="id-franja" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required" onkeyup="validarFranjaPro(),deshabilitarBotonPro()"/>
-					<span style="float:right" class="errorFranjaPro"></span>
-				</div>
+                <input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="botonConfirmarPro" />
+				 
+				 </form>
+				 
+				 <button class="botonCambioPropuesta btn btn-danger col-sm-2" data-toggle="modal" data-target="#BorrarCuenta" style="width: 15%;">
+                  Borrar Cuenta
+                </button>
+                
+				<!-- MODAL PARA BORRAR PERSONA  -->
+				<div class="modal fade" id="BorrarCuenta" tabindex="-1" role="dialog" aria-labelledby="BorrarProfesionalTitle" aria-hidden="true">
+                  		<div class="modal-dialog modal-dialog-centered" role="document">
+                    		<div class="modal-content">
+                      			<div class="modal-header">
+                        			<h5 class="modal-title Borrar Profesional" id="exampleModalLongTitle" style="font-size: 180% !important; color:rgb(40, 167, 69) !important;">Borrar Profesional</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                      			</div>
+                    <div class="modal-body textoBorrarProfesional">
+                       	 ¿Estas seguro de que quieres borrar tu cuenta? <br>
+                    </div>
+                     <div class="modal-footer">
+                        
+                       <form action="<?=base_url()?>profesional/borrarCuentaPost" method="post">
+            				<input type="hidden" id="id-id" name="id" value="<?=$profesional->id?>">
+            				<button type="button" onclick="submit()" class="btn btn-danger" id="botonPC">Borrar</button>
+            				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            		   </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+	</div>
 				
 				<br />
 				
-				<script type="text/javascript"> 
-
-                    var base_url = "<?php echo base_url()?>";
-
-                       var idProfesional = "<?php echo $_SESSION['profesional']['id']?>";
-                         recuperarDatos(idProfesional);
-                             function recuperarDatos(idProfesional) {
-                                 $.ajax({
-                                       type: "GET",
-                                       url: base_url + "profesional/obtenerDatos?id="+ idProfesional,
-                                      success:  function (response) {
-                                         var profesional = JSON.parse(response);
-                                         var nombrep = profesional.nombre;
-                                        $("#id-nombrep").val(nombrep);
-
-                                        var telefonop = profesional.telefono;
-                                        $("#id-telefonop").val(telefonop);
-
-                                        var id_correop = profesional.email;
-                                        $("#id-correop").val(id_correop);
-
-                                        var valoraciones = profesional.valoracion;
-                                        $("#id-valoracionp").val(valoraciones);
-                                        
-                                        var clinicas = profesional.clinica;
-                                        $("#id-clinicap").val(clinicas);
-                                        
-                                        var turnos = profesional.turno;
-                                        $("#id-turnop").val(turnos);
-
-                                        var franjas = profesional.franja
-                                        $("#id-franja").val(franjas);
-                             }
-
-                     });
-             }
-            </script>
-        	
-				 <input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="botonConfirmarPro" />
-				 
-				 </form>
 				 <div class="modal right fade" class="modal custom show"
 				id="exampleModal" tabindex="-1" role="dialog"
 				aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -247,4 +228,44 @@ function deshabilitarBotonPro() {
 </div>
 </div>
 </div>
+<script type="text/javascript"> 
+
+                    var base_url = "<?php echo base_url()?>";
+
+                       var idProfesional = "<?php echo $_SESSION['profesional']['id']?>";
+                         recuperarDatos(idProfesional);
+                             function recuperarDatos(idProfesional) {
+                                 $.ajax({
+                                       type: "GET",
+                                       url: base_url + "profesional/obtenerDatos?id="+ idProfesional,
+                                      success:  function (response) {
+                                         var profesional = JSON.parse(response);
+                                         var nombrep = profesional.nombre;
+                                        $("#id-nombrep").val(nombrep);
+                                        
+                                        var id = profesional.id;
+                                        $("#id-id").val(id);
+
+                                        var telefonop = profesional.telefono;
+                                        $("#id-telefonop").val(telefonop);
+
+                                        var id_correop = profesional.email;
+                                        $("#id-correop").val(id_correop);
+
+                                        var valoraciones = profesional.valoracion;
+                                        $("#id-valoracionp").val(valoraciones);
+                                        
+                                        var clinicas = profesional.clinica;
+                                        $("#id-clinicap").val(clinicas);
+                                        
+                                        var turnos = profesional.turno;
+                                        $("#id-turnop").val(turnos);
+
+                                        var franjas = profesional.franja
+                                        $("#id-franjap").val(franjas);
+                             }
+
+                     });
+             }
+            </script>
 </div>

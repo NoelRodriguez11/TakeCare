@@ -79,7 +79,6 @@ class Persona_model extends CI_Model
         R::trash(R::load('persona',$id));
     }
     
-    
     public function existEmail($email) { 
         
         $usuario = R::findOne('persona', 'email=?', [$email]);

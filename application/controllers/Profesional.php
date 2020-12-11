@@ -63,6 +63,26 @@ class Profesional extends CI_Controller
         $this->profesional_model->borrarProfesional($id);
         redirect(base_url().'profesional/d');
     }
+    
+    public function borrarCuenta(){
+        $this->load->model('profesional_model');
+        $datos['profesional'] = $this->profesional_model->getProfesionales();
+        frame($this, 'profesional/configPerfil', $datos);
+    }
+    
+    public function borrarCuentaPost() {
+        $id = isset($_POST['id']) ? $_POST['id'] : null;
+        $this->load->model('profesional_model');
+        $this->profesional_model->borrarProfesional($id);
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+        if (isset($_SESSION['profesional'])) {
+            unset($_SESSION['profesional']);
+        }
+        session_destroy();
+        redirect(base_url());
+    }
 
     
     public function enviarStar() {
