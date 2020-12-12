@@ -1,5 +1,5 @@
 <?php 
-class buscador_model extends CI_Model {
+class Buscador_model extends CI_Model {
 
     public function filtro($especialidad){
           $objetoEspecialidad = R::findOne('especialidad','nombre =?',[$especialidad]);
