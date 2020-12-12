@@ -15,10 +15,10 @@
     				</div>
 				<div class="col-sm-2" style="bottom: 5rem"> 
 					<div>
-                        <a href="<?=base_url()?>home/avisoLegal">Aviso Legal</a>
+                        <a class ="textoexp2"  id ="aviso_quiensomos" href="<?=base_url()?>home/avisoLegal">Aviso Legal</a>
                     </div>
                     <div>
-                		<a href="<?=base_url()?>home/quienesSomos">Quienes Somos</a>
+                		<a class ="textoexp2" id="aviso_quiensomos" href="<?=base_url()?>home/quienesSomos">Quienes Somos</a>
                 	</div>
             	</div>
 			</div>

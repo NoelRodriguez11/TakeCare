@@ -65,6 +65,8 @@
 	<!-- CSS información completa del tratamiento desde el lado del profesional -->
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/informacionCompletaCasoProfesional.css">
 	
+	<link rel="stylesheet" href="<?=base_url()?>assets/css/avisoLegal_quienSomos.css">
+	
 	
 	
 
