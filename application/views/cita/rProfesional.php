@@ -101,20 +101,29 @@
              		 <div class="col-sm-1"><?= $i?></div>
              		<div class="col-sm-2"></div>
              		<div class="col-sm-4 textoCasosContenidoConFormatoFechaHoraInformacion"><?= $cita->fecha?></div> 
-             		<div class="col-sm-3"><?= $cita->caracter?></div>
-             		<div class="col-sm-2">
+             		<div class="col-sm-2"><?= $cita->caracter?></div>
+             		<div class="col-sm-3">
              			
-                 		<?php if($caso->estado == "Aceptada"):?> 
+                 		<?php if($caso->estado == "Aceptada" && $cita->estado == "Aceptada"):?> 
                  		    <form style="float:right;" action="<?=base_url()?>cita/dPost" method="post">
+                 		    <input type="hidden" name="idCita" value="<?=$cita->id?>">
+                 		    <input type="hidden" name="idCaso" value="<?=$caso->id?>">
                        		<button  class="botonInformacionCita btn btn-danger btn-sm">✖</button>
                        		</form>
-                      		<form style="float:right; visibility:hidden;" action="<?=base_url()?>cita/#" method="post">
-                       		<button class="botonInformacionCita btn btn-info btn-sm"><i class="fas fa-edit"></i></button> 
+                       		<form style="float:right; visibility:hidden;" action="<?=base_url()?>cita/#" method="post">
+                       		<button class="botonInformacionCita btn btn-info btn-sm"><i class="fas fa-check"></i></button> 
+                       		</form>  
+                       	<?php elseif ($caso->estado == "Aceptada" && $cita->estado == "Pendiente"):?>
+                       		<i class="fas fa-bell" style="color:rgb(181, 148, 40);"></i>Nueva Fecha
+                     		<form style="float:right;" action="<?=base_url()?>cita/#" method="post">
+                      		<button  class="botonInformacionCita btn btn-danger btn-sm">✖</button>
+                      		</form>                       	
+                      		<form style="float:right;" action="<?=base_url()?>cita/#" method="post">
+                       		<button class="botonInformacionCita btn btn-success btn-sm"><i class="fas fa-check"></i></button> 
                        		</form>                    		
-                     		<form style="float:right; visibility:hidden;" action="<?=base_url()?>cita/#" method="post">
-                      		<button class="botonInformacionCita btn btn-success btn-sm"><i class="fas fa-check"></i></button>  
-                      		</form>
 
+                      		
+                      		
                    		<?php endif;?>
                    		                   		
              		</div>
