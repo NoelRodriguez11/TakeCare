@@ -57,25 +57,60 @@
 	 		
     	</div>  
     	
-    	
+
  		<hr class="divisorHorizontal">
      	<div class="row">
-         	<div class="col-sm-8" style="word-wrap: break-word;">
+         	<div class="col-sm-10" style="word-wrap: break-word;">
              	<div class="tituloCasosIndicadorInformacionPaciente" >Citas</div>
-             	<div class="contenedoresInformacionCitas" >Cita de prueba</div>
+             	<div class="row" >
+             		<div class="col-sm-1"></div>
+             		<div class="col-sm-2"></div>
+             		<div class="col-sm-4 tituloCasosIndicador">Fecha y Hora</div> 
+             		<div class="col-sm-2 tituloCasosIndicador">Caracter</div>          	
+             	</div>
+             	<?php $i = 1;?>
+             	<?php foreach($citas as $cita):?>
+             	<div class="contenedoresInformacionCitas row" >
+             		<?php if($cita->caracter == "Primera Cita" || $cita->caracter == "Ultima cita"):?>
+             		<div class="col-sm-1"><?= $i?></div>
+             		<div class="col-sm-2"></div>
+             		<div class="col-sm-4 textoCasosContenidoConFormatoFechaHoraInformacion"><?= $cita->fecha?></div> 
+             		<div class="col-sm-3"><?= $cita->caracter?></div>
+             		<button class="botonInformacionCita btn btn-danger btn-sm" style="visibility: hidden">✖</button>
+             		
+             		<?php else:?> 
+             		 <div class="col-sm-1"><?= $i?></div>
+             		<div class="col-sm-2"></div>
+             		<div class="col-sm-4 textoCasosContenidoConFormatoFechaHoraInformacion"><?= $cita->fecha?></div> 
+             		<div class="col-sm-3"><?= $cita->caracter?></div>
+             		<div class="col-sm-2">
+             			
+                 		<?php if($caso->estado == "Aceptada"):?> 
+                 		    <form style="float:right;" action="<?=base_url()?>persona/solicitarCambioCita" method="get">
+                 		    <input type="hidden" name="idCita" value="<?=$cita->id?>">
+                 		    <input type="hidden" name="idCaso" value="<?=$caso->id?>">
+                       		<button  class="botonInformacionCita btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
+                       		</form>
+                      		<form style="float:right; visibility:hidden;" action="<?=base_url()?>cita/#" method="post">
+                       		<button class="botonInformacionCita btn btn-info btn-sm"><i class="fas fa-edit"></i></button> 
+                       		</form>                    		
+                     		<form style="float:right; visibility:hidden;" action="<?=base_url()?>cita/#" method="post">
+                      		<button class="botonInformacionCita btn btn-success btn-sm"><i class="fas fa-check"></i></button>  
+                      		</form>
+                   		<?php endif;?>
+                   		
+                   		
+             		</div>
+             		<?php endif;?>             	            	
+             	</div>
+             	<?php $i++;?>
+             	<?php endforeach;?>
+    
+        			
+    	 		
         	</div>  
     	</div>  
     	 
-    	 
-    	<?php if($caso->estado == "Aceptada"):?>  	
-    	<div class="row">
-    			<div class="col-sm-9"></div>
-    		    <form class="col-sm-2" action="<?=base_url()?>cita/rPaciente" method="post">
-        			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
-        			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Solicitar cambio de cita</button>
-        		</form>    		 	 		
-    	</div>   
-    	<?php endif;?>
              
 </div> 
 

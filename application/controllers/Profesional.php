@@ -184,7 +184,7 @@ class Profesional extends CI_Controller
         $this->load->model('persona_model');
                
         $this->caso_model->cambiarEstado($id, "Aceptada");
-        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente), $this->caso_model->getCasoById($id), "Primera Cita" );
+        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente), $this->caso_model->getCasoById($id), "Cita Diagnóstico" );
                   
         PRG('Caso Aceptado', 'caso/r', 'success');
                 

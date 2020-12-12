@@ -34,6 +34,8 @@ class Cita_model extends CI_Model
             $cita->caso = $idCaso;
             $cita->caracter = $caracter;
             $cita->estado = $estado;
+            $cita->fechaAnterior = "";
+            
             return R::store($cita);
         }
         else {
@@ -42,5 +44,23 @@ class Cita_model extends CI_Model
         }
     }
     
+    public function solicitarCambioCita($idCita, $fechahora, $fechaAnterior, $estado="Pendiente")
+    {
+        $cita = R::load('cita',$idCita);
+      
+        $cita->fecha = $fechahora;
+        $cita->estado = $estado;
+        $cita->fechaAnterior = $fechaAnterior;
+        return R::store($cita);
+        
+    }
+    
+
+    
+
+    
+    public function borrarCita($id) {
+        R::trash(R::load('cita',$id));
+    }
 }
 ?>

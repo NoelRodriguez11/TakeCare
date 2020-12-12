@@ -5,20 +5,25 @@ class Cita extends CI_Controller {
     public function rPaciente() {
              
         $this->load->model('caso_model');
+        $this->load->model('cita_model');
+        $this->load->model('sintoma_model');
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        
         $datos['caso'] = $this->caso_model->getCasoById($id);
+        $datos['citas'] = $this->cita_model->getCitasByCasoId($id);
+        $datos['sintomas'] = $this->sintoma_model->getSintomas();
         frame($this, 'cita/rPaciente', $datos);
     }
     
     public function rPacienteFinalizada() {
         
         $this->load->model('caso_model');
-        $this->load->model('especialidad_model');
+        $this->load->model('cita_model');
         $this->load->model('sintoma_model');
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $datos['caso'] = $this->caso_model->getCasoById($id);
-        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        $datos['citas'] = $this->cita_model->getCitasByCasoId($id);
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
         frame($this, 'cita/rPaciente', $datos);
     }
@@ -39,9 +44,11 @@ class Cita extends CI_Controller {
     
     public function rCasosCerrados() {
         
+        $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+               
         $this->load->model('caso_model');
-        $this->load->model('especialidad_model');
-        
+ 
+        $datos['caso'] = $this->caso_model->getCasoById($idCaso);
         $datos['casos'] = $this->caso_model->getCasosByEstado("Finalizada");
         frame($this, 'caso/rCasosCerrados', $datos);
     }
@@ -49,12 +56,14 @@ class Cita extends CI_Controller {
     public function rProfesionalFinalizada() {
         
         $this->load->model('caso_model');
-        $this->load->model('especialidad_model');
+        $this->load->model('cita_model');
         $this->load->model('sintoma_model');
-        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
-        $datos['caso'] = $this->caso_model->getCasoById($id);
-        $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
+        
+        $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+     
+        $datos['caso'] = $this->caso_model->getCasoById($idCaso);
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
+        $datos['citas'] = $this->cita_model->getCitasByCasoId($idCaso);
         frame($this, 'cita/rProfesional', $datos);
     }
     
@@ -95,22 +104,28 @@ class Cita extends CI_Controller {
         }
     }
     
+    
     public function dPost() {
         
-        $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
-        $alertaPropuestaCambio = isset($_POST['alerta']) ? $_POST['alerta'] : null;
+        $id = isset($_POST['idCita']) ? $_POST['idCita'] : null;
+        $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         
-        if($alertaPropuestaCambio == true){
+            $this->load->model('cita_model');
+            $this->cita_model->borrarCita($id);
+            
+ 
             $this->load->model('caso_model');
-            $this->caso_model->borrarCaso($id);
-            PRG("Propuesta de profesional rechazada. En caso de querer reintentarlo realiza una nueva solicitud o ponte en contacto");
-        }
-        else {
-            $this->load->model('caso_model');
-            $this->caso_model->borrarCaso($id);
-            redirect(base_url().'caso/rPacientes');
-        }
+            $this->load->model('sintoma_model');
+            $datos['caso'] = $this->caso_model->getCasoById($idCaso);
+            $datos['sintomas'] = $this->sintoma_model->getSintomas();
+            $datos['citas'] = $this->cita_model->getCitasByCasoId($idCaso);
+            frame($this,'cita/rProfesional', $datos);
+            
+  
+
     }
+
+
     
     
 }

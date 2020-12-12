@@ -216,6 +216,41 @@ class Persona extends CI_Controller
         PRG('Propuesta Rechazada. Envie una nueva solicitud o pongase en contacto', 'caso/rPacientesSolicitudes', 'danger');
         
     }
+
+    public function solicitarCambioCita() {
+        
+        $idCita = isset($_GET['idCita']) ? $_GET['idCita'] : null;
+        $idCaso = isset($_GET['idCaso']) ? $_GET['idCaso'] : null;
+        
+        $this->load->model('cita_model');
+        $this->load->model('caso_model');
+        
+        $datos['cita'] = $this->cita_model->getCitaById($idCita);
+        $datos['caso'] = $this->caso_model->getCasoById($idCaso);
+        frame($this,'cita/cCambioCita', $datos);
+    }
+
+
+    
+    
+    public function solicitarCambioCitaPost() {
+        
+        $this->load->model('cita_model');
+        $this->load->model('caso_model');
+        
+        $idCita = isset($_POST['idCita']) ? $_POST['idCita'] : null;
+        $fechahora = isset($_POST['fechahora']) ? $_POST['fechahora'] : null;
+     
+        try {
+            $this->cita_model->solicitarCambioCita($idCita, $fechahora);
+            PRG('Cambio de fecha solicitado', 'caso/rPacientes', 'success');
+        } catch (Exception $e) {
+            session_start();
+            $_SESSION['_msg']['texto'] = $e->getMessage();
+            $_SESSION['_msg']['uri'] = 'persona/d';
+            redirect(base_url() . 'msg');
+        }
+    }
     
 //     public function u()
 //     {
