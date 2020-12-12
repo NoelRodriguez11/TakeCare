@@ -18,4 +18,19 @@ class Buscador extends CI_Controller {
         frame($this, 'profesional/Filtrado', $data);
     }
     
+    public function cAJAX (){
+        
+        $data["idEspecialidad"] = $_POST["idEspecialidad"];
+        echo $this->toJSON($data["idEspecialidad"]);
+        
+    }
+    
+    public function toJSON($especialidad) {
+        $this->load->model('buscador_model');
+        $data['profesionales'] = $this->buscador_model->filtroAJAX($especialidad);
+        return json_encode($data);
+        
+        
+    }
+    
 }

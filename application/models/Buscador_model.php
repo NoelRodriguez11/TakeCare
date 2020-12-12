@@ -11,5 +11,10 @@ class Buscador_model extends CI_Model {
           return R::findAll('profesional', 'especialidad_id =?',[$idEspecialidad]);
 }
 }
+    public function filtroAJAX($especialidad){
+        $objetoEspecialidad = R::findOne('especialidad','nombre =?',[$especialidad]);
+        $idEspecialidad = $objetoEspecialidad->id;
+        return R::findAll('profesional', 'especialidad_id =?',[$idEspecialidad]);
+}
 }
 ?>

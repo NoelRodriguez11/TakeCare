@@ -11,7 +11,7 @@
 
 <div class="filtroProfesionales">
   <p class="textoexp2">Selecciona una especialidad:</p>
-  <select name="especialidad" id="idEspecialidad" onchange="myFunction()">
+  <select name="especialidad" id="idEspecialidad" onchange="elegirEspecialidad()">
   <option value="0" selected>- - - -</option>
   <?php foreach ($especialidades as $especialidad):?>
   <option value="<?=$especialidad->id?>"><?=$especialidad->nombre?></option>
@@ -82,4 +82,46 @@
 </div>
 <?php endforeach;?>
 </div>
+
+<script type="text/javascript">
+	function mostrar(respuestaAJAX) {
+
+            nombreActual = document.getElementById("nombreActualId").value;
+            nombre = document.getElementById("idp").value;
+
+            json = JSON.parse(respuestaAJAX);
+            if (json["coincide"] == 1 && nombreActual != nombre ) { 
+                mensaje ="<b>Advertencia</b>, este producto ya esta registrado.";
+                document.getElementById("warning").style="display:inline; margin-left:10px;";
+                document.getElementById("idp").classList.add("bg-warning");
+                document.getElementById("warning").innerHTML=mensaje;
+            }
+            else if (json["coincide"] == 1 &&  nombreActual != nombre ){
+                document.getElementById("warning").innerHTML='';
+                document.getElementById("idp").classList.remove('bg-warning');
+            }
+            else {
+                document.getElementById("warning").innerHTML='';
+                document.getElementById("idp").classList.remove('bg-warning');
+            }
+        }
+
+	function elegirEspecialidad() {
+            url = <?= base_url()?>"/buscador/cAJAX";
+
+            x = new XMLHttpRequest();
+            x.open("POST", url, true);
+            x.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+
+            x.send("idEspecialidad="+document.getElementById('idEspecialidad').value);
+
+            x.onreadystatechange=function() {
+                if (x.readyState==4 && x.status==200) {
+                    mostrar(x.responseText);
+                } 
+
+            //--disable-web-security --disable-gpu --user-data-dir=C:\tmp
+            }
+        }
+</script>
 

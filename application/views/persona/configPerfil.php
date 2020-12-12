@@ -9,9 +9,12 @@
         
                     if (nombre.length < 2 && nombre.length > 20) {
                         document.getElementById("errorNombrePac").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
-                    }
-                    else if (!rgExp.test(nombre)){
+                    
+                     if (!rgExp.test(nombre)){
                         document.getElementById("errorNombrePac").innerHTML="El nombre tiene caracteres no validos";
+                    }
+                     else {
+                     	document.getElementById("errorNombrePac").innerHTML="";
                     }
                     else {
                         document.getElementById("errorNombrePac").innerHTML="";
