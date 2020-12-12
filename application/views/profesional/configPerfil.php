@@ -135,7 +135,7 @@ function deshabilitarBotonPro() {
 				
 				<div class="col-xs-8">
 					<label for="id-turnop">Turno</label>
-                  	<select name="turnop" id="id-turnop">
+                  	<select name="turnop" id="id-turnop" class="form-control">
                     <option value="Mañana">Mañana</option>
                     <option value="Tarde">Tarde</option>
                     <option value="Mañana y Tarde">Mañana y Tarde</option>
@@ -145,14 +145,14 @@ function deshabilitarBotonPro() {
 
                 <div class="col-xs-8">
                     <label for="id-franjap">Franja Horaria</label>
-                    <input id="id-franjap" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required" onkeyup="validarFranjaPro(),deshabilitarBotonPro()"/>
+                    <input id="id-franjap" type="text" placeholder="Formato: 09:00-14:00" name="franja"  class="form-control" required="required" onkeyup="validarFranjaPro(),deshabilitarBotonPro()"/>
                     <span style="float:right" class="errorFranjaPro"></span>
                 </div>
-                <input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="botonConfirmarPro" />
+                <input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="loginBoton" />
 				 
 				 </form>
 				 
-				 <button class="botonCambioPropuesta btn btn-danger col-sm-2" data-toggle="modal" data-target="#BorrarCuenta" style="width: 15%;">
+				 <button class="botonCambioPropuesta btn btn-danger col-sm-2" id="botonConfPerfil" data-toggle="modal" data-target="#BorrarCuenta" style="width: 15%;">
                   Borrar Cuenta
                 </button>
                 

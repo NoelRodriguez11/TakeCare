@@ -203,19 +203,23 @@ function deshabilitarBotonPac() {
         	</select>
         	</div>
 				<br/>
-				<input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="botonConfirmarPac"/>
+				<input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="loginBoton"/>
 			</form>
-			
-				<button class="botonCambioPropuesta btn btn-danger col-sm-2" data-toggle="modal" data-target="#BorrarCuenta" style="width: 15%;">
-                  Borrar Cuenta
-                </button>
+			<div>
+				<button class="botonCambioPropuesta btn btn-danger col-sm-2" id="botonConfPerfil" data-toggle="modal" data-target="#BorrarCuenta" >
+    		        Borrar Cuenta 
+            	</button>
+			</div>	
+				<!--  <button class="botonCambioPropuesta btn btn-danger col-sm-2" data-toggle="modal" data-target="#BorrarCuenta" style="width: 15%;">
+<!--                   Borrar Cuenta -->
+<!--                 </button> -->
                 
 				<!-- MODAL PARA BORRAR PERSONA  -->
 				<div class="modal fade" id="BorrarCuenta" tabindex="-1" role="dialog" aria-labelledby="BorrarProfesionalTitle" aria-hidden="true">
                   		<div class="modal-dialog modal-dialog-centered" role="document">
                     		<div class="modal-content">
                       			<div class="modal-header">
-                        			<h5 class="modal-title Borrar Profesional" id="exampleModalLongTitle" style="font-size: 180% !important; color:rgb(40, 167, 69) !important;">Borrar Profesional</h5>
+                        			<h5 class="modal-title Borrar Profesional" id="exampleModalLongTitle" style="font-size: 180% !important; color:rgb(40, 167, 69) !important;">Borrar P</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                           <span aria-hidden="true">&times;</span>
                                         </button>
