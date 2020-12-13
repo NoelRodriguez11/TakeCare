@@ -13,7 +13,7 @@ function isRolOKPro($rol) {
     }
     $profesional = isset($_SESSION['profesional']) ? $_SESSION['profesional'] : null;
     
-    if ($profesional != null && ($rol == 'profesional')) {
+    if ($profesional != null && ($rol == 'profesional')&& $profesional->email !=null) {
         $sol1 = true;
     }
     return $sol1;
@@ -35,20 +35,20 @@ function isRolOKPer($rol) {
 }
 
 
-// function isRolOK($rol)
-// {
-//     $sol = false;
+function isRolOK($rol)
+{
+    $sol = false;
 
-//     if (session_status() == PHP_SESSION_NONE) {
-//         session_start();
-//     }
-//     $persona = isset($_SESSION['persona']) ? $_SESSION['persona'] : null;
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    $persona = isset($_SESSION['persona']) ? $_SESSION['persona'] : null;
 
-//     if ($persona != null && ($rol == 'auth' || $persona->loginname == 'admin' && $rol == 'admin')) {
-//         $sol = true;
-//     }
-//     return $sol;
-// }
+    if ($persona != null && ($persona->dni == 'admin' && $rol == 'admin')) {
+        $sol = true;
+    }
+    return $sol;
+}
 
 function PRG($mensaje='Ha ocurrido algún error', $uri = '/', $severity = 'danger')
 {

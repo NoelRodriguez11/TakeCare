@@ -3,7 +3,11 @@
 class Cita extends CI_Controller {
 
     public function rPaciente() {
-             
+        
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado");
+        }
+        
         $this->load->model('caso_model');
         $this->load->model('cita_model');
         $this->load->model('sintoma_model');
@@ -18,6 +22,10 @@ class Cita extends CI_Controller {
     
     public function rPacienteFinalizada() {
         
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado");
+        }
+        
         $this->load->model('caso_model');
         $this->load->model('cita_model');
         $this->load->model('sintoma_model');
@@ -30,6 +38,9 @@ class Cita extends CI_Controller {
     
     public function rProfesional() {
         
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
         $this->load->model('caso_model');
         $this->load->model('sintoma_model');
         $this->load->model('cita_model');
@@ -44,6 +55,10 @@ class Cita extends CI_Controller {
     
     public function rCasosCerrados() {
         
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
+        
         $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
                
         $this->load->model('caso_model');
@@ -54,6 +69,10 @@ class Cita extends CI_Controller {
     }
     
     public function rProfesionalFinalizada() {
+        
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
         
         $this->load->model('caso_model');
         $this->load->model('cita_model');
@@ -68,6 +87,10 @@ class Cita extends CI_Controller {
     }
     
     public function c() {
+             
+        if( !isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $this->load->model('caso_model');
@@ -77,6 +100,9 @@ class Cita extends CI_Controller {
     
     public function cPost()
     {
+        if( !isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
         $this->load->model('caso_model');
         $this->load->model('cita_model');
         $this->load->model('profesional_model');
@@ -107,6 +133,10 @@ class Cita extends CI_Controller {
     
     public function dPost() {
         
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
+        
         $id = isset($_POST['idCita']) ? $_POST['idCita'] : null;
         $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         
@@ -124,6 +154,10 @@ class Cita extends CI_Controller {
     }
 
     public function dPostPaciente() {
+        
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado");
+        }
         
         $id = isset($_POST['idCita']) ? $_POST['idCita'] : null;
         $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;

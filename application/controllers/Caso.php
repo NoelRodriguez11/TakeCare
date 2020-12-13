@@ -6,6 +6,10 @@ class Caso extends CI_Controller {
 // Casos READ de profesional del bean CASOS
     public function rCasosPendientes() {
         
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
+        
         $this->load->model('caso_model');
         $datos['casos'] = $this->caso_model->getCasosByEstado("Pendiente");
         frame($this, 'caso/rCasosPendientes', $datos);
@@ -14,6 +18,10 @@ class Caso extends CI_Controller {
     
     public function rCasosRechazados() {
         
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
+        
         $this->load->model('caso_model');
         $datos['casos'] = $this->caso_model->getCasosByEstado("Rechazada");
         frame($this, 'caso/rCasosRechazados', $datos);
@@ -21,6 +29,9 @@ class Caso extends CI_Controller {
       
     public function r() {
         
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
         $this->load->model('caso_model');
         $datos['casos'] = $this->caso_model->getCasosByEstado("Aceptada");
         frame($this, 'caso/r', $datos);
@@ -29,12 +40,20 @@ class Caso extends CI_Controller {
 // casos READ de persona del bean CASOS
     public function rPacientesSolicitudes() {
         
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado");
+        }
+        
         $this->load->model('caso_model');
         $datos['casos'] = $this->caso_model->getCasos();
         frame($this, 'caso/rPacientesSolicitudes', $datos);
     }
     
     public function rPacientes() {
+        
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado");
+        }
         
         $this->load->model('caso_model');
         $this->load->model('especialidad_model');
@@ -47,7 +66,10 @@ class Caso extends CI_Controller {
     
     public function c() {
         
-       
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado");
+        }
+        
         $idProfesional = isset($_GET['idProfesional']) ? $_GET['idProfesional'] : null;
         $this->load->model('profesional_model');
         $data['profesional'] = $this->profesional_model->getProfesionalById($idProfesional);
@@ -56,6 +78,9 @@ class Caso extends CI_Controller {
     
     public function cPost()
     {
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado");
+        }
         $this->load->model('caso_model');
         $this->load->model('profesional_model');
         $this->load->model('persona_model');
@@ -90,6 +115,9 @@ class Caso extends CI_Controller {
     
     public function dPost() {
         
+        if(!isRolOKPer("persona") || !isRolOKPro("profesional")){
+            PRG("Rol inadecuado");
+        }
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $alertaPropuestaCambio = isset($_POST['alerta']) ? $_POST['alerta'] : null;
         
