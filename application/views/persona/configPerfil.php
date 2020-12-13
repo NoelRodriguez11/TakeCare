@@ -4,11 +4,11 @@
 		
 		<script type="text/javascript">
 			function validarNombrePac() {
-            		var nombre = document.getElementById("id-nombrepac").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+            		var nombre = document.getElementById("id-nombrepac").value.trim().toLowerCase();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
-                    if (nombre.length < 2 && nombre.length > 20) {
-                        document.getElementById("errorNombrePac").innerHTML="El nombre tiene menos de 2 caracteres o mas de 20 caracteres";
+                    if (nombre.length > 2 && nombre.length < 20) {
+                        document.getElementById("errorNombrePac").innerHTML="";
                     
                      if (!rgExp.test(nombre)){
                         document.getElementById("errorNombrePac").innerHTML="El nombre tiene caracteres no validos";
@@ -16,8 +16,9 @@
                      else {
                      	document.getElementById("errorNombrePac").innerHTML="";
                     }
-                    else {
-                        document.getElementById("errorNombrePac").innerHTML="";
+                }
+                else {
+                        document.getElementById("errorNombrePac").innerHTML="El nombre tiene menos de 3 caracteres o mas de 21 caracteres";
                     }
                 }
          
@@ -25,56 +26,87 @@ function validarTelefonoPac() {
             		var telefono = document.getElementById("id-tlfpac").value.trim();
                     var rgExp= /^[9876][0-9]{8}$/;
         
-                    if (telefono.length != 9) {
-                        document.getElementById("errorTelefonoPac").innerHTML="El teléfono no tiene 9 caracteres";
-                    }
-                    else if (!rgExp.test(telefono)){
-                        document.getElementById("errorTelefonoPac").innerHTML="El teléfono tiene caracteres no validos";
+                    if (telefono.length == 9) {
+                        document.getElementById("errorTelefonoPac").innerHTML="";
+                    
+                    if (!rgExp.test(telefono)){
+                        document.getElementById("errorTelefonoPac").innerHTML="El teléfono tiene caracteres no validos o no empieza por 9, 8, 7 o 6";
                     }
                     else {
-                        document.getElementById("errorTelefonoPac").innerHTML="";
+                    	document.getElementById("errorTelefonoPac").innerHTML="";
+                    }
+                    }
+                    else {
+                        document.getElementById("errorTelefonoPac").innerHTML="El teléfono tiene menos o más de 9 caracteres";
                     }
                 }
                 
 function validarDireccionPac() {
-            		var direccion = document.getElementById("id-direccionpac").value.trim();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+            		var direccion = document.getElementById("id-direccionpac").value.trim().toLowerCase();
+                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ 0-9 -º/,.ª]{10,40}$/;
         
-                    if (direccion.length < 2 && direccion.length > 20) {
-                        document.getElementById("errorDireccionPac").innerHTML="La dirección tiene menos de 2 caracteres o mas de 20 caracteres";
-                    }
+                    if (direccion.length > 10 && direccion.length < 40) {
+                        document.getElementById("errorDireccionPac").innerHTML="";
                     
-                    else if (!rgExp.test(direccion)){
+                     if (!rgExp.test(direccion)){
                         document.getElementById("errorDireccionPac").innerHTML="La dirección tiene caracteres no validos";
                     }
-                    else {
-                        document.getElementById("errorDireccionPac").innerHTML="";
+                     else {
+                     	document.getElementById("errorDireccionPac").innerHTML="";
+                    }
+                }
+                else {
+                        document.getElementById("errorDireccionPac").innerHTML="La dirección tiene menos de 11 caracteres o mas de 41 caracteres";
+                    }
+                }
+                
+function validarEmailPac() {
+            		var email=document.getElementById("id-correopac").value.trim().toLowerCase();
+                    var rgExp= /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+        
+                    if (email.length > 7 && email.length < 40) {
+                        document.getElementById("errorEmailPac").innerHTML="";
+						
+						if (!rgExp.test(email)){
+                        	document.getElementById("errorEmailPac").innerHTML="El nombre tiene caracteres no validos";
+                    	}
+                     	else {
+                     		document.getElementById("errorEmailPac").innerHTML="";
+                    	}	
+                	}
+                	else {
+                        document.getElementById("errorEmailPac").innerHTML="El nombre tiene menos de 8 caracteres o mas de 40 caracteres";
                     }
                 }
                 
 function validarCiudadPac() {
-            		var ciudad = document.getElementById("id-ciudadpac").value.trim();
-                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{3,30}$/;
+            		var ciudad = document.getElementById("id-ciudadpac").value.trim().toLowerCase();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ 0-9]{3,30}$/;
         
-                    if (ciudad.length < 3 && ciudad.length > 30) {
-                        document.getElementById("errorCiudadPac").innerHTML="La ciudad tiene menos de 3 caracteres o mas de 30 caracteres";
-                    }
-                    else if (!rgExp.test(ciudad)){
+                    if (ciudad.length > 3 && ciudad.length < 30) {
+                        document.getElementById("errorCiudadPac").innerHTML="";
+                    
+                     if (!rgExp.test(ciudad)){
                         document.getElementById("errorCiudadPac").innerHTML="La ciudad tiene caracteres no validos";
                     }
-                    else {
-                        document.getElementById("errorCiudadPac").innerHTML="";
+                     else {
+                     	document.getElementById("errorCiudadPac").innerHTML="";
                     }
-                    }
+                }
+                else {
+                        document.getElementById("errorCiudadPac").innerHTML="La ciudad tiene menos de 4 caracteres o mas de 31 caracteres";
+                }
+                }
                    
 function deshabilitarBotonPac() {
                 	var spanNombre = document.getElementById("errorNombrePac").innerHTML;
                 	var spanTelefono = document.getElementById("errorTelefonoPac").innerHTML;
+                	var spanEmail = document.getElementById("errorEmailPac").innerHTML;
                 	var spanDireccion = document.getElementById("errorDireccionPac").innerHTML;
                 	var spanCiudad = document.getElementById("errorCiudadPac").innerHTML;
-                	var boton = document.getElementById("botonConfirmarPac");
+                	var boton = document.getElementById("loginBoton");
                 	
-                	if (spanNombre.length > 0 || spanTelefono.length > 0 || spanDireccion.length > 0 || spanCiudad.length > 0) {
+                	if (spanNombre.length > 0 || spanTelefono.length > 0 || spanDireccion.length > 0 || spanCiudad.length > 0 || spanEmail.length > 0) {
                 		boton.disabled = true;
                 	}
                 	else {
@@ -106,7 +138,11 @@ function deshabilitarBotonPac() {
 					<a href="#" id="btn_modal" data-toggle="modal" class="forgot" data-target="#exampleModal" data-whatever="@getbootstrap">Cambiar contraseña</a>
 				</div>
 
-
+				<div class="col-xs-8">
+					<label for="id-correopac">Correo</label> 
+					<input id="id-correopac" type="text" class="form-control" name="correopac" onkeyup="validarEmailPac(),deshabilitarBotonPac()" />
+					<span style="float:right" id="errorEmailPac"></span>
+				</div>
 
 				<div class="col-xs-8">
 					<label for="id-tlfpac">Teléfono</label> 
@@ -206,10 +242,10 @@ function deshabilitarBotonPac() {
         	</select>
         	</div>
 				<br/>
-				<input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="loginBoton"/>
+				<input type="submit" value="Guardar Cambios" id="loginBoton" class="btn btnEstandar"/>
 			</form>
 			<div>
-				<button class="botonCambioPropuesta btn btn-danger col-sm-2" id="botonConfPerfil" data-toggle="modal" data-target="#BorrarCuenta" >
+				<button class="btn btn-danger" id="botonConfPerfil" data-toggle="modal" data-target="#BorrarCuenta" >
     		        Borrar Cuenta 
             	</button>
 			</div>	
@@ -222,7 +258,7 @@ function deshabilitarBotonPac() {
                   		<div class="modal-dialog modal-dialog-centered" role="document">
                     		<div class="modal-content">
                       			<div class="modal-header">
-                        			<h5 class="modal-title Borrar Profesional" id="exampleModalLongTitle" style="font-size: 180% !important; color:rgb(40, 167, 69) !important;">Borrar Paciente</h5>
+                        			<h5 class="modal-title Borrar Profesional" id="exampleModalLongTitle" style="font-size: 180% !important; color:red !important;">Borrar Paciente</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                           <span aria-hidden="true">&times;</span>
                                         </button>
@@ -309,7 +345,9 @@ function deshabilitarBotonPac() {
    								
    								var primer_apellido = persona.primer_apellido;
    								$("#id-ape1pac").val(primer_apellido);
-
+								
+								var id_correopac = persona.email;
+                                $("#id-correopac").val(id_correopac);
    								
    								var segundo_apellido = persona.segundo_apellido;
    								$("#id-ape2pac").val(segundo_apellido);

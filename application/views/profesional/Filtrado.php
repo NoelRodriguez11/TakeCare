@@ -9,17 +9,6 @@
 	var base_url = "<?php echo base_url()?>";
 </script>
 
-<div class="filtroProfesionales">
-  <p class="textoexp2">Selecciona una especialidad:</p>
-  <select name="especialidad" id="idEspecialidad" onchange="myFunction()">
-  <option value="0" selected>- - - -</option>
-  <?php foreach ($especialidades as $especialidad):?>
-  <option value="<?=$especialidad->id?>"><?=$especialidad->nombre?></option>
-  <?php endforeach;?>
-  </select>   
-</div>
-
-
 <!-- Estos div de palabraes tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd -->
 <?php foreach ($palabras as $palabra):?>
 <div class="divAnuncioProfesionales">
@@ -28,27 +17,70 @@
 		<div class="row">
 		<img class="divFotoPerfil col-sm-2" style="margin:0;" src="<?=base_url()?>/assets/img/upload/profesional/pro<?=$palabra->id?>.jpg"/>
 		
-		
 		<div class="col-sm-4 especialidadIndicador divEstrellitas" >
-            <form>
-      			<p class="clasificacion" id="star1">
-      				<label for="radio1" id="radio1_5" class ="star" onClick="pulsarStar(this.id,<?=$palabra->id?>);">★</label> <!-- la segunda variable del parentesis es el id del profesional
-      				cambiar cuando se cree con ci-->
-        				<input type="radio" name="estrellas" value="5">
-        			<label for="radio2" id="radio<?=$palabra->id?>_4" class ="star" onClick="pulsarStar(this.id,<?=$palabra->id?>);">★</label>
-       					<input type="radio" name="estrellas" value="4">
-                    <label for="radio3" id="radio<?=$palabra->id?>_3" class ="star" onClick="pulsarStar(this.id,<?=$palabra->id?>);">★</label>
-                    	<input type="radio" name="estrellas" value="3">
-                    <label for="radio4" id="radio<?=$palabra->id?>_2" class ="star" onClick="pulsarStar(this.id,<?=$palabra->id?>);">★</label>
-                    	<input type="radio" name="estrellas" value="2">
-                    <label for="radio5" id="radio<?=$palabra->id?>_1" class ="star" onClick="pulsarStar(this.id,<?=$palabra->id?>);">★</label>
-                    	<input type="radio" name="estrellas" value="1">
-           			</p>			
-    		</form>
+			Valoración
+			<div class="row">
+			<?php if($palabra->valoracion == 0):?>
+			<div class="estrellas">
+			<i class="far fa-star"></i>&nbsp<i class="far fa-star">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp</div>
+			&nbsp¡Sé el primero!
+			
+			<?php elseif($palabra->valoracion >= 0.5 && $palabra->valoracion < 1):?>
+			<div class="estrellas">
+			<i class="fas fa-star-half-alt"></i>&nbsp</i><i class="far fa-star">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>
+			
+			<?php elseif($palabra->valoracion >= 1 && $palabra->valoracion < 1.5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="far fa-star">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>
+			
+			<?php elseif($palabra->valoracion >= 1.5 && $palabra->valoracion < 2):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star-half-alt">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>
+			
+			<?php elseif($palabra->valoracion >= 2 && $palabra->valoracion < 2.5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>		
+			
+			<?php elseif($palabra->valoracion >= 2.5 && $palabra->valoracion < 3):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star-half-alt"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>				
+			
+			<?php elseif($palabra->valoracion >= 3 && $palabra->valoracion < 3.5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>
+						
+			<?php elseif($palabra->valoracion >= 3.5 && $palabra->valoracion < 4):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="fas fa-star-half-alt"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>	
+			
+			<?php elseif($palabra->valoracion >= 4 && $palabra->valoracion < 4.5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="fas fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>			
+			
+			<?php elseif($palabra->valoracion >= 4.5 && $palabra->valoracion < 5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="fas fa-star"></i>&nbsp<i class="fas fa-star-half-alt"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>			
+			
+			<?php elseif($palabra->valoracion == 5) :?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="fas fa-star"></i>&nbsp<i class="fas fa-star"></i>
+			&nbsp (<?=$palabra->numeroValoraciones ?>)</div>						
+			<?php endif;?>
+			</div>
         </div>
         
          <!--Horario -->
-    	<div class="col-sm-2 especialidadIndicador horario" >Horario:<div id="especialidadEstiloHorario"><?=$palabra->turno?><br><?=$palabra->franja?></div></div>
+    	<div class="col-sm-2 especialidadIndicador horario" style="margin-left:0; right:.5rem;" >Horario:<div id="especialidadEstiloHorario"><?=$palabra->turno?><br><?=$palabra->franja?></div></div>
       
 		
        	<form action="<?=base_url()?>caso/c" method="get">

@@ -9,19 +9,6 @@
 	var base_url = "<?php echo base_url()?>";
 </script>
 
-<!-- 
-<div class="filtroProfesionales">
-  <p class="textoexp2">Selecciona una especialidad:</p>
-  <select name="especialidad" id="idEspecialidad" onchange="elegirEspecialidad()">
-  <option value="0" selected>- - - -</option>
-  <?php foreach ($especialidades as $especialidad):?>
-  <option value="<?=$especialidad->id?>"><?=$especialidad->nombre?></option>
-  <?php endforeach;?>
-  </select>   
-</div> -->
-<br>
-
-
 <!-- Estos div de profesionales tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd -->
 <?php foreach ($profesionales as $profesional):?>
 

@@ -33,12 +33,6 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/css/styles.css">
      <link rel="stylesheet" href="<?=base_url()?>assets/css/font-awesome.min.css">
     
-<!-- JavaScript para las expresiones regulares de Registro y Login -->
-    <script type="text/javascript" src="<?=base_url()?>assets/js/RegExp.js"></script>
-
-    <script type="text/javascript" src="<?=base_url()?>assets/js/RegExpPac.js"></script>
-    <script type="text/javascript" src="<?=base_url()?>assets/js/RegExpPro.js"></script>
-    
     <!-- CSS Footer -->
     <link rel="stylesheet" href="<?=base_url()?>assets/css/footer.css">
     
