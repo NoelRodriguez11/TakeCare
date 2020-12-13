@@ -275,29 +275,6 @@ class Profesional extends CI_Controller
         
         
     }
-        
-    //AJAX DEL BEAN "PROFESIONAL"
-    
-    public function cAJAX (){
-        
-        $data["nombreProducto"] = $_POST["nombreProducto"];
-        echo $this->toJSON($data["nombreProducto"]);
-        
-    }
-    
-    public function toJSON($nombre) {
-        $ok = [];
-        $this->load->model('producto_model');
-        if ($this->producto_model->buscarUno($nombre) != null ) {
-            $ok["coincide"] = 1;
-        }
-        else {
-            $ok["coincide"] = 0;
-        }
-        return json_encode($ok);
-        
-        
-    }
 }
 
 ?>
