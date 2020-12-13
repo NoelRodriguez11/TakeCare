@@ -120,9 +120,25 @@ class Cita extends CI_Controller {
             $datos['sintomas'] = $this->sintoma_model->getSintomas();
             $datos['citas'] = $this->cita_model->getCitasByCasoId($idCaso);
             frame($this,'cita/rProfesional', $datos);
-            
-  
+          
+    }
 
+    public function dPostPaciente() {
+        
+        $id = isset($_POST['idCita']) ? $_POST['idCita'] : null;
+        $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
+        
+        $this->load->model('cita_model');
+        $this->cita_model->borrarCita($id);
+        
+        
+        $this->load->model('caso_model');
+        $this->load->model('sintoma_model');
+        $datos['caso'] = $this->caso_model->getCasoById($idCaso);
+        $datos['sintomas'] = $this->sintoma_model->getSintomas();
+        $datos['citas'] = $this->cita_model->getCitasByCasoId($idCaso);
+        frame($this,'cita/rPaciente', $datos);
+        
     }
 
 

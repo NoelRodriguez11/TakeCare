@@ -184,6 +184,7 @@
                        <form action="<?=base_url()?>profesional/agregarSintoma" method="post">
                        
                       		<input type="hidden" name="idAfeccion" value="<?=$caso->afeccion->id?>">
+                      		<input type="hidden" name="idCaso" value="<?=$caso->id?>">
                       		
                       		<div class="row">
                       		<div class="col-sm-3" style="margin-bottom:2.7rem;"></div>

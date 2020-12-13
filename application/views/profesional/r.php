@@ -9,6 +9,7 @@
 	var base_url = "<?php echo base_url()?>";
 </script>
 
+<!-- 
 <div class="filtroProfesionales">
   <p class="textoexp2">Selecciona una especialidad:</p>
   <select name="especialidad" id="idEspecialidad" onchange="elegirEspecialidad()">
@@ -17,7 +18,8 @@
   <option value="<?=$especialidad->id?>"><?=$especialidad->nombre?></option>
   <?php endforeach;?>
   </select>   
-</div>
+</div> -->
+<br>
 
 
 <!-- Estos div de profesionales tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd -->
@@ -31,25 +33,69 @@
 		
 		
 		<div class="col-sm-4 especialidadIndicador divEstrellitas" >
-            <form>
-      			<p class="clasificacion" id="star1">
-      				<label for="radio1" id="radio1_5" class ="star" onClick="pulsarStar(this.id,<?=$profesional->id?>);">★</label> <!-- la segunda variable del parentesis es el id del profesional
-      				cambiar cuando se cree con ci-->
-        				<input type="radio" name="estrellas" value="5">
-        			<label for="radio2" id="radio<?=$profesional->id?>_4" class ="star" onClick="pulsarStar(this.id,<?=$profesional->id?>);">★</label>
-       					<input type="radio" name="estrellas" value="4">
-                    <label for="radio3" id="radio<?=$profesional->id?>_3" class ="star" onClick="pulsarStar(this.id,<?=$profesional->id?>);">★</label>
-                    	<input type="radio" name="estrellas" value="3">
-                    <label for="radio4" id="radio<?=$profesional->id?>_2" class ="star" onClick="pulsarStar(this.id,<?=$profesional->id?>);">★</label>
-                    	<input type="radio" name="estrellas" value="2">
-                    <label for="radio5" id="radio<?=$profesional->id?>_1" class ="star" onClick="pulsarStar(this.id,<?=$profesional->id?>);">★</label>
-                    	<input type="radio" name="estrellas" value="1">
-           			</p>			
-    		</form>
+			Valoración
+			<div class="row">
+			<?php if($profesional->valoracion == 0):?>
+			<div class="estrellas">
+			<i class="far fa-star"></i>&nbsp<i class="far fa-star">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp</div>
+			&nbsp¡Sé el primero!
+			
+			<?php elseif($profesional->valoracion >= 0.5 && $profesional->valoracion < 1):?>
+			<div class="estrellas">
+			<i class="fas fa-star-half-alt"></i>&nbsp</i><i class="far fa-star">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>
+			
+			<?php elseif($profesional->valoracion >= 1 && $profesional->valoracion < 1.5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="far fa-star">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>
+			
+			<?php elseif($profesional->valoracion >= 1.5 && $profesional->valoracion < 2):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star-half-alt">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>
+			
+			<?php elseif($profesional->valoracion >= 2 && $profesional->valoracion < 2.5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>		
+			
+			<?php elseif($profesional->valoracion >= 2.5 && $profesional->valoracion < 3):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star-half-alt"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>				
+			
+			<?php elseif($profesional->valoracion >= 3 && $profesional->valoracion < 3.5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="far fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>
+						
+			<?php elseif($profesional->valoracion >= 3.5 && $profesional->valoracion < 4):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="fas fa-star-half-alt"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>	
+			
+			<?php elseif($profesional->valoracion >= 4 && $profesional->valoracion < 4.5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="fas fa-star"></i>&nbsp<i class="far fa-star"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>			
+			
+			<?php elseif($profesional->valoracion >= 4.5 && $profesional->valoracion < 5):?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="fas fa-star"></i>&nbsp<i class="fas fa-star-half-alt"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>			
+			
+			<?php elseif($profesional->valoracion == 5) :?>
+			<div class="estrellas">
+			<i class="fas fa-star"></i>&nbsp</i><i class="fas fa-star">&nbsp</i><i class="fas fa-star"></i>&nbsp<i class="fas fa-star"></i>&nbsp<i class="fas fa-star"></i>
+			&nbsp (<?=$profesional->numeroValoraciones ?>)</div>						
+			<?php endif;?>
+			</div>
         </div>
         
          <!--Horario -->
-    	<div class="col-sm-2 especialidadIndicador horario" >Horario:<div id="especialidadEstiloHorario"><?=$profesional->turno?><br><?=$profesional->franja?></div></div>
+    	<div class="col-sm-2 especialidadIndicador horario" style="margin-left:0; right:.5rem;" >Horario<div id="especialidadEstiloHorario"><?=$profesional->turno?><br><?=$profesional->franja?></div></div>
       
 		
        	<form action="<?=base_url()?>caso/c" method="get">
@@ -70,12 +116,12 @@
     	</div>
         
          <!--Especialidad -->
-    	<div class="col-sm-2 especialidadIndicador" >Especialidad:<div id="especialidadEstilo"><?=$profesional->especialidad->nombre?></div></div>
+    	<div class="col-sm-2 especialidadIndicador" >Especialidad<div id="especialidadEstilo"><?=$profesional->especialidad->nombre?></div></div>
     	
     	  <!--Especialidad -->
-    	<div class="col-sm-2 provinciaIndicador" >Ubicación:<div id="provinciaEstilo"><?=$profesional->ciudad?>, <?=$profesional->provincia?></div></div>
+    	<div class="col-sm-2 provinciaIndicador" >Ubicación<div id="provinciaEstilo"><?=$profesional->ciudad?>, <?=$profesional->provincia?></div></div>
     	
-    	<div class="col-sm-2 provinciaIndicador" >Telefono:<div id="provinciaEstilo"><?=$profesional->telefono?></div></div>
+    	<div class="col-sm-2 provinciaIndicador" >Telefono<div id="provinciaEstilo"><?=$profesional->telefono?></div></div>
     	
     	
     	</div>

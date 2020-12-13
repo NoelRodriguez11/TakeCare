@@ -1,9 +1,12 @@
 <div class="container">
+
 <h1 class="textoexp1-enunciados">Historial de Solicitudes</h1>
 
 <?php if(count($casos)==0):?>
 <p class="tituloCasosIndicador">No tienes ninguna solicitud pendiente</p>
 <?php else:?>
+
+
 <?php foreach ($casos as $caso):?>
 <?php if($caso->persona->id == $datosGen["persona"]->id):?>
 
@@ -67,10 +70,12 @@
         			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Información Completa</button>
         		</form>
         		
-        		<form class="col-sm-1" action="<?=base_url()?>persona/valorarProfesional" method="post">
-        			<input type="hidden" name="idCaso" value="<?=$caso->id?>">
-        			<button title="Valorar profesional" onclick="submit()" class="botonCambioPropuesta btn btn-warning" id="botonPC"><i class="fas fa-star"></i> Valorar Profesional</button>
-        		</form>
+            		 <?php if($caso->valorado == false):?>
+            		 <button class="botonCambioPropuesta btn btn-warning col-sm-1" data-toggle="modal" data-target="#valorarProfesional<?=$caso->id?>" style="width: 14.7%; right:1.5rem;" id="botonPC">
+                      <i class="fas fa-star" ></i> Valorar Profesional</button>
+                      <?php endif;?>
+                      
+                      
         		<?php else:?>
         		
         		<?php if($caso->alertaCambioPropuesta == false):?>
@@ -93,7 +98,46 @@
         		<?php endif;?> 
         		<?php endif;?>   
         		 
-    		</div>	   
+    		</div>	
+    		
+    		   <div class="modal fade" id="valorarProfesional<?=$caso->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title tituloCasosIndicador" id="exampleModalLongTitle" style="font-size: 180% !important">Valoración de profesional</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body row">
+                      
+						<form action="<?=base_url()?>persona/enviarStar" method="post">
+							<input type="hidden" name="idProfesional" value="<?=$caso->profesional->id?>">
+							<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+                            <div class="star_content">
+                                <input name="rate" value="1" type="radio" class="star"/> 
+                                <input name="rate" value="2" type="radio" class="star"/> 
+                                <input name="rate" value="3" type="radio" class="star"/> 
+                                <input name="rate" value="4" type="radio" class="star"/> 
+                                <input name="rate" value="5" type="radio" class="star"/>
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-5"></div>
+                            <button type="submit" name="nuevaValoracion" class="btn btn-primary col-sm-2" >Enviar</button>
+                            </div>
+                        </form>
+
+                                                            
+                      </div>
+                      <div class="modal-footer">
+                        	<form class="col-sm-1" action="<?=base_url()?>persona/valorarProfesional" method="post">
+        						<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+        					</form>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>	      
 		</div> 
 
 <?php endif;?>      
@@ -101,5 +145,12 @@
 <?php endif;?>  
  
 </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $('input.star').rating();
+});
+</script>
 
 

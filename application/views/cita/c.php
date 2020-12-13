@@ -13,7 +13,8 @@
 					<div class="form-group">
 					<label for="idCaracter">Carácter</label>
     					<select id="idCaracter" name="caracter">
-                          <option value="Revision">Revision</option>
+                          <option value="Revisión">Revisión</option>
+                          <option value="Seguimiento">Seguimiento</option>
                           <option value="Tratamiento">Tratamiento</option>
                           <option value="Puntual/Urgencia">Puntual/Urgencia</option>
                         </select>

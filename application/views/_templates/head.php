@@ -8,7 +8,7 @@
     
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
 	
-	<script src="<?=base_url()?>assets/js/jquery.min.js" ></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="<?=base_url()?>assets/js/popper.min.js" ></script> 
 	<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
 	
@@ -24,11 +24,15 @@
     <script type="text/javascript" src="<?=base_url()?>assets/js/cambioImagenRegistro.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/separacionFechaYHora.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/agregarSintoma.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/js/jquery.rating.pack.js"></script>
     
     <link rel="stylesheet" href="<?=base_url()?>assets/css/oscuro.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/paginaPrincipal.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/configPerfil.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/styles.css">
+     <link rel="stylesheet" href="<?=base_url()?>assets/css/font-awesome.min.css">
+    
 <!-- JavaScript para las expresiones regulares de Registro y Login -->
     <script type="text/javascript" src="<?=base_url()?>assets/js/RegExp.js"></script>
 

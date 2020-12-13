@@ -58,6 +58,7 @@ class Profesional_model extends CI_Model
         $profesional->turno = $turno;
         $profesional->franja = $franja;
         $profesional->valoracion = 0;
+        $profesional->numeroValoraciones = 0;
         
         
         return R::store($profesional);
@@ -86,20 +87,26 @@ class Profesional_model extends CI_Model
     }
     
     //=========== media valoraciones estrellas ===================//
-    public function setPuntuacionTotalValoraciones($id, $nuevaValoracion)
+    public function setPuntuacionTotalValoraciones($idProfesional, $nuevaValoracion)
     {
-        $profesional = R::findOne('profesional','id=?',[$id]);
+        $profesional = R::findOne('profesional','id=?',[$idProfesional]);
         
-       echo $id . "-----------" . $nuevaValoracion;
         if ($profesional != null) {
             if($profesional->valoracion == 0){
                 $profesional->valoracion = $nuevaValoracion;
+                $profesional->numeroValoraciones = 1;
             }
             else {
-                $profesional->valoracion = (($profesional->valoracion) + $nuevaValoracion)/2; //media de puntuaciones 
+                $profesional->numeroValoraciones++;
+                $profesional->valoracion = (($profesional->valoracion) + $nuevaValoracion)/$profesional->numeroValoraciones; //media de puntuaciones 
             }
            
             R::store($profesional);
+
+        }
+        else {
+            PRG("problema");
+            
         }
     }
     

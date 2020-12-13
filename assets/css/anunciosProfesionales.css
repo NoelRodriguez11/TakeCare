@@ -3,7 +3,7 @@
 	padding: 1.4rem !important;
 	border-radius: .5rem !important;
 	border:2px solid grey;
-	height: 190px;
+	height: 195px;
 	width: 950px;
 	background: rgb(230,230,230);
 	background: linear-gradient(90deg, rgba(230,230,230,1) 0%, rgba(248,248,248,1) 26%, rgba(248,248,248,1) 100%);
@@ -13,7 +13,7 @@
 
 	font-family:'Exo 2', sans-serif;
 	font-size: 180%;
-	margin-top:1%;
+	margin-top:2%;
 	top:75%;
 	text-align:center;
 	right:4.5%;
@@ -89,8 +89,11 @@
   object-fit: cover;
   border: 1px solid grey;
   left:13%;
-  top:-3%;
+  top:0.6rem;
   background:white;
+-webkit-box-shadow: 0px 2px 55px -16px rgba(94,94,94,1);
+-moz-box-shadow: 0px 2px 55px -16px rgba(94,94,94,1);
+box-shadow: 0px 2px 55px -16px rgba(94,94,94,1);
 }
 
 .botonPedirCita {
@@ -106,21 +109,22 @@
 	height: 30px;
 	width: 170px;
 	float:left;
-	margin-left:15%;
-	margin-right: 2.5%;
+	margin-left:20%;
+	margin-right: 2%;
 
 	
 }
 
-.enunciadoValoracion {
-	height: 20px;
-	width:100px;
-	float:left;
-	margin-left:30%;
-	margin-right: 2.5%;
-	margin-bottom: 6%;
-	
+.estrellas {
+	margin-left:0.3rem; 
+	margin-top: .4rem; 
 }
+
+.estrellas i {
+ 
+	color:#e5ac00;
+}
+
 
 
 #form {

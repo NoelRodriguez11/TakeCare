@@ -45,6 +45,7 @@ class Caso_model extends CI_Model
             $caso->estado = "Pendiente";
             $caso->afeccion = $afeccion;
             $caso->alertaCambioPropuesta = false;
+            $caso->valorado=false;
             return R::store($caso);
         }
         else {
@@ -83,6 +84,16 @@ class Caso_model extends CI_Model
 
             R::store($caso);
             
+    }
+    
+    public function cambiarValorado($id, $valorado) {
+        $caso = R::findOne('caso','id=?',[$id]);
+        
+        $caso = R::load('caso', $id);
+        $caso->valorado = $valorado;
+        
+        R::store($caso);
+        
     }
 
     public function cambiarAlerta($id, $alerta) {

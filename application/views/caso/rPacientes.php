@@ -25,13 +25,13 @@
         			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Ver Información Completa</button>
         		</form>
         		
-        		<button class="botonCambioPropuesta btn btn-danger col-sm-2" data-toggle="modal" data-target="#exampleModalCenter" style="width: 15%;">
+        		<button class="botonCambioPropuesta btn btn-danger col-sm-2" data-toggle="modal" data-target="#exampleModalCenter<?=$caso->id?>" style="width: 15%;">
                   Finalizar tratamiento
                 </button>
         		
         		
 <!--         		MODAL PARA CONFIRMAR EL FIN DEL TRATAMIENTO -->
-        		<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        		<div class="modal fade" id="exampleModalCenter<?=$caso->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                       <div class="modal-header">

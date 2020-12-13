@@ -85,16 +85,6 @@ class Profesional extends CI_Controller
     }
 
     
-    public function enviarStar() {
-//         if(!isRolOK("admin")){
-//             PRG("Rol inadecuado");
-//         }
-        $id = isset($_GET['id']) ? $_GET['id'] : null;
-        $nuevaValoracion = isset($_GET['nuevaValoracion']) ? $_GET['nuevaValoracion'] : null;
-        $this->load->model('profesional_model');
-        $this->profesional_model->setPuntuacionTotalValoraciones($id, $nuevaValoracion);
-  
-    }
     
     //CONFIGURACION PERFIL
     
@@ -184,7 +174,7 @@ class Profesional extends CI_Controller
         $this->load->model('persona_model');
                
         $this->caso_model->cambiarEstado($id, "Aceptada");
-        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente), $this->caso_model->getCasoById($id), "Cita Diagnóstico" );
+        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente), $this->caso_model->getCasoById($id), "Diagnóstico" );
                   
         PRG('Caso Aceptado', 'caso/r', 'success');
                 
@@ -232,6 +222,7 @@ class Profesional extends CI_Controller
         
         $this->load->model('afeccion_model');
         $this->load->model('caso_model');
+        $this->load->model('cita_model');
         $this->load->model('sintoma_model');
         $this->load->model('especialidad_model');
         
@@ -239,6 +230,7 @@ class Profesional extends CI_Controller
         $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
         $datos['caso'] = $this->caso_model->getCasoById($id);
+        $datos['citas'] = $this->cita_model->getCitasByCasoId($id);
         frame($this, 'cita/rProfesional', $datos);
         
         
@@ -247,6 +239,7 @@ class Profesional extends CI_Controller
     public function agregarSintoma() {
         
         $id = isset($_POST['idAfeccion']) ? $_POST['idAfeccion'] : null;
+        $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $sintoma1 = isset($_POST['sintoma1']) ? $_POST['sintoma1'] : null;
         $sintoma2 = isset($_POST['sintoma2']) ? $_POST['sintoma2'] : null;
         $sintoma3 = isset($_POST['sintoma3']) ? $_POST['sintoma3'] : null;
@@ -257,6 +250,7 @@ class Profesional extends CI_Controller
         
         $this->load->model('afeccion_model');
         $this->load->model('caso_model');
+        $this->load->model('cita_model');
         $this->load->model('sintoma_model');
         $this->load->model('especialidad_model');
         
@@ -264,7 +258,8 @@ class Profesional extends CI_Controller
         $this->afeccion_model->agregarSintoma($id,$sintoma1, $sintoma2, $sintoma3, $sintoma4, $sintoma5, $sintoma6, $sintoma7);
         $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
-        $datos['caso'] = $this->caso_model->getCasoById($id);
+        $datos['caso'] = $this->caso_model->getCasoById($idCaso);
+        $datos['citas'] = $this->cita_model->getCitasByCasoId($idCaso);
         frame($this, 'cita/rProfesional', $datos);
            
     }
