@@ -201,7 +201,7 @@ class Persona extends CI_Controller
         
         $this->caso_model->cambiarEstado($id, "Aceptada");
         $this->caso_model->cambiarAlerta($id, false);
-        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente), $this->caso_model->getCasoById($id), "Primera Cita" );
+        $this->cita_model->crearCita($fechaCita,$this->profesional_model->getProfesionalById($idProfesional), $this->persona_model->getPersonaById($idPaciente), $this->caso_model->getCasoById($id), "Diagnóstico" );
         PRG('Propuesta Aceptada', 'caso/rPacientesSolicitudes', 'success');
         
       
