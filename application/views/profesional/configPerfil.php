@@ -115,7 +115,7 @@ function deshabilitarBotonPro() {
 	</script>
 	<div id="profesional" class="tab-pane fade in active">
 
-			<h1 class="textoexp1-enunciados">Configuracion Perfil Profesional</h1>
+			<h1 class="textoexp1-enunciados">Configuración Perfil Profesional</h1>
 
 			<form action="<?=base_url()?>profesional/configPerfilPost" method="post" enctype="multipart/form-data">
 
@@ -185,7 +185,7 @@ function deshabilitarBotonPro() {
                                         </button>
                       			</div>
                     <div class="modal-body textoBorrarProfesional">
-                       	 ¿Estas seguro de que quieres borrar tu cuenta? <br>
+                       	 ¿Estás seguro de que quieres borrar tu cuenta? <br>
                     </div>
                      <div class="modal-footer">
                         

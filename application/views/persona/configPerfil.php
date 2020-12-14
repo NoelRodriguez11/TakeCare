@@ -93,7 +93,7 @@ function deshabilitarBotonPac() {
                 	}
                 }
 </script>
-			<h1 class="textoexp1-enunciados">Configuracion Perfil Paciente</h1>
+			<h1 class="textoexp1-enunciados">Configuración Perfil Paciente</h1>
 
 			<form action="<?=base_url()?>persona/configPerfilPost" method="post" enctype="multipart/form-data">
 
@@ -209,7 +209,7 @@ function deshabilitarBotonPac() {
 				<br />
 
 			<div class="col-xs-8">
-				<label for="id-pais">Pais</label>
+				<label for="id-pais">País</label>
         	<select id="id-pais" class="form-control" name="pais">
 				<?php foreach ($paises as $pais):?>
     				<?php if ($pais->nombre != $persona->nace->nombre) :?>
@@ -241,7 +241,7 @@ function deshabilitarBotonPac() {
                                         </button>
                       			</div>
                     <div class="modal-body textoBorrarProfesional">
-                       	 ¿Estas seguro de que quieres borrar tu cuenta? <br>
+                       	 ¿Estás seguro de que quieres borrar tu cuenta? <br>
                     </div>
                      <div class="modal-footer">
                         

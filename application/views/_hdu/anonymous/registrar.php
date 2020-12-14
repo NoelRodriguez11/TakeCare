@@ -1,6 +1,6 @@
 <div class="container">
 <br>
-  <h5>¿Como quieres darte de alta?</h5>
+  <h5>¿Cómo quieres darte de alta?</h5>
   <script type="text/javascript">
 function validarNombrepa() {
             		var nombre = document.getElementById("id-nompa").value.trim();
@@ -379,14 +379,14 @@ function deshabilitarBotonpr() {
         	<input id="id-fnac" type="date" name="fechaNacimiento" required="required" value="2000-02-29"/>
         	<br/>
         	
-        	<label for="id-genero">Genero</label>
+        	<label for="id-genero">Género</label>
           	<select id="id-genero" name="genero">
             <option value="hombre">Hombre</option>
             <option value="mujer">Mujer</option>
             </select>
             <br>
             
-            <label for="id-grupoSanguineo">Grupo Sanguineo</label>
+            <label for="id-grupoSanguineo">Grupo Sanguíneo</label>
           	<select name="grupoSanguineo" id="id-grupoSanguineo">
             <option value="0+">0+</option>
             <option value="0-">0-</option>
@@ -401,7 +401,7 @@ function deshabilitarBotonpr() {
         	
 
         	
-        	<label for="id-direccion">Direccion</label>
+        	<label for="id-direccion">Dirección</label>
         	<input id="id-direccion" type="text" name="direccion" required="required"/>
         	<br/>
         	
@@ -467,7 +467,7 @@ function deshabilitarBotonpr() {
             <br/>
         	
         	
-        	<label for="id-telefonopa">Telefono</label>
+        	<label for="id-telefonopa">Teléfono</label>
         	<input id="id-telefonopa" type="text" name="telefono" required="required" onkeyup="validarTelefonopa(),deshabilitarBotonpa()"/>
         	<span id="errorTelefonopa" style="float:right;color:red"></span>
         	<br/>
@@ -485,7 +485,7 @@ function deshabilitarBotonpr() {
         	<input type="hidden" name="tipoUsuario" value=1/>
         	    
         	       	
-        	<label for="id-pais">Pais Origen</label>
+        	<label for="id-pais">País Origen</label>
         	<select id="id-pais" name="pais">
         		<option selected="selected" value=-1>---</option>
         		<?php foreach ($paises as $pais):?>
@@ -530,7 +530,7 @@ function deshabilitarBotonpr() {
         	<input id="id-fnac" type="date" name="fechaNacimiento" required="required" value="2000-02-29"/>
         	<br/>
         	
-        	<label for="id-genero">Genero</label>
+        	<label for="id-genero">Género</label>
           	<select name="genero" id="id-genero">
             <option value="hombre">Hombre</option>
             <option value="mujer">Mujer</option>
@@ -637,7 +637,7 @@ function deshabilitarBotonpr() {
         	<input id="id-clinica" type="text" name="clinica"/>
         	<br/>
         	
-        	<label for="id-pais">Pais Origen</label>	
+        	<label for="id-pais">País Origen</label>	
         	<select id="id-pais" name="pais">
         		<option selected="selected" value=-1>---</option>
         		<?php foreach ($paises as $pais):?>

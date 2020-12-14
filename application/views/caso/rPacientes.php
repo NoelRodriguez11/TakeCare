@@ -41,7 +41,7 @@
                         </button>
                       </div>
                       <div class="modal-body textoCasosContenidoPaciente">
-                        ¿Estas seguro de que quieres finalizar el tratamiento? <br><br>El profesional dará el caso como finalizado independiente del diagnostico.
+                        ¿Estás seguro de que quieres finalizar el tratamiento? <br><br>El profesional dará el caso como finalizado independiente del diagnostico.
                         
                       </div>
                       <div class="modal-footer">
