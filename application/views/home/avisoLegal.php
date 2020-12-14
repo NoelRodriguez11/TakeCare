@@ -110,7 +110,7 @@
 						servicios de conformidad con la Ley, con la moral y buenas
 						costumbres generalmente aceptadas y el orden público.</p>
 
-					<p>Se prohíbe la subcontratación o subarrendamiento a terceros de
+					<p class="textoexp2">Se prohíbe la subcontratación o subarrendamiento a terceros de
 						los servicios y/o productos ofrecidos en nuestro sitio web.</p>
 
 

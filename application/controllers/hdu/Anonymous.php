@@ -68,15 +68,15 @@ class Anonymous extends CI_Controller
             //Creación de especialidades
             $this->especialidad_model->crearEspecialidad('Fisioterapia');
             $this->especialidad_model->crearEspecialidad('Traumatología');
-            $this->especialidad_model->crearEspecialidad('Psicologia');
-            $this->especialidad_model->crearEspecialidad('Pedagogia');
+            $this->especialidad_model->crearEspecialidad('Psicología');
+            $this->especialidad_model->crearEspecialidad('Pedagogía');
             $this->especialidad_model->crearEspecialidad('Dermatología');
             $this->especialidad_model->crearEspecialidad('Logopedia');
             $this->especialidad_model->crearEspecialidad('Oftalmología');
             $this->especialidad_model->crearEspecialidad('Optometría');
             $this->especialidad_model->crearEspecialidad('Podología');
             $this->especialidad_model->crearEspecialidad('Otología');
-            $this->especialidad_model->crearEspecialidad('Nutricionista');
+            $this->especialidad_model->crearEspecialidad('Nutricionismo');
             
             //Creación de Sintomas
             $this->sintoma_model->crearSintoma('Absceso');
@@ -170,14 +170,14 @@ class Anonymous extends CI_Controller
             
                               
             //Profesionales Hard-Coded
-            $this->profesional_model->crearProfesional('Antonio', 'Garcia', "Marquez","33344455Y","Password1","Plaza castilla-leon, 7, 1-B", "Conde de Casal", "Madrid", 576483934, "takecaretfg@gmail.com","Hombre" , $this->pais_model->getPaisById(5), "4/9/1994", $this->especialidad_model->getEspecialidadById(1),"Autonomo/a","Tarde", "17:00-21:00",40,"jpg");
+            $this->profesional_model->crearProfesional('Antonio', 'García', "Marquez","33344455Y","Password1","Plaza castilla-leon, 7, 1-B", "Conde de Casal", "Madrid", 576483934, "takecaretfg@gmail.com","Hombre" , $this->pais_model->getPaisById(5), "4/9/1994", $this->especialidad_model->getEspecialidadById(1),"Autonomo/a","Tarde", "17:00-21:00",40,"jpg");
             $this->profesional_model->crearProfesional('Leire', 'Rivera', "Del Rio","76544455Y","Password1","Calle robledal 8", "Coslada", "Madrid", 495394831, "emailLeire@gmail.com","Mujer", $this->pais_model->getPaisById(6), "4/9/1994", $this->especialidad_model->getEspecialidadById(1),"Clinica Las lagunas","Mañana y Tarde","09:00-18:00",35, "jpg");
-            $this->profesional_model->crearProfesional('Daniel', 'Martinez', "Cabrales","93567455Y","Password1","Calle Capitan America, 32", "Torrejon de Ardoz", "Madrid", 485337564, "emailDaniel@gmail.com","Hombre" , $this->pais_model->getPaisById(4),"4/9/1994", $this->especialidad_model->getEspecialidadById(2),"Autonomo/a","Tarde","15:00-21:30",40,"jpg");
-            $this->profesional_model->crearProfesional('Alberto', 'Pascual', "Jimenez", "34256542V","Password1", "Calle de Segovia, 21", "Madrid", "Madrid", 663283456, "emailAlberto@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "29/3/1998", $this->especialidad_model->getEspecialidadById(3),"Garrigues médicos","Mañana","08:00-14:00",32, "jpg");
+            $this->profesional_model->crearProfesional('Daniel', 'Martínez', "Cabrales","93567455Y","Password1","Calle Capitan America, 32", "Torrejon de Ardoz", "Madrid", 485337564, "emailDaniel@gmail.com","Hombre" , $this->pais_model->getPaisById(4),"4/9/1994", $this->especialidad_model->getEspecialidadById(2),"Autonomo/a","Tarde","15:00-21:30",40,"jpg");
+            $this->profesional_model->crearProfesional('Alberto', 'Pascual', "Jiménez", "34256542V","Password1", "Calle de Segovia, 21", "Madrid", "Madrid", 663283456, "emailAlberto@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "29/3/1998", $this->especialidad_model->getEspecialidadById(3),"Garrigues médicos","Mañana","08:00-14:00",32, "jpg");
             $this->profesional_model->crearProfesional('Raúl', 'Camargo', "Torremocha", "74757596B", "Password1", "Calle de la Madera, 1", "Madrid", "Madrid", 776534345, "emailRaul@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "16/8/1990", $this->especialidad_model->getEspecialidadById(4),"Autonomo/a","Mañana","10:00-14:00",50, "jpg");
             $this->profesional_model->crearProfesional('Antonio', 'Paterna', "Benito", "67859035A", "Password1", "Calle Izelaieta, 34", "Bilbao", "Vizcaya", 636782345, "emailAntonioP@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "16/9/1992", $this->especialidad_model->getEspecialidadById(5),"Dermatólogos Paterna","Tarde","16:00-20:00",25, "jpg");
             $this->profesional_model->crearProfesional('Alejandro', 'Pérez', "Yunqueras", "75486359G", "Password1", "Calle de pez, 1", "Madrid", "Madrid", 943586124, "emailAlejandro@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "10/1/1975", $this->especialidad_model->getEspecialidadById(6),"Parlem Junts","Tarde","16:00-23:00",70,"jpg");
-            $this->profesional_model->crearProfesional('Laura', 'Baltar', "Fernandez", "31486396H", "Password1", "Calle de Piñor, 38", "Cangas", "Pontevedra", 636487569, "emailLaura@gmail.com", "Mujer", $this->pais_model->getPaisById(8), "2/7/1989", $this->especialidad_model->getEspecialidadById(7),"Autonomo/a","Mañana","06:00-11:00",40, "jpg");
+            $this->profesional_model->crearProfesional('Laura', 'Baltar', "Fernández", "31486396H", "Password1", "Calle de Piñor, 38", "Cangas", "Pontevedra", 636487569, "emailLaura@gmail.com", "Mujer", $this->pais_model->getPaisById(8), "2/7/1989", $this->especialidad_model->getEspecialidadById(7),"Autonomo/a","Mañana","06:00-11:00",40, "jpg");
             $this->profesional_model->crearProfesional('José Antonio', 'González', "Mestalla", "06463745M", "Password1", "Calle Pintor Rosales, 34", "Madrid", "Madrid", 843657414, "emailJose@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "24/12/1990", $this->especialidad_model->getEspecialidadById(8),"Autonomo/a","Mañana y Tarde","08:00-17:00",43, null);
             $this->profesional_model->crearProfesional('Jorge', 'Mayo', "Bencomo", "68842379J", "Password1", "Rua Augusta, 25", "Rivas","Madrid", 943854721, "emailJorge@gmail.com", "Hombre", $this->pais_model->getPaisById(22), "30/5/1982", $this->especialidad_model->getEspecialidadById(9),"Asisu","Mañana","07:00-11:00",30, null);
             $this->profesional_model->crearProfesional('Iván', 'Da Conçeicao', "Martín", "53781965P", "Password1", "Calle de caballero de Gracia, 30", "Madrid", "Madrid", 643172098, "emailIvan@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "20/2/1985", $this->especialidad_model->getEspecialidadById(11),"Autonomo/a","Mañana","06:00-10:00",50, null);
@@ -462,11 +462,11 @@ class Anonymous extends CI_Controller
        else if ($this->profesional_model->getProfesionalByEmail($email) != null) {
            if ($this->profesional_model->changePass($token, $email, $encryptedPassword)) {
                
-               echo '<h1 align="center">Has cambiado tu contraseña, para acceder pulsa <a href="' . base_url() . '">aquí</a></h1>';
+               PRG('Has cambiado tu contraseña, intenta acceder','home','info');
                
            } else {
                
-               echo '<h1 align="center">Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.</h1>';
+               PRG('Algo ha salido mal. Por favor revisa los datos o contacta con nosotros.');
            }
        }
         

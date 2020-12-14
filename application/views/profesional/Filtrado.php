@@ -91,7 +91,7 @@
        	<form action="<?=base_url()?>caso/c" method="get">
 			<input type="hidden" name="idProfesional" value="<?=$palabra->id?>">
 	
-			<button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null):?>disabled<?php endif;?>>Enviar Solicitud</button>
+			<button onclick="submit()" class="botonPedirCita btn btn-primary col-sm-3" id="botonPC" <?php if ($datosGen['persona']==null || $datosGen['persona']->dni =="admin"):?>disabled<?php endif;?>>Enviar Solicitud</button>
 
 		</form>
       

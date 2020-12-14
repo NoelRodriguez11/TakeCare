@@ -76,7 +76,7 @@
                         </a>
                     </li>
                     <li class="l4" style="background-position:-583px 0">
-                        <a href="<?=base_url()?>Buscador/filtroSelect?palabras=Nutricionista">
+                        <a href="<?=base_url()?>Buscador/filtroSelect?palabras=Nutricionismo">
                             <div class="foo">
                                 <div class="h"><em class="sprite-h2"></em><span>Nutricionistas</span></div>
                             </div>
