@@ -223,7 +223,7 @@ function deshabilitarBotonPac() {
 			</form>
 			<div>
 				<button class="btn btn-danger" id="botonConfPerfil" data-toggle="modal" data-target="#BorrarCuenta" >
-    		        Borrar Cuenta 
+    		       Dar de Baja
             	</button>
 			</div>	
 				<!--  <button class="botonCambioPropuesta btn btn-danger col-sm-2" data-toggle="modal" data-target="#BorrarCuenta" style="width: 15%;">
@@ -247,7 +247,7 @@ function deshabilitarBotonPac() {
                         
                        <form action="<?=base_url()?>persona/borrarCuentaPost" method="post">
             				<input type="hidden" id="id-id" name="id" value="<?=$persona->id?>">
-            				<button type="button" onclick="submit()" class="btn btn-danger" id="botonPC">Borrar</button>
+            				<button type="button" onclick="submit()" class="btn btn-danger" id="botonPC">Dar de Baja</button>
             				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             		   </form>
                       </div>
@@ -276,12 +276,12 @@ function deshabilitarBotonPac() {
 								<!--           </div> -->
 
 								<div class="form-group">
-									<label for="recipient-name" class="col-form-label">New Password:</label> 
+									<label for="recipient-name" class="col-form-label">Nueva Contraseña:</label> 
 										<input type="password" class="form-control" name="newpwd" id="btn_modal">
 								</div>
 
 								<div class="form-group">
-									<label for="recipient-name" class="col-form-label">Repeat New Password:</label> 
+									<label for="recipient-name" class="col-form-label">Repite la Contraseña:</label> 
 									<input type="password" class="form-control" name="new1pwd" id="btn_modal">
 								</div>
 
@@ -318,7 +318,6 @@ function deshabilitarBotonPac() {
    								
    								var id = persona.id;
    								$("#id-id").val(id);
-   								
    								
    								var primer_apellido = persona.primer_apellido;
    								$("#id-ape1pac").val(primer_apellido);

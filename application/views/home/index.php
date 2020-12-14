@@ -51,13 +51,13 @@
      
       <div class="profesionalesBuscados">
                 <h2 class="subtitulo">Profesionales más buscados</h2>
-                <p class="subtitulo">Estas son las localidades donde más búsquedas de profesores se registran a diario.</p>
+                <p class="subtitulo">Estas son las especialidades más buscadas.</p>
                 
                 <ul>
                     <li class="l1" style="background-position:-64px 0">
                         <a href="<?=base_url()?>Buscador/filtroSelect?palabras=Traumatologia">
                             <div class="foo">
-                                <div class="h"><em class="sprite-h2"></em><span>Traumatólogo</span></div>
+                                <div class="h"><em class="sprite-h2"></em><span>Traumatólogos</span></div>
                             </div>
                         </a>
                     </li>

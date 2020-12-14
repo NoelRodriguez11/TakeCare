@@ -171,7 +171,7 @@ function deshabilitarBotonPro() {
 				 </form>
 				 
 				 <button class=" btn btn-danger" id="botonConfPerfil" data-toggle="modal" data-target="#BorrarCuenta">
-                  Borrar Cuenta
+                  Dar de Baja
                 </button>
                 
 				<!-- MODAL PARA BORRAR PERSONA  -->
@@ -191,7 +191,7 @@ function deshabilitarBotonPro() {
                         
                        <form action="<?=base_url()?>profesional/borrarCuentaPost" method="post">
             				<input type="hidden" id="id-id" name="id" value="<?=$profesional->id?>">
-            				<button type="button" onclick="submit()" class="btn btn-danger" id="botonPC">Borrar</button>
+            				<button type="button" onclick="submit()" class="btn btn-danger" id="botonPC">Dar de Baja</button>
             				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             		   </form>
                       </div>
@@ -224,12 +224,12 @@ function deshabilitarBotonPro() {
 								<!--           </div> -->
 
 								<div class="form-group">
-									<label for="recipient-name" class="col-form-label">New Password:</label> 
+									<label for="recipient-name" class="col-form-label">Nueva Contraseña:</label> 
 										<input type="password" class="form-control" name="newpwd" id="btn_modal">
 								</div>
 
 								<div class="form-group">
-									<label for="recipient-name" class="col-form-label">Repeat New Password:</label> 
+									<label for="recipient-name" class="col-form-label">Repite la Contraseña:</label> 
 									<input type="password" class="form-control" name="new1pwd" id="btn_modal">
 								</div>
 
