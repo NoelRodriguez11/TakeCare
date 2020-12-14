@@ -18,7 +18,7 @@
             <span class="logo1"><img src="<?=base_url()?>assets/img/acuerdo.png" alt="INICIO" style="width: 50px; height:50px;"></span>
             <strong><span class="textoexp1">Contacto con profesionales vía web</span></strong>
             <br> 
-            <span class="textoexp2">Contacto directo con profesionales via chat para dudas o citas privadas</span>
+            <span class="textoexp2">Consulta la amplía lista de profesionales a disposición y concreta una cita.</span>
         </div>
         
         <br>
@@ -27,7 +27,7 @@
             <span class="logo2"><img src="<?=base_url()?>assets/img/farmacia.png" alt="INICIO" style="width: 50px; height:50px;"></span>
             <strong><span class="textoexp1">Encuentra a los mejores profesionales</span></strong>
             <br> 
-            <span class="textoexp2">Obtén un listado de posibles enfermedades y una recomendación indicándote qué hacer a continuación.</span>
+            <span class="textoexp2">Una vez iniciado el proceso puedes consultar los distintos diagnósticos y síntomas dentro de tus tratamientos.</span>
         </div>
         
         <br>
@@ -36,7 +36,7 @@
             <span class="logo3"><img src="<?=base_url()?>assets/img/corazon.png" alt="INICIO" style="width: 50px; height:50px;"></span>
             <strong><span class="textoexp1">Evaluar tus síntomas es muy fácil</span></strong>
             <br>
-            <span class="textoexp2">Mejoramos el acceso a la atención médica en todo el mundo</span>
+            <span class="textoexp2">Mejoramos el acceso a la atención médica en todo el mundo.</span>
         </div>
         
         <br>
@@ -45,7 +45,7 @@
             <span class="logo4"><img src="<?=base_url()?>assets/img/medicina.png" alt="INICIO" style="width: 50px; height:50px;"></span>
             <strong><span class="textoexp1">El mejor profesional, cerca de tu domicilio</span></strong>
             <br> 
-            <span class="textoexp2">Podrás elegir entre una lista de profesionales cerca de tu casa fijandote en un sistema de valoración</span>
+            <span class="textoexp2">Podrás elegir entre una lista de profesionales cerca de tu casa fijandote en un sistema de valoración.</span>
         </div>
      </div>
      

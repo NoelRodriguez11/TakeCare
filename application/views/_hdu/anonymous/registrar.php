@@ -99,7 +99,7 @@ function validarContrapa() {
                 
 function validarTelefonopa() {
             		var telefono = document.getElementById("id-telefonopa").value.trim();
-                    var rgExp = /^[9876][0-9]{8}$/;
+                    var rgExp = /^[0-9]{9}$/;
         
                     if (telefono.length == 9) {
                         document.getElementById("errorTelefonopa").innerHTML="";
@@ -253,7 +253,7 @@ function validarContrapr() {
                 
 function validarTelefonopr() {
             		var telefono = document.getElementById("id-telefonopr").value.trim();
-                    var rgExp = /^[9876][0-9]{8}$/;
+                    var rgExp = /^[0-9]{9}$/;
         
                     if (telefono.length == 9) {
                         document.getElementById("errorTelefonopr").innerHTML="";

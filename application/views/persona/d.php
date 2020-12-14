@@ -1,6 +1,6 @@
 <div class="container">
 
-<h1 class="textoexp1-enunciados">Listado Completo de Personas</h1>
+<h1 class="textoexp1-enunciados">Listado Completo de Pacientes</h1>
 
 <!-- Estos div de personaes tiene que ser obtenido de la bbdd segun los prodesionales que haya en la bbdd -->
 <?php foreach ($personas as $persona):?>

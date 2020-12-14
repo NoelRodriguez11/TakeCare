@@ -6,9 +6,9 @@ class Anonymous extends CI_Controller
 
     public function init()
     {
-//         if(!isRolOK("admin")){
-//             PRG("Rol inadecuado. Debes ser Admin");
-//         }
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado. Debes ser Admin");
+         }
         
         $data['vacia'] = true;
         $this->load->model('persona_model');
@@ -20,9 +20,9 @@ class Anonymous extends CI_Controller
 
     public function initPost()
     {
-//         if(!isRolOK("admin")){
-//             PRG("Rol inadecuado");
-//         }
+        if(!isRolOK("admin")){
+           PRG("Rol inadecuado");
+        }
         
         $pwd = isset($_POST['pwd']) ? $_POST['pwd'] : null;
         $data['msg'] = 'Password incorrecta';
@@ -75,6 +75,7 @@ class Anonymous extends CI_Controller
             $this->especialidad_model->crearEspecialidad('Optometría');
             $this->especialidad_model->crearEspecialidad('Podología');
             $this->especialidad_model->crearEspecialidad('Otología');
+            $this->especialidad_model->crearEspecialidad('Nutricionista');
             
             //Creación de Sintomas
             $this->sintoma_model->crearSintoma('Absceso');
@@ -174,11 +175,11 @@ class Anonymous extends CI_Controller
             $this->profesional_model->crearProfesional('Alberto', 'Pascual', "Jimenez", "34256542V","1233", "Calle de Segovia, 21", "Madrid", "Madrid", 663283456, "emailAlberto@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "29/3/1998", $this->especialidad_model->getEspecialidadById(3),"Garrigues médicos","Mañana","08:00-14:00", "jpg");
             $this->profesional_model->crearProfesional('Raúl', 'Camargo', "Torremocha", "74757596B", "Password1", "Calle de la Madera, 1", "Madrid", "Madrid", 776534345, "emailRaul@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "16/8/1990", $this->especialidad_model->getEspecialidadById(4),"Autonomo/a","Mañana","10:00-14:00", "jpg");
             $this->profesional_model->crearProfesional('Antonio', 'Paterna', "Benito", "67859035A", "Password2", "Calle Izelaieta, 34", "Bilbao", "Vizcaya", 636782345, "emailAntonioP@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "16/9/1992", $this->especialidad_model->getEspecialidadById(5),"Dermatólogos Paterna","Tarde","16:00-20:00", "jpg");
-            $this->profesional_model->crearProfesional('Alejandro', 'Pérez', "Yunqueras", "75486359G", "Password3", "Calle de pez, 1", "Madrid", "Madrid", 943586124, "emailAlejandro@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "10/1/1975", $this->especialidad_model->getEspecialidadById(6),"Parlem Junts","Tarde","16:00-23:00", null);
-            $this->profesional_model->crearProfesional('Iván', 'Da Conçeicao', "Martín", "31486396H", "Password4", "Calle de Piñor, 38", "Cangas", "Pontevedra", 636487569, "emailIvan@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "2/7/1989", $this->especialidad_model->getEspecialidadById(7),"Autonomo/a","Mañana","06:00-11:00", null);
+            $this->profesional_model->crearProfesional('Alejandro', 'Pérez', "Yunqueras", "75486359G", "Password3", "Calle de pez, 1", "Madrid", "Madrid", 943586124, "emailAlejandro@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "10/1/1975", $this->especialidad_model->getEspecialidadById(6),"Parlem Junts","Tarde","16:00-23:00", "jpg");
+            $this->profesional_model->crearProfesional('Laura', 'Baltar', "Fernandez", "31486396H", "Password4", "Calle de Piñor, 38", "Cangas", "Pontevedra", 636487569, "emailLaura@gmail.com", "Mujer", $this->pais_model->getPaisById(8), "2/7/1989", $this->especialidad_model->getEspecialidadById(7),"Autonomo/a","Mañana","06:00-11:00", "jpg");
             $this->profesional_model->crearProfesional('José Antonio', 'González', "Mestalla", "06463745M", "Password5", "Calle Pintor Rosales, 34", "Madrid", "Madrid", 843657414, "emailJose@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "24/12/1990", $this->especialidad_model->getEspecialidadById(8),"Autonomo/a","Mañana y Tarde","08:00-17:00", null);
             $this->profesional_model->crearProfesional('Jorge', 'Mayo', "Bencomo", "68842379J", "Password6", "Rua Augusta, 25", "Rivas-Vaciamadrid","Madrid", 943854721, "emailJorge@gmail.com", "Hombre", $this->pais_model->getPaisById(22), "30/5/1982", $this->especialidad_model->getEspecialidadById(9),"Asisu","Mañana","07:00-11:00", null);
-            $this->profesional_model->crearProfesional('Ignacio', 'Rojo', "Martínez", "53781965P", "Password7", "Calle de caballero de Gracia, 30", "Madrid", "Madrid", 643172098, "emailIgnacio@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "20/2/1985", $this->especialidad_model->getEspecialidadById(10),"Autonomo/a","Mañana","06:00-10:00", null);
+            $this->profesional_model->crearProfesional('Iván', 'Da Conçeicao', "Martín", "53781965P", "Password7", "Calle de caballero de Gracia, 30", "Madrid", "Madrid", 643172098, "emailIvan@gmail.com", "Hombre", $this->pais_model->getPaisById(8), "20/2/1985", $this->especialidad_model->getEspecialidadById(11),"Autonomo/a","Mañana","06:00-10:00", null);
             
             
             $data['msg'] = "BD recreada";

@@ -15,7 +15,12 @@
 
 		<!--Foto del profesional -->
 		<div class="row">
-		<img class="divFotoPerfil col-sm-2" style="margin:0;" src="<?=base_url()?>/assets/img/upload/profesional/pro<?=$palabra->id?>.jpg"/>
+		<?php if($palabra->extension_Foto != null):?>
+		<img class="divFotoPerfil col-sm-2" style="margin:0;" src="<?=base_url()?>/assets/img/upload/profesional/pro<?=$palabra->id?>.<?= $palabra->extension_Foto?>"/>
+		<?php else:?>
+		<img class="divFotoPerfil col-sm-2" style="margin:0;" src="<?=base_url()?>/assets/img/upload/profesional/noImage.jpg"/>
+		<?php endif;?>
+		
 		
 		<div class="col-sm-4 especialidadIndicador divEstrellitas" >
 			Valoración

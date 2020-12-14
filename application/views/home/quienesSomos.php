@@ -16,8 +16,7 @@
 						finalidad exclusiva de poner en contacto a profesionales autónomos y 
 						clínicas con pacientes que requieren de algún tipo de servicio médico, 
 						proporcionando una herramienta además de seguimiento del tratamiento 
-						hasta su finalización.
-</p>
+						hasta su finalización.</p>
 
 
 					<p class="textoexp2">Han sido muchas herramientas y tecnologías utilizadas
@@ -26,10 +25,10 @@
 						enseñanzas impartidas por los profesores a lo largo de
 						estos dos años de curso. Se ha requerido, además, de
 						documentación externa y otra información necesaria
-						para la finalización del proyecto.
+						para la finalización del proyecto.</p>
 					
 					
-					</p><p class="textoexp2">Desde Take Care queremos que los usuarios disfruten de la
+					<p class="textoexp2">Desde Take Care queremos que los usuarios disfruten de la
 						experiencia y repitan el uso de la aplicación que les
 						proporcionamos. Deseamos que el esfuerzo realizado por los
 						componentes del equipo de proyecto dé como fruto una gran

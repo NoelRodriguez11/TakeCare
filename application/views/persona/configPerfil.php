@@ -24,7 +24,7 @@
          
 function validarTelefonoPac() {
             		var telefono = document.getElementById("id-tlfpac").value.trim();
-                    var rgExp= /^[9876][0-9]{8}$/;
+                    var rgExp= /^[0-9]{9}$/;
         
                     if (telefono.length == 9) {
                         document.getElementById("errorTelefonoPac").innerHTML="";
@@ -49,14 +49,14 @@ function validarEmailPac() {
                         document.getElementById("errorEmailPac").innerHTML="";
 						
 						if (!rgExp.test(email)){
-                        	document.getElementById("errorEmailPac").innerHTML="El nombre tiene caracteres no validos";
+                        	document.getElementById("errorEmailPac").innerHTML="El correo tiene caracteres no validos";
                     	}
                      	else {
                      		document.getElementById("errorEmailPac").innerHTML="";
                     	}	
                 	}
                 	else {
-                        document.getElementById("errorEmailPac").innerHTML="El nombre tiene menos de 8 caracteres o mas de 40 caracteres";
+                        document.getElementById("errorEmailPac").innerHTML="El correo tiene menos de 8 caracteres o mas de 40 caracteres";
                     }
                 }
                 
@@ -83,11 +83,9 @@ function deshabilitarBotonPac() {
                 	var spanNombre = document.getElementById("errorNombrePac").innerHTML;
                 	var spanTelefono = document.getElementById("errorTelefonoPac").innerHTML;
                 	var spanEmail = document.getElementById("errorEmailPac").innerHTML;
-                	var spanDireccion = document.getElementById("errorDireccionPac").innerHTML;
-                	var spanCiudad = document.getElementById("errorCiudadPac").innerHTML;
                 	var boton = document.getElementById("loginBoton");
                 	
-                	if (spanNombre.length > 0 || spanTelefono.length > 0 || spanDireccion.length > 0 || spanCiudad.length > 0 || spanEmail.length > 0) {
+                	if (spanNombre.length > 0 || spanTelefono.length > 0 || spanEmail.length > 0) {
                 		boton.disabled = true;
                 	}
                 	else {

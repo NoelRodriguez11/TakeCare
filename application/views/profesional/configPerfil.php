@@ -25,7 +25,7 @@
            
 function validarTelefonoPro() {
             		var telefono = document.getElementById("id-telefonop").value.trim();
-                    var rgExp= /^[9876][0-9]{8}$/;
+                    var rgExp= /^[0-9]{9}$/;
         
                     if (telefono.length == 9) {
                         document.getElementById("errorTelefonoPro").innerHTML="";
@@ -50,14 +50,14 @@ function validarEmailPro() {
                         document.getElementById("errorEmailPro").innerHTML="";
 						
 						if (!rgExp.test(email)){
-                        	document.getElementById("errorEmailPro").innerHTML="El nombre tiene caracteres no validos";
+                        	document.getElementById("errorEmailPro").innerHTML="El correo tiene caracteres no validos";
                     	}
                      	else {
                      		document.getElementById("errorEmailPro").innerHTML="";
                     	}	
                 	}
                 	else {
-                        document.getElementById("errorEmailPro").innerHTML="El nombre tiene menos de 8 caracteres o mas de 40 caracteres";
+                        document.getElementById("errorEmailPro").innerHTML="El correo tiene menos de 8 caracteres o mas de 40 caracteres";
                     }
                 }
 
