@@ -24,14 +24,13 @@
     <script type="text/javascript" src="<?=base_url()?>assets/js/cambioImagenRegistro.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/separacionFechaYHora.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/js/agregarSintoma.js"></script>
-    <script type="text/javascript" src="<?=base_url()?>assets/js/jquery.rating.pack.js"></script>
+
     
     <link rel="stylesheet" href="<?=base_url()?>assets/css/oscuro.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/paginaPrincipal.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/configPerfil.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/styles.css">
-     <link rel="stylesheet" href="<?=base_url()?>assets/css/font-awesome.min.css">
     
     <!-- CSS Footer -->
     <link rel="stylesheet" href="<?=base_url()?>assets/css/footer.css">
@@ -65,6 +64,8 @@
 	
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/avisoLegal_quienSomos.css">
 	
+    <script type="text/javascript" src="<?=base_url()?>assets/js/jquery.rating.pack.js"></script>
+
 	
 	
 
