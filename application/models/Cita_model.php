@@ -55,6 +55,15 @@ class Cita_model extends CI_Model
         
     }
     
+    public function cambiarEstado($idCita,$estado)
+    {
+        $cita = R::load('cita',$idCita);
+        
+        $cita->estado = $estado;
+        return R::store($cita);
+        
+    }
+    
 
     
 

@@ -323,7 +323,19 @@ class Profesional extends CI_Controller
     }
 
 //-----------------------------------------------------------Dar de alta paciente------------------------------------------------------------------------------------
-    
+   
+    public function aceptarCita() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
+        
+        $id = isset($_POST['idCita']) ? $_POST['idCita'] : null;
+        $this->load->model('cita_model');
+        $this->cita_model->cambiarEstado($id, "Aceptada");
+        PRG('Cambio de cita aceptado', 'cita/rProfesional', 'success');
+        
+        
+    }
     public function finalizarTratamiento() {
         if(!isRolOKPro("profesional")){
             PRG("Rol inadecuado, debes de ser un profesional");

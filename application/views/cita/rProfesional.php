@@ -106,20 +106,25 @@
              			
                  		<?php if($caso->estado == "Aceptada" && $cita->estado == "Aceptada"):?> 
                  		    <form style="float:right;" action="<?=base_url()?>cita/dPost" method="post">
-                 		    <input type="hidden" name="idCita" value="<?=$cita->id?>">
-                 		    <input type="hidden" name="idCaso" value="<?=$caso->id?>">
-                       		<button  class="botonInformacionCita btn btn-danger btn-sm">✖</button>
+                     		    <input type="hidden" name="idCita" value="<?=$cita->id?>">
+                     		    <input type="hidden" name="idCaso" value="<?=$caso->id?>">
+                           		<button  class="botonInformacionCita btn btn-danger btn-sm">✖</button>
                        		</form>
                        		<form style="float:right; visibility:hidden;" action="<?=base_url()?>cita/#" method="post">
-                       		<button class="botonInformacionCita btn btn-info btn-sm"><i class="fas fa-check"></i></button> 
+                       			<button class="botonInformacionCita btn btn-info btn-sm"><i class="fas fa-check"></i></button> 
                        		</form>  
                        	<?php elseif ($caso->estado == "Aceptada" && $cita->estado == "Pendiente"):?>
-                       		<i class="fas fa-bell" style="color:rgb(181, 148, 40);"></i>Nueva Fecha
-                     		<form style="float:right;" action="<?=base_url()?>cita/#" method="post">
-                      		<button  class="botonInformacionCita btn btn-danger btn-sm">✖</button>
+                       			<i class="fas fa-bell" style="color:rgb(181, 148, 40);"></i>Nueva Fecha
+                     		<form style="float:right;" action="<?=base_url()?>cita/dPost" method="post">
+                     			<input type="hidden" name="idCita" value="<?=$cita->id?>">
+                 		     	<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+                      			<button  class="botonInformacionCita btn btn-danger btn-sm">✖</button>
+                      			<input type="hidden" name="idCita" value="<?=$cita->id?>">
                       		</form>                       	
-                      		<form style="float:right;" action="<?=base_url()?>cita/#" method="post">
-                       		<button class="botonInformacionCita btn btn-success btn-sm"><i class="fas fa-check"></i></button> 
+                      		<form style="float:right;" action="<?=base_url()?>profesional/aceptarCita" method="post">
+                      		 	<input type="hidden" name="idCita" value="<?=$cita->id?>">
+                 		     	<input type="hidden" name="idCaso" value="<?=$caso->id?>">
+                       			<button class="botonInformacionCita btn btn-success btn-sm"><i class="fas fa-check"></i></button> 
                        		</form>                    		
 
                       		

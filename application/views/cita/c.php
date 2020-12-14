@@ -16,7 +16,7 @@
                           <option value="Revisión">Revisión</option>
                           <option value="Seguimiento">Seguimiento</option>
                           <option value="Tratamiento">Tratamiento</option>
-                          <option value="Puntual/Urgencia">Puntual/Urgencia</option>
+                          <option value="Puntual/Urgencia">Urgencia</option>
                         </select>
                     </div>
 					

@@ -92,7 +92,7 @@
                        		<button class="botonInformacionCita btn btn-danger btn-sm">✖</button> 
                        		</form>  
                        		
-                       		<?php if($cita->fechaAnterior != null):?>   
+                       		<?php if($cita->fechaAnterior == null):?>   
                  		    <form style="float:right;" action="<?=base_url()?>persona/solicitarCambioCita" method="get">
                  		    <input type="hidden" name="idCita" value="<?=$cita->id?>">
                  		    <input type="hidden" name="idCaso" value="<?=$caso->id?>">
