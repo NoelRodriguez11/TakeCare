@@ -115,9 +115,6 @@ class Caso extends CI_Controller {
     
     public function dPost() {
         
-        if(!isRolOKPer("persona") || !isRolOKPro("profesional")){
-            PRG("Rol inadecuado");
-        }
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $alertaPropuestaCambio = isset($_POST['alerta']) ? $_POST['alerta'] : null;
         

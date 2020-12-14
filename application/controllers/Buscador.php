@@ -5,7 +5,7 @@ class Buscador extends CI_Controller {
     
     public function filtroSelect()
     {
-        $palabras = $this->input->post('palabras');
+        $palabras = $this->input->get('palabras');
         
             $this->load->model('buscador_model');
             $this->load->model('especialidad_model');

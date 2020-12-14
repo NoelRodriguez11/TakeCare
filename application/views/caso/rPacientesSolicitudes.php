@@ -70,9 +70,10 @@
         			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Información Completa</button>
         		</form>
         		
-            		
+            		<?php if($caso->valorado == true):?>
             		 <button class="botonCambioPropuesta btn btn-warning col-sm-1" data-toggle="modal" data-target="#valorarProfesional<?=$caso->id?>" style="width: 14.7%; right:1.5rem;" id="botonPC">
                       <i class="fas fa-star" ></i> Valorar Profesional</button>
+                    <?php endif;?>
                      
                       
                       
@@ -110,26 +111,27 @@
                         </button>
                       </div>
                       <div class="modal-body row">
-                          <script>
-                                $(document).ready(function(){
-                                    $('input.star').rating();
-                                });
-                          </script>
+ 						 <div class="col-sm-2"></div>
+ 						
 						<form action="<?=base_url()?>persona/enviarStar" method="post">
-                            <div class="star_content">
-                                <input name="rate" value="1" type="radio" class="star" checked="checked"/> 
-                                <input name="rate" value="2" type="radio" class="star"/> 
-                                <input name="rate" value="3" type="radio" class="star"/> 
-                                <input name="rate" value="4" type="radio" class="star"/> 
-                                <input name="rate" value="5" type="radio" class="star"/>
-                            </div>
-                            <div class="row">
-                            <div class="col-sm-5"></div>
-                            <button type="submit" name="nuevaValoracion" class="btn btn-primary col-sm-2" >Enviar</button>
+							  <div class="col-sm-5" style="top:0.6rem;">
+							  <label > Selecciona una puntuación </label>
+                              <select name="rate" class="browser-default custom-select" >                                 
+                                  <option value=1 >1</option>
+                                  <option value=2 >2</option>
+                                  <option value=3 >3</option>
+                                  <option value=4 >4</option>
+                                  <option value=5 >5</option>
+                                </select>
+                                </div>
+                            
+                          	<div class="col-sm-2">
+                            <button type="submit" name="nuevaValoracion" class="btn btn-primary" >Enviar</button>
                             </div>
                             <input type="hidden" name="idProfesional" value="<?=$caso->profesional->id?>">
 							<input type="hidden" name="idCaso" value="<?=$caso->id?>">
                         </form>
+                        
 
                                                             
                       </div>

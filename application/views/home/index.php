@@ -1,7 +1,7 @@
 <div  id="divContenido">
 	<div class="contenidoPrincipal">
 		<div class="col-lg-4" id="buscador">
-			<form action="<?= base_url()?>Buscador/filtroSelect" method="post">
+			<form action="<?= base_url()?>Buscador/filtroSelect" method="get">
 				<input type="text" name="palabras" id="buscabusca" placeholder="Buscar...">
 				<input type="submit" id="loginBoton" class="btn btn-light" value="Buscar">
 			</form>

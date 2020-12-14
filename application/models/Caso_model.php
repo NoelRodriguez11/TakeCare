@@ -37,7 +37,6 @@ class Caso_model extends CI_Model
         if ($ok) {
             $caso = R::dispense('caso');
             $caso->fechaInicio = $fechahora;
-            $caso->fechaFin = ""; 
             $caso->persona = $idPersona;
             $caso->profesional = $idProfesional;
             $caso->diagnosticoPreliminar = $diagnosticoPrevio;
@@ -95,6 +94,8 @@ class Caso_model extends CI_Model
         R::store($caso);
         
     }
+    
+    
 
     public function cambiarAlerta($id, $alerta) {
         $caso = R::findOne('caso','id=?',[$id]);

@@ -8,9 +8,9 @@
     
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
 	
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script src="<?=base_url()?>assets/js/popper.min.js" ></script> 
-	<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
 	<!-- FAVICON -->
 	
@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="<?=base_url()?>assets/css/paginaPrincipal.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/configPerfil.css">
     <link rel="stylesheet" href="<?=base_url()?>assets/css/nav.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/styles.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets/css/modalValoracion.css">
     
     <!-- CSS Footer -->
     <link rel="stylesheet" href="<?=base_url()?>assets/css/footer.css">
@@ -64,7 +64,6 @@
 	
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/avisoLegal_quienSomos.css">
 	
-    <script type="text/javascript" src="<?=base_url()?>assets/js/jquery.rating.pack.js"></script>
 
 	
 	
