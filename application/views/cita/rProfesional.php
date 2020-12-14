@@ -119,7 +119,6 @@
                      			<input type="hidden" name="idCita" value="<?=$cita->id?>">
                  		     	<input type="hidden" name="idCaso" value="<?=$caso->id?>">
                       			<button  class="botonInformacionCita btn btn-danger btn-sm">✖</button>
-                      			<input type="hidden" name="idCita" value="<?=$cita->id?>">
                       		</form>                       	
                       		<form style="float:right;" action="<?=base_url()?>profesional/aceptarCita" method="post">
                       		 	<input type="hidden" name="idCita" value="<?=$cita->id?>">

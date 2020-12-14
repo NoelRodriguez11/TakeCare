@@ -329,10 +329,14 @@ class Profesional extends CI_Controller
             PRG("Rol inadecuado, debes de ser un profesional");
         }
         
-        $id = isset($_POST['idCita']) ? $_POST['idCita'] : null;
+        $idCita = isset($_POST['idCita']) ? $_POST['idCita'] : null;
+        $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $this->load->model('cita_model');
         $this->cita_model->cambiarEstado($id, "Aceptada");
-        PRG('Cambio de cita aceptado', 'cita/rProfesional', 'success');
+        $datos['caso'] = $this->caso_model->getCasoById($idCaso);
+        $datos['citas'] = $this->cita_model->getCitasByCasoId($idCaso);
+        $datos['sintomas'] = $this->sintoma_model->getSintomas();
+        frame($this, 'cita/rProfesional', $datos);
         
         
     }
