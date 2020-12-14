@@ -55,28 +55,28 @@
                 
                 <ul>
                     <li class="l1" style="background-position:-64px 0">
-                        <a href="/">
+                        <a href="<?=base_url()?>Buscador/filtroSelect?palabras=Traumatologia">
                             <div class="foo">
                                 <div class="h"><em class="sprite-h2"></em><span>Traumatólogo</span></div>
                             </div>
                         </a>
                     </li>
                     <li class="l2" style="background-position:-237px 0">
-                        <a href="/">
+                        <a href="<?=base_url()?>Buscador/filtroSelect?palabras=Psicologia">
                             <div class="foo">
                                 <div class="h"><em class="sprite-h2"></em><span>Psicólogo</span></div>
                             </div>
                         </a>
                     </li>
                     <li class="l3" style="background-position:-410px 0">
-                        <a href="/">
+                        <a href="<?=base_url()?>Buscador/filtroSelect?palabras=Podologia">
                             <div class="foo">
                                 <div class="h"><em class="sprite-h2"></em><span>Podólogo</span></div>
                             </div>
                         </a>
                     </li>
                     <li class="l4" style="background-position:-583px 0">
-                        <a href="/">
+                        <a href="<?=base_url()?>Buscador/filtroSelect?palabras=Nutricionista">
                             <div class="foo">
                                 <div class="h"><em class="sprite-h2"></em><span>Nutricionistas</span></div>
                             </div>

@@ -4,10 +4,9 @@ class Sintoma extends CI_Controller
 {
     
     public function c() {
-        //VISTA
-        /* if(!isRolOK("admin")){
-         PRG("Rol inadecuado");
-         } */
+        if(!isRolOK("admin")){
+         PRG("Rol inadecuado, debes ser Administrador");
+         } 
         $this->load->model('sintoma_model');
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
         frame($this,'sintoma/c', $datos);
@@ -15,9 +14,9 @@ class Sintoma extends CI_Controller
     
     public function cPost() {
         
-        /* if(!isRolOK("admin")){
-         PRG("Rol inadecuado");
-         } */
+         if(!isRolOK("admin")){
+         PRG("Rol inadecuado, debes ser Administrador");
+         } 
         
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
         
@@ -41,18 +40,19 @@ class Sintoma extends CI_Controller
         }
     }
     
-    public function r()
-    {
+    public function r() {
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        } 
         $this->load->model('sintoma_model');
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
         frame($this,'sintoma/r', $datos);
     }
     
-    public function u()
-    {
-        /* if(!isRolOK("admin")){
-         PRG("Rol inadecuado");
-         } */
+    public function u() {
+        if(!isRolOK("admin")){
+         PRG("Rol inadecuado, debes ser Administrador");
+         } 
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('sintoma_model');
         $data['sintoma'] = $this->sintoma_model->getSintomaById($id);
@@ -60,10 +60,9 @@ class Sintoma extends CI_Controller
     }
     
     public function uPost() {
-        
-        /* if(!isRolOK("admin")){
-         PRG("Rol inadecuado");
-         } */
+        if(!isRolOK("admin")){
+         PRG("Rol inadecuado, debes ser Administrador");
+         } 
         $this->load->model('sintoma_model');
         
         $id = isset($_POST['id']) ? $_POST['id'] : null;
@@ -82,10 +81,9 @@ class Sintoma extends CI_Controller
     
     
     public function dPost() {
-        
-        /* if(!isRolOK("admin")){
-         PRG("Rol inadecuado");
-         } */
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        } 
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $this->load->model('sintoma_model');
         $this->sintoma_model->borrarSintoma($id);

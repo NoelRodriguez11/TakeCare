@@ -4,10 +4,10 @@ class Especialidad extends CI_Controller
 {
     
     public function c() {
-        //VISTA
-        /* if(!isRolOK("admin")){
-            PRG("Rol inadecuado");
-        } */
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado,, debes ser Administrador");
+        }
+        
         $this->load->model('especialidad_model');
         $datos['especialidades'] = $this->especialidad_model->getEspecialidades();
         frame($this,'especialidad/c', $datos);
@@ -15,9 +15,9 @@ class Especialidad extends CI_Controller
     
     public function cPost() {
         
-        /* if(!isRolOK("admin")){
-            PRG("Rol inadecuado");
-        } */
+         if(!isRolOK("admin")){
+            PRG("Rol inadecuado,, debes ser Administrador");
+        } 
         
         $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
         
@@ -43,6 +43,9 @@ class Especialidad extends CI_Controller
     
     public function r()
     {
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        }
         $this->load->model('especialidad_model');
         $datos['especialidades'] = $this->especialidad_model->getEspecialidades();   
         frame($this,'especialidad/r', $datos);
@@ -50,9 +53,9 @@ class Especialidad extends CI_Controller
     
     public function u()
     {
-        /* if(!isRolOK("admin")){
-            PRG("Rol inadecuado");
-        } */
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        }
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('especialidad_model');
         $data['especialidad'] = $this->especialidad_model->getEspecialidadById($id);
@@ -61,9 +64,9 @@ class Especialidad extends CI_Controller
     
     public function uPost() {
         
-        /* if(!isRolOK("admin")){
-            PRG("Rol inadecuado");
-        } */
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        }
         $this->load->model('especialidad_model');
         
         $id = isset($_POST['id']) ? $_POST['id'] : null;
@@ -83,9 +86,9 @@ class Especialidad extends CI_Controller
     
     public function dPost() {
         
-        /* if(!isRolOK("admin")){
-            PRG("Rol inadecuado");
-        } */
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        }
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $this->load->model('especialidad_model');
         $this->especialidad_model->borrarEspecialidad($id);

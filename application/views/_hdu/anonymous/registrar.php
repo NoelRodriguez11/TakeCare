@@ -2,165 +2,300 @@
 <br>
   <h5>¿Como quieres darte de alta?</h5>
   <script type="text/javascript">
-  	function validarNombre() {
-            		var nombre = document.getElementById("id-nom").value.trim();
+function validarNombrepa() {
+            		var nombre = document.getElementById("id-nompa").value.trim();
                     var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
         
                     if (nombre.length > 2 && nombre.length < 20) {
-                        document.getElementById("errorNombre").innerHTML="";
+                        document.getElementById("errorNombrepa").innerHTML="";
                     
                      if (!rgExp.test(nombre)){
-                        document.getElementById("errorNombre").innerHTML="El nombre tiene caracteres no validos";
+                        document.getElementById("errorNombrepa").innerHTML="El nombre tiene caracteres no validos";
                     }
                      else {
-                     	document.getElementById("errorNombre").innerHTML="";
+                     	document.getElementById("errorNombrepa").innerHTML="";
                     }
                 }
                 else {
-                        document.getElementById("errorNombre").innerHTML="El nombre tiene menos de 3 caracteres o mas de 21 caracteres";
+                        document.getElementById("errorNombrepa").innerHTML="El nombre tiene menos de 3 caracteres o mas de 21 caracteres";
                     }
                 }
 
-function validarApellidoUno() {
-            		var apellidoUno = document.getElementById("id-ape1").value.trim();
+function validarApellidoUnopa() {
+            		var apellidoUno = document.getElementById("id-ape1pa").value.trim();
                     var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,30}$/;
         
                     if (apellidoUno.length > 2 && apellidoUno.length < 20) {
-                        document.getElementById("errorApellidoUno").innerHTML="";
+                        document.getElementById("errorApellidoUnopa").innerHTML="";
                     
                      if (!rgExp.test(apellidoUno)){
-                        document.getElementById("errorApellidoUno").innerHTML="El primer apellido tiene caracteres no validos";
+                        document.getElementById("errorApellidoUnopa").innerHTML="El primer apellido tiene caracteres no validos";
                     }
                      else {
-                     	document.getElementById("errorApellidoUno").innerHTML="";
+                     	document.getElementById("errorApellidoUnopa").innerHTML="";
                     }
                 }
                 else {
-                        document.getElementById("errorApellidoUno").innerHTML="El primer apellido tiene menos de 3 caracteres o mas de 21 caracteres";
+                        document.getElementById("errorApellidoUnopa").innerHTML="El primer apellido tiene menos de 3 caracteres o mas de 21 caracteres";
                     }
                 }
 
-function validarApellidoDos() {
-            		var ApellidoDos = document.getElementById("id-ape2").value.trim();
+function validarApellidoDospa() {
+            		var apellidoDos = document.getElementById("id-ape2pa").value.trim();
                     var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,30}$/;
         
                     if (apellidoDos.length > 2 && apellidoDos.length < 20) {
-                        document.getElementById("errorApellidoDos").innerHTML="";
+                        document.getElementById("errorApellidoDospa").innerHTML="";
                     
                      if (!rgExp.test(apellidoDos)){
-                        document.getElementById("errorApellidoDos").innerHTML="El segundo apellido tiene caracteres no validos";
+                        document.getElementById("errorApellidoDospa").innerHTML="El segundo apellido tiene caracteres no validos";
                     }
                      else {
-                     	document.getElementById("errorApellidoDos").innerHTML="";
+                     	document.getElementById("errorApellidoDospa").innerHTML="";
                     }
                 }
                 else {
-                        document.getElementById("errorApellidoDos").innerHTML="El segundo apellido tiene menos de 3 caracteres o mas de 21 caracteres";
+                        document.getElementById("errorApellidoDospa").innerHTML="El segundo apellido tiene menos de 3 caracteres o mas de 21 caracteres";
                     }
                 }
 
-function validarDNI() {
-            		var dni = document.getElementById("id-dni").value.trim();
+function validarDNIpa() {
+            		var dni = document.getElementById("id-dnipa").value.trim();
                     var rgExp = /^\d{8}[ABCDEFGHJKMNPQRSTVWXYZ]$/;
         
                     if (dni.length == 9) {
-                        document.getElementById("errorDNI").innerHTML="";
+                        document.getElementById("errorDNIpa").innerHTML="";
                     
                      if (!rgExp.test(dni)){
-                        document.getElementById("errorDNI").innerHTML="El segundo dni tiene caracteres no validos";
+                        document.getElementById("errorDNIpa").innerHTML="El segundo dni tiene caracteres no validos";
                     }
                      else {
-                     	document.getElementById("errorDNI").innerHTML="";
+                     	document.getElementById("errorDNIpa").innerHTML="";
                     }
                 }
                 else {
-                        document.getElementById("errorDNI").innerHTML="El dni no tiene 9 caracteres";
+                        document.getElementById("errorDNIpa").innerHTML="El dni no tiene 9 caracteres";
                     }
                 }
-                
-function validarDireccion() {
-            		var direccion = document.getElementById("id-direccion").value.trim().toLowerCase();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ 0-9 -º/,.ª]{10,40}$/;
-        
-                    if (direccion.length > 10 && direccion.length < 40) {
-                        document.getElementById("errorDireccion").innerHTML="";
-                    
-                     if (!rgExp.test(direccion)){
-                        document.getElementById("errorDireccion").innerHTML="La dirección tiene caracteres no validos";
-                    }
-                     else {
-                     	document.getElementById("errorDireccion").innerHTML="";
-                    }
-                }
-                else {
-                        document.getElementById("errorDireccion").innerHTML="La dirección tiene menos de 11 caracteres o mas de 41 caracteres";
-                    }
-                }
-                
-function validarContra() {
-            		var contraseña = document.getElementById("id-pwd").value.trim();
+                            
+function validarContrapa() {
+            		var contraseña = document.getElementById("id-pwdpa").value.trim();
                     var rgExp = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
         
                     if (contraseña.length >= 8 && contraseña.length <= 16) {
-                        document.getElementById("errorPWD").innerHTML="";
+                        document.getElementById("errorPWDpa").innerHTML="";
                     
                      if (!rgExp.test(contraseña)){
-                        document.getElementById("errorPWD").innerHTML="La contraseña tiene caracteres no validos";
+                        document.getElementById("errorPWDpa").innerHTML="La contraseña tiene caracteres no validos, Mayúsculas, minúsculas y digitos necesarios";
                     }
                      else {
-                     	document.getElementById("errorPWD").innerHTML="";
+                     	document.getElementById("errorPWDpa").innerHTML="";
                     }
                 }
                 else {
-                        document.getElementById("errorPWD").innerHTML="La contraseña tiene menos de 8 caracteres o mas de 16 caracteres";
+                        document.getElementById("errorPWDpa").innerHTML="La contraseña tiene menos de 8 caracteres o mas de 16 caracteres";
                     }
                 }
                 
-function validarTelefono() {
-            		var telefono = document.getElementById("id-telefono").value.trim();
+function validarTelefonopa() {
+            		var telefono = document.getElementById("id-telefonopa").value.trim();
                     var rgExp = /^[9876][0-9]{8}$/;
         
                     if (telefono.length == 9) {
-                        document.getElementById("errorTelefono").innerHTML="";
+                        document.getElementById("errorTelefonopa").innerHTML="";
                     
                     if (!rgExp.test(telefono)){
-                        document.getElementById("errorTelefono").innerHTML="El teléfono tiene caracteres no validos o no empieza por 9, 8, 7 o 6";
+                        document.getElementById("errorTelefonopa").innerHTML="El teléfono tiene caracteres no validos o no empieza por 9, 8, 7 o 6";
                     }
                     else {
-                    	document.getElementById("errorTelefono").innerHTML="";
+                    	document.getElementById("errorTelefonopa").innerHTML="";
                     }
                     }
                     else {
-                        document.getElementById("errorTelefono").innerHTML="El teléfono tiene menos o más de 9 caracteres";
+                        document.getElementById("errorTelefonopa").innerHTML="El teléfono tiene menos o más de 9 caracteres";
                     }
                 }
                 
                              
-function validarEmail() {
-            		var email = document.getElementById("id-email").value.trim();
-                    var rgExp= /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+function validarEmailpa() {
+            		var email = document.getElementById("id-emailpa").value.trim();
+                    var rgExp = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
         
                     if (email.length > 7 && email.length < 40) {
-                        document.getElementById("errorEmail").innerHTML="";
+                        document.getElementById("errorEmailpa").innerHTML="";
 						
 						if (!rgExp.test(email)){
-                        	document.getElementById("errorEmail").innerHTML="El nombre tiene caracteres no validos";
+                        	document.getElementById("errorEmailpa").innerHTML="El nombre tiene caracteres no validos";
                     	}
                      	else {
-                     		document.getElementById("errorEmail").innerHTML="";
+                     		document.getElementById("errorEmailpa").innerHTML="";
                     	}	
                 	}
                 	else {
-                        document.getElementById("errorEmail").innerHTML="El nombre tiene menos de 8 caracteres o mas de 40 caracteres";
+                        document.getElementById("errorEmailpa").innerHTML="El nombre tiene menos de 8 caracteres o mas de 40 caracteres";
+                    }
+                }
+                    
+function deshabilitarBotonpa() {
+                	var spanNombre = document.getElementById("errorNombrepa").innerHTML;
+                	var spanApellidoUno = document.getElementById("errorApellidoUnopa").innerHTML;
+                	var spanApellidoDos = document.getElementById("errorApellidoDospa").innerHTML;
+                	var spanDNI = document.getElementById("errorDNIpa").innerHTML;
+                	var spanPWD = document.getElementById("errorPWDpa").innerHTML;
+                	var spanTelefono = document.getElementById("errorTelefonopa").innerHTML;
+                	var spanEmail = document.getElementById("errorEmailpa").innerHTML;
+                	var boton = document.getElementById("botonRegistrarpa");
+                	
+                	if (spanNombre.length > 0 || spanApellidoUno.length > 0 || spanApellidoDos.length > 0 || spanDNI.length > 0 || spanPWD.length > 0 || spanTelefono.length > 0 || spanEmail.length > 0) {
+                		boton.disabled = true;
+                	}
+                	else {
+                		boton.disabled = false;
+                	}
+                }
+                
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function validarNombrepr() {
+            		var nombre = document.getElementById("id-nompr").value.trim();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,20}$/;
+        
+                    if (nombre.length > 2 && nombre.length < 20) {
+                        document.getElementById("errorNombrepr").innerHTML="";
+                    
+                     if (!rgExp.test(nombre)){
+                        document.getElementById("errorNombrepr").innerHTML="El nombre tiene caracteres no validos";
+                    }
+                     else {
+                     	document.getElementById("errorNombrepr").innerHTML="";
+                    }
+                }
+                else {
+                        document.getElementById("errorNombrepr").innerHTML="El nombre tiene menos de 3 caracteres o mas de 21 caracteres";
                     }
                 }
 
-function validarFranjaPro() {
-            		var franja = document.getElementById("id-franjap").value.trim();
+function validarApellidoUnopr() {
+            		var apellidoUno = document.getElementById("id-ape1pr").value.trim();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,30}$/;
+        
+                    if (apellidoUno.length > 2 && apellidoUno.length < 20) {
+                        document.getElementById("errorApellidoUnopr").innerHTML="";
+                    
+                     if (!rgExp.test(apellidoUno)){
+                        document.getElementById("errorApellidoUnopr").innerHTML="El primer apellido tiene caracteres no validos";
+                    }
+                     else {
+                     	document.getElementById("errorApellidoUnopr").innerHTML="";
+                    }
+                }
+                else {
+                        document.getElementById("errorApellidoUnopr").innerHTML="El primer apellido tiene menos de 3 caracteres o mas de 21 caracteres";
+                    }
+                }
+
+function validarApellidoDospr() {
+            		var apellidoDos = document.getElementById("id-ape2pr").value.trim();
+                    var rgExp = /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ]{2,30}$/;
+        
+                    if (apellidoDos.length > 2 && apellidoDos.length < 20) {
+                        document.getElementById("errorApellidoDospr").innerHTML="";
+                    
+                     if (!rgExp.test(apellidoDos)){
+                        document.getElementById("errorApellidoDospr").innerHTML="El segundo apellido tiene caracteres no validos";
+                    }
+                     else {
+                     	document.getElementById("errorApellidoDospr").innerHTML="";
+                    }
+                }
+                else {
+                        document.getElementById("errorApellidoDospr").innerHTML="El segundo apellido tiene menos de 3 caracteres o mas de 21 caracteres";
+                    }
+                }
+
+function validarDNIpr() {
+            		var dni = document.getElementById("id-dnipr").value.trim();
+                    var rgExp = /^\d{8}[ABCDEFGHJKMNPQRSTVWXYZ]$/;
+        
+                    if (dni.length == 9) {
+                        document.getElementById("errorDNIpr").innerHTML="";
+                    
+                     if (!rgExp.test(dni)){
+                        document.getElementById("errorDNIpr").innerHTML="El segundo dni tiene caracteres no validos";
+                    }
+                     else {
+                     	document.getElementById("errorDNIpr").innerHTML="";
+                    }
+                }
+                else {
+                        document.getElementById("errorDNIpr").innerHTML="El dni no tiene 9 caracteres";
+                    }
+                }           
+                
+function validarContrapr() {
+            		var contraseña = document.getElementById("id-pwdpr").value.trim();
+                    var rgExp = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+        
+                    if (contraseña.length >= 8 && contraseña.length <= 16) {
+                        document.getElementById("errorPWDpr").innerHTML="";
+                    
+                     if (!rgExp.test(contraseña)){
+                        document.getElementById("errorPWDpr").innerHTML="La contraseña tiene caracteres no validos, Mayúsculas, minúsculas y digitos necesarios";
+                    }
+                     else {
+                     	document.getElementById("errorPWDpr").innerHTML="";
+                    }
+                }
+                else {
+                        document.getElementById("errorPWDpr").innerHTML="La contraseña tiene menos de 8 caracteres o mas de 16 caracteres";
+                    }
+                }
+                
+function validarTelefonopr() {
+            		var telefono = document.getElementById("id-telefonopr").value.trim();
+                    var rgExp = /^[9876][0-9]{8}$/;
+        
+                    if (telefono.length == 9) {
+                        document.getElementById("errorTelefonopr").innerHTML="";
+                    
+                    if (!rgExp.test(telefono)){
+                        document.getElementById("errorTelefonopr").innerHTML="El teléfono tiene caracteres no validos o no empieza por 9, 8, 7 o 6";
+                    }
+                    else {
+                    	document.getElementById("errorTelefonopr").innerHTML="";
+                    }
+                    }
+                    else {
+                        document.getElementById("errorTelefonopr").innerHTML="El teléfono tiene menos o más de 9 caracteres";
+                    }
+                }
+                
+                             
+function validarEmailpr() {
+            		var email = document.getElementById("id-emailpr").value.trim();
+                    var rgExp= /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+        
+                    if (email.length > 7 && email.length < 40) {
+                        document.getElementById("errorEmailpr").innerHTML="";
+						
+						if (!rgExp.test(email)){
+                        	document.getElementById("errorEmailpr").innerHTML="El nombre tiene caracteres no validos";
+                    	}
+                     	else {
+                     		document.getElementById("errorEmailpr").innerHTML="";
+                    	}	
+                	}
+                	else {
+                        document.getElementById("errorEmailpr").innerHTML="El nombre tiene menos de 8 caracteres o mas de 40 caracteres";
+                    }
+                }
+
+function validarFranja() {
+            		var franja = document.getElementById("id-franja").value.trim();
             		var opcionSeleccionada = document.getElementById("id-turno").options.selectedIndex;
-                    var rgExpMañana = /^(0?[0-9]|1[012])(:[0-5]\d)$/;
-                    var rgExpTarde = /^(1?[2-9]|2[0123])(:[0-5]\d)$/;
-                    var rgExpAmbos = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
+                    var rgExpMañana = /^(0?[0-9]|1[012])(:[0-5]\d)(-(0?[0-9]|1[012]))(:[0-5]\d)$/;
+                    var rgExpTarde = /^(1?[2-9]|2[0123])(:[0-5]\d)(-(1?[2-9]|2[0123]))(:[0-5]\d)$/;
+                    var rgExpAmbos = /^([01]?[0-9]|2[0-3]):[0-5][0-9](-([01]?[0-9]|2[0-3])):[0-5][0-9]$/;
         
                     if(opcionSeleccionada == 0) {
                     	if(!rgExpMañana.test(franja)) {
@@ -191,18 +326,18 @@ function validarFranjaPro() {
                     
                     }
                     
-function deshabilitarBoton() {
-                	var spanNombre = document.getElementById("errorNombre").innerHTML;
-                	var spanApellidoUno = document.getElementById("errorApellidoUno").innerHTML;
-                	var spanApellidoDos = document.getElementById("errorApellidoDos").innerHTML;
-                	var spanDNI = document.getElementById("errorDNI").innerHTML;
-                	var spanPWD = document.getElementById("errorPWD").innerHTML;
-                	var spanCiudad = document.getElementById("errorCiudad").innerHTML;
-                	var spanTelefono = document.getElementById("errorTelefono").innerHTML;
-                	var spanEmail = document.getElementById("errorEmail").innerHTML;
-                	var boton = document.getElementById("botonRegistrar");
+function deshabilitarBotonpr() {
+                	var spanNombre = document.getElementById("errorNombrepr").innerHTML;
+                	var spanApellidoUno = document.getElementById("errorApellidoUnopr").innerHTML;
+                	var spanApellidoDos = document.getElementById("errorApellidoDospr").innerHTML;
+                	var spanDNI = document.getElementById("errorDNIpr").innerHTML;
+                	var spanPWD = document.getElementById("errorPWDpr").innerHTML;
+                	var spanTelefono = document.getElementById("errorTelefonopr").innerHTML;
+                	var spanEmail = document.getElementById("errorEmailpr").innerHTML;
+                	var spanFranja = document.getElementById("errorFranja").innerHTML;
+                	var boton = document.getElementById("botonRegistrarpr");
                 	
-                	if (spanNombre.length > 0 || spanApellidoUno.length > 0 || spanApellidoDos.length > 0 || spanDNI.length > 0 || spanTelefono.length > 0 || spanEmail.length > 0) {
+                	if (spanNombre.length > 0 || spanApellidoUno.length > 0 || spanApellidoDos.length > 0 || spanDNI.length > 0 || spanPWD.length > 0 || spanTelefono.length > 0 || spanEmail.length > 0 || spanFranja.length > 0) {
                 		boton.disabled = true;
                 	}
                 	else {
@@ -220,24 +355,24 @@ function deshabilitarBoton() {
 
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         
-        	<label for="id-nom">Nombre</label>
-        	<input id="id-nom" type="text" name="nombre" required="required" onkeyup="validarNombre(),deshabilitarBoton()"/>
-        	<span id="errorNombre" style="float:right"></span>
+        	<label for="id-nompa">Nombre</label>
+        	<input id="id-nompa" type="text" name="nombre" required="required" onkeyup="validarNombrepa(),deshabilitarBotonpa()"/>
+        	<span id="errorNombrepa" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-ape1">Primer Apellido</label>
-        	<input id="id-ape1" type="text" name="primerApellido" required="required" onkeyup="validarApellidoUno(),deshabilitarBoton()"/>
-        	<span id="errorApellidoUno" style="float:right"></span>
+        	<label for="id-ape1pa">Primer Apellido</label>
+        	<input id="id-ape1pa" type="text" name="primerApellido" required="required" onkeyup="validarApellidoUnopa(),deshabilitarBotonpa()"/>
+        	<span id="errorApellidoUnopa" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-ape2">Segundo Apellido</label>
-        	<input id="id-ape2" type="text" name="segundoApellido" required="required" onkeyup="validarApellidoDos(),deshabilitarBoton()"/>
-        	<span id="errorApellidoDos" style="float:right"></span>
+        	<label for="id-ape2pa">Segundo Apellido</label>
+        	<input id="id-ape2pa" type="text" name="segundoApellido" required="required" onkeyup="validarApellidoDospa(),deshabilitarBotonpa()"/>
+        	<span id="errorApellidoDospa" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-dni">DNI</label>
-        	<input id="id-dni" type="text" name="dni" placeholder="00000000A" required="required" onkeyup="validarDNI(),deshabilitarBoton()"/>
-        	<span id="errorDNI" style="float:right"></span>
+        	<label for="id-dnipa">DNI</label>
+        	<input id="id-dnipa" type="text" name="dni" placeholder="00000000A" required="required" onkeyup="validarDNIpa(),deshabilitarBotonpa()"/>
+        	<span id="errorDNIpa" style="float:right;color:red"></span>
         	<br/>
         	
         	<label for="id-fnac">Fecha de Nacimiento</label>
@@ -268,12 +403,10 @@ function deshabilitarBoton() {
         	
         	<label for="id-direccion">Direccion</label>
         	<input id="id-direccion" type="text" name="direccion" required="required"/>
-        	<span id="errorDireccion" style="float:right"></span>
         	<br/>
         	
         	<label for="id-ciudad">Ciudad/Zona</label>
         	<input id="id-ciudad" type="text" name="ciudad" required="required"/>
-        	<span id="errorCiudad" style="float:right"></span>
         	<br/>
         	
             <label for="id-provincia">Provincia</label>
@@ -334,19 +467,19 @@ function deshabilitarBoton() {
             <br/>
         	
         	
-        	<label for="id-telefono">Telefono</label>
-        	<input id="id-telefono" type="text" name="telefono" required="required" onkeyup="validarTelefono(),deshabilitarBoton()"/>
-        	<span id="errorTelefono" style="float:right"></span>
+        	<label for="id-telefonopa">Telefono</label>
+        	<input id="id-telefonopa" type="text" name="telefono" required="required" onkeyup="validarTelefonopa(),deshabilitarBotonpa()"/>
+        	<span id="errorTelefonopa" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-pwd">Contraseña</label>
-        	<input id="id-pwd" type="password" name="password" required="required" onkeyup="validarContra(), deshabilitarBoton()"/>
-        	<span id="errorPWD" style="float:right"></span>
+        	<label for="id-pwdpa">Contraseña</label>
+        	<input id="id-pwdpa" type="password" name="password" required="required" placeholder="Mayusculas, minusculas y digitos" onkeyup="validarContrapa(), deshabilitarBotonpa()"/>
+        	<span id="errorPWDpa" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-email">Email</label>
-        	<input id="id-email" type="text" name="email" placeholder="ejemplo@gmail.com" required="required" onkeyup="validarEmail(),deshabilitarBoton()"/>
-        	<span id="errorEmail" style="float:right"></span>
+        	<label for="id-emailpa">Email</label>
+        	<input id="id-emailpa" type="text" name="email" placeholder="ejemplo@gmail.com" required="required" onkeyup="validarEmailpa(),deshabilitarBotonpa()"/>
+        	<span id="errorEmailpa" style="float:right;color:red"></span>
         	<br/>
         	
         	<input type="hidden" name="tipoUsuario" value=1/>
@@ -361,7 +494,7 @@ function deshabilitarBoton() {
         	</select>
         	<br/>
         	
-        	<input type="submit" value="Registrar" class="btn btnEstandar" id="botonRegistrar"/>
+        	<input type="submit" value="Registrar" class="btn btnEstandar" id="botonRegistrarpa"/>
         </form>       
     </div>
     
@@ -373,24 +506,24 @@ function deshabilitarBoton() {
 
         <form action="<?=base_url()?>hdu/anonymous/registrarPost" method="post" enctype="multipart/form-data">
         
-        	<label for="id-nom">Nombre</label>
-        	<input id="id-nom" type="text" name="nombre" required="required" onkeyup="validarNombre(),deshabilitarBoton()"/>
-        	<span id="errorNombre" style="float:right"></span>
+        	<label for="id-nompr">Nombre</label>
+        	<input id="id-nompr" type="text" name="nombre" required="required" onkeyup="validarNombrepr(),deshabilitarBotonpr()"/>
+        	<span id="errorNombrepr" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-ape1">Primer Apellido</label>
-        	<input id="id-ape1" type="text" name="primerApellido" required="required" onkeyup="validarApellidoUno(),deshabilitarBoton()"/>
-        	<span id="errorApellidoUno" style="float:right"></span>
+        	<label for="id-ape1pr">Primer Apellido</label>
+        	<input id="id-ape1pr" type="text" name="primerApellido" required="required" onkeyup="validarApellidoUnopr(),deshabilitarBotonpr()"/>
+        	<span id="errorApellidoUnopr" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-ape2">Segundo Apellido</label>
-        	<input id="id-ape2" type="text" name="segundoApellido" required="required" onkeyup="validarApellidoDos(),deshabilitarBoton()"/>
-        	<span id="errorApellidoDos" style="float:right"></span>
+        	<label for="id-ape2pr">Segundo Apellido</label>
+        	<input id="id-ape2pr" type="text" name="segundoApellido" required="required" onkeyup="validarApellidoDospr(),deshabilitarBotonpr()"/>
+        	<span id="errorApellidoDospr" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-dni">DNI</label>
-        	<input id="id-dni" type="text" name="dni" required="required" onkeyup="validarDNI(),deshabilitarBoton()"/>
-        	<span id="errorDNI" style="float:right"></span>
+        	<label for="id-dnipr">DNI</label>
+        	<input id="id-dnipr" type="text" name="dni" required="required" onkeyup="validarDNIpr(),deshabilitarBotonpr()"/>
+        	<span id="errorDNIpr" style="float:right;color:red"></span>
         	<br/>
         	
         	<label for="id-fnac">Fecha de Nacimiento</label>
@@ -407,13 +540,11 @@ function deshabilitarBoton() {
 
         	
         	<label for="id-direccion">Dirección</label>
-        	<input id="id-direccion" type="text" name="direccion" required="required" onkeyup="validarDireccion(),deshabilitarBoton()"/>
-        	<span id="errorDireccion" style="float:right"></span>
+        	<input id="id-direccion" type="text" name="direccion" required="required" onkeyup="validarDireccionpr(),deshabilitarBotonpr()"/>
         	<br/>
         	
         	<label for="id-ciudad">Ciudad/Zona</label>
-        	<input id="id-ciudad" type="text" name="ciudad" required="required" onkeyup="validarCiudad(),deshabilitarBoton()"/>
-        	<span id="errorCiudad" style="float:right"></span>
+        	<input id="id-ciudad" type="text" name="ciudad" required="required" onkeyup="validarCiudadpr(),deshabilitarBotonpr()"/>
         	<br/>
         	
         	<label for="id-provincia">Provincia</label>
@@ -474,19 +605,19 @@ function deshabilitarBoton() {
             <br/>
         	
         	
-        	<label for="id-telefono">Teléfono</label>
-        	<input id="id-telefono" type="text" name="telefono" required="required" onkeyup="validarTelefono(),deshabilitarBoton()"/>
-        	<span id="errorTelefono" style="float:right"></span>
+        	<label for="id-telefonopr">Teléfono</label>
+        	<input id="id-telefonopr" type="text" name="telefono" required="required" onkeyup="validarTelefonopr(),deshabilitarBotonpr()"/>
+        	<span id="errorTelefonopr" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-pwd">Contraseña</label>
-        	<input id="id-pwd" type="password" name="password" required="required" onkeyup="validarContra(),deshabilitarBoton()"/>
-        	<span id="errorPWD" style="float:right"></span>
+        	<label for="id-pwdpr">Contraseña</label>
+        	<input id="id-pwdpr" type="password" name="password" required="required" onkeyup="validarContrapr(),deshabilitarBotonpr()"/>
+        	<span id="errorPWDpr" style="float:right;color:red"></span>
         	<br/>
         	
-        	<label for="id-email">Email</label>
-        	<input id="id-email" type="text" name="email" required="required" onkeyup="validarEmail(),deshabilitarBoton()"/>
-        	<span id="errorEmail" style="float:right"></span>
+        	<label for="id-emailpr">Email</label>
+        	<input id="id-emailpr" type="text" name="email" required="required" onkeyup="validarEmailpr(),deshabilitarBotonpr()"/>
+        	<span id="errorEmailpr" style="float:right;color:red"></span>
         	<br/>
         	
         	<label for="id-especialidad">Especialidad</label>
@@ -503,7 +634,7 @@ function deshabilitarBoton() {
         	<br/>
         	
         	<label for="id-clinica">Clínica <i style="color:#a4a6a5; font-size: 1.2rem;">(Dejar en blanco si eres autónomo)</i></label>
-        	<input id="id-clinica" type="text" name="clinica" onkeyup="validarClinica(),deshabilitarBoton()"/>
+        	<input id="id-clinica" type="text" name="clinica"/>
         	<br/>
         	
         	<label for="id-pais">Pais Origen</label>	
@@ -525,7 +656,7 @@ function deshabilitarBoton() {
             
             <label for="id-franja">Franja Horaria</label>
         	<input id="id-franja" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required" onkeyup="validarFranja(),deshabilitarBoton()"/>
-        	<span id="errorFranja" style="float:right"></span>
+        	<span id="errorFranja" style="float:right;color:red"></span>
         	<br/>
             
             <br>
@@ -561,7 +692,7 @@ function deshabilitarBoton() {
         	<input id="id-foto" type="file" name="foto"/><br>
         	<img class="" id="id-out-foto" width="20%" height="20%" src="../../assets/img/noimage.png" alt=""/><br><br>
         	
-        	<input type="submit" id="botonRegistrar" value="Registrar" class="btn btnEstandar"/>
+        	<input type="submit" id="botonRegistrarpr" value="Registrar" class="btn btnEstandar"/>
         </form>
 
     </div>

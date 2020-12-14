@@ -41,25 +41,6 @@ function validarTelefonoPac() {
                     }
                 }
                 
-function validarDireccionPac() {
-            		var direccion = document.getElementById("id-direccionpac").value.trim().toLowerCase();
-                    var rgExp= /^[a-zA-z çÇñÑáÁéÉíÍóÓúÚ 0-9 -º/,.ª]{10,40}$/;
-        
-                    if (direccion.length > 10 && direccion.length < 40) {
-                        document.getElementById("errorDireccionPac").innerHTML="";
-                    
-                     if (!rgExp.test(direccion)){
-                        document.getElementById("errorDireccionPac").innerHTML="La dirección tiene caracteres no validos";
-                    }
-                     else {
-                     	document.getElementById("errorDireccionPac").innerHTML="";
-                    }
-                }
-                else {
-                        document.getElementById("errorDireccionPac").innerHTML="La dirección tiene menos de 11 caracteres o mas de 41 caracteres";
-                    }
-                }
-                
 function validarEmailPac() {
             		var email=document.getElementById("id-correopac").value.trim().toLowerCase();
                     var rgExp= /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
@@ -113,7 +94,7 @@ function deshabilitarBotonPac() {
                 		boton.disabled = false;
                 	}
                 }
-		</script>
+</script>
 			<h1 class="textoexp1-enunciados">Configuracion Perfil Paciente</h1>
 
 			<form action="<?=base_url()?>persona/configPerfilPost" method="post" enctype="multipart/form-data">
@@ -121,7 +102,7 @@ function deshabilitarBotonPac() {
 				<div class="col-xs-8">
 					<label for="id-nombrepac">Nombre</label> 
 					<input id="id-nombrepac" type="text" class="form-control" name="nombre" onkeyup="validarNombrePac(),deshabilitarBotonPac()"/>
-					<span style="float:right" id="errorNombrePac"></span>
+					<span style="float:right;color:red" id="errorNombrePac"></span>
 				</div>
 
 				<div class="col-xs-8">
@@ -141,13 +122,13 @@ function deshabilitarBotonPac() {
 				<div class="col-xs-8">
 					<label for="id-correopac">Correo</label> 
 					<input id="id-correopac" type="text" class="form-control" name="correopac" onkeyup="validarEmailPac(),deshabilitarBotonPac()" />
-					<span style="float:right" id="errorEmailPac"></span>
+					<span style="float:right;color:red" id="errorEmailPac"></span>
 				</div>
 
 				<div class="col-xs-8">
 					<label for="id-tlfpac">Teléfono</label> 
 					<input id="id-tlfpac" type="text" class="form-control" name="tlf" onkeyup="validarTelefonoPac(),deshabilitarBotonPac()"/>
-					<span style="float:right" id="errorTelefonoPac"></span>
+					<span style="float:right;color:red" id="errorTelefonoPac"></span>
 				</div>
 
 				<div class="col-xs-8">
@@ -162,14 +143,12 @@ function deshabilitarBotonPac() {
 
 				<div class="col-xs-8">
 					<label for="id-direccionpac">Dirección</label> 
-					<input id="id-direccionpac" type="text" name="direccion" class="form-control" onkeyup="validarDireccionPac(),deshabilitarBotonPac()"/>
-					<span style="float:right" id="errorDireccionPac"></span>
+					<input id="id-direccionpac" type="text" name="direccion" class="form-control"/>
 				</div>
 
 				<div class="col-xs-8">
 					<label for="id-ciudadpac">Ciudad</label> 
-					<input id="id-ciudadpac" type="text" class="form-control" name="ciudad" onkeyup="validarCiudadPac(),deshabilitarBotonPac()" />
-					<span style="float:right" id="errorCiudadPac"></span>
+					<input id="id-ciudadpac" type="text" class="form-control" name="ciudad"/>
 				</div>
 
 			<div class="col-xs-8">

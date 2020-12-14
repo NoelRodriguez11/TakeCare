@@ -3,8 +3,7 @@
 class Profesional extends CI_Controller
 {
 
-    public function r()
-    {
+    public function r() {
         $this->load->model('profesional_model');
         $this->load->model('especialidad_model');
         $datos['profesionales'] = $this->profesional_model->getProfesionales();
@@ -15,6 +14,9 @@ class Profesional extends CI_Controller
    
     public function u()
     {
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        }
         
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('profesional_model');
@@ -26,6 +28,10 @@ class Profesional extends CI_Controller
     }
     
     public function uPost() {
+        
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        }
         
         $this->load->model('profesional_model');
         $this->load->model('pais_model');
@@ -49,6 +55,11 @@ class Profesional extends CI_Controller
     }
     
     public function d(){
+        
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        }
+        
         $this->load->model('profesional_model');
         $this->load->model('especialidad_model');
         $datos['profesionales'] = $this->profesional_model->getProfesionales();
@@ -57,7 +68,11 @@ class Profesional extends CI_Controller
     }
     
     public function dPost() {
-        //SERIA EL PROFESIONAL EL QUE BORRARIA SU CUENTA PROPIA
+        
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        }
+        
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $this->load->model('profesional_model');
         $this->profesional_model->borrarProfesional($id);
@@ -65,12 +80,21 @@ class Profesional extends CI_Controller
     }
     
     public function borrarCuenta(){
+        
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
+        
         $this->load->model('profesional_model');
         $datos['profesional'] = $this->profesional_model->getProfesionales();
         frame($this, 'profesional/configPerfil', $datos);
     }
     
     public function borrarCuentaPost() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
+        
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $this->load->model('profesional_model');
         $this->profesional_model->borrarProfesional($id);
@@ -89,6 +113,10 @@ class Profesional extends CI_Controller
     //CONFIGURACION PERFIL
     
     public function cambiarContraProfesional() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
+        
         session_start();
         $this->load->model('profesional_model');
         
@@ -121,6 +149,10 @@ class Profesional extends CI_Controller
     }
     
     public function configPerfil() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
+        
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('profesional_model');
         $datos['profesional'] = $this->profesional_model->getProfesionalById($id);
@@ -128,6 +160,10 @@ class Profesional extends CI_Controller
     }
     
     public function configPerfilPost() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
+        
         session_start();
         $this->load->model('profesional_model');
         
@@ -150,9 +186,11 @@ class Profesional extends CI_Controller
     }
     
     public function obtenerDatos() {
-        //         if(!isRolOK("admin")){
-        //             PRG("Rol inadecuado");
-        //         }
+        
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
+        
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('profesional_model');
         echo $this->profesional_model->getDatosProfesional($id);
@@ -162,6 +200,10 @@ class Profesional extends CI_Controller
     
 //-----------------------------------------------------------ACEPTAR CASO------------------------------------------------------------------------------------
     public function aceptarCaso() {
+        
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
 
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $idProfesional = isset($_POST['idProfesional']) ? $_POST['idProfesional'] : null;
@@ -183,6 +225,10 @@ class Profesional extends CI_Controller
 //-----------------------------------------------------------RECHAZAR CASO------------------------------------------------------------------------------------
     public function rechazarCaso() {
         
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
+        
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $this->load->model('caso_model');
         $this->caso_model->cambiarEstado($id, "Rechazada");
@@ -193,6 +239,9 @@ class Profesional extends CI_Controller
     
 //-----------------------------------------------------------ACEPTAR CASO------------------------------------------------------------------------------------
     public function cambiarPropuesta() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
         
         $id = isset($_GET['idCaso']) ? $_GET['idCaso'] : null;
         $this->load->model('caso_model');
@@ -202,6 +251,9 @@ class Profesional extends CI_Controller
     }
     
     public function cambiarPropuestaPost() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $fechaHora = isset($_POST['fechaHora']) ? $_POST['fechaHora'] : null;
@@ -216,6 +268,9 @@ class Profesional extends CI_Controller
 
 //-----------------------------------------------------------Editar diagnostico y sintomas------------------------------------------------------------------------------------
     public function editarDiagnostico() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $diagnosticoGeneral = isset($_POST['diagnosticoGeneral']) ? $_POST['diagnosticoGeneral'] : null;
@@ -237,6 +292,9 @@ class Profesional extends CI_Controller
     }
 
     public function agregarSintoma() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
         
         $id = isset($_POST['idAfeccion']) ? $_POST['idAfeccion'] : null;
         $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
@@ -267,6 +325,9 @@ class Profesional extends CI_Controller
 //-----------------------------------------------------------Dar de alta paciente------------------------------------------------------------------------------------
     
     public function finalizarTratamiento() {
+        if(!isRolOKPro("profesional")){
+            PRG("Rol inadecuado, debes de ser un profesional");
+        }
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $this->load->model('caso_model');

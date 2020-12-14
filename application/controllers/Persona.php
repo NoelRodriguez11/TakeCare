@@ -3,20 +3,18 @@
 class Persona extends CI_Controller
 {
 
-    public function r()
-    {
+    public function r() {
         if(!isRolOK("admin")){
-            PRG("Rol inadecuado");
+            PRG("Rol inadecuado, debes ser Administrador");
         }
         $this->load->model('persona_model');
         $datos['personas'] = $this->persona_model->getPersonas();
         frame($this, 'persona/r', $datos);
     }
     
-    public function u()
-    {
+    public function u() {
         if(!isRolOK("admin")){
-            PRG("Rol inadecuado");
+            PRG("Rol inadecuado, debes ser Administrador");
         }
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('persona_model');
@@ -25,13 +23,12 @@ class Persona extends CI_Controller
         $data['paises'] = $this->pais_model->getPaises();
         frame($this, 'persona/d', $data);
         
-        
     }
     
     public function uPost() {
         
         if(!isRolOK("admin")){
-            PRG("Rol inadecuado");
+            PRG("Rol inadecuado, debes ser Administrador");
         }
         $this->load->model('persona_model');
         $this->load->model('pais_model');
@@ -55,16 +52,18 @@ class Persona extends CI_Controller
     }
     
     public function d(){
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        } 
         $this->load->model('persona_model');
         $datos['personas'] = $this->persona_model->getPersonas();
         frame($this, 'persona/d', $datos);
     }
     
     public function dPost() {
-        
-//         if(!isRolOK("admin")){
-//             PRG("Rol inadecuado");
-//         }
+        if(!isRolOK("admin")){
+            PRG("Rol inadecuado, debes ser Administrador");
+        } 
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $this->load->model('persona_model');
         $this->persona_model->borrarPersona($id);
@@ -72,12 +71,18 @@ class Persona extends CI_Controller
     }
     
     public function borrarCuenta(){
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado");
+        }
         $this->load->model('persona_model');
         $datos['personas'] = $this->persona_model->getPersonas();
         frame($this, 'persona/configPerfil', $datos);
     }
     
     public function borrarCuentaPost() {
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $this->load->model('persona_model');
         $this->persona_model->borrarPersona($id);
@@ -94,6 +99,9 @@ class Persona extends CI_Controller
     //CONFIGURACION PERFIL
     
     public function cambiarContraPersona() {
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
         session_start();
         $this->load->model('persona_model');
         
@@ -125,6 +133,9 @@ class Persona extends CI_Controller
     }
     
     public function configPerfil() {
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
         $id = isset($_GET['id']) ? $_GET['id'] : null;
         $this->load->model('persona_model');
         $this->load->model('pais_model');
@@ -134,6 +145,9 @@ class Persona extends CI_Controller
     }
     
     public function configPerfilPost() {
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
         session_start();
         $this->load->model('persona_model');
         $this->load->model('pais_model');
@@ -174,6 +188,9 @@ class Persona extends CI_Controller
 //----------------------------------Finalizar tratamiento-------------------------------------------------------------   
 
     public function finalizarTratamiento() {
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $this->load->model('caso_model');
@@ -186,6 +203,10 @@ class Persona extends CI_Controller
 //----------------------------------Aceptar y rechazar nuevas fechas-------------------------------------------------------------
     
     public function aceptarNuevaFecha() {
+        
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
         
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $idProfesional = isset($_POST['idProfesional']) ? $_POST['idProfesional'] : null;
@@ -208,6 +229,10 @@ class Persona extends CI_Controller
     
     public function rechazarNuevaFecha() {
         
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
+        
         $id = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $this->load->model('caso_model');
         $this->caso_model->cambiarEstado($id, "Rechazada");
@@ -217,6 +242,10 @@ class Persona extends CI_Controller
     }
 
     public function solicitarCambioCita() {
+        
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
         
         $idCita = isset($_GET['idCita']) ? $_GET['idCita'] : null;
         $idCaso = isset($_GET['idCaso']) ? $_GET['idCaso'] : null;
@@ -233,6 +262,10 @@ class Persona extends CI_Controller
     
     
     public function solicitarCambioCitaPost() {
+        
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
         
         $this->load->model('cita_model');
         $this->load->model('caso_model');
@@ -252,6 +285,10 @@ class Persona extends CI_Controller
     }
     
     public function enviarStar() {
+        
+        if(!isRolOKPer("persona")){
+            PRG("Rol inadecuado, debes de ser un paciente");
+        }
         
         $idProfesional = isset($_POST['idProfesional']) ? $_POST['idProfesional'] : null;
         $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;

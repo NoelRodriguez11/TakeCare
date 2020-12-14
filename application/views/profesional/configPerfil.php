@@ -64,9 +64,9 @@ function validarEmailPro() {
 function validarFranjaPro() {
             		var franja = document.getElementById("id-franjap").value.trim();
             		var opcionSeleccionada = document.getElementById("id-turnop").options.selectedIndex;
-                    var rgExpMañana = /^(0?[0-9]|1[012])(:[0-5]\d)$/;
-                    var rgExpTarde = /^(1?[2-9]|2[0123])(:[0-5]\d)$/;
-                    var rgExpAmbos = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/;
+                    var rgExpMañana = /^(0?[0-9]|1[012])(:[0-5]\d)(-(0?[0-9]|1[012]))(:[0-5]\d)$/;
+                    var rgExpTarde = /^(1?[2-9]|2[0123])(:[0-5]\d)(-(1?[2-9]|2[0123]))(:[0-5]\d)$/;
+                    var rgExpAmbos = /^([01]?[0-9]|2[0-3]):[0-5][0-9](-([01]?[0-9]|2[0-3])):[0-5][0-9]$/;
         
                     if(opcionSeleccionada == 0) {
                     	if(!rgExpMañana.test(franja)) {
@@ -122,7 +122,7 @@ function deshabilitarBotonPro() {
 				<div class="col-xs-8">
 					<label for="id-nombrep">Nombre</label> 
 					<input id="id-nombrep" type="text" class="form-control" name="nombrep" onkeyup="validarNombrePro(),deshabilitarBotonPro()" />
-					<span style="float:right" id="errorNombrePro"></span>
+					<span style="float:right;color:red" id="errorNombrePro"></span>
 				</div>
 
 				<div class="form-group">
@@ -132,13 +132,13 @@ function deshabilitarBotonPro() {
 				<div class="col-xs-8">
 					<label for="id-telefonop">Teléfono</label> 
 					<input id="id-telefonop" type="text" class="form-control" name="tlfp" onkeyup="validarTelefonoPro(),deshabilitarBotonPro()" />
-					<span style="float:right" id="errorTelefonoPro"></span>
+					<span style="float:right;color:red" id="errorTelefonoPro"></span>
 				</div>
 
 				<div class="col-xs-8">
 					<label for="id-correop">Correo</label> 
 					<input id="id-correop" type="text" class="form-control" name="correop" onkeyup="validarEmailPro(),deshabilitarBotonPro()" />
-					<span style="float:right" id="errorEmailPro"></span>
+					<span style="float:right;color:red" id="errorEmailPro"></span>
 				</div>
 
 				<div class="col-xs-8">
@@ -164,7 +164,7 @@ function deshabilitarBotonPro() {
                 <div class="col-xs-8">
                     <label for="id-franjap">Franja Horaria</label>
                     <input id="id-franjap" type="text" placeholder="Formato: 09:00-14:00" name="franja"  class="form-control" required="required" onkeyup="validarFranjaPro(),deshabilitarBotonPro()"/>
-                    <span style="float:right" id="errorFranjaPro"></span>
+                    <span style="float:right;color:red" id="errorFranjaPro"></span>
                 </div>
                 <input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="loginBoton" />
 				 
