@@ -30,7 +30,7 @@ class Profesional_model extends CI_Model
             throw new Exception("email o password nulos");
         }
         
-        if ( R::findOne('profesional', 'email=?', [$email]) != null && R::findOne('profesional', 'dni=?', [$dni]) != null) {
+        if ( R::findOne('persona', 'email=?', [$email]) != null && R::findOne('persona', 'dni=?', [$dni]) != null) {
             throw new Exception("email o dni duplicado");
         }
         
