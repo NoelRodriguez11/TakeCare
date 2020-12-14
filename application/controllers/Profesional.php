@@ -328,11 +328,16 @@ class Profesional extends CI_Controller
         if(!isRolOKPro("profesional")){
             PRG("Rol inadecuado, debes de ser un profesional");
         }
+        $this->load->model('afeccion_model');
+        $this->load->model('caso_model');
+        $this->load->model('cita_model');
+        $this->load->model('sintoma_model');
+        $this->load->model('especialidad_model');
         
         $idCita = isset($_POST['idCita']) ? $_POST['idCita'] : null;
         $idCaso = isset($_POST['idCaso']) ? $_POST['idCaso'] : null;
         $this->load->model('cita_model');
-        $this->cita_model->cambiarEstado($id, "Aceptada");
+        $this->cita_model->cambiarEstado($idCita, "Aceptada");
         $datos['caso'] = $this->caso_model->getCasoById($idCaso);
         $datos['citas'] = $this->cita_model->getCitasByCasoId($idCaso);
         $datos['sintomas'] = $this->sintoma_model->getSintomas();
