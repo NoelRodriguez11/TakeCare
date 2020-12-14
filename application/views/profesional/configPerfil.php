@@ -166,6 +166,12 @@ function deshabilitarBotonPro() {
                     <input id="id-franjap" type="text" placeholder="Formato: 09:00-14:00" name="franja"  class="form-control" required="required" onkeyup="validarFranjaPro(),deshabilitarBotonPro()"/>
                     <span style="float:right;color:red" id="errorFranjaPro"></span>
                 </div>
+                
+                <div class="col-xs-8">
+                    <label for="id-tarifa">Tarifa <i style="color:#a4a6a5; font-size: 1.2rem;">(€/sesión)</i></label>
+        			<input id="id-tarifa" type="text" class="form-control" placeholder="" minlength=1 maxLength=2  size=1 name="tarifa" required="required" onkeyup=""/>
+                </div>
+                
                 <input type="submit" value="Guardar Cambios" class="btn btnEstandar" id="loginBoton" />
 				 
 				 </form>
@@ -275,6 +281,9 @@ function deshabilitarBotonPro() {
                                         
                                         var clinicas = profesional.clinica;
                                         $("#id-clinicap").val(clinicas);
+                                        
+                                        var tarifas = profesional.tarifa;
+                                        $("#id-tarifa").val(tarifas);
                                         
                                         var turnos = profesional.turno;
                                         $("#id-turnop").val(turnos);

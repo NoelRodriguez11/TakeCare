@@ -473,7 +473,7 @@ function deshabilitarBotonpr() {
         	<br/>
         	
         	<label for="id-pwdpa">Contraseña</label>
-        	<input id="id-pwdpa" type="password" name="password" required="required" placeholder="Mayusculas, minusculas y digitos" onkeyup="validarContrapa(), deshabilitarBotonpa()"/>
+        	<input id="id-pwdpa" type="password" name="password" required="required" placeholder="Mayus, minus y num" onkeyup="validarContrapa(), deshabilitarBotonpa()"/>
         	<span id="errorPWDpa" style="float:right;color:red"></span>
         	<br/>
         	
@@ -522,7 +522,7 @@ function deshabilitarBotonpr() {
         	<br/>
         	
         	<label for="id-dnipr">DNI</label>
-        	<input id="id-dnipr" type="text" name="dni" required="required" onkeyup="validarDNIpr(),deshabilitarBotonpr()"/>
+        	<input id="id-dnipr" type="text" name="dni" placeholder="00000000A" required="required" onkeyup="validarDNIpr(),deshabilitarBotonpr()"/>
         	<span id="errorDNIpr" style="float:right;color:red"></span>
         	<br/>
         	
@@ -611,12 +611,12 @@ function deshabilitarBotonpr() {
         	<br/>
         	
         	<label for="id-pwdpr">Contraseña</label>
-        	<input id="id-pwdpr" type="password" name="password" required="required" onkeyup="validarContrapr(),deshabilitarBotonpr()"/>
+        	<input id="id-pwdpr" type="password" placeholder="Mayus, minus y num" name="password" required="required" onkeyup="validarContrapr(),deshabilitarBotonpr()"/>
         	<span id="errorPWDpr" style="float:right;color:red"></span>
         	<br/>
         	
         	<label for="id-emailpr">Email</label>
-        	<input id="id-emailpr" type="text" name="email" required="required" onkeyup="validarEmailpr(),deshabilitarBotonpr()"/>
+        	<input id="id-emailpr" type="text" placeholder="ejemplo@gmail.com" name="email" required="required" onkeyup="validarEmailpr(),deshabilitarBotonpr()"/>
         	<span id="errorEmailpr" style="float:right;color:red"></span>
         	<br/>
         	
@@ -661,7 +661,6 @@ function deshabilitarBotonpr() {
         	
         	<label for="id-tarifa">Tarifa <i style="color:#a4a6a5; font-size: 1.2rem;">(€/sesión)</i></label>
         	<input id="id-tarifa" type="text" placeholder="" minlength=1 maxLength=2  size=1 name="tarifa" required="required" onkeyup=""/>
-        	<span id="errortarifa" style="float:right;color:red"></span>
         	<br/>
             
             <br>
