@@ -18,6 +18,11 @@
                             <p style="float: right; margin-right: 40%;" class="provinciaEstiloCita"><?=$profesional->direccion?><br><?=$profesional->ciudad?><br>
                             <?=$profesional->provincia?></p>
                         </div>
+                        
+                        <div style="overflow: hidden;">
+                            <p style="float: left;" class="provinciaIndicadorCita">Tarifa:</p>
+                            <p style="float: right; margin-right: 40%;" class="provinciaEstiloCita"><?=$profesional->tarifa?> €/sesión</p>
+                        </div>
 
                        
                      </div>

@@ -90,12 +90,16 @@
                  			<input type="hidden" name="idCita" value="<?=$cita->id?>">
                  		    <input type="hidden" name="idCaso" value="<?=$caso->id?>">
                        		<button class="botonInformacionCita btn btn-danger btn-sm">✖</button> 
-                       		</form>     
+                       		</form>  
+                       		
+                       		<?php if($cita->fechaAnterior != null):?>   
                  		    <form style="float:right;" action="<?=base_url()?>persona/solicitarCambioCita" method="get">
                  		    <input type="hidden" name="idCita" value="<?=$cita->id?>">
                  		    <input type="hidden" name="idCaso" value="<?=$caso->id?>">
+                 		    <input type="hidden" name="fechaAnterior" value="<?=$cita->fecha?>">
                        		<button  class="botonInformacionCita btn btn-info btn-sm"><i class="fas fa-edit"></i></button>
                        		</form>
+                       		<?php endif;?>
                       		               		
                      		<form style="float:right; visibility:hidden;" action="<?=base_url()?>cita/#" method="post">
                       		<button class="botonInformacionCita btn btn-success btn-sm"><i class="fas fa-check"></i></button>  

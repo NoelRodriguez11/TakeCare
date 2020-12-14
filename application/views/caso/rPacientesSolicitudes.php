@@ -70,7 +70,7 @@
         			<button title="Ver la información detallada del tratamiento" onclick="submit()" class="botonCambioPropuesta btn btn-primary" id="botonPC">Información Completa</button>
         		</form>
         		
-            		<?php if($caso->valorado == true):?>
+            		<?php if($caso->valorado == false):?>
             		 <button class="botonCambioPropuesta btn btn-warning col-sm-1" data-toggle="modal" data-target="#valorarProfesional<?=$caso->id?>" style="width: 14.7%; right:1.5rem;" id="botonPC">
                       <i class="fas fa-star" ></i> Valorar Profesional</button>
                     <?php endif;?>

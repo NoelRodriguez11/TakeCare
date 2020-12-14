@@ -24,7 +24,7 @@ class Profesional_model extends CI_Model
     }
     
 
-    public function crearProfesional($nombre, $primerApellido, $segundoApellido, $dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $especialidad, $clinica, $turno,$franja,  $extFoto)
+    public function crearProfesional($nombre, $primerApellido, $segundoApellido, $dni, $password, $direccion, $ciudad, $provincia, $telefono, $email, $genero, $pais,$fechaNacimiento, $especialidad, $clinica, $turno,$franja,$tarifa,  $extFoto)
     {
         if ( $email == null || $password == null) {
             throw new Exception("email o password nulos");
@@ -59,6 +59,7 @@ class Profesional_model extends CI_Model
         $profesional->franja = $franja;
         $profesional->valoracion = 0;
         $profesional->numeroValoraciones = 0;
+        $profesional->tarifa = $tarifa;
         
         
         return R::store($profesional);

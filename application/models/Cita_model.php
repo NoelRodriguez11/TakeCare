@@ -44,11 +44,11 @@ class Cita_model extends CI_Model
         }
     }
     
-    public function solicitarCambioCita($idCita, $fechahora, $fechaAnterior, $estado="Pendiente")
+    public function solicitarCambioCita($idCita, $fechaNueva, $fechaAnterior, $estado="Pendiente")
     {
         $cita = R::load('cita',$idCita);
       
-        $cita->fecha = $fechahora;
+        $cita->fecha = $fechaNueva;
         $cita->estado = $estado;
         $cita->fechaAnterior = $fechaAnterior;
         return R::store($cita);

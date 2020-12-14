@@ -121,12 +121,12 @@ class Caso extends CI_Controller {
         if($alertaPropuestaCambio == true){
             $this->load->model('caso_model');
             $this->caso_model->borrarCaso($id);
-           PRG("Propuesta de profesional rechazada. En caso de querer reintentarlo realiza una nueva solicitud o ponte en contacto");
+           PRG("Propuesta de profesional rechazada. Realiza una nueva solicitud o ponte en contacto");
         }
         else {
             $this->load->model('caso_model');
             $this->caso_model->borrarCaso($id);
-            redirect(base_url().'caso/rPacientes');
+            redirect(base_url());
         }
         }
 

@@ -658,6 +658,11 @@ function deshabilitarBotonpr() {
         	<input id="id-franja" type="text" placeholder="Formato: 09:00-14:00" name="franja" required="required" onkeyup="validarFranja(),deshabilitarBoton()"/>
         	<span id="errorFranja" style="float:right;color:red"></span>
         	<br/>
+        	
+        	<label for="id-tarifa">Tarifa <i style="color:#a4a6a5; font-size: 1.2rem;">(€/sesión)</i></label>
+        	<input id="id-tarifa" type="text" placeholder="" minlength=1 maxLength=2  size=1 name="tarifa" required="required" onkeyup=""/>
+        	<span id="errortarifa" style="float:right;color:red"></span>
+        	<br/>
             
             <br>
         	

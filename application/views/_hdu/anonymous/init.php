@@ -1,8 +1,8 @@
 <div class="container">
 	<form action="<?=base_url()?>hdu/anonymous/initPost" method="post">
     <?php if (!$vacia):?>
-     	<h1>¡¡ Peligro !!. BD no vacía</h1>
-		<h3>Introduce "admin" para borrar la BD</h3>
+     	<h1>La base de datos no está vacía.<br>¿Quieres continuar?</h1>
+		<p>Introduce la clave</p>
 		<input type="password" name="pwd" />
 		<input type="submit" value="Borrar" />
 	<?php else:?>

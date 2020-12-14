@@ -249,12 +249,12 @@ class Persona extends CI_Controller
         
         $idCita = isset($_GET['idCita']) ? $_GET['idCita'] : null;
         $idCaso = isset($_GET['idCaso']) ? $_GET['idCaso'] : null;
-        
         $this->load->model('cita_model');
         $this->load->model('caso_model');
         
         $datos['cita'] = $this->cita_model->getCitaById($idCita);
         $datos['caso'] = $this->caso_model->getCasoById($idCaso);
+        
         frame($this,'cita/cCambioCita', $datos);
     }
 
@@ -271,10 +271,11 @@ class Persona extends CI_Controller
         $this->load->model('caso_model');
         
         $idCita = isset($_POST['idCita']) ? $_POST['idCita'] : null;
-        $fechahora = isset($_POST['fechahora']) ? $_POST['fechahora'] : null;
+        $fechaNueva = isset($_POST['fechaNueva']) ? $_POST['fechaNueva'] : null;
+        $fechaAnterior = isset($_POST['fechaAnterior']) ? $_POST['fechaAnterior'] : null;
      
         try {
-            $this->cita_model->solicitarCambioCita($idCita, $fechahora);
+            $this->cita_model->solicitarCambioCita($idCita, $fechaNueva, $fechaAnterior);
             PRG('Cambio de fecha solicitado', 'caso/rPacientes', 'success');
         } catch (Exception $e) {
             session_start();
